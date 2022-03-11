@@ -1,0 +1,15 @@
+<nav>
+    <label  class="logo" for="logo">SVS</label>
+    <ul  [@navbarAnimation]="navbarState" class="navlink" >
+        <li><a class="active" href="#">Acceuil</a></li>
+        <li><a href="#">A propos</a></li>
+        <li><a href="#">Formations</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a routerLink="/auth/login">Se Connecter</a></li>
+    </ul>
+    <label id="icon">
+        <button (click)="onHide()">
+            <li class="fas fa-bars"></li>
+        </button>
+    </label>
+</nav>
