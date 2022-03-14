@@ -40,7 +40,7 @@ nav{
 
             a.active, a:hover{
                 border: 1px solid $first-color;
-                transition: .5s;
+                transition: 1s;
             }
 
         }
@@ -93,7 +93,7 @@ nav{
             
             // display: none;
             text-align: center;
-            transition: all .5s;
+            transition: all 1s;
             transition: ease-in-out;
 
             li{
@@ -110,7 +110,7 @@ nav{
             li > a.active, li > a:hover{
                 border: none;
                 color: #6fa9e2;
-                transition: .5s;
+                transition: 1s;
             }
     
         }
