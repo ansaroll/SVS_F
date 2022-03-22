@@ -14,15 +14,15 @@
 				<form>
 					<div class="flex justify-center items-center">
 						<div>
-                            <div class="flex justify-between">
-                                <img src="./assets/images/ua.png" alt="" srcset="">
-                                <img class="h-24 text-center w-auto animate-bounce " src="./assets/images/svs.png" alt="" srcset="">
+                <div class="flex justify-between">
+                    <img src="./assets/images/ua.png" alt="" srcset="">
+                    <img class="h-24 text-center w-auto animate-bounce " src="./assets/images/svs.png" alt="" srcset="">
 
-                            </div>
-                            <!-- <span class="text-sm text-gray-900">Bienvenue </span> -->
+                </div>
+                 <!-- <span class="text-sm text-gray-900">Bienvenue </span> -->
 
-                            <h1 class="text-2xl font-bold ">Connecter votre compte</h1>
-                        </div>
+                <h1 class="text-2xl font-bold ">Creer un compte</h1>
+            </div>
 					</div>
 					<div class="mt-5">
 						<label class="block text-md mb-2" for="password">Mot de passe</label>
@@ -31,20 +31,24 @@
 					<div class="my-3">
 							<label class="block text-md mb-2" for="email">Email</label>
 							<input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email" name="password" placeholder="email">
-                    </div>
+          </div>
 					<div class="flex justify-center">
-								<span class="text-sm text-blue-700  hover:underline cursor-pointer">Mot de passe oublié ?</span>
+							<!-- <div>
+								<input class="cursor-pointer"  type="radio" name="rememberme">
+								<span class="text-sm"> Me</span>
+							</div> -->
+								<!-- <span class="text-sm text-blue-700  hover:underline cursor-pointer">Mot de passe oublié ?</span> -->
 					</div>
 					<div class="">
-						<button type="submit" class="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Se Connecter</button>
-						<div class="flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100">
+						<button class="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">S'Enregistrer</button>
+						<!-- <div class="flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100">
                             <img class=" h-5 cursor-pointer" src="https://i.imgur.com/arC60SB.png" alt="">
                             <button >Ou connecter avec google</button>
-					    </div>
+					    </div> -->
 				    </div>
 				</form>
 
-				<p class="mt-8"> Pas de compte ? <a routerLink="/auth/signup" class="cursor-pointer text-sm text-blue-600"> Contacter l'Ecole </a></p>
+				<p class="mt-8">  <a routerLink="/auth/login" class="cursor-pointer text-sm text-blue-600"> Se connecter </a></p>
 			</div>
 		</div>
 	</div>
