@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 // les modules
 import { CoreModule } from "./core/core.module";
 import { AuthModule } from "./auth/auth.module";
-import { EntModule } from "./ent/ent.module";
+import { AdminModule } from './admin/admin.module';
+import { PublicModule } from './public/public.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EntModule } from "./ent/ent.module";
     AppRoutingModule,
     CoreModule,
     AuthModule,
-    EntModule
+    AdminModule,
+    PublicModule
   ],
   providers: [],
   bootstrap: [AppComponent]

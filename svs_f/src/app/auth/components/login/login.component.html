@@ -36,10 +36,10 @@
 								<span class="text-sm text-blue-700  hover:underline cursor-pointer">Mot de passe oublié ?</span>
 					</div>
 					<div class="">
-						<button type="submit" class="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Se Connecter</button>
+						<button type="submit" (click)="onLogin()" class="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Se Connecter</button>
 						<div class="flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100">
                             <img class=" h-5 cursor-pointer" src="https://i.imgur.com/arC60SB.png" alt="">
-                            <button >Ou connecter avec google</button>
+                            <button type="submit" >Ou connecter avec google</button>
 					    </div>
 				    </div>
 				</form>
