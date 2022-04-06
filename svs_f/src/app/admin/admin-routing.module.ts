@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core'
 import { RouterModule , Routes  } from '@angular/router'
-import { HomeComponent } from './components/home/home.component'
+import { BodyComponent } from './components/body/body.component'
 import { ParametersComponent } from './components/parameters/parameters.component'
 
 const routes: Routes = [
-  { path : 'home'  , component: HomeComponent },
+  { path : 'home'  , component: BodyComponent },
   { path : 'parameters' , component : ParametersComponent}
 ]
 
