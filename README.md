@@ -1,4 +1,5 @@
 # SvsF
+Plateforme de Gestion des Formations de l'Ecole Doctorale Science de la Vie et de la Sante
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
