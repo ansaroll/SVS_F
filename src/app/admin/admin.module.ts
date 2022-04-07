@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ParametersComponent } from './components/parameters/parameters.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -10,12 +9,12 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { DatabaseComponent } from './components/database/database.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 
 
 @NgModule({
   declarations: [
-    ParametersComponent,
     HeaderComponent,
     SidenavComponent,
     SidenavComponent,
@@ -24,7 +23,8 @@ import { DatabaseComponent } from './components/database/database.component';
     CoursesComponent,
     CalendarComponent,
     ChatsComponent,
-    DatabaseComponent
+    DatabaseComponent,
+    SettingsComponent
   ],
   imports: [
     CommonModule,
