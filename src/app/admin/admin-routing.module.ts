@@ -22,7 +22,7 @@ const routes: Routes = [
       { path : 'courses' , component : CoursesComponent},
     ]
   },
-  { path : '' , redirectTo : '/dashboard' , pathMatch : 'full'}
+  // { path : '' , redirectTo : '/dashboard' , pathMatch : 'full'}
 ]
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -7,6 +7,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { ScreenComponent } from './components/screen/screen.component';
+import { BodyComponent } from './components/body/body.component';
 
 
 
@@ -17,7 +19,9 @@ import { CoursesComponent } from './components/courses/courses.component';
     SettingsComponent,
     ChatsComponent,
     CalendarComponent,
-    CoursesComponent
+    CoursesComponent,
+    ScreenComponent,
+    BodyComponent
   ],
   imports: [
     CommonModule,
