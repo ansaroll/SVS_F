@@ -9,8 +9,11 @@ import { ScreenComponent } from './components/screen/screen.component'
 import { SettingsComponent } from './components/settings/settings.component'
 
 const routes: Routes = [
-  { path : ''  , component: ScreenComponent ,
+  {
+    path : ''  , component: ScreenComponent ,
+    // path : ''   , redirectTo :'' , pathMatch : 'full' ,
     children : [
+      { path : '' , component: DashboardComponent },
       { path : 'dashboard' , component: DashboardComponent},
       { path : 'calendar' , component : CalendarComponent},
       { path : 'chats' , component : ChatsComponent},
@@ -18,7 +21,8 @@ const routes: Routes = [
       { path : 'settings' , component : SettingsComponent},
       { path : 'courses' , component : CoursesComponent},
     ]
-  }
+  },
+  { path : '' , redirectTo : '/dashboard' , pathMatch : 'full'}
 ]
 @NgModule({
   imports: [RouterModule.forChild(routes)],
