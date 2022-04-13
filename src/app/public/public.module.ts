@@ -4,6 +4,10 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { PublicRoutingModule } from './public-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -11,7 +15,11 @@ import { HeaderComponent } from './components/header/header.component';
   declarations: [
     LandingPageComponent,
     NavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    CoursesComponent,
+    ContactComponent,
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
