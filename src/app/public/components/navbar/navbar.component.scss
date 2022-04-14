@@ -1,4 +1,8 @@
-$first-color: #34495e;
+// $first-color: #34495e;
+$first-color: #378384;
+$second-color : #53F916;
+$third-color : #2228E3;
+
 
 
 // body{
@@ -9,13 +13,18 @@ nav{
     height: 8vh;
     width: 100%;
     background-color: white;
+    // padding  : 5px 5px 5px 80px;
 
     .logo{
         font-size: 35px;
         font-weight: bold;
         color: $first-color;
-        padding: 0 100px;
+        // padding: 15px 10px;
         line-height: 80px;
+
+        // img{
+        //   padding : 7px 10px ;
+        // }
     }
 
     .navlink{
@@ -33,15 +42,19 @@ nav{
                 font-size: 18px;
                 font-weight:500;
                 text-transform: uppercase;
-                border: 1px solid transparent;
+                // border: 1px solid transparent;
                 padding: 7px 10px;
-                border-radius: 3px;
             }
 
-            a.active, a:hover{
-                border: 1px solid $first-color;
-                transition: 1s;
+            a.active{
+                border-bottom: 1px solid $first-color;
+                // transition: 1s;
             }
+
+            a:hover{
+              border-bottom: 2px solid $first-color;
+              // transition: 0.3s;
+          }
 
         }
 
@@ -75,7 +88,7 @@ nav{
 
     }
 
-    
+
     @media (max-width: 909px) {
 
         #icon{
@@ -90,7 +103,7 @@ nav{
             background-color: $first-color;
             color: white;
             top: 80px;
-            
+
             // display: none;
             text-align: center;
             transition: all 1s;
@@ -101,7 +114,7 @@ nav{
                 margin: 50px 0;
                 line-height: 30px;
             }
-            
+
             li > a {
                 color: white;
                 font-size: 20px;
@@ -112,7 +125,7 @@ nav{
                 color: #6fa9e2;
                 transition: 1s;
             }
-    
+
         }
 
     }

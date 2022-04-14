@@ -1,20 +1,20 @@
-<nav class="flex flex-row space-between">
-    <label  class="logo" for="logo">
-      <img class="w-12" src="./assets/images/svs.png" alt="">
-    </label>
-    <ul  [@navbarAnimation]="navbarState" class="navlink" >
-        <li><a class="active" href="#">Acceuil</a></li>
-        <li><a href="#">A propos</a></li>
-        <li><a href="#">Formations</a></li>
-        <li><a href="#">Contacts</a></li>
-        <li><a routerLink="/auth/login">Se Connecter</a></li>
-    </ul>
-    <label id="icon">
-        <button title="submit" (click)="onHide()">
-          <ul>
-            <li class="fas fa-bars"></li>
+<nav class="flex flex-row justify-between">
+  <label  class="logo flex flex-row pl-6" for="logo">
+    <img class="mt-3 mx-4" src="./assets/images/svs.png" alt=""> <p>ED SVS</p>
+  </label>
+  <ul  [@navbarAnimation]="navbarState" class="navlink" >
+      <li><a class="active" href="acceuil">Acceuil</a></li>
+      <li><a routerLink="/about">A propos</a></li>
+      <li><a href="/courses">Formations</a></li>
+      <li><a href="/contact">Contacts</a></li>
+      <li><a routerLink="/auth/login">Se Connecter</a></li>
+  </ul>
+  <label id="icon">
+      <button title="submit" (click)="onHide()">
+        <ul>
+          <li class="fas fa-bars"></li>
 
-          </ul>
-        </button>
-    </label>
+        </ul>
+      </button>
+  </label>
 </nav>

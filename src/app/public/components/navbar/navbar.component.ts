@@ -26,6 +26,9 @@ import { trigger , state , style , transition , animate  } from "@angular/animat
 export class NavbarComponent implements OnInit {
 
   navbarState = 'inactive';
+  isList!: number;
+  isMenu: boolean = false;
+  isSearch: boolean = false;
 
   constructor() { }
 
