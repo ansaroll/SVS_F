@@ -30,7 +30,7 @@ nav{
     .navlink{
 
         float: right;
-        margin-right: 40px;
+        margin-right: 70px;
 
         li{
             display: inline-block;
@@ -103,7 +103,7 @@ nav{
             background-color: $first-color;
             color: white;
             top: 80px;
-
+            // margin-right: 40px;
             // display: none;
             text-align: center;
             transition: all 1s;
