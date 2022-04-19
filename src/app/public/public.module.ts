@@ -4,7 +4,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { PublicRoutingModule } from './public-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CoursesComponent } from './components/courses/courses.component';
-import { ContactComponent } from './components/contact/contact.component';
+// import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { BodyComponent } from './components/body/body.component';
@@ -17,7 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
     LandingPageComponent,
     NavbarComponent,
     CoursesComponent,
-    ContactComponent,
+    // ContactComponent,
     AboutComponent,
     HomeComponent,
     BodyComponent,
