@@ -12,8 +12,10 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { ScreenComponent } from './components/screen/screen.component';
 import { BodyComponent } from './components/body/body.component';
 
-
-
+import { CalendarModule , DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
+// import { FlatpickrModule } from 'angularx-flatpickr';
+// import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -30,7 +32,13 @@ import { BodyComponent } from './components/body/body.component';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    // NgbModalModule,
+    // FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
   ]
 
 })

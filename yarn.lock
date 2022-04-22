@@ -190,14 +190,14 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/core@>=10.0.0", "@angular/core@>=12.0.0", "@angular/core@~13.2.0", "@angular/core@13.2.6":
+"@angular/core@>=10.0.0", "@angular/core@>=12.0.0", "@angular/core@>=5.0.0", "@angular/core@~13.2.0", "@angular/core@13.2.6":
   "integrity" "sha512-ctWsxuaSO3d3afLW+wkJSyiEIA2uhaTKNps9x5wz/oZJDaUDYVa4PM4x7/UHn2bXzBjXjN9LSW8h9F31iwmcTg=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-13.2.6.tgz"
   "version" "13.2.6"
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/forms@~13.2.0":
+"@angular/forms@>=5.0.0", "@angular/forms@~13.2.0":
   "integrity" "sha512-3IikvNtO0RBiGb2AWl8aYcE3ivXHPIJz+JOn9Wz9XXSkYx75D3GjuJlz+fVIgz+7Q7tJuS6Q2E5qat/ldeDmoA=="
   "resolved" "https://registry.npmjs.org/@angular/forms/-/forms-13.2.6.tgz"
   "version" "13.2.6"
@@ -1776,6 +1776,13 @@
   dependencies:
     "tslib" "^2.2.0"
 
+"angularx-flatpickr@^6.6.0":
+  "integrity" "sha512-n/csZmAwfL32P7pUv52FXihSbPjVAjiKglbY8WO9hsBKvAk7mw8PKNjiovln4+fuscJwKo0wSsw+s7A+JpetQg=="
+  "resolved" "https://registry.npmjs.org/angularx-flatpickr/-/angularx-flatpickr-6.6.0.tgz"
+  "version" "6.6.0"
+  dependencies:
+    "tslib" "^1.9.0"
+
 "ansi-colors@4.1.1":
   "integrity" "sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA=="
   "resolved" "https://registry.npmjs.org/ansi-colors/-/ansi-colors-4.1.1.tgz"
@@ -3093,6 +3100,11 @@
   dependencies:
     "locate-path" "^5.0.0"
     "path-exists" "^4.0.0"
+
+"flatpickr@^4.5.0", "flatpickr@^4.6.13":
+  "integrity" "sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw=="
+  "resolved" "https://registry.npmjs.org/flatpickr/-/flatpickr-4.6.13.tgz"
+  "version" "4.6.13"
 
 "flatted@^3.2.5":
   "integrity" "sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg=="

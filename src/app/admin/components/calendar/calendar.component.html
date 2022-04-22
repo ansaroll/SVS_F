@@ -1,10 +1,8 @@
 
-
+<!--
 <div class="p-calendar">
-  <!-- p-calendar pour ajuster le padding-top  -->
 <p class="text-3xl">calendar</p>
 
-<!-- Soloina rehefa tonga eto ny implemetation CALENDAR GOOGLE API -->
 <div class="flex items-center justify-center py-8 px-4 ">
   <div class="2xl:w-1/3 xl:w-1/2 lg:w-3/5 sm:w-4/5 w-full shadow-lg">
       <div class="md:p-16 md:pb-12 p-5 dark:bg-gray-800 bg-white rounded-t">
@@ -258,4 +256,39 @@
       </div>
   </div>
 </div>
+</div> -->
+
+
+
+
+
+<div class="container">
+  <ng-template #weekViewHourSegmentTemplate
+     let-segment="segment" vent
+     let-locale="locale"
+     let-segmentHeight="segmentHeight"
+     let-isTimeLabel="isTimeLabel"
+   >
+    <div #segmentElement
+       class="cal-hour-segment"
+       [style.height.px]="segmentHeight"
+       [class.cal-hour-start]="segment.isStart"
+       [class.cal-after-hour-start]="!segment.isStart"
+       [ngClass]="segment.cssClass"
+       (mousedown)="startDragToCreate(segment, $event, segmentElement)">
+        <div class="cal-time" *ngIf="isTimeLabel">
+            {{ segment.date | calendarDate:'weekViewHour':locale }}
+        </div>
+    </div>
+</ng-template>
 </div>
+
+<mwl-calendar-week-view
+    [viewDate]="viewDate" [events]="events"
+    [hourSegmentTemplate]="weekViewHourSegmentTemplate"
+    [weekStartsOn]="weekStartsOn">
+</mwl-calendar-week-view>
+
+<hr>
+<!-- <div>Selected Slots</div> -->
+<!-- <pre>{{ slots | json }}</pre> -->
