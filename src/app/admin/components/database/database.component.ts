@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatabaseComponent implements OnInit {
 
-  dropDownList: any;
+  // dropDownList: any;
+  active_status = 1;
   constructor() { }
 
   ngOnInit(): void {

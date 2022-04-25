@@ -13,7 +13,11 @@ import { ScreenComponent } from './components/screen/screen.component';
 import { BodyComponent } from './components/body/body.component';
 
 import { CalendarModule , DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { ListDoctorantComponent } from './components/list-doctorant/list-doctorant.component';
+import { ListStaffComponent } from './components/list-staff/list-staff.component';
+import { ListProfComponent } from './components/list-prof/list-prof.component';
+import { ProfilComponent } from './components/profil/profil.component'
 // import { FlatpickrModule } from 'angularx-flatpickr';
 // import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
@@ -28,7 +32,11 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
     ChatsComponent,
     DatabaseComponent,
     SettingsComponent,
-    ScreenComponent
+    ScreenComponent,
+    ListDoctorantComponent,
+    ListStaffComponent,
+    ListProfComponent,
+    ProfilComponent
   ],
   imports: [
     CommonModule,
