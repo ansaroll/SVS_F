@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
+  tooltip_status = 0;
   constructor() { }
 
   ngOnInit(): void {

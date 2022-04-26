@@ -1,64 +1,99 @@
-<table class="min-w-full">
+<div class="md:grid md:grid-cols-4 md:gap-6">
 
-  <thead class="bg-white border-b">
-    <tr>
-      <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-        #ID
-      </th>
-      <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-        Nom
-      </th>
-      <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-        Responsabilite
-      </th>
-      <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-        Email
-      </th>
-    </tr>
-  </thead>
+  <div class="md:col-span-3 table-list scrollbar scrollbar-thin overflow-y-auto">
+
+    <input class="min-w-full p-2 my-1 rounded outline-none" type="text" name="" id="" placeholder="Rechercher">
+
+    <table class="min-w-full">
+
+      <thead class="bg-white border-b">
+        <tr>
+          <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+            #ID
+          </th>
+          <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+            Nom
+          </th>
+          <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+            Responsabilite
+          </th>
+          <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+            Email
+          </th>
+        </tr>
+      </thead>
 
 
 
-  <tbody>
+      <tbody>
 
-    <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        Mark
-      </td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        Otto
-      </td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        @mdo
-      </td>
-    </tr>
+        <tr class="bg-white border-b transition duration-300 ease-in-out click:bg-gray-400 hover:bg-gray-100">
 
-    <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        Jacob
-      </td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        Thornton
-      </td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        @fat
-      </td>
-    </tr>
+          <button title="btn1" routerLink="profil/1">
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              1
+            </td>
+          </button>
 
-    <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        Larry
-      </td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        Wild
-      </td>
-      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        @twitter
-      </td>
-    </tr>
-  </tbody>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <button title="btn1" routerLink="profil/1">
+              Mark
+            </button>
+          </td>
 
-  </table>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <button title="btn1" routerLink="profil/1">
+                Otto
+              </button>
+            </td>
+
+            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <button title="btn1" routerLink="profil/1">
+                @mdo
+              </button>
+            </td>
+
+      </tr>
+
+        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            Jacob
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            Thornton
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            @fat
+          </td>
+        </tr>
+
+        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            Larry
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            Wild
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            @twitter
+          </td>
+        </tr>
+      </tbody>
+
+      </table>
+
+
+
+  </div>
+
+
+  <div class="md:col-span-1 hidden lg:block dark:border-gray-700 border-t lg:border-t-0 lg:border-r lg:border-l lg:rounded-r dark:bg-gray-700 bg-gray-100">
+
+      <!-- <app-resume></app-resume> -->
+    <router-outlet></router-outlet>
+  </div>
+
+
+</div>
