@@ -18,6 +18,7 @@ import { ListDoctorantComponent } from './components/list-doctorant/list-doctora
 import { ListStaffComponent } from './components/list-staff/list-staff.component';
 import { ListProfComponent } from './components/list-prof/list-prof.component';
 import { ResumeComponent } from './components/resume/resume.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { FlatpickrModule } from 'angularx-flatpickr';
 // import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
@@ -47,6 +48,8 @@ import { ResumeComponent } from './components/resume/resume.component'
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
+    ReactiveFormsModule,
+    FormsModule
   ]
 
 })
