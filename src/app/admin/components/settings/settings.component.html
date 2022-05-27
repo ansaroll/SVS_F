@@ -84,7 +84,7 @@
           <h2>Votre Email : {{ faceSnap.email }}</h2>
           <p>Date d'inscription:  {{ faceSnap.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
           <p>Photo de profil</p>
-          <img [src]="faceSnap.imageUrl" [alt]="faceSnap.name">
+          <img title="imgurl" [src]="faceSnap.imageUrl" [alt]="faceSnap.name">
           <p>A propos de vous : " {{ faceSnap.about }} "</p>
           <p *ngIf="faceSnap.location">Adresse : {{ faceSnap.location }}</p>
       </div>

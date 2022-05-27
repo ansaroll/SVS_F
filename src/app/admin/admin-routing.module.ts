@@ -3,6 +3,7 @@ import { RouterModule , Routes  } from '@angular/router'
 import { CalendarComponent } from './components/calendar/calendar.component'
 import { ChatsComponent } from './components/chats/chats.component'
 import { CoursesComponent } from './components/courses/courses.component'
+import { CreateDoctorantComponent } from './components/create-doctorant/create-doctorant.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { DatabaseComponent } from './components/database/database.component'
 import { ListDoctorantComponent } from './components/list-doctorant/list-doctorant.component'
@@ -41,6 +42,7 @@ const routes: Routes = [
     },
       { path : 'settings' , component : SettingsComponent},
       { path : 'courses' , component : CoursesComponent},
+      { path : 'createdoctorant' , component : CreateDoctorantComponent},
     ]
   },
   // { path : '' , redirectTo : '/dashboard' , pathMatch : 'full'}
