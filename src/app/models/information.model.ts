@@ -1,10 +1,15 @@
 export class Information {
   name!: string;
   lastName!: string;
-  email!:string;
-  city!: string;
-  postal!: string;
-  streetadress!:string;
-  province!: string;
-  country!: string
+  country!: string;
+  sexe!: string;
+  dtn!: string;// dtn : date de naissance
+  dtbacc!: string; // dtbacc : date d'obtention bacc
+  adress!: string;
+  cin!: string;
+  serieBacc!: string;
+  codeRedoublement!: string;
+
 }
+
+

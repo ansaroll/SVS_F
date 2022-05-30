@@ -1,10 +1,10 @@
-export class Profil {
+export class Contact {
   id!: number;
-  name!: string;
   email!: string;
+  telephone!: string;
+  isBoursier!: boolean;
+  tauxBourse!:number;
   about!: string;
   imageUrl!: string;
   createdDate!: Date;
-  // snaps!: number;
-  location?: string;
 }

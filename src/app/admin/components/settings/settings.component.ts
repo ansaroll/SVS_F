@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { map, Observable } from 'rxjs';
 import { Information } from 'src/app/models/information.model';
-import { Profil } from 'src/app/models/profil.model';
+import { Contact } from 'src/app/models/contact.model';
 
 @Component({
   selector: 'app-settings',
@@ -11,17 +11,20 @@ import { Profil } from 'src/app/models/profil.model';
 })
 export class SettingsComponent implements OnInit {
 
-  profilForm!:FormGroup;
+  contactForm!:FormGroup;
   informationForm!:FormGroup;
   notificationForm!:FormGroup;
-  profilPreview$!: Observable<Profil>
+  contactPreview$!: Observable<Contact>
   informationPreview$!: Observable<Information>
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.profilForm = this.formBuilder.group({
+    this.contactForm = this.formBuilder.group({
       email: [null],
+      telephone:[null],
+      isBoursier:[null],
+      tauxBourse:[null],
       about: [null],
       imageUrl: [null]
     })
@@ -37,15 +40,13 @@ export class SettingsComponent implements OnInit {
       country: [null],
     })
 
-    this.profilPreview$ = this.profilForm.valueChanges.pipe(
+    this.contactPreview$ = this.contactForm.valueChanges.pipe(
       map(formValue => ({
         ...formValue,
         createdDate: new Date(),
-        name: 'son Nom',
-        id: 0,
-        location: 'myLocation'
       }))
     )
+
 
     this.informationPreview$ = this.informationForm.valueChanges.pipe(
       map(formValue => ({
@@ -54,9 +55,9 @@ export class SettingsComponent implements OnInit {
     )
 
   }
-
-  onSubmitprofilForm() {
-    console.log(this.profilForm.value);
+  onSubmitprofilForm(form:FormGroup) {
+    // alert('hey')
+    console.log(form.value);
   }
 
 }

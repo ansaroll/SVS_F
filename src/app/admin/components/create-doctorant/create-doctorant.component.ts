@@ -1,8 +1,8 @@
 import { Component, OnInit , VERSION } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map, Observable } from 'rxjs';
 import { Information } from 'src/app/models/information.model';
-import { Profil } from 'src/app/models/profil.model';
+import { Contact } from 'src/app/models/contact.model';
 
 
 @Component({
@@ -13,40 +13,43 @@ import { Profil } from 'src/app/models/profil.model';
 export class CreateDoctorantComponent implements OnInit {
 
 
-  profilForm!:FormGroup;
+  contactForm!:FormGroup;
   informationForm!:FormGroup;
   notificationForm!:FormGroup;
-  profilPreview$!: Observable<Profil>
+  contactPreview$!: Observable<Contact>
   informationPreview$!: Observable<Information>
 
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.profilForm = this.formBuilder.group({
+    this.contactForm = this.formBuilder.group({
       email: [null],
+      telephone:[null],
+      isBoursier:[null],
+      tauxBourse:[null],
       about: [null],
       imageUrl: [null]
     })
 
     this.informationForm = this.formBuilder.group({
-      name: [null],
+      name: [null,Validators.required],
       lastName: [null],
-      email: [null],
-      city: [null],
-      postal: [null],
-      streetadress: [null],
-      province: [null],
       country: [null],
+      sexe: [null],
+      dtn: [null], // dtn : date de naissance
+      dtbacc: [null], // dtbacc : date d'obtention bacc
+      adress: [null],
+      cin: [null],
+      serieBacc: [null],
+      codeRedoublement: [null],
+
     })
 
-    this.profilPreview$ = this.profilForm.valueChanges.pipe(
+    this.contactPreview$ = this.contactForm.valueChanges.pipe(
       map(formValue => ({
         ...formValue,
         createdDate: new Date(),
-        name: 'son Nom',
-        id: 0,
-        location: 'myLocation'
       }))
     )
 
@@ -59,7 +62,9 @@ export class CreateDoctorantComponent implements OnInit {
   }
 
 
-  onSubmitprofilForm() {
-    console.log(this.profilForm.value);
+  onSubmitprofilForm(form:FormGroup) {
+    // alert('hey')
+    console.log(form.value);
   }
+
 }
