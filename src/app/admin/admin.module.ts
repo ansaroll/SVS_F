@@ -20,6 +20,7 @@ import { ListProfComponent } from './components/list-prof/list-prof.component';
 import { ResumeComponent } from './components/resume/resume.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateDoctorantComponent } from './components/create-doctorant/create-doctorant.component';
+import { CreateFormationComponent } from './components/create-formation/create-formation.component';
 // import { FlatpickrModule } from 'angularx-flatpickr';
 // import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
@@ -39,7 +40,8 @@ import { CreateDoctorantComponent } from './components/create-doctorant/create-d
     ListStaffComponent,
     ListProfComponent,
     ResumeComponent,
-    CreateDoctorantComponent
+    CreateDoctorantComponent,
+    CreateFormationComponent
   ],
   imports: [
     CommonModule,
