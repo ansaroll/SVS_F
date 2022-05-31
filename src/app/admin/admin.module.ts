@@ -23,6 +23,12 @@ import { CreateDoctorantComponent } from './components/create-doctorant/create-d
 import { CreateFormationComponent } from './components/create-formation/create-formation.component';
 // import { FlatpickrModule } from 'angularx-flatpickr';
 // import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
+// https://www.tiny.cloud/docs/tinymce/6/angular-cloud/
+// import { EditorModule } from '@tinymce/tinymce-angular';
+import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -46,6 +52,7 @@ import { CreateFormationComponent } from './components/create-formation/create-f
   imports: [
     CommonModule,
     AdminRoutingModule,
+    EditorModule,
     // NgbModalModule,
     // FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
@@ -55,6 +62,5 @@ import { CreateFormationComponent } from './components/create-formation/create-f
     ReactiveFormsModule,
     FormsModule
   ]
-
 })
 export class AdminModule { }

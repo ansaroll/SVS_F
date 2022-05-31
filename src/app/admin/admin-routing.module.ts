@@ -5,6 +5,7 @@ import { ChatsComponent } from './components/chats/chats.component'
 import { CoursesComponent } from './components/courses/courses.component'
 import { CreateDoctorantComponent } from './components/create-doctorant/create-doctorant.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { CreateFormationComponent } from './components/create-formation/create-formation.component'
 import { DatabaseComponent } from './components/database/database.component'
 import { ListDoctorantComponent } from './components/list-doctorant/list-doctorant.component'
 import { ListProfComponent } from './components/list-prof/list-prof.component'
@@ -43,6 +44,7 @@ const routes: Routes = [
       { path : 'settings' , component : SettingsComponent},
       { path : 'courses' , component : CoursesComponent},
       { path : 'createdoctorant' , component : CreateDoctorantComponent},
+      { path : 'createformation' , component : CreateFormationComponent},
     ]
   },
   // { path : '' , redirectTo : '/dashboard' , pathMatch : 'full'}
