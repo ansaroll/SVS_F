@@ -9,9 +9,9 @@
   <div class="md:grid md:grid-cols-4 md:gap-6">
     <div class="mt-5 md:mt-0 md:col-span-2">
       <form [formGroup]="formationForm">
-          <div class="shadow sm:rounded-ld sm:overflow-hidden">
+          <div class="shadow bg-white rounded-lg sm:rounded-md sm:overflow-hidden">
 
-            <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+            <div class="px-4 py-5 space-y-6 sm:p-6">
               <div class="grid grid-cols-6 gap-6">
 
 
@@ -37,27 +37,13 @@
                       id="other"
                       outputFormat="text"
                     ></editor> -->
-<!--
-                    <editor
-  [init]="{
-    base_url: '/tinymce',
-    suffix: '.min',
-    height: 500,
-    menubar: false,
-    plugins: [
-      'advlist autolink lists link image charmap print preview anchor',
-      'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste code help wordcount'
-    ],
-    toolbar:
-      'undo redo | formatselect | bold italic backcolor | \
-      alignleft aligncenter alignright alignjustify | \
-      bullist numlist outdent indent | removeformat | help'
-  }">
-</editor> -->
 
 
+                  </div>
 
+                  <div class="col-span-6 sm:col-span-5">
+                    <label for="profResponsable" class="block text-sm font-medium text-gray-700">Prof Responable</label>
+                    <input type="text" name="profResponsable" id="profResponsable" autocomplete="off" formControlName="responsable" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
 
               </div>
@@ -74,7 +60,7 @@
 
     <!-- Previsualisation du Formation  -->
     <div class="mt-5 md:mt-0 md:col-span-2" *ngIf="formationPreview$ | async as formation">
-      <h1 class="text-center text-3xl">{{ formation.title }}</h1>
+      <h1 class="text-3xl p-12">{{ formation.title }}</h1>
 
 
 
@@ -82,6 +68,12 @@
 
         {{ formation.others }}
 
+      </div>
+
+      <div class="float-right p-12 ">
+        <em>
+          {{ formation.responsable }}
+        </em>
       </div>
 
 

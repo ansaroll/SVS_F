@@ -27,6 +27,7 @@ import { CreateFormationComponent } from './components/create-formation/create-f
 // https://www.tiny.cloud/docs/tinymce/6/angular-cloud/
 // import { EditorModule } from '@tinymce/tinymce-angular';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { CreateNewsComponent } from './components/create-news/create-news.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
     ListProfComponent,
     ResumeComponent,
     CreateDoctorantComponent,
-    CreateFormationComponent
+    CreateFormationComponent,
+    CreateNewsComponent
   ],
   imports: [
     CommonModule,
