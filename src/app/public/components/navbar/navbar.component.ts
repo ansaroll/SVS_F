@@ -29,10 +29,16 @@ export class NavbarComponent implements OnInit {
   isList!: number;
   isMenu: boolean = false;
   isSearch: boolean = false;
+  linckActive!:string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.linckActive = 'home'
+  }
+
+  onClickLink(linkClicked:string){
+    this.linckActive = linkClicked
   }
 
   onHide(){

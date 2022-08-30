@@ -28,6 +28,7 @@ import { CreateFormationComponent } from './components/create-formation/create-f
 // import { EditorModule } from '@tinymce/tinymce-angular';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CreateNewsComponent } from './components/create-news/create-news.component';
+import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { CreateNewsComponent } from './components/create-news/create-news.compon
     ResumeComponent,
     CreateDoctorantComponent,
     CreateFormationComponent,
-    CreateNewsComponent
+    CreateNewsComponent,
+    SublevelMenuComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,6 @@
-export const navbarData = [
+import { INavbarData } from "./helper";
+
+export const navbarData:INavbarData[] = [
   {
     routerLink : 'dashboard',
     icon : 'fa-solid fa-house-laptop',
@@ -22,7 +24,21 @@ export const navbarData = [
   {
     routerLink : 'database',
     icon : 'fa-solid fa-database',
-    label : 'Base de donnees'
+    label : 'Base de donnees',
+    items:[
+      {
+        routerLink : 'database/students',
+        label : 'Doctorants'
+      },
+      {
+        routerLink : 'database/staffs',
+        label : 'Staffs'
+      },
+      {
+        routerLink : 'database/profs',
+        label : 'Profs'
+      },
+    ]
   },
   {
     routerLink : 'settings',

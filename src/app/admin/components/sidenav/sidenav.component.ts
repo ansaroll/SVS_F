@@ -1,4 +1,5 @@
 import { Component, Output , EventEmitter, OnInit, HostListener} from '@angular/core';
+import { INavbarData } from './helper';
 import { navbarData } from './nav-data';
 
 interface SideNavToggle {
@@ -18,6 +19,7 @@ export class SidenavComponent implements OnInit{
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
+  multiple:boolean = false
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any){
@@ -40,5 +42,16 @@ export class SidenavComponent implements OnInit{
   closeSidenav(): void {
     this.collapsed = false;
     this.onToggleSidenav.emit({collapsed : this.collapsed, screenWidth: this.screenWidth});
+  }
+
+  handleClick(item:INavbarData):void {
+    if(!this.multiple){
+        for(let modelItem of this.navData) {
+          if(item !== modelItem && modelItem.expended){
+            modelItem.expended = false
+          }
+      }
+    }
+    item.expended = !item.expended
   }
 }
