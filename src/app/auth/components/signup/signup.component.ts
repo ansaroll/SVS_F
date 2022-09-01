@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  User:Partial<User> = {}
 
-  ngOnInit(): void {
+  @Input() userObj = { name:'' , email:'' , password:'', passwordConfirmation:''}
+
+  constructor(
+    public userService:UserService ,
+    public router: Router
+    ) { }
+
+  ngOnInit(): void {}
+
+  addUser(data:any) {
+    console.log(this.userObj);
+    this.userService.addUser(this.userObj)
   }
 
 }

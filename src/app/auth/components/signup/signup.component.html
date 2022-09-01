@@ -11,7 +11,6 @@
 
 		<div class="bg-white min-h-screen md:w-1/2 p-4 md:pl-4 xl:pl-16 flex justify-center md:justify-start items-center">
 			<div>
-				<form>
 					<div class="flex justify-center items-center">
 						<div>
                 <div class="flex justify-between">
@@ -26,12 +25,24 @@
 					</div>
 					<div class="mt-5">
 						<label class="block text-md mb-2" for="password">Mot de passe</label>
-						<input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="password" placeholder="mot de passe">
+						<input [(ngModel)]="userObj.password"
+              class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="password" placeholder="mot de passe">
                     </div>
 					<div class="my-3">
+						<label class="block text-md mb-2" for="password">Confirmation Mot de passe</label>
+            <input [(ngModel)]="userObj.passwordConfirmation"
+            class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="passwordConfirmation" placeholder="mot de passe">
+                  </div>
+          <div class="my-3">
 							<label class="block text-md mb-2" for="email">Email</label>
-							<input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email" name="password" placeholder="email">
+							<input [(ngModel)]="userObj.email"
+                class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email" name="email" placeholder="email">
           </div>
+          <div class="my-3">
+            <label class="block text-md mb-2" for="email">Nom</label>
+            <input [(ngModel)]="userObj.name"
+              class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="text" name="name" placeholder="Nom">
+        </div>
 					<div class="flex justify-center">
 							<!-- <div>
 								<input class="cursor-pointer"  type="radio" name="rememberme">
@@ -40,13 +51,12 @@
 								<!-- <span class="text-sm text-blue-700  hover:underline cursor-pointer">Mot de passe oublié ?</span> -->
 					</div>
 					<div class="">
-						<button type="submit" class="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">S'Enregistrer</button>
+						<button type="submit" (click)="addUser(userObj)" class="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">S'Enregistrer</button>
 						<!-- <div class="flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100">
                             <img class=" h-5 cursor-pointer" src="https://i.imgur.com/arC60SB.png" alt="">
                             <button >Ou connecter avec google</button>
 					    </div> -->
 				    </div>
-				</form>
 
 				<p class="mt-8">  <a routerLink="/auth/login" class="cursor-pointer text-sm text-blue-600"> Se connecter </a></p>
 			</div>

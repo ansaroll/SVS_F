@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CoreRoutingModule } from "./core-routing.module";
+import { HttpClientModule } from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { CoreRoutingModule } from "./core-routing.module";
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    HttpClientModule
   ],
   exports : [
   ]
