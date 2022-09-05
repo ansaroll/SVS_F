@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -9,6 +9,11 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  @Input() userLogin = {
+    email:'',
+    password:''
+  }
+
   constructor(private router: Router,
               private authService : AuthService) { }
 
@@ -16,9 +21,10 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(){
+    console.log(this.userLogin);
 
-    this.authService.login();
-    this.router.navigateByUrl('/admin')
+    this.authService.login(this.userLogin);
+    // this.router.navigateByUrl('/admin')
     // or
     // this.router.navigateByUrl('/ent/doctorants')
     // or

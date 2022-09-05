@@ -24,12 +24,14 @@
                         </div>
 					</div>
 					<div class="mt-5">
-						<label class="block text-md mb-2" for="password">Mot de passe</label>
-						<input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="password" placeholder="mot de passe">
+						<label  class="block text-md mb-2" for="password">Mot de passe</label>
+						<input [(ngModel)]="userLogin.password"
+              class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="password" placeholder="mot de passe">
                     </div>
 					<div class="my-3">
 							<label class="block text-md mb-2" for="email">Email</label>
-							<input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email" name="password" placeholder="email">
+							<input [(ngModel)]="userLogin.email"
+                  class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email" name="password" placeholder="email">
                     </div>
 					<div class="flex justify-center">
 								<span class="text-sm text-blue-700  hover:underline cursor-pointer">Mot de passe oublié ?</span>

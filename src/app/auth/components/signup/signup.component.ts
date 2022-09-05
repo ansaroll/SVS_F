@@ -22,7 +22,6 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {}
 
   addUser(data:any) {
-    console.log(this.userObj);
     this.userService.addUser(this.userObj)
   }
 
