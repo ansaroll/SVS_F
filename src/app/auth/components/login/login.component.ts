@@ -17,15 +17,14 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private authService : AuthService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onLogin(){
     console.log(this.userLogin);
 
     this.authService.login(this.userLogin)
                     .subscribe((res) => {
-                      // console.log(res)
+                      // console.log('res' , res);                      
                       this.router.navigateByUrl('/admin')
                     })
     // this.router.navigateByUrl('/admin')

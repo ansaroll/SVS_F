@@ -1,0 +1,656 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>svs-f documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">svs-f documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CreateFormationComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/components/create-formation/create-formation.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-create-formation</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./create-formation.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./create-formation.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formationForm" >formationForm</a>
+                            </li>
+                            <li>
+                                <a href="#formationPreview$" >formationPreview$</a>
+                            </li>
+                            <li>
+                                <a href="#others" >others</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmitFormation" >onSubmitFormation</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/admin/components/create-formation/create-formation.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/admin/components/create-formation/create-formation.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmitFormation"></a>
+                    <span class="name">
+                        <span ><b>onSubmitFormation</b></span>
+                        <a href="#onSubmitFormation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmitFormation()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/admin/components/create-formation/create-formation.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formationForm"></a>
+                    <span class="name">
+                        <span ><b>formationForm</b></span>
+                        <a href="#formationForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/admin/components/create-formation/create-formation.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formationPreview$"></a>
+                    <span class="name">
+                        <span ><b>formationPreview$</b></span>
+                        <a href="#formationPreview$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Formation.html" target="_self" >Observable&lt;Formation&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/admin/components/create-formation/create-formation.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="others"></a>
+                    <span class="name">
+                        <span ><b>others</b></span>
+                        <a href="#others"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/admin/components/create-formation/create-formation.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup } from &#x27;@angular/forms&#x27;;
+import { map, Observable } from &#x27;rxjs&#x27;;
+import { Formation } from &#x27;src/app/models/formation.model&#x27;;
+import { convert } from &#x27;html-to-text&#x27;
+import { Editor  } from &#x27;tinymce&#x27;;
+
+
+@Component({
+  selector: &#x27;app-create-formation&#x27;,
+  templateUrl: &#x27;./create-formation.component.html&#x27;,
+  styleUrls: [&#x27;./create-formation.component.scss&#x27;]
+})
+export class CreateFormationComponent implements OnInit {
+
+  formationForm!:FormGroup;
+  formationPreview$!: Observable&lt;Formation&gt;
+  others!:any;
+
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.formationForm &#x3D; this.formBuilder.group({
+      title: [null],
+      others:[null],
+      responsable:[null],
+      imageUrl: [null]
+    })
+
+    this.formationPreview$ &#x3D; this.formationForm.valueChanges.pipe(
+      map(formValue &#x3D;&gt; ({
+        ...formValue,
+        createdDate: new Date(),
+      }))
+    )
+  }
+
+  onSubmitFormation(){
+    console.log(this.formationForm.value[&#x27;others&#x27;]);
+    this.others &#x3D; this.formationForm.value[&#x27;others&#x27;];
+    console.log(this.others);
+
+
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;formFormation&quot;&gt;
+
+
+&lt;h1 class&#x3D;&quot;text-3xl mb-12&quot; &gt;Rediger ici toutes informations concernant le nouveau Formation .&lt;/h1&gt;
+
+
+&lt;!-- // DEBUT FORM EDIT DE FORATION --&gt;
+&lt;div&gt;
+  &lt;div class&#x3D;&quot;md:grid md:grid-cols-4 md:gap-6&quot;&gt;
+    &lt;div class&#x3D;&quot;mt-5 md:mt-0 md:col-span-2&quot;&gt;
+      &lt;form [formGroup]&#x3D;&quot;formationForm&quot;&gt;
+          &lt;div class&#x3D;&quot;shadow bg-white rounded-lg sm:rounded-md sm:overflow-hidden&quot;&gt;
+
+            &lt;div class&#x3D;&quot;px-4 py-5 space-y-6 sm:p-6&quot;&gt;
+              &lt;div class&#x3D;&quot;grid grid-cols-6 gap-6&quot;&gt;
+
+
+
+                  &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                    &lt;label for&#x3D;&quot;formationTitle&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Titre du Formation&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;formationTitle&quot; id&#x3D;&quot;formationTitle&quot; autocomplete&#x3D;&quot;off&quot; formControlName&#x3D;&quot;title&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+                  &lt;/div&gt;
+
+
+                  &lt;div class&#x3D;&quot;col-span-3 sm:col-span-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;other&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Autres infos du nouveau Formation&lt;/label&gt;
+
+
+                    &lt;textarea class&#x3D;&quot;outline-0 border-0&quot; title&#x3D;&quot;others&quot; name&#x3D;&quot;&quot; id&#x3D;&quot;&quot; cols&#x3D;&quot;60&quot; rows&#x3D;&quot;10&quot;
+                    formControlName&#x3D;&quot;others&quot;
+                    &gt;&lt;/textarea&gt;
+
+                    &lt;!-- &lt;editor
+                      formControlName&#x3D;&quot;others&quot;
+                      apiKey&#x3D;&quot;ogzucabofnjrif7c0mmh2v268icn9689t7t33sfvq5v1al4f&quot;
+                      [init]&#x3D;&quot;{ plugins: &#x27;lists link image table code help wordcount&#x27; }&quot;
+                      id&#x3D;&quot;other&quot;
+                      outputFormat&#x3D;&quot;text&quot;
+                    &gt;&lt;/editor&gt; --&gt;
+
+
+                  &lt;/div&gt;
+
+                  &lt;div class&#x3D;&quot;col-span-6 sm:col-span-5&quot;&gt;
+                    &lt;label for&#x3D;&quot;profResponsable&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Prof Responable&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;profResponsable&quot; id&#x3D;&quot;profResponsable&quot; autocomplete&#x3D;&quot;off&quot; formControlName&#x3D;&quot;responsable&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+                  &lt;/div&gt;
+
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;px-4 py-3 bg-gray-50 text-right sm:px-6&quot;&gt;
+              &lt;button type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;onSubmitFormation()&quot; class&#x3D;&quot;inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500&quot;&gt;Enregistrer&lt;/button&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+     &lt;/form&gt;
+    &lt;/div&gt;
+
+
+    &lt;!-- Previsualisation du Formation  --&gt;
+    &lt;div class&#x3D;&quot;mt-5 md:mt-0 md:col-span-2&quot; *ngIf&#x3D;&quot;formationPreview$ | async as formation&quot;&gt;
+      &lt;h1 class&#x3D;&quot;text-3xl p-12&quot;&gt;{{ formation.title }}&lt;/h1&gt;
+
+
+
+      &lt;div id&#x3D;&quot;ids&quot; class&#x3D;&quot;p-12&quot;&gt;
+
+        {{ formation.others }}
+
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;float-right p-12 &quot;&gt;
+        &lt;em&gt;
+          {{ formation.responsable }}
+        &lt;/em&gt;
+      &lt;/div&gt;
+
+
+    &lt;/div&gt;
+
+
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./create-formation.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.formFormation{
+  padding : 3rem 0rem 0rem 0rem;
+  
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="formFormation"><h1 class="text-3xl mb-12" >Rediger ici toutes informations concernant le nouveau Formation .</h1><!-- // DEBUT FORM EDIT DE FORATION --><div>  <div class="md:grid md:grid-cols-4 md:gap-6">    <div class="mt-5 md:mt-0 md:col-span-2">      <form [formGroup]="formationForm">          <div class="shadow bg-white rounded-lg sm:rounded-md sm:overflow-hidden">            <div class="px-4 py-5 space-y-6 sm:p-6">              <div class="grid grid-cols-6 gap-6">                  <div class="col-span-6 sm:col-span-3">                    <label for="formationTitle" class="block text-sm font-medium text-gray-700">Titre du Formation</label>                    <input type="text" name="formationTitle" id="formationTitle" autocomplete="off" formControlName="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">                  </div>                  <div class="col-span-3 sm:col-span-6">                    <label for="other" class="block text-sm font-medium text-gray-700">Autres infos du nouveau Formation</label>                    <textarea class="outline-0 border-0" title="others" name="" id="" cols="60" rows="10"                    formControlName="others"                    ></textarea>                    <!-- <editor                      formControlName="others"                      apiKey="ogzucabofnjrif7c0mmh2v268icn9689t7t33sfvq5v1al4f"                      [init]="{ plugins: \'lists link image table code help wordcount\' }"                      id="other"                      outputFormat="text"                    ></editor> -->                  </div>                  <div class="col-span-6 sm:col-span-5">                    <label for="profResponsable" class="block text-sm font-medium text-gray-700">Prof Responable</label>                    <input type="text" name="profResponsable" id="profResponsable" autocomplete="off" formControlName="responsable" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">                  </div>              </div>            </div>            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">              <button type="submit" (click)="onSubmitFormation()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>            </div>          </div>     </form>    </div>    <!-- Previsualisation du Formation  -->    <div class="mt-5 md:mt-0 md:col-span-2" *ngIf="formationPreview$ | async as formation">      <h1 class="text-3xl p-12">{{ formation.title }}</h1>      <div id="ids" class="p-12">        {{ formation.others }}      </div>      <div class="float-right p-12 ">        <em>          {{ formation.responsable }}        </em>      </div>    </div>  </div></div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CreateFormationComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateFormationComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

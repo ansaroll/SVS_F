@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "compodoc":"npx compodoc -p src/tsconfig.app.json",
+    "compodoc:serve":"npx compodoc -p src/tsconfig.app.json -s",
+    "compodoc:serve:watch":"npx compodoc -p src/tsconfig.app.json -s -w"
   },
   "styles": [
     "node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -22,6 +25,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "@compodoc/compodoc": "^1.1.19",
     "@tinymce/tinymce-angular": "^6.0.1",
     "angular-calendar": "^0.29.0",
     "angularx-flatpickr": "^6.6.0",

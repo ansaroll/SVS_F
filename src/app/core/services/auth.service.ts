@@ -23,7 +23,6 @@ export class AuthService {
     })
   };
 
-
   private token!: string;
 
   login(data:{email:string,password:string}):Observable<{accessToken:string , refreshToken:string}>{
@@ -34,6 +33,10 @@ export class AuthService {
         this._isLoggedIn$.next(true)
       })
     )
+  }
+
+  isLogged(){
+    return this.isLoggedIn$
   }
 
   getToken() : string {

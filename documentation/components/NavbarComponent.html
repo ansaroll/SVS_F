@@ -1,0 +1,845 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>svs-f documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">svs-f documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  NavbarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/public/components/navbar/navbar.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-navbar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./navbar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./navbar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isList" >isList</a>
+                            </li>
+                            <li>
+                                <a href="#isMenu" >isMenu</a>
+                            </li>
+                            <li>
+                                <a href="#isSearch" >isSearch</a>
+                            </li>
+                            <li>
+                                <a href="#linckActive" >linckActive</a>
+                            </li>
+                            <li>
+                                <a href="#navbarState" >navbarState</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onClickLink" >onClickLink</a>
+                            </li>
+                            <li>
+                                <a href="#onHide" >onHide</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClickLink"></a>
+                    <span class="name">
+                        <span ><b>onClickLink</b></span>
+                        <a href="#onClickLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClickLink(linkClicked: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>linkClicked</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onHide"></a>
+                    <span class="name">
+                        <span ><b>onHide</b></span>
+                        <a href="#onHide"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onHide()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isList"></a>
+                    <span class="name">
+                        <span ><b>isList</b></span>
+                        <a href="#isList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMenu"></a>
+                    <span class="name">
+                        <span ><b>isMenu</b></span>
+                        <a href="#isMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSearch"></a>
+                    <span class="name">
+                        <span ><b>isSearch</b></span>
+                        <a href="#isSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="linckActive"></a>
+                    <span class="name">
+                        <span ><b>linckActive</b></span>
+                        <a href="#linckActive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navbarState"></a>
+                    <span class="name">
+                        <span ><b>navbarState</b></span>
+                        <a href="#navbarState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;inactive&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/public/components/navbar/navbar.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { trigger , state , style , transition , animate  } from &quot;@angular/animations&quot;;
+
+@Component({
+  selector: &#x27;app-navbar&#x27;,
+  templateUrl: &#x27;./navbar.component.html&#x27;,
+  styleUrls: [&#x27;./navbar.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;navbarAnimation&#x27;, [
+      state(&#x27;inactive&#x27; , style({
+        // transform:&#x27;scale(1)&#x27;
+        left : &#x27;-100%&#x27;,
+        // opacity : &#x27;0&#x27;
+      })),
+      state(&#x27;active&#x27; , style({
+        left : &#x27;0&#x27;,
+        opacity : &#x27;1&#x27;
+        // transform:&#x27;scale(1.5)&#x27;,
+      })),
+      transition(&#x27;inactive &lt;&#x3D;&gt; active&#x27;, [
+        animate(&#x27;1000ms ease-in-out&#x27;)
+      ])
+    ])
+  ]
+})
+export class NavbarComponent implements OnInit {
+
+  navbarState &#x3D; &#x27;inactive&#x27;;
+  isList!: number;
+  isMenu: boolean &#x3D; false;
+  isSearch: boolean &#x3D; false;
+  linckActive!:string;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.linckActive &#x3D; &#x27;home&#x27;
+  }
+
+  onClickLink(linkClicked:string){
+    this.linckActive &#x3D; linkClicked
+  }
+
+  onHide(){
+    this.navbarState &#x3D; this.navbarState &#x3D;&#x3D;&#x3D; &#x27;inactive&#x27; ? &#x27;active&#x27; : &#x27;inactive&#x27;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;flex flex-row justify-between&quot;&gt;
+  &lt;label  class&#x3D;&quot;logo flex flex-row pl-6&quot; for&#x3D;&quot;logo&quot;&gt;
+    &lt;img class&#x3D;&quot;mt-3 mx-4 ml-12&quot; src&#x3D;&quot;./assets/images/svs.png&quot; alt&#x3D;&quot;&quot;&gt; &lt;p&gt;ED SVS&lt;/p&gt;
+  &lt;/label&gt;
+  &lt;ul [@navbarAnimation]&#x3D;&quot;navbarState&quot; class&#x3D;&quot;navlink&quot; &gt;
+      &lt;li&gt;&lt;a routerLink&#x3D;&quot;acceuil&quot; (click)&#x3D;&quot;onClickLink(&#x27;home&#x27;)&quot; [ngClass]&#x3D;&quot;{ active: linckActive &#x3D;&#x3D;&#x3D; &#x27;home&#x27; }&quot;&gt;Acceuil&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a routerLink&#x3D;&quot;/about&quot; (click)&#x3D;&quot;onClickLink(&#x27;about&#x27;)&quot; [ngClass]&#x3D;&quot;{ active: linckActive &#x3D;&#x3D;&#x3D; &#x27;about&#x27; }&quot; &gt;A propos&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a routerLink&#x3D;&quot;/courses&quot; (click)&#x3D;&quot;onClickLink(&#x27;courses&#x27;)&quot; [ngClass]&#x3D;&quot;{ active: linckActive &#x3D;&#x3D;&#x3D; &#x27;courses&#x27; }&quot;&gt;Formations&lt;/a&gt;&lt;/li&gt;
+      &lt;!-- &lt;li&gt;&lt;a href&#x3D;&quot;/contact&quot;&gt;Contacts&lt;/a&gt;&lt;/li&gt; --&gt;
+      &lt;li&gt;&lt;a routerLink&#x3D;&quot;/auth/login&quot;&gt;Se Connecter&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;label id&#x3D;&quot;icon&quot;&gt;
+      &lt;button title&#x3D;&quot;submit&quot; (click)&#x3D;&quot;onHide()&quot;&gt;
+        &lt;ul&gt;
+          &lt;li class&#x3D;&quot;fas fa-bars&quot;&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/button&gt;
+  &lt;/label&gt;
+&lt;/nav&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./navbar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// $first-color: #34495e;
+$first-color: #378384;
+$second-color : #53F916;
+$third-color : #2228E3;
+
+
+
+// body{
+//     font-family: montserrat;
+// }
+
+nav {
+  height: 8vh;
+  width: 100%;
+  background-color: white;
+  // padding  : 5px 5px 5px 80px;
+
+  .logo {
+    font-size: 35px;
+    font-weight: bold;
+    color: $first-color;
+    // padding: 15px 10px;
+    line-height: 80px;
+
+    // img{
+    //   padding : 7px 10px ;
+    // }
+  }
+
+  .navlink {
+
+    float: right;
+    margin-right: 70px;
+
+    li {
+      display: inline-block;
+      margin: 0 8px;
+      line-height: 80px;
+
+      a {
+        color: $first-color;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        // border: 1px solid transparent;
+        padding: 7px 10px;
+
+        :active {
+          border-bottom: 1px solid $first-color;
+        }
+      }
+
+      a.active {
+        border-bottom: 2px solid $first-color;
+      }
+
+      a:hover {
+        border-bottom: 2px solid $first-color;
+        // transition: 0.3s;
+      }
+      a:active {
+        border-bottom: 2px solid $third-color;
+        // transition: 0.3s;
+      }
+
+    }
+
+  }
+
+  .active {
+    border-bottom: 2px solid $first-color;
+  }
+
+  #icon {
+
+    color: $first-color;
+    font-size: x-large;
+    line-height: 80px;
+    margin-right: 40px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+
+  @media (max-width: 1048px) {
+    .logo {
+      font-size: 32px;
+      padding-left: 60px;
+    }
+
+    .navlink {
+      margin-right: 20px;
+
+      li&gt;a {
+        font-size: 17px;
+      }
+    }
+
+  }
+
+
+  @media (max-width: 909px) {
+
+    #icon {
+      display: block;
+    }
+
+    .navlink {
+
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background-color: $first-color;
+      color: white;
+      top: 80px;
+      // margin-right: 40px;
+      // display: none;
+      text-align: center;
+      transition: all 1s;
+      transition: ease-in-out;
+
+      li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+      }
+
+      li&gt;a {
+        color: white;
+        font-size: 20px;
+      }
+
+      li&gt;a.active,
+      li&gt;a:hover {
+        border: none;
+        color: #6fa9e2;
+        transition: 1s;
+      }
+
+    }
+
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><nav class="flex flex-row justify-between">  <label  class="logo flex flex-row pl-6" for="logo">    <img class="mt-3 mx-4 ml-12" src="./assets/images/svs.png" alt=""> <p>ED SVS</p>  </label>  <ul [@navbarAnimation]="navbarState" class="navlink" >      <li><a routerLink="acceuil" (click)="onClickLink(\'home\')" [ngClass]="{ active: linckActive === \'home\' }">Acceuil</a></li>      <li><a routerLink="/about" (click)="onClickLink(\'about\')" [ngClass]="{ active: linckActive === \'about\' }" >A propos</a></li>      <li><a routerLink="/courses" (click)="onClickLink(\'courses\')" [ngClass]="{ active: linckActive === \'courses\' }">Formations</a></li>      <!-- <li><a href="/contact">Contacts</a></li> -->      <li><a routerLink="/auth/login">Se Connecter</a></li>  </ul>  <label id="icon">      <button title="submit" (click)="onHide()">        <ul>          <li class="fas fa-bars"></li>        </ul>      </button>  </label></nav></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NavbarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
