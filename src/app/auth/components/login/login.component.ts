@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { ICredentials } from 'src/app/_interfaces/credentials';
+
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  @Input() userLogin = {
+  @Input() userLogin:ICredentials = {
     email:'',
     password:''
   }

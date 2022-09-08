@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core'
 import { HttpClient , HttpHeaders } from '@angular/common/http'
 import { BehaviorSubject, Observable, throwError } from 'rxjs'
 import { catchError, retry, tap } from 'rxjs/operators'
+import { ICredentials } from 'src/app/_interfaces/credentials'
+import { IToken } from 'src/app/_interfaces/token'
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +16,7 @@ export class AuthService {
   isLoggedIn$ = this._isLoggedIn$.asObservable()
 
   endpoint = 'http://localhost:1337'
+  
   constructor(private httpClient: HttpClient) {
     const AToken = localStorage.getItem('accessToken')
     this._isLoggedIn$.next(!!AToken)
@@ -25,8 +30,8 @@ export class AuthService {
 
   private token!: string;
 
-  login(data:{email:string,password:string}):Observable<{accessToken:string , refreshToken:string}>{
-    return this.httpClient.post<{accessToken:string , refreshToken:string}>(this.endpoint + '/api/sessions', JSON.stringify(data),this.httpHeader).pipe(
+  login(data:ICredentials):Observable<IToken>{
+    return this.httpClient.post<IToken>(this.endpoint + '/api/sessions', JSON.stringify(data),this.httpHeader).pipe(
       tap((response) => {
         localStorage.setItem('accessToken', response.accessToken)
         localStorage.setItem('refreshToken', response.refreshToken)
