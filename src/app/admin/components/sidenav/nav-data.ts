@@ -1,4 +1,4 @@
-import { INavbarData } from "./helper";
+ import { INavbarData } from "./helper";
 
 export const navbarData:INavbarData[] = [
   {
@@ -27,8 +27,22 @@ export const navbarData:INavbarData[] = [
     label : 'Base de donnees',
     items:[
       {
-        routerLink : 'database/students',
-        label : 'Doctorants'
+        routerLink : 'database/doctorants',
+        label : 'Doctorants',
+        // items:[
+        //   {
+        //     routerLink : 'database/doctorants',
+        //     label : 'Doctorants'
+        //   },
+        //   {
+        //     routerLink : 'database/staffs',
+        //     label : 'Staffs'
+        //   },
+        //   {
+        //     routerLink : 'database/profs',
+        //     label : 'Profs'
+        //   },
+        // ]
       },
       {
         routerLink : 'database/staffs',

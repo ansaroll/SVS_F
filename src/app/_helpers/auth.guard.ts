@@ -15,16 +15,14 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const test = this.authService.isLogged()
-
-    test.subscribe(data => this.status = data)
+    this.authService.isLogged().subscribe(data => this.status = data)
 
     if (this.status) {
-      console.log('connected' ,this.status);
+      console.log('Auth Guard said:connected' ,this.status);
       return this.status
     }
 
-    console.log('connected' ,this.status);
+    console.log('Auth Guard said:connected' ,this.status);
     return this.router.navigate(['auth'])
 
   }

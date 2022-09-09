@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CoursesComponent } from './components/courses/courses.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarComponent } from './components/body/calendar/calendar.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { DatabaseComponent } from './components/database/database.component';
 import { SettingsComponent } from './components/settings/settings.component';

@@ -6,9 +6,9 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   selector: 'app-sublevel-menu',
   template: `
    <ul *ngIf="collapsed && data.items && data.items.length > 0"
-    [@submenu]="expended ? {value:'visible' , params:{transitionParams:'400ms cubic-bezier(0.86 , 0, 0.07, 1)' , height:'*'}} 
-                         : {value: 'hidden', 
-                            params:{transitionParams:'400ms cubic-bezier(0.86 , 0, 0.07, 1)' , height:'0'}}"
+    [@submenu]="expended ? {value:'visible' , params:{transitionParams:'1000ms ease-in-out' , height:'*'}}
+                         : {value: 'hidden',
+                            params:{transitionParams:'1000ms ease-in-out' , height:'0'}}"
     class="sublevel-nav"
    >
       <li *ngFor="let item of data.items" class="sublevel-nav-item">
@@ -19,11 +19,11 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
           <i class="sublevel-link-icon fa fa-circle"></i>
           <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>
           <i *ngIf="item.items && collapsed" class="menu-collapsed-icon"
-             [ngClass]="!item.expended  ? 'fal fa-angle-right' : 'fal fa-angle-down'"
+             [ngClass]="!item.expended ? 'fa fa-angle-right' : 'fa fa-angle-down'"
           ></i>
         </a>
         <a class="sublevel-nav-link"
-          *ngIf="!item.items || (item.items.length === 0)"
+          *ngIf="!item.items || (item.items && item.items.length === 0)"
           [routerLink]="[item.routerLink]"
           routerLinkActive="active-sublevel"
           [routerLinkActiveOptions]="{exact: true}"
@@ -33,13 +33,14 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         </a>
         <div *ngIf="item.items && item.items.length > 0">
           <app-sublevel-menu
+            [data]="item"
             [collapsed]="collapsed"
             [multiple]="multiple"
             [expended]="item.expended"
           ></app-sublevel-menu>
         </div>
       </li>
-   
+
    </ul>
   `,
    styleUrls: ['./sidenav.component.scss'],
@@ -49,17 +50,14 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
           height:'0',
           overflow:'hidden'
         })),
-        state('visble', style({
+        state('visible', style({
           height:'*',
         })),
         transition('visible <=> hidden' ,
         [
-          style({
-            overflow:'hidden'
-          }), 
-          animate('{{ trasitionParams }}'),
-          transition('void => *' , animate(0))
-        ])
+          animate('{{ transitionParams }}')
+        ]),
+        transition('void => *' , animate(0))
      ])
     ]
 })
@@ -68,7 +66,7 @@ export class SublevelMenuComponent implements OnInit {
   @Input() data: INavbarData = {
     routerLink:'',
     icon:'',
-    label:'', 
+    label:'',
     items:[]
   }
 
