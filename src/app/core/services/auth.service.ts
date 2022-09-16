@@ -16,7 +16,7 @@ export class AuthService {
   isLoggedIn$ = this._isLoggedIn$.asObservable()
 
   endpoint = 'http://localhost:1337'
-  
+
   constructor(private httpClient: HttpClient) {
     const AToken = localStorage.getItem('accessToken')
     this._isLoggedIn$.next(!!AToken)
@@ -35,6 +35,7 @@ export class AuthService {
       tap((response) => {
         localStorage.setItem('accessToken', response.accessToken)
         localStorage.setItem('refreshToken', response.refreshToken)
+		    this.token = response.accessToken
         this._isLoggedIn$.next(true)
       })
     )

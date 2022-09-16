@@ -62,6 +62,7 @@ export class SidenavComponent implements OnInit{
   }
 
   handleClick(item:INavbarData):void {
+    console.log('item.expended', item.expended)
     if(!this.multiple){
         for(let modelItem of this.navData) {
           if(item !== modelItem && modelItem.expended){

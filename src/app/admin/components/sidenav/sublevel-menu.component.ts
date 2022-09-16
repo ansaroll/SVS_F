@@ -4,47 +4,9 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 
 @Component({
   selector: 'app-sublevel-menu',
-  template: `
-   <ul *ngIf="collapsed && data.items && data.items.length > 0"
-    [@submenu]="expended ? {value:'visible' , params:{transitionParams:'1000ms ease-in-out' , height:'*'}}
-                         : {value: 'hidden',
-                            params:{transitionParams:'1000ms ease-in-out' , height:'0'}}"
-    class="sublevel-nav"
-   >
-      <li *ngFor="let item of data.items" class="sublevel-nav-item">
-        <a class="sublevel-nav-link"
-          (click)="handleClick(item)"
-          *ngIf="item.items && item.items.length > 0"
-        >
-          <i class="sublevel-link-icon fa fa-circle"></i>
-          <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>
-          <i *ngIf="item.items && collapsed" class="menu-collapsed-icon"
-             [ngClass]="!item.expended ? 'fa fa-angle-right' : 'fa fa-angle-down'"
-          ></i>
-        </a>
-        <a class="sublevel-nav-link"
-          *ngIf="!item.items || (item.items && item.items.length === 0)"
-          [routerLink]="[item.routerLink]"
-          routerLinkActive="active-sublevel"
-          [routerLinkActiveOptions]="{exact: true}"
-        >
-          <i class="sublevel-link-icon fa fa-circle"></i>
-          <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>
-        </a>
-        <div *ngIf="item.items && item.items.length > 0">
-          <app-sublevel-menu
-            [data]="item"
-            [collapsed]="collapsed"
-            [multiple]="multiple"
-            [expended]="item.expended"
-          ></app-sublevel-menu>
-        </div>
-      </li>
-
-   </ul>
-  `,
-   styleUrls: ['./sidenav.component.scss'],
-   animations:[
+  templateUrl: './sublevel-menu-component.html',
+  styleUrls: ['./sidenav.component.scss'],
+  animations:[
      trigger('submenu', [
         state('hidden', style({
           height:'0',
@@ -78,9 +40,12 @@ export class SublevelMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('thisSub.expended' , this.expended);
+
   }
 
   handleClick(item:any):void {
+    console.log('thisSublevel.expended', this.expended);
     if(!this.multiple){
       if(this.data.items && this.data.items.length > 0) {
         for(let modelItem of this.data.items) {
