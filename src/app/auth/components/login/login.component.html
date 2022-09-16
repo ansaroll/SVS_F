@@ -51,6 +51,10 @@
             </div>
           </div>
 
+            <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="unAuthorized && f.submitted">
+              "Vos identifiants sont incorrects"
+            </div>
+
           <div class="flex justify-center">
             <span class="text-sm text-blue-700  hover:underline cursor-pointer">Mot de passe oublié ?</span>
           </div>

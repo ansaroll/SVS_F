@@ -33,8 +33,6 @@ export class AuthService {
   login(data:ICredentials):Observable<IToken>{
     return this.httpClient.post<IToken>(this.endpoint + '/api/sessions', JSON.stringify(data),this.httpHeader).pipe(
       tap((response) => {
-        localStorage.setItem('accessToken', response.accessToken)
-        localStorage.setItem('refreshToken', response.refreshToken)
 		    this.token = response.accessToken
         this._isLoggedIn$.next(true)
       })
