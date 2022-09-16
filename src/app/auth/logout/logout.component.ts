@@ -10,6 +10,12 @@ export class LogoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.logout()
   }
 
+  logout = () => {
+    localStorage.removeItem('accessToken')
+    localStorage.removeItem('refreshToken')
+    window.location.reload()
+  }
 }

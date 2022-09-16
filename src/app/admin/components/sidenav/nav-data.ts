@@ -59,4 +59,9 @@ export const navbarData:INavbarData[] = [
     icon : 'fa-solid fa-gears',
     label : 'Paramettres'
   },
+  {
+    routerLink : '/auth/logout',
+    icon : 'fa-solid fa-exit',
+    label : 'Deconnexion'
+  },
 ]

@@ -17,11 +17,10 @@ export class UserService {
     })
   };
 
-  getUsers():Observable<Partial<User>> {
-    return this.httpClient.get(this.endpoint+'/healthcheck')
-                    .pipe(retry(1) , catchError(this.processError))
+  getUsers():Observable<Partial<User>[]> {
+    return this.httpClient.get<Partial<User>[]>(this.endpoint+'/api/users')
+    .pipe(retry(1), catchError(this.processError));
   }
-
 
   getSingleUser(id: any): Observable<Partial<User>> {
     return this.httpClient
