@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/core/services/token.service';
 
 @Component({
   selector: 'app-logout',
@@ -7,15 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.logout()
+    this.tokenService.clearToken()
   }
 
-  logout = () => {
-    localStorage.removeItem('accessToken')
-    localStorage.removeItem('refreshToken')
-    window.location.reload()
-  }
 }

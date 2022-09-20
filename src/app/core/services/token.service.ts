@@ -17,4 +17,14 @@ export class TokenService {
     const accessToken = localStorage.getItem('accessToken')
     return !!accessToken
   }
+
+  clearToken = () => {
+      localStorage.removeItem('accessToken')
+      localStorage.removeItem('refreshToken')
+      window.location.reload()
+  }
+
+  getToken = () : string | null => {
+    return localStorage.getItem('accessToken')
+  }
 }

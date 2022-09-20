@@ -17,3 +17,4 @@ export class ListDoctorantComponent implements OnInit {
     this.userService.getUsers().subscribe({next:data => this.users = data , error: err => console.log({err})})
   }
 }
+

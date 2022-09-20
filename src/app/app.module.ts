@@ -8,6 +8,7 @@ import { CoreModule } from "./core/core.module";
 import { HttpClientModule } from "@angular/common/http"
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { TokenInterceptorProvider } from './_helpers/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
