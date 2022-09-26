@@ -54,11 +54,11 @@ export const navbarData:INavbarData[] = [
       },
     ]
   },
-  {
-    routerLink : 'settings',
-    icon : 'fa-solid fa-gears',
-    label : 'Paramettres'
-  },
+  // {
+  //   routerLink : 'settings',
+  //   icon : 'fa-solid fa-gears',
+  //   label : 'Paramettres'
+  // },
   {
     routerLink : '/auth/logout',
     icon : 'fa-solid fa-exit',

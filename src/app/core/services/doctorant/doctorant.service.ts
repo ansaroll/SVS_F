@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core'
 import { HttpClient , HttpHeaders } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs'
 import { catchError, retry } from 'rxjs/operators'
-import { User  } from '../../models/user.model'
+import { Doctorant } from 'src/app/models/doctorant/doctorant.model'
 
 @Injectable({
   providedIn:'root'
 })
-export class UserService {
+export class DoctorantService {
   endpoint = 'http://localhost:1337'
   constructor(private httpClient:HttpClient) {}
 
@@ -17,22 +17,22 @@ export class UserService {
     })
   };
 
-  getUsers():Observable<Partial<User>[]> {
-    return this.httpClient.get<Partial<User>[]>(this.endpoint+'/api/users')
+  getDoctorants():Observable<Partial<Doctorant>[]> {
+    return this.httpClient.get<Partial<Doctorant>[]>(this.endpoint+'/api/doctorants')
     .pipe(retry(1), catchError(this.processError));
   }
 
-  getSingleUser(id: string | null): Observable<Partial<User>> {
+  getSingleDoctorant(id: string | null): Observable<Partial<Doctorant>> {
     console.log({id});
 
     return this.httpClient
-      .get<Partial<User>>(this.endpoint + '/api/user/' + id)
+      .get<Partial<Doctorant>>(this.endpoint + '/api/Doctorant/' + id)
       .pipe(retry(1), catchError(this.processError));
   }
-  addUser(data: Partial<User>): Observable<Partial<User>> {
+  addDoctorant(data: Partial<Doctorant>): Observable<Partial<Doctorant>> {
     const req = this.httpClient
-      .post<Partial<User>>(
-        this.endpoint + '/api/users',
+      .post<Partial<Doctorant>>(
+        this.endpoint + '/api/doctorants',
         JSON.stringify(data),
         this.httpHeader
       )
@@ -40,18 +40,18 @@ export class UserService {
       req.subscribe()
       return req
   }
-  updateUser(id: any, data: any): Observable<Partial<User>> {
+  updateDoctorant(id: any, data: any): Observable<Partial<Doctorant>> {
     return this.httpClient
-      .put<Partial<User>>(
-        this.endpoint + '/users/' + id,
+      .put<Partial<Doctorant>>(
+        this.endpoint + '/Doctorants/' + id,
         JSON.stringify(data),
         this.httpHeader
       )
       .pipe(retry(1), catchError(this.processError));
   }
-  deleteUser(id: any) {
+  deleteDoctorant(id: any) {
     return this.httpClient
-      .delete<Partial<User>>(this.endpoint + '/users/' + id, this.httpHeader)
+      .delete<Partial<Doctorant>>(this.endpoint + '/Doctorants/' + id, this.httpHeader)
       .pipe(retry(1), catchError(this.processError));
   }
 
