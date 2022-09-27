@@ -61,7 +61,7 @@ export const navbarData:INavbarData[] = [
   // },
   {
     routerLink : '/auth/logout',
-    icon : 'fa-solid fa-exit',
+    icon : 'fa-solid fa-arrow-right-from-bracket',
     label : 'Deconnexion'
   },
 ]
