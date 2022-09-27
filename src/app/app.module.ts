@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,8 @@ import { HttpClientModule } from "@angular/common/http"
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenInterceptorProvider } from './_helpers/token.interceptor';
+import { registerLocaleData } from '@angular/common';
+import * as fr from '@angular/common/locales/fr';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,14 @@ import { TokenInterceptorProvider } from './_helpers/token.interceptor';
     BrowserAnimationsModule,
     NoopAnimationsModule
   ],
-  providers: [TokenInterceptorProvider],
+  providers: [
+    TokenInterceptorProvider,
+    { provide: LOCALE_ID, useValue: 'fr-FR'}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+}

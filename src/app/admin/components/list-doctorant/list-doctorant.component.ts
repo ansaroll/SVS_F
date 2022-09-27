@@ -12,9 +12,17 @@ export class ListDoctorantComponent implements OnInit {
   constructor(private userService:UserService) {}
 
   users:Partial<User>[] = []
+  currentUser:Partial<User> = {}
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe({next:data => this.users = data , error: err => console.log({err})})
+    this.userService.getUsers().subscribe({next:data => {
+      this.users = data
+      this.currentUser = data[0]    
+    } , error: err => console.log({err})})
+  }
+
+  onViewUser = (user:Partial<User>) => {
+    this.currentUser = user
   }
 }
 

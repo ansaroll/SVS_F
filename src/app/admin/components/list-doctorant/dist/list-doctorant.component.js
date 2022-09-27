@@ -10,12 +10,20 @@ exports.ListDoctorantComponent = void 0;
 var core_1 = require("@angular/core");
 var ListDoctorantComponent = /** @class */ (function () {
     function ListDoctorantComponent(userService) {
+        var _this = this;
         this.userService = userService;
         this.users = [];
+        this.currentUser = {};
+        this.onViewUser = function (user) {
+            _this.currentUser = user;
+        };
     }
     ListDoctorantComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getUsers().subscribe({ next: function (data) { return _this.users = data; }, error: function (err) { return console.log({ err: err }); } });
+        this.userService.getUsers().subscribe({ next: function (data) {
+                _this.users = data;
+                _this.currentUser = data[0];
+            }, error: function (err) { return console.log({ err: err }); } });
     };
     ListDoctorantComponent = __decorate([
         core_1.Component({

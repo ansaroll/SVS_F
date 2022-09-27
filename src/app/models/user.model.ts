@@ -9,6 +9,8 @@ export class User {
   about?: string;
   imageUrl?: string;
   createdDate?: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
   password?:string;
   passwordConfirmation?: string;
 }

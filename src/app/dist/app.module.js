@@ -17,8 +17,11 @@ var http_1 = require("@angular/common/http");
 var animations_1 = require("@angular/platform-browser/animations");
 var animations_2 = require("@angular/platform-browser/animations");
 var token_interceptor_1 = require("./_helpers/token.interceptor");
+var common_1 = require("@angular/common");
+var fr = require("@angular/common/locales/fr");
 var AppModule = /** @class */ (function () {
     function AppModule() {
+        common_1.registerLocaleData(fr["default"]);
     }
     AppModule = __decorate([
         core_1.NgModule({
@@ -34,7 +37,10 @@ var AppModule = /** @class */ (function () {
                 animations_1.BrowserAnimationsModule,
                 animations_2.NoopAnimationsModule
             ],
-            providers: [token_interceptor_1.TokenInterceptorProvider],
+            providers: [
+                token_interceptor_1.TokenInterceptorProvider,
+                { provide: core_1.LOCALE_ID, useValue: 'fr-FR' }
+            ],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

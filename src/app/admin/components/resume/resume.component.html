@@ -1,12 +1,23 @@
-<div class="p-4">
-  <p class="text-white text-center text-2xl font-medium" >Profil</p>
-  <div class="pt-4 text-white text-center text-2xl break">
-    Id Interne: {{ user._id }}
-</div>
-  <div class="pt-4 text-white text-center text-2xl break">
-      {{ user.email }}
+
+<div class="flex justify-center">
+  <div class="max-w-sm">
+    <a href="#!">
+      <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+    </a>
+    <div class="p-6 mt-2 h-96 scrollbar scrollbar-thin overflow-y-auto">
+      <h5 class="text-gray-100 text-3xl font-medium mb-2">
+        {{ user.name }}
+      </h5>
+      <div class="pt-4 text-gray-200 text-2xl break">
+        {{ user.email }}
+      </div>
+      <div class="pt-4 text-gray-200 text-2xl break">
+        {{ user._id }}
+      </div>
+      <div class="pt-4 text-gray-200 text-2xl break">
+        date d'inscription : {{ user.createdAt | date}}
+      </div>
+      <button type="button" class="mt-12 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Details</button>
+    </div>
   </div>
-  <div class="pt-4 text-white text-center text-2xl break">
-    {{ user.name }}
-</div>
 </div>

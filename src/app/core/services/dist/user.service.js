@@ -11,10 +11,11 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
 var rxjs_1 = require("rxjs");
 var operators_1 = require("rxjs/operators");
+var environment_1 = require("../../../environments/environment");
 var UserService = /** @class */ (function () {
     function UserService(httpClient) {
         this.httpClient = httpClient;
-        this.endpoint = 'http://localhost:1337';
+        this.endpoint = environment_1.environment.apiUrl;
         this.httpHeader = {
             headers: new http_1.HttpHeaders({
                 'Content-Type': 'application/json'

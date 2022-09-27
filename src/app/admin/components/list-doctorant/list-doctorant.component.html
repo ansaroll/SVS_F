@@ -26,26 +26,27 @@
         <tbody>
           <tr *ngFor="let user of users" class="bg-white border-b transition duration-300 ease-in-out click:bg-gray-400 hover:bg-gray-100">
 
-                <button title="btn1" [routerLink]="['profil' , user._id]">
+                <!-- <button title="btn1" [routerLink]="['profil' , user._id]"> -->
+                  <button title="btn1" (click)="onViewUser(user)">
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                     {{ user._id }}
                   </td>
                 </button>
 
                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <button title="btn1" routerLink="profil/1">
+                      <button title="btn1">
                     {{ user.name }}
                   </button>
                 </td>
 
                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <button title="btn1" routerLink="profil/1">
+                      <button title="btn1">
                       {{ user.email }}
                     </button>
                   </td>
 
                   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <button title="btn1" routerLink="profil/1">
+                      <button title="btn1">
                       {{ user.email }}
                     </button>
                   </td>
@@ -61,8 +62,8 @@
 
       <div class="md:col-span-1 hidden lg:block dark:border-gray-700 border-t lg:border-t-0 lg:border-r lg:border-l lg:rounded-r dark:bg-gray-700 bg-gray-100">
 
-          <!-- <app-resume></app-resume> -->
-        <router-outlet></router-outlet>
+          <app-resume [user]="currentUser"></app-resume>
+        <!-- <router-outlet></router-outlet> -->
       </div>
 
 

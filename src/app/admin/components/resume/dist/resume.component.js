@@ -10,31 +10,34 @@ exports.ResumeComponent = void 0;
 var core_1 = require("@angular/core");
 var ResumeComponent = /** @class */ (function () {
     function ResumeComponent(route, userService, location) {
-        var _this = this;
         this.route = route;
         this.userService = userService;
         this.location = location;
         this.user = {};
         this.id = null;
-        this.fetch = function (id) {
-            _this.userService.getSingleUser(id).subscribe({
-                next: function (data) { return _this.user = data; },
-                error: function (err) { return console.log({ err: err }); }
-            });
-        };
+        // fetch = (id:string | null) => {
+        //   this.userService.getSingleUser(id).subscribe(
+        //     {
+        //       next:data => this.user = data,
+        //       error:err => console.log({err})
+        //     }
+        //   )
+        // }
         this.ngOnDestroy = function () {
-            _this.fetch(_this.route.snapshot.paramMap.get('id'));
+            // this.fetch(this.route.snapshot.paramMap.get('id'))
         };
     }
     ResumeComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.fetch(this.route.snapshot.paramMap.get('id'));
-        this.location.onUrlChange(function () {
-            // this.id = this.route.snapshot.paramMap.get('id')
-            _this.fetch(_this.route.snapshot.paramMap.get('id'));
-            console.log('id', _this.route.snapshot.paramMap.get('id'));
-        });
+        // this.fetch(this.route.snapshot.paramMap.get('id'))
+        // this.location.onUrlChange(()=>{
+        //   // this.id = this.route.snapshot.paramMap.get('id')
+        //   this.fetch(this.route.snapshot.paramMap.get('id'))
+        //   console.log('id' , this.route.snapshot.paramMap.get('id') );
+        // })
     };
+    __decorate([
+        core_1.Input()
+    ], ResumeComponent.prototype, "user");
     ResumeComponent = __decorate([
         core_1.Component({
             selector: 'app-resume',
