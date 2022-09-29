@@ -1,0 +1,6 @@
+https://tailwindcss.com/docs/object-fit : A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+https://openclassrooms.com/ : Des formations innovantes
+https://angular.io/ : Doc officielle
+https://github.com/ansaroll : github
+https://fontawesome.com/icons/spinner?s=solid&f=classic : Fonts Icons Gratuit
+https://tailwind-elements.com/ : Components tailwind
