@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
 import { User } from 'src/app/models/user.model';
 
@@ -9,7 +10,8 @@ import { User } from 'src/app/models/user.model';
 })
 export class ListDoctorantComponent implements OnInit {
 
-  constructor(private userService:UserService) {}
+  constructor(private userService:UserService,
+              private router:Router) {}
 
   users:Partial<User>[] = []
   currentUser:Partial<User> = {}
@@ -24,5 +26,7 @@ export class ListDoctorantComponent implements OnInit {
   onViewUser = (user:Partial<User>) => {
     this.currentUser = user
   }
+
+
 }
 

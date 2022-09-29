@@ -9,9 +9,11 @@ exports.__esModule = true;
 exports.ResumeComponent = void 0;
 var core_1 = require("@angular/core");
 var ResumeComponent = /** @class */ (function () {
-    function ResumeComponent(route, userService, location) {
+    function ResumeComponent(route, userService, router, location) {
+        var _this = this;
         this.route = route;
         this.userService = userService;
+        this.router = router;
         this.location = location;
         this.user = {};
         this.id = null;
@@ -23,6 +25,9 @@ var ResumeComponent = /** @class */ (function () {
         //     }
         //   )
         // }
+        this.onViewDetailUser = function (idUser) {
+            _this.router.navigateByUrl("/admin/profil/" + idUser);
+        };
         this.ngOnDestroy = function () {
             // this.fetch(this.route.snapshot.paramMap.get('id'))
         };

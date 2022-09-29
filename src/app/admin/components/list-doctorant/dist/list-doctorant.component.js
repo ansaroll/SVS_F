@@ -9,9 +9,10 @@ exports.__esModule = true;
 exports.ListDoctorantComponent = void 0;
 var core_1 = require("@angular/core");
 var ListDoctorantComponent = /** @class */ (function () {
-    function ListDoctorantComponent(userService) {
+    function ListDoctorantComponent(userService, router) {
         var _this = this;
         this.userService = userService;
+        this.router = router;
         this.users = [];
         this.currentUser = {};
         this.onViewUser = function (user) {

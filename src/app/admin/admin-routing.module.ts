@@ -14,6 +14,8 @@ import { ResumeComponent } from './components/resume/resume.component'
 import { ScreenComponent } from './components/screen/screen.component'
 import { SettingsComponent } from './components/settings/settings.component'
 import { CreateNewsComponent } from './components/create-news/create-news.component';
+import { ProfilComponent } from "./components/profil/profil.component";
+
 
 
 const routes: Routes = [
@@ -25,6 +27,7 @@ const routes: Routes = [
       { path : 'dashboard' , component: DashboardComponent},
       { path : 'calendar' , component : CalendarComponent},
       { path : 'chats' , component : ChatsComponent},
+      { path : 'profil/:id' , component: ProfilComponent},
       { path : 'database' , component : DatabaseComponent ,
 
           children : [
