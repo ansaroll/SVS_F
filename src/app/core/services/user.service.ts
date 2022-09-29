@@ -24,8 +24,6 @@ export class UserService {
   }
 
   getSingleUser(id: string | null): Observable<Partial<User>> {
-    console.log({id});
-
     return this.httpClient
       .get<Partial<User>>(this.endpoint + '/api/user/' + id)
       .pipe(retry(1), catchError(this.processError));

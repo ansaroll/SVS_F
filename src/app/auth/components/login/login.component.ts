@@ -31,7 +31,15 @@ export class LoginComponent implements OnInit {
                     .subscribe({
                       next: (data) => {
                         this.tokenService.saveToken(data)
-                        this.router.navigateByUrl('/admin')
+                        if(data.role == 'admin'){
+                          this.router.navigateByUrl('/admin')
+                        }
+                        // if(data.role == 'prof'){
+                        //   this.router.navigateByUrl('/prof')
+                        // }
+                        if(data.role == 'doctorant'){
+                          this.router.navigateByUrl('/doctorant')
+                        }
                       },
                       error: (err) => {
                         if(err.status === 401) {

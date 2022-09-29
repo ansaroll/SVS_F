@@ -27,7 +27,6 @@ var UserService = /** @class */ (function () {
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     UserService.prototype.getSingleUser = function (id) {
-        console.log({ id: id });
         return this.httpClient
             .get(this.endpoint + '/api/user/' + id)
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));

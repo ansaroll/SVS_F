@@ -13,4 +13,5 @@ export class User {
   updatedAt?: Date;
   password?:string;
   passwordConfirmation?: string;
+  role?: "doctorant" | "prof" | "admin"
 }
