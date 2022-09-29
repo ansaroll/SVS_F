@@ -24,4 +24,9 @@ export const navbarData = [
     icon : 'fa-solid fa-gears',
     label : 'Paramettres'
   },
+  {
+    routerLink : '/auth/logout',
+    icon : 'fa-solid fa-arrow-right-from-bracket',
+    label : 'Deconnexion'
+  },
 ]

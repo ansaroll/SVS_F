@@ -25,8 +25,8 @@ var ResumeComponent = /** @class */ (function () {
         //     }
         //   )
         // }
-        this.onViewDetailUser = function (idUser) {
-            _this.router.navigateByUrl("/admin/profil/" + idUser);
+        this.onViewDetailUser = function (idUser, role) {
+            _this.router.navigateByUrl("/admin/profil/" + idUser + "/" + role);
         };
         this.ngOnDestroy = function () {
             // this.fetch(this.route.snapshot.paramMap.get('id'))

@@ -20,7 +20,21 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
           animate('{{ transitionParams }}')
         ]),
         transition('void => *' , animate(0))
-     ])
+     ]),
+    trigger('fadeInOut',[
+      transition(':enter',[
+        style({opacity:0}),
+        animate('1000ms ease-in-out',
+          style({opacity:1})
+        )
+      ]),
+      transition(':leave',[
+        style({opacity:1}),
+        animate('1000ms ease-in-out',
+          style({opacity:0})
+        )
+      ])
+    ])
     ]
 })
 export class SublevelMenuComponent implements OnInit {

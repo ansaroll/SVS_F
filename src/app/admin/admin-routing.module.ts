@@ -27,7 +27,7 @@ const routes: Routes = [
       { path : 'dashboard' , component: DashboardComponent},
       { path : 'calendar' , component : CalendarComponent},
       { path : 'chats' , component : ChatsComponent},
-      { path : 'profil/:id' , component: ProfilComponent},
+      { path : 'profil/:id/:role' , component: ProfilComponent},
       { path : 'database' , component : DatabaseComponent ,
 
           children : [
@@ -48,8 +48,8 @@ const routes: Routes = [
     },
       { path : 'settings' , component : SettingsComponent},
       { path : 'courses' , component : CoursesComponent},
-      { path : 'createdoctorant' , component : CreateDoctorantComponent},
-      { path : 'createformation' , component : CreateFormationComponent},
+      { path : 'create-user' , component : CreateDoctorantComponent},
+      { path : 'create-formation' , component : CreateFormationComponent},
       { path : 'createnews' , component : CreateNewsComponent},
     ]
   },

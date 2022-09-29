@@ -33,7 +33,7 @@ var routes = [
             { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
             { path: 'calendar', component: calendar_component_1.CalendarComponent },
             { path: 'chats', component: chats_component_1.ChatsComponent },
-            { path: 'profil/:id', component: profil_component_1.ProfilComponent },
+            { path: 'profil/:id/:role', component: profil_component_1.ProfilComponent },
             { path: 'database', component: database_component_1.DatabaseComponent,
                 children: [
                     { path: '', component: list_doctorant_component_1.ListDoctorantComponent },
@@ -50,8 +50,8 @@ var routes = [
             },
             { path: 'settings', component: settings_component_1.SettingsComponent },
             { path: 'courses', component: courses_component_1.CoursesComponent },
-            { path: 'createdoctorant', component: create_doctorant_component_1.CreateDoctorantComponent },
-            { path: 'createformation', component: create_formation_component_1.CreateFormationComponent },
+            { path: 'create-user', component: create_doctorant_component_1.CreateDoctorantComponent },
+            { path: 'create-formation', component: create_formation_component_1.CreateFormationComponent },
             { path: 'createnews', component: create_news_component_1.CreateNewsComponent },
         ]
     },

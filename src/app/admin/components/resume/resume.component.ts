@@ -40,8 +40,8 @@ ngOnInit(): void {
   //   )
   // }
 
-  onViewDetailUser = (idUser?:string) => {
-    this.router.navigateByUrl(`/admin/profil/${idUser}`)
+  onViewDetailUser = (idUser?:string, role?:string) => {
+    this.router.navigateByUrl(`/admin/profil/${idUser}/${role}`)
   }
 
   ngOnDestroy = () => {

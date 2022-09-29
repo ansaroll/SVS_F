@@ -41,11 +41,21 @@ exports.navbarData = [
             },
         ]
     },
-    // {
-    //   routerLink : 'settings',
-    //   icon : 'fa-solid fa-gears',
-    //   label : 'Paramettres'
-    // },
+    {
+        routerLink: '',
+        icon: 'fa-solid fa-add',
+        label: 'Création',
+        items: [
+            {
+                routerLink: 'create-user',
+                label: 'Utilisateur'
+            },
+            {
+                routerLink: 'create-formation',
+                label: 'Formation'
+            }
+        ]
+    },
     {
         routerLink: '/auth/logout',
         icon: 'fa-solid fa-arrow-right-from-bracket',

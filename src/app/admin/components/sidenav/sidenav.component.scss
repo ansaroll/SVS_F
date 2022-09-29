@@ -7,6 +7,7 @@
   width: 5rem;
   height: 100vh;
   box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+  transition: all .3s ease-in-out;
 
   .logo-container{
     display: flex;
@@ -131,7 +132,7 @@
 
 .sublevel-nav{
   list-style: none;
-  margin-left: 10px;
+  margin-left: 20px;
   transition: all .3s ease-in-out;
 
   .sublevel-nav-item{
@@ -146,7 +147,7 @@
       transition: all .3s ease-in-out;
 
       .sublevel-link-icon{
-        font-size:4px;
+        font-size:7px;
         width : 2rem;
         min-width: 2rem;
         margin: 0 0.5rem;

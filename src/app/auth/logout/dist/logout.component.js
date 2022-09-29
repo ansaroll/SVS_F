@@ -13,7 +13,8 @@ var LogoutComponent = /** @class */ (function () {
         this.tokenService = tokenService;
     }
     LogoutComponent.prototype.ngOnInit = function () {
-        this.tokenService.clearToken();
+        var _this = this;
+        setTimeout(function () { _this.tokenService.clearToken(); }, 500);
     };
     LogoutComponent = __decorate([
         core_1.Component({

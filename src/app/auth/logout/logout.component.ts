@@ -11,7 +11,7 @@ export class LogoutComponent implements OnInit {
   constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.tokenService.clearToken()
+    setTimeout(() =>{ this.tokenService.clearToken()},500)
   }
 
 }
