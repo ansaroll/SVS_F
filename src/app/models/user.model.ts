@@ -1,17 +1,25 @@
 export class User {
-  id?: number;
-  _id?:string;
-  name?:string
+  _id?: string;
+  imageUrl?: string;
+  password?: string;
+  userId?: string;
+  name?: string;
+  firstName?: string;
+  nationality?: string;
+  gender?: string;
+  dateOfBirth?: string;
+  yearBacc?: string;
+  adress?: string;
+  cin?: string;
+  serieBacc?: string;
+  codeDoubling?: string;
   email?: string;
   telephone?: string;
   isBoursier?: boolean;
-  tauxBourse?:number;
+  tauxBourse?: number;
   about?: string;
-  imageUrl?: string;
-  createdDate?: Date;
   createdAt?: Date;
   updatedAt?: Date;
-  password?:string;
   passwordConfirmation?: string;
   role?: "doctorant" | "prof" | "admin"
 }
