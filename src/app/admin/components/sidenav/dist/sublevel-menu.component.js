@@ -24,7 +24,6 @@ var SublevelMenuComponent = /** @class */ (function () {
         console.log('thisSub.expended', this.expended);
     };
     SublevelMenuComponent.prototype.handleClick = function (item) {
-        console.log('thisSublevel.expended', this.expended);
         if (!this.multiple) {
             if (this.data.items && this.data.items.length > 0) {
                 for (var _i = 0, _a = this.data.items; _i < _a.length; _i++) {
@@ -60,26 +59,17 @@ var SublevelMenuComponent = /** @class */ (function () {
             animations: [
                 animations_1.trigger('submenu', [
                     animations_1.state('hidden', animations_1.style({
-                        height: '0',
-                        overflow: 'hidden'
+                        height: '0px',
+                        overflow: 'hidden',
+                        opacity: 0
                     })),
                     animations_1.state('visible', animations_1.style({
-                        height: '*'
+                        height: '150px',
+                        opacity: 1
                     })),
-                    animations_1.transition('visible <=> hidden', [
-                        animations_1.animate('{{ transitionParams }}')
+                    animations_1.transition('hidden <=> visible', [
+                        animations_1.animate('2000ms ease-in-out')
                     ]),
-                    animations_1.transition('void => *', animations_1.animate(0))
-                ]),
-                animations_1.trigger('fadeInOut', [
-                    animations_1.transition(':enter', [
-                        animations_1.style({ opacity: 0 }),
-                        animations_1.animate('1000ms ease-in-out', animations_1.style({ opacity: 1 }))
-                    ]),
-                    animations_1.transition(':leave', [
-                        animations_1.style({ opacity: 1 }),
-                        animations_1.animate('1000ms ease-in-out', animations_1.style({ opacity: 0 }))
-                    ])
                 ])
             ]
         })

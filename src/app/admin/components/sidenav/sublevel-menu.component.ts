@@ -9,33 +9,20 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   animations:[
      trigger('submenu', [
         state('hidden', style({
-          height:'0',
-          overflow:'hidden'
+          height:'0px',
+          overflow:'hidden',
+          opacity:0
         })),
         state('visible', style({
-          height:'*',
+          height:'150px',
+          opacity:1
         })),
-        transition('visible <=> hidden' ,
+        transition('hidden <=> visible' ,
         [
-          animate('{{ transitionParams }}')
+          animate('2000ms ease-in-out')
         ]),
-        transition('void => *' , animate(0))
-     ]),
-    trigger('fadeInOut',[
-      transition(':enter',[
-        style({opacity:0}),
-        animate('1000ms ease-in-out',
-          style({opacity:1})
-        )
-      ]),
-      transition(':leave',[
-        style({opacity:1}),
-        animate('1000ms ease-in-out',
-          style({opacity:0})
-        )
-      ])
-    ])
-    ]
+     ])
+  ]
 })
 export class SublevelMenuComponent implements OnInit {
 
@@ -55,11 +42,11 @@ export class SublevelMenuComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('thisSub.expended' , this.expended);
-
   }
 
+
+
   handleClick(item:any):void {
-    console.log('thisSublevel.expended', this.expended);
     if(!this.multiple){
       if(this.data.items && this.data.items.length > 0) {
         for(let modelItem of this.data.items) {

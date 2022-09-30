@@ -1,9 +1,6 @@
 <ul *ngIf="collapsed && data.items && data.items.length > 0"
-@fadeInOut
-[@submenu]="expended ? {value:'visible' , params:{transitionParams:'1000ms ease-in-out', height:'*'}}
-                     : {value:'hidden',
-                        params:{transitionParams:'1000ms ease-in-out' , height:'0'}}"
-class="sublevel-nav transition delay-150 duration-300 ease-in-out"
+[@submenu]="expended ? 'visible' : 'hidden'"
+class="sublevel-nav"
 >
   <li *ngFor="let item of data.items" class="sublevel-nav-item">
     <a class="sublevel-nav-link"
