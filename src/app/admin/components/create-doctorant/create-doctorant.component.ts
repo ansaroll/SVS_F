@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map, Observable } from 'rxjs';
 import { Information } from 'src/app/models/information.model';
 import { Contact } from 'src/app/models/contact.model';
+import { UserService } from 'src/app/core/services/user.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class CreateDoctorantComponent implements OnInit {
   informationPreview$!: Observable<Information>
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService ) { }
 
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
@@ -32,18 +33,20 @@ export class CreateDoctorantComponent implements OnInit {
       imageUrl: [null]
     })
 
-    this.informationForm = this.formBuilder.group({
-      name: [null,Validators.required],
-      lastName: [null],
-      country: [null],
-      sexe: [null],
-      dtn: [null], // dtn : date de naissance
-      dtbacc: [null], // dtbacc : date d'obtention bacc
+    this.informationForm  = this.formBuilder.group({
+      name: [null],
+      firstName: [null],
+      nationality: [null],
+      gender: [null],
+      dateofBirth : [null],
+      yearBacc: [null],
       adress: [null],
-      cin: [null],
-      serieBacc: [null],
-      codeRedoublement: [null],
-
+      cin:[null],
+      serieBacc:[null],
+      codeDoubling:[null],
+      password:[null],
+      passwordConfirmation:[null],
+      email:[null],
     })
 
     this.contactPreview$ = this.contactForm.valueChanges.pipe(
@@ -63,7 +66,8 @@ export class CreateDoctorantComponent implements OnInit {
 
 
   onSubmitprofilForm(form:FormGroup) {
-    // alert('hey')
+    this.userService.addUser(form.value)
+        // alert('hey')
     console.log(form.value);
   }
 
