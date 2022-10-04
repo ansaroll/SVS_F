@@ -9,7 +9,11 @@ export class Information {
   cin!: string;
   serieBacc!: string;
   codeRedoublement!: string;
-
+  telephone!: string;
+  isBoursier!: boolean;
+  tauxBourse!: string;
+  about!: string;
+  createdDate!: Date;
 }
 
 

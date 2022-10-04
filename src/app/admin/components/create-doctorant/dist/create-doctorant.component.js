@@ -21,19 +21,12 @@ exports.CreateDoctorantComponent = void 0;
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
 var CreateDoctorantComponent = /** @class */ (function () {
-    function CreateDoctorantComponent(formBuilder, userService) {
+    function CreateDoctorantComponent(formBuilder, userService, route) {
         this.formBuilder = formBuilder;
         this.userService = userService;
+        this.route = route;
     }
     CreateDoctorantComponent.prototype.ngOnInit = function () {
-        this.contactForm = this.formBuilder.group({
-            email: [null],
-            telephone: [null],
-            isBoursier: [null],
-            tauxBourse: [null],
-            about: [null],
-            imageUrl: [null]
-        });
         this.informationForm = this.formBuilder.group({
             name: [null],
             firstName: [null],
@@ -44,15 +37,22 @@ var CreateDoctorantComponent = /** @class */ (function () {
             adress: [null],
             cin: [null],
             serieBacc: [null],
-            codeDoubling: [null]
+            codeDoubling: [null],
+            password: [null],
+            passwordConfirmation: [null],
+            email: [null],
+            telephone: [null],
+            isBoursier: [null],
+            tauxBourse: [null],
+            about: [null]
         });
-        this.contactPreview$ = this.contactForm.valueChanges.pipe(rxjs_1.map(function (formValue) { return (__assign(__assign({}, formValue), { createdDate: new Date() })); }));
-        this.informationPreview$ = this.informationForm.valueChanges.pipe(rxjs_1.map(function (formValue) { return (__assign({}, formValue)); }));
+        this.informationPreview$ = this.informationForm.valueChanges.pipe(rxjs_1.map(function (formValue) { return (__assign(__assign({}, formValue), { createdDate: new Date() })); }));
     };
     CreateDoctorantComponent.prototype.onSubmitprofilForm = function (form) {
-        this.userService.updateUser(form.value);
-        // alert('hey')
-        console.log(form.value);
+        var _this = this;
+        this.userService.addUser(form.value).subscribe({
+            next: function (data) { return _this.route.navigate(['/admin/profil', data._id, data.role]); }
+        });
     };
     CreateDoctorantComponent = __decorate([
         core_1.Component({

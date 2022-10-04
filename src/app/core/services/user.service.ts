@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpClient , HttpHeaders } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs'
 import { catchError, retry } from 'rxjs/operators'
-import { User  } from '../../models/user.model'
+import { User , TPayloadPdp } from '../../models/user.model'
 import { environment } from '../../../environments/environment'
 
 @Injectable({
@@ -36,9 +36,19 @@ export class UserService {
         this.httpHeader
       )
       .pipe(retry(1), catchError(this.processError));
-      req.subscribe()
       return req
   }
+
+  addPdpUser(data:TPayloadPdp): Observable<Partial<TPayloadPdp>>{
+    const req = this.httpClient
+      .post<Partial<TPayloadPdp>>(
+        this.endpoint + '/api/user/pdp',
+        JSON.stringify(data),
+        this.httpHeader
+      )
+      return req
+  }
+
   updateUser(id: any, data: any): Observable<Partial<User>> {
     return this.httpClient
       .put<Partial<User>>(

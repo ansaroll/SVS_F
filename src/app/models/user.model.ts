@@ -19,7 +19,14 @@ export class User {
   tauxBourse?: number;
   about?: string;
   createdAt?: Date;
+  pictureUrl?:string;
   updatedAt?: Date;
   passwordConfirmation?: string;
   role?: "doctorant" | "prof" | "admin"
+}
+
+
+export class TPayloadPdp {
+  userId?:string | null;
+  file?:string;
 }

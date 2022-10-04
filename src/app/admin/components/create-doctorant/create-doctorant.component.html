@@ -6,8 +6,9 @@
   </div>
 </div>
 
+<form [formGroup]="informationForm">
 <!-- debut blpock 2-->
-<div class="mt-10 sm:mt-0">
+<div class="mt-10 sm:mt-0" id="form-creation">
   <div class="md:grid md:grid-cols-4 md:gap-6">
     <!-- <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
@@ -15,25 +16,30 @@
         <p class="mt-1 text-sm text-gray-600">Use a permanent address where you can receive mail.</p>
       </div>
     </div> -->
-    <div class="mt-5 md:mt-0 md:col-span-2">
-      <form [formGroup]="informationForm">
+      <div class="mt-5 md:mt-0 md:col-span-2">
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
                 <label for="name" class="block text-sm font-medium text-gray-700">Nom</label>
-                <input type="text" name="name"  formControlName="name" id="name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" autocomplete="off" required >
+                <input type="text" name="name" formControlName="name" id="name"
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  autocomplete="off" required>
               </div>
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="first-name" class="block text-sm font-medium text-gray-700">Prenom</label>
-                <input type="text" name="first-name" id="first-name"  formControlName="firstName" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" autocomplete="off" required >
+                <input type="text" name="first-name" id="first-name" formControlName="firstName"
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  autocomplete="off" required>
               </div>
 
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="nationality" class="block text-sm font-medium text-gray-700">Nationalité</label>
-                <select id="nationality" name="nationality"  formControlName="nationality" autocomplete="country-name" required class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <select id="nationality" name="nationality" formControlName="nationality" autocomplete="country-name"
+                  required
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option value="Madagascar">Malgache</option>
                   <option value="Comore">Comorien</option>
                   <option value="France">Français</option>
@@ -43,7 +49,9 @@
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="sexe" class="block text-sm font-medium text-gray-700">Sexe</label>
-                <select title="sexeOptions" id="sexe" name="sexe"  formControlName="gender" autocomplete="country-name" required  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <select title="sexeOptions" id="sexe" name="sexe" formControlName="gender" autocomplete="country-name"
+                  required
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option value="masculin">Masculin</option>
                   <option value="feminin">Feminin</option>
                   <option value="binaire">Binaire</option>
@@ -52,42 +60,54 @@
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="dtn" class="block text-sm font-medium text-gray-700">Date de naissance</label>
-                <input title="dtn" type="date" name="dtn"  formControlName="dateofBirth" id="dtn" autocomplete="off" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input title="dtn" type="date" name="dtn" formControlName="dateofBirth" id="dtn" autocomplete="off"
+                  required
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="dtbacc" class="block text-sm font-medium text-gray-700">Obtention Bacc</label>
-                <input title="dtbacc" id="dtbacc" type="number" min="1900" max="2022" step="1" value="2016" required formControlName="yearBacc" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input title="dtbacc" id="dtbacc" type="number" min="1900" max="2022" step="1" value="2016" required
+                  formControlName="yearBacc"
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6">
                 <label for="address" class="block text-sm font-medium text-gray-700">Adresse</label>
-                <input type="text" name="adress"  formControlName="adress" id="address" autocomplete="off" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input type="text" name="adress" formControlName="adress" id="address" autocomplete="off" required
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="mdp" class="block text-sm font-medium text-gray-700">Mot de passe</label>
-                <input title="password" type="text" name="dtn"  formControlName="password" id="mdp" autocomplete="off" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input title="password" type="text" name="dtn" formControlName="password" id="mdp" autocomplete="off"
+                  required
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="cmdp" class="block text-sm font-medium text-gray-700">Confirmation mot de passe</label>
-                <input title="passwordconfirm" id="cmdp" type="text"  required formControlName="passwordConfirmation" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input title="passwordconfirm" id="cmdp" type="text" required formControlName="passwordConfirmation"
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6">
                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" name="email"  formControlName="email" id="email" autocomplete="off" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input type="email" name="email" formControlName="email" id="email" autocomplete="off" required
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                 <label for="cin" class="block text-sm font-medium text-gray-700">CIN</label>
-                <input type="text" name="cin" id="cin"  formControlName="cin" autocomplete="off" required class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+                <input type="text" name="cin" id="cin" formControlName="cin" autocomplete="off" required
+                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  required>
               </div>
 
               <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                 <label for="serieBacc" class="block text-sm font-medium text-gray-700">Serie BACC</label>
-                <select title="serieBacc" id="serieBacc" name="serieBAcc"  formControlName="serieBacc" autocomplete="off" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <select title="serieBacc" id="serieBacc" name="serieBAcc" formControlName="serieBacc" autocomplete="off"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option value="C">C</option>
                   <option value="C">D</option>
                   <option value="C">A</option>
@@ -95,8 +115,11 @@
               </div>
 
               <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                <label for="codeRedoublement" class="block text-sm font-medium text-gray-700">Code de Redoublement</label>
-                <select title="codeRedoublement" id="codeRedoublement" name="codeRedoublement" required formControlName="codeDoubling" autocomplete="off" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <label for="codeRedoublement" class="block text-sm font-medium text-gray-700">Code de
+                  Redoublement</label>
+                <select title="codeRedoublement" id="codeRedoublement" name="codeRedoublement" required
+                  formControlName="codeDoubling" autocomplete="off"
+                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option>Nouveau</option>
                   <option>Ancien</option>
                 </select>
@@ -105,34 +128,39 @@
             </div>
           </div>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" (click)="onSubmitprofilForm(informationForm)" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>
-          </div>
+            <!-- <a
+              href="/admin/create-user#contact-form"
+              disabled="true"
+              class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer
+          </a> -->
+
+            </div>
         </div>
-      </form>
-    </div>
-
-
-    <div class="md:col-span-2">
-      <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">Information Personnel</h3>
-        <p class="mt-1 text-sm text-gray-600">Ces informations seront affichées publiquement, alors faites attention à ce que vous partagez.</p>
-
-        <div class="py-4 space-y-2 font-medium text-gray-600" *ngIf="informationPreview$ | async as info">
-          <h2>Votre Nom : {{ info.name +" "+ info.lastName}} </h2>
-          <p>{{ info.country + " " + info.sexe }}</p>
-          <p>Date de naissance : {{ info.dtn }} </p>
-          <p>Date d'Obtention Baccalaureat : {{ info.dtbacc }} Serie {{ info.serieBacc }} </p>
-          <p>Adresse : {{ info.adress }} </p>
-          <p>Numero CIN : {{ info.cin }} Code Redoublement {{ info.codeRedoublement }} </p>
-
-          <!-- <p>Photo de profil</p> -->
-          <!-- <img [src]="contact." [alt]="contact.name"> -->
-          <!-- <p>A propos de vous : " {{ info.email }} "</p> -->
-          <!-- <p *ngIf="info.city">Adresse : {{ info.city }}</p> -->
       </div>
 
+
+      <div class="md:col-span-2">
+        <div class="px-4 sm:px-0">
+          <h3 class="text-lg font-medium leading-6 text-gray-900">Information Personnel</h3>
+          <p class="mt-1 text-sm text-gray-600">Ces informations seront affichées publiquement, alors faites attention à
+            ce que vous partagez.</p>
+
+          <div class="py-4 space-y-2 font-medium text-gray-600" *ngIf="informationPreview$ | async as info">
+            <h2>Votre Nom : {{ info.name +" "+ info.lastName}} </h2>
+            <p>{{ info.country + " " + info.sexe }}</p>
+            <p>Date de naissance : {{ info.dtn }} </p>
+            <p>Date d'Obtention Baccalaureat : {{ info.dtbacc }} Serie {{ info.serieBacc }} </p>
+            <p>Adresse : {{ info.adress }} </p>
+            <p>Numero CIN : {{ info.cin }} Code Redoublement {{ info.codeRedoublement }} </p>
+
+            <!-- <p>Photo de profil</p> -->
+            <!-- <img [src]="contact." [alt]="contact.name"> -->
+            <!-- <p>A propos de vous : " {{ info.email }} "</p> -->
+            <!-- <p *ngIf="info.city">Adresse : {{ info.city }}</p> -->
+          </div>
+
+        </div>
       </div>
-    </div>
 
 
   </div>
@@ -149,7 +177,9 @@
 </div>
 
 <!-- debut blpock 1 -->
-<div>
+<div
+  id="contact-form"
+>
   <div class="md:grid md:grid-cols-4 md:gap-6">
     <!-- <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
@@ -158,52 +188,49 @@
       </div>
     </div> -->
     <div class="mt-5 md:mt-0 md:col-span-2">
-      <form [formGroup]="contactForm">
-        <div class="shadow sm:rounded-md sm:overflow-hidden">
-          <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+      <div class="shadow sm:rounded-md sm:overflow-hidden">
+        <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
 
-            <div class="grid grid-cols-6 gap-6">
-              <div class="col-span-3 sm:col-span-3">
-                <label for="company-website" class="block text-sm font-medium text-gray-700"> Email </label>
-                <div class="mt-1 flex rounded-md shadow-sm">
-                  <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm"> Email </span>
-                  <!-- <input type="text" name="company-website" id="email" formControlName="email" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" formControlName="email" placeholder="www.example.com"> -->
-                </div>
-              </div>
+          <div class="grid grid-cols-6 gap-6">
 
-
-
-
-                <div class="col-span-6 sm:col-span-3">
-                  <label for="telephone" class="block text-sm font-medium text-gray-700">Telephone</label>
-                  <input type="tel" name="telephone" id="telephone" autocomplete="off" formControlName="telephone" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                </div>
-
-                <div class="col-span-6 sm:col-span-6 lg:col-span-3">
-                  <label for="isBoursier" class="block text-sm font-medium text-gray-700">Boursier</label>
-                  <select title="sexeOptions" id="isBoursier" name="isBoursier" autocomplete="off" formControlName="isBoursier" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option vlaue="Boursier">Boursier</option>
-                    <option value="Non Boursier">Non Boursier</option>
-                  </select>
-                </div>
-
-                <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                  <label for="taux" class="block text-sm font-medium text-gray-700">Taux de Bourse</label>
-                  <input title="tauxBourse" id="taux" type="number" min="1" max="100" step="1" name="tauxBourse" formControlName="tauxBourse" id="tauxBourse" autocomplete="off" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
-                </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="telephone" class="block text-sm font-medium text-gray-700">Telephone</label>
+              <input type="tel" name="telephone" id="telephone" autocomplete="off" formControlName="telephone"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
             </div>
 
-            <div>
-              <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
-              <div class="mt-1">
-                <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" formControlName="about" placeholder="Exemple: Il est souriant , a deux enfants , ... "></textarea>
-              </div>
-              <p class="mt-2 text-sm text-gray-500">Petit description du nouveau doctorant</p>
+            <div class="col-span-6 sm:col-span-6 lg:col-span-3">
+              <label for="isBoursier" class="block text-sm font-medium text-gray-700">Boursier</label>
+              <select title="isBoursier" id="isBoursier" name="isBoursier" autocomplete="off"
+                formControlName="isBoursier"
+                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <option value="true">Boursier</option>
+                <option value="false">Non Boursier</option>
+              </select>
             </div>
 
+            <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+              <label for="taux" class="block text-sm font-medium text-gray-700">Taux de Bourse</label>
+              <input title="tauxBourse" id="taux" type="number" min="1" max="100" step="1" name="tauxBourse"
+                formControlName="tauxBourse" id="tauxBourse" autocomplete="off" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                required>
+            </div>
+          </div>
+
+          <div>
+            <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
+            <div class="mt-1">
+              <textarea id="about" name="about" rows="3"
+                class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                formControlName="about" placeholder="Exemple: Il est souriant , a deux enfants , ... "></textarea>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">Petit description du nouveau doctorant</p>
+          </div>
 
 
-            <!-- <div>
+
+          <!-- <div>
               <label class="block text-sm font-medium text-gray-700"> Photo </label>
               <div class="mt-1 flex items-center">
                 <span class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
@@ -215,7 +242,7 @@
               </div>
             </div> -->
 
-            <div>
+          <!-- <div>
               <label class="block text-sm font-medium text-gray-700"> Cover photo </label>
               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                 <div class="space-y-1 text-center">
@@ -226,43 +253,42 @@
                     <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                       <span>Upload a file</span>
                       <input id="file-upload" name="file-upload" type="file" formControlName="imageUrl" class="sr-only">
-                      <!-- <input type="file" accept=".jpg,.png" class="button" (change)="upload($event.target.files)" /> -->
+                      <input type="file" accept=".jpg,.png" class="button" (change)="upload($event.target.files)" /> --
                     </label>
                     <p class="pl-1">or drag and drop</p>
                   </div>
                   <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
-          </div>
+            </div> -->
         </div>
-      </form>
+        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+          <button (click)="onSubmitprofilForm(informationForm)" type="submit"
+            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>
+        </div>
+      </div>
     </div>
 
     <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
         <h3 class="text-lg font-medium leading-6 text-gray-900">Contacts</h3>
-        <p class="mt-1 text-sm text-gray-600">Ses informations seront affiche dans la base de donnees de l'ED SVS , assurer qu'ils sont correctes
-        , Merci</p>
+        <p class="mt-1 text-sm text-gray-600">Ses informations seront affiche dans la base de donnees de l'ED SVS ,
+          assurer qu'ils sont correctes
+          , Merci</p>
 
-        <div class="py-4 space-y-2 font-medium text-gray-600" *ngIf="contactPreview$ | async as contact">
-          <p>Email : {{ contact.email }}</p>
-          <p>Telephone : {{ contact.telephone }}</p>
-          <p>Boursier ? : {{ contact.isBoursier }}</p>
-          <p>Taux Bourse : {{ contact.tauxBourse }} %</p>
-          <p>Date d'inscription:  {{ contact.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
+        <div class="py-4 space-y-2 font-medium text-gray-600" *ngIf="informationPreview$ | async as info">
+          <p>Telephone : {{ info.telephone }}</p>
+          <p>Boursier ? : {{ info.isBoursier }}</p>
+          <p>Taux Bourse : {{ info.tauxBourse }} %</p>
+          <p>Date d'inscription: {{ info.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
           <!-- <p>Photo de profil</p>
           <img title="imgurl" [src]="contact.imageUrl" [alt]="contact.name"> -->
-          <p>A propos de vous : " {{ contact.about }} "</p>
-      </div>
+          <p>A propos de vous : " {{ info.about }} "</p>
+        </div>
       </div>
     </div>
 
   </div>
 </div>
 <!--fin blpock 1 -->
-
-
+</form>

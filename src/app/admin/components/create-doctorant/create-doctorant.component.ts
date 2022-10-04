@@ -2,8 +2,8 @@ import { Component, OnInit , VERSION } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map, Observable } from 'rxjs';
 import { Information } from 'src/app/models/information.model';
-import { Contact } from 'src/app/models/contact.model';
 import { UserService } from 'src/app/core/services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,24 +14,15 @@ import { UserService } from 'src/app/core/services/user.service';
 export class CreateDoctorantComponent implements OnInit {
 
 
-  contactForm!:FormGroup;
   informationForm!:FormGroup;
-  notificationForm!:FormGroup;
-  contactPreview$!: Observable<Contact>
   informationPreview$!: Observable<Information>
 
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService ) { }
+  constructor(private formBuilder: FormBuilder, 
+              private userService: UserService,
+              private route:Router ) { }
 
   ngOnInit(): void {
-    this.contactForm = this.formBuilder.group({
-      email: [null],
-      telephone:[null],
-      isBoursier:[null],
-      tauxBourse:[null],
-      about: [null],
-      imageUrl: [null]
-    })
 
     this.informationForm  = this.formBuilder.group({
       name: [null],
@@ -47,18 +38,18 @@ export class CreateDoctorantComponent implements OnInit {
       password:[null],
       passwordConfirmation:[null],
       email:[null],
+      telephone:[null],
+      isBoursier:[null],
+      tauxBourse:[null],
+      about: [null],
     })
 
-    this.contactPreview$ = this.contactForm.valueChanges.pipe(
-      map(formValue => ({
-        ...formValue,
-        createdDate: new Date(),
-      }))
-    )
+
 
     this.informationPreview$ = this.informationForm.valueChanges.pipe(
       map(formValue => ({
         ...formValue,
+        createdDate: new Date(),
       }))
     )
 
@@ -66,9 +57,9 @@ export class CreateDoctorantComponent implements OnInit {
 
 
   onSubmitprofilForm(form:FormGroup) {
-    this.userService.addUser(form.value)
-        // alert('hey')
-    console.log(form.value);
+    this.userService.addUser(form.value).subscribe({
+      next:data => this.route.navigate(['/admin/profil' , data._id , data.role]),
+    })
   }
 
 }

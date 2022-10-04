@@ -35,7 +35,11 @@ var UserService = /** @class */ (function () {
         var req = this.httpClient
             .post(this.endpoint + '/api/users', JSON.stringify(data), this.httpHeader)
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
-        req.subscribe();
+        return req;
+    };
+    UserService.prototype.addPdpUser = function (data) {
+        var req = this.httpClient
+            .post(this.endpoint + '/api/user/pdp', JSON.stringify(data), this.httpHeader);
         return req;
     };
     UserService.prototype.updateUser = function (id, data) {
