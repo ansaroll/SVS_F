@@ -9,7 +9,7 @@ import { trigger , state , style , transition , animate  } from "@angular/animat
     trigger('navbarAnimation', [
       state('inactive' , style({
         // transform:'scale(1)'
-        left : '-100%',
+        left : '100%',
         // opacity : '0'
       })),
       state('active' , style({
@@ -39,6 +39,7 @@ export class NavbarComponent implements OnInit {
 
   onClickLink(linkClicked:string){
     this.linckActive = linkClicked
+    this.navbarState = this.navbarState === 'inactive' ? 'active' : 'inactive'
   }
 
   onHide(){
