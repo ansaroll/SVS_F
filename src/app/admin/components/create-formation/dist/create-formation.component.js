@@ -45,14 +45,12 @@ var CreateFormationComponent = /** @class */ (function () {
                 image.onload = function (rs) {
                     _this.pdpBase64 = e.target.result;
                     _this.imageSaved = true;
-                    alert('heyy sary');
                 };
             };
             reader.readAsDataURL(fileInput.target.files[0]);
         }
     };
     CreateFormationComponent.prototype.onSubmitFormation = function () {
-        console.log(this.formationForm, this.pdpBase64);
         this.coursesService.addCourses(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64 })).subscribe({
             next: function (data) { return console.log({ data: data }); },
             error: function (err) { return console.log({ err: err }); }
