@@ -57,10 +57,6 @@ export class ProfilComponent implements OnInit {
 
   uploadImage(e: Event) {
     this.CreateBase64String(e)
-    const target = e.target as HTMLInputElement;
-    if (target?.files?.[0]) {
-      this.filetoUp = target.files[0]
-    }
   }
 
 
@@ -79,13 +75,10 @@ export class ProfilComponent implements OnInit {
             file:imgBase64Path
           }).subscribe(
             {
-              next: data => {
-                console.log({data})
-              },
-              error: error => { throw new Error(error) }
+            next: data => {console.log({data}) },
+            error: error => { throw new Error(error) }
             }
           )
-          console.log({ imgBase64Path });
         };
       };
       reader.readAsDataURL(fileInput.target.files[0]);

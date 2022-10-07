@@ -42,12 +42,7 @@ var ProfilComponent = /** @class */ (function () {
         this.role = this.route.snapshot.paramMap.get('role');
     };
     ProfilComponent.prototype.uploadImage = function (e) {
-        var _a;
         this.CreateBase64String(e);
-        var target = e.target;
-        if ((_a = target === null || target === void 0 ? void 0 : target.files) === null || _a === void 0 ? void 0 : _a[0]) {
-            this.filetoUp = target.files[0];
-        }
     };
     ProfilComponent.prototype.CreateBase64String = function (fileInput) {
         var _this = this;
@@ -64,12 +59,9 @@ var ProfilComponent = /** @class */ (function () {
                         userId: _this.userId,
                         file: imgBase64Path
                     }).subscribe({
-                        next: function (data) {
-                            console.log({ data: data });
-                        },
+                        next: function (data) { console.log({ data: data }); },
                         error: function (error) { throw new Error(error); }
                     });
-                    console.log({ imgBase64Path: imgBase64Path });
                 };
             };
             reader.readAsDataURL(fileInput.target.files[0]);
