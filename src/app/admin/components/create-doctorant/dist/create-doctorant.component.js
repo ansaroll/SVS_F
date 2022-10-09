@@ -25,6 +25,12 @@ var CreateDoctorantComponent = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.userService = userService;
         this.route = route;
+        this.userSignUp = {
+            name: '',
+            password: '',
+            passwordconfirm: '',
+            email: ''
+        };
     }
     CreateDoctorantComponent.prototype.ngOnInit = function () {
         this.informationForm = this.formBuilder.group({
@@ -44,9 +50,12 @@ var CreateDoctorantComponent = /** @class */ (function () {
             telephone: [null],
             isBoursier: [null],
             tauxBourse: [null],
-            about: [null]
+            about: [null],
+            poste: [null],
+            im: [null],
+            role: ["doctorant"]
         });
-        this.informationPreview$ = this.informationForm.valueChanges.pipe(rxjs_1.map(function (formValue) { return (__assign(__assign({}, formValue), { createdDate: new Date() })); }));
+        this.informationPreview$ = this.informationForm.valueChanges.pipe(rxjs_1.map(function (formValue) { return (__assign(__assign({}, formValue), { createdAt: new Date() })); }));
     };
     CreateDoctorantComponent.prototype.onSubmitprofilForm = function (form) {
         var _this = this;
@@ -54,6 +63,9 @@ var CreateDoctorantComponent = /** @class */ (function () {
             next: function (data) { return _this.route.navigate(['/admin/profil', data._id, data.role]); }
         });
     };
+    __decorate([
+        core_1.Input()
+    ], CreateDoctorantComponent.prototype, "userSignUp");
     CreateDoctorantComponent = __decorate([
         core_1.Component({
             selector: 'app-create-doctorant',

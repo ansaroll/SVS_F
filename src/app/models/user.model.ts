@@ -7,7 +7,7 @@ export class User {
   firstName?: string;
   nationality?: string;
   gender?: string;
-  dateOfBirth?: string;
+  dateofBirth?: string;
   yearBacc?: string;
   adress?: string;
   cin?: string;
@@ -22,7 +22,9 @@ export class User {
   pictureUrl?:string;
   updatedAt?: Date;
   passwordConfirmation?: string;
-  role?: "doctorant" | "prof" | "admin"
+  role?: "doctorant" | "prof" | "admin";
+  poste?: string;
+  im?: string;
 }
 
 

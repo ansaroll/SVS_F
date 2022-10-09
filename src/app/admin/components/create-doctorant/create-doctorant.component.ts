@@ -1,9 +1,9 @@
-import { Component, OnInit , VERSION } from '@angular/core';
+import { Component, OnInit , VERSION  , Input} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map, Observable } from 'rxjs';
-import { Information } from 'src/app/models/information.model';
 import { UserService } from 'src/app/core/services/user.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
 
 
 @Component({
@@ -15,15 +15,24 @@ export class CreateDoctorantComponent implements OnInit {
 
 
   informationForm!:FormGroup;
-  informationPreview$!: Observable<Information>
+  informationPreview$!: Observable<User>
+
+  
+  @Input() userSignUp:any = {
+    name:'',
+    password:'',
+    passwordconfirm:'',
+    email:'',
+  }
 
 
-  constructor(private formBuilder: FormBuilder, 
+  constructor(private formBuilder: FormBuilder,
               private userService: UserService,
               private route:Router ) { }
 
   ngOnInit(): void {
 
+    
     this.informationForm  = this.formBuilder.group({
       name: [null],
       firstName: [null],
@@ -42,6 +51,9 @@ export class CreateDoctorantComponent implements OnInit {
       isBoursier:[null],
       tauxBourse:[null],
       about: [null],
+      poste:[null],
+      im: [null],
+      role:["doctorant"]
     })
 
 
@@ -49,7 +61,7 @@ export class CreateDoctorantComponent implements OnInit {
     this.informationPreview$ = this.informationForm.valueChanges.pipe(
       map(formValue => ({
         ...formValue,
-        createdDate: new Date(),
+        createdAt: new Date(),
       }))
     )
 

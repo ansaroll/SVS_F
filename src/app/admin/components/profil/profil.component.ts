@@ -20,7 +20,7 @@ export class ProfilComponent implements OnInit {
   percentDone: number = 0;
   uploadSuccess: boolean = false;
   isImageSaved: boolean = false;
-  cardImageBase64: string | undefined = "./assets/profils/rolland.jpg";
+  cardImageBase64: string | undefined = undefined;
   user: User = {}
 
   fileName = '';

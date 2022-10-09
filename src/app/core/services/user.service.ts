@@ -12,7 +12,7 @@ export class UserService {
   endpoint = environment.apiUrl
   constructor(private httpClient:HttpClient) {}
 
-  httpHeader = {
+httpHeader = {
     headers: new HttpHeaders({
       'Content-Type':'application/json',
     })

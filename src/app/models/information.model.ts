@@ -14,6 +14,18 @@ export class Information {
   tauxBourse!: string;
   about!: string;
   createdDate!: Date;
+  firstName!: string;
+  nationality!: string;
+  gender!: string;
+  dateofBirth !: string;
+  yearBacc!: string;
+  codeDoubling!: string;
+  password!: string;
+  passwordConfirmation!: string;
+  email!: string;
+  role!:"doctorant" | "prof" | "admin";
+  poste?: string;
+  im?: string;
 }
 
 
