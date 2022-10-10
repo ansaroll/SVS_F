@@ -37,9 +37,7 @@ var LoginComponent = /** @class */ (function () {
                 }
             },
             error: function (err) {
-                if (err.status === 401) {
-                    _this.unAuthorized = true;
-                }
+                _this.unAuthorized = true;
             }
         });
         // this.router.navigateByUrl('/admin')

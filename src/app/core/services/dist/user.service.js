@@ -22,8 +22,8 @@ var UserService = /** @class */ (function () {
             })
         };
     }
-    UserService.prototype.getUsers = function () {
-        return this.httpClient.get(this.endpoint + '/api/users')
+    UserService.prototype.getUsers = function (data) {
+        return this.httpClient.get(this.endpoint + '/api/users', { params: data })
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     UserService.prototype.getSingleUser = function (id) {

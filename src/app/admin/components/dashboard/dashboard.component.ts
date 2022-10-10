@@ -9,10 +9,10 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient, private userService:UserService) {}
+  constructor(private userService:UserService) {}
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe({next:data => console.log({data}) , error: err => console.log({err})})
+    this.userService.getUsers({role:'doctorant'}).subscribe({next:data => console.log({data}) , error: err => console.log({err})})
   }
 
 }

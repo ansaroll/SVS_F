@@ -6,10 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.ListDoctorantComponent = void 0;
+exports.ListProfComponent = void 0;
 var core_1 = require("@angular/core");
-var ListDoctorantComponent = /** @class */ (function () {
-    function ListDoctorantComponent(userService, router) {
+var ListProfComponent = /** @class */ (function () {
+    function ListProfComponent(userService, router) {
         var _this = this;
         this.userService = userService;
         this.router = router;
@@ -19,20 +19,22 @@ var ListDoctorantComponent = /** @class */ (function () {
             _this.currentUser = user;
         };
     }
-    ListDoctorantComponent.prototype.ngOnInit = function () {
+    ListProfComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getUsers({ role: 'doctorant' }).subscribe({ next: function (data) {
+        this.userService.getUsers({ role: 'prof' }).subscribe({
+            next: function (data) {
                 _this.users = data;
                 _this.currentUser = data[0];
-            }, error: function (err) { return console.log({ err: err }); } });
+            }, error: function (err) { return console.log({ err: err }); }
+        });
     };
-    ListDoctorantComponent = __decorate([
+    ListProfComponent = __decorate([
         core_1.Component({
-            selector: 'app-list-doctorant',
-            templateUrl: './list-doctorant.component.html',
-            styleUrls: ['./list-doctorant.component.scss']
+            selector: 'app-list-prof',
+            templateUrl: './list-prof.component.html',
+            styleUrls: ['./list-prof.component.scss']
         })
-    ], ListDoctorantComponent);
-    return ListDoctorantComponent;
+    ], ListProfComponent);
+    return ListProfComponent;
 }());
-exports.ListDoctorantComponent = ListDoctorantComponent;
+exports.ListProfComponent = ListProfComponent;

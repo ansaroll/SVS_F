@@ -18,8 +18,9 @@ httpHeader = {
     })
   };
 
-  getUsers():Observable<Partial<User>[]> {
-    return this.httpClient.get<Partial<User>[]>(this.endpoint+'/api/users')
+  getUsers(data:{role:string}) {
+    return this.httpClient.get<Partial<User>[]>(
+      this.endpoint+'/api/users', {params:data})
     .pipe(retry(1), catchError(this.processError));
   }
 

@@ -42,9 +42,7 @@ export class LoginComponent implements OnInit {
                         }
                       },
                       error: (err) => {
-                        if(err.status === 401) {
                           this.unAuthorized = true
-                        }
                       }
                     })
     // this.router.navigateByUrl('/admin')

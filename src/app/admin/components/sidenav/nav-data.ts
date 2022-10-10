@@ -24,35 +24,7 @@ export const navbarData:INavbarData[] = [
   {
     routerLink : 'database',
     icon : 'fa-solid fa-database',
-    label : 'Base de donnees',
-    items:[
-      {
-        routerLink : 'database/doctorants',
-        label : 'Doctorants',
-        // items:[
-        //   {
-        //     routerLink : 'database/doctorants',
-        //     label : 'Doctorants'
-        //   },
-        //   {
-        //     routerLink : 'database/staffs',
-        //     label : 'Staffs'
-        //   },
-        //   {
-        //     routerLink : 'database/profs',
-        //     label : 'Profs'
-        //   },
-        // ]
-      },
-      {
-        routerLink : 'database/staffs',
-        label : 'Staffs'
-      },
-      {
-        routerLink : 'database/profs',
-        label : 'Profs'
-      },
-    ]
+    label : 'Base de donnees'
   },
   {
     routerLink : '',

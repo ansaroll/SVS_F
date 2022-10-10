@@ -6,10 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.ListDoctorantComponent = void 0;
+exports.ListStaffComponent = void 0;
 var core_1 = require("@angular/core");
-var ListDoctorantComponent = /** @class */ (function () {
-    function ListDoctorantComponent(userService, router) {
+var ListStaffComponent = /** @class */ (function () {
+    function ListStaffComponent(userService, router) {
         var _this = this;
         this.userService = userService;
         this.router = router;
@@ -19,20 +19,22 @@ var ListDoctorantComponent = /** @class */ (function () {
             _this.currentUser = user;
         };
     }
-    ListDoctorantComponent.prototype.ngOnInit = function () {
+    ListStaffComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getUsers({ role: 'doctorant' }).subscribe({ next: function (data) {
+        this.userService.getUsers({ role: 'admin' }).subscribe({
+            next: function (data) {
                 _this.users = data;
                 _this.currentUser = data[0];
-            }, error: function (err) { return console.log({ err: err }); } });
+            }, error: function (err) { return console.log({ err: err }); }
+        });
     };
-    ListDoctorantComponent = __decorate([
+    ListStaffComponent = __decorate([
         core_1.Component({
-            selector: 'app-list-doctorant',
-            templateUrl: './list-doctorant.component.html',
-            styleUrls: ['./list-doctorant.component.scss']
+            selector: 'app-list-staff',
+            templateUrl: './list-staff.component.html',
+            styleUrls: ['./list-staff.component.scss']
         })
-    ], ListDoctorantComponent);
-    return ListDoctorantComponent;
+    ], ListStaffComponent);
+    return ListStaffComponent;
 }());
-exports.ListDoctorantComponent = ListDoctorantComponent;
+exports.ListStaffComponent = ListStaffComponent;
