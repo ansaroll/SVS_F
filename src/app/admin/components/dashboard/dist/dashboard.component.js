@@ -9,11 +9,18 @@ exports.__esModule = true;
 exports.DashboardComponent = void 0;
 var core_1 = require("@angular/core");
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(userService) {
-        this.userService = userService;
+    function DashboardComponent(statsService) {
+        this.statsService = statsService;
+        this.stats = {
+            coursesCount: 0,
+            doctorantCount: 0,
+            profCount: 0,
+            staffCount: 0
+        };
     }
     DashboardComponent.prototype.ngOnInit = function () {
-        this.userService.getUsers({ role: 'doctorant' }).subscribe({ next: function (data) { return console.log({ data: data }); }, error: function (err) { return console.log({ err: err }); } });
+        var _this = this;
+        this.statsService.getStats().subscribe({ next: function (data) { return _this.stats = data; }, error: function (err) { return console.log({ err: err }); } });
     };
     DashboardComponent = __decorate([
         core_1.Component({

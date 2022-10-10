@@ -1,97 +1,22 @@
-<div class="p-dashboard">
 
+<div class="md:pt-8 pt-4 relative sm:flex items-center justify-center">
+  <img src="https://i.ibb.co/KjrPCyW/map.png" alt="world map image" class="w-full xl:h-full h-96 object-cover object-fill sm:block hidden" />
+  <img src="https://i.ibb.co/SXKj9Mf/map-bg.png" alt="mobile-image" class="sm:hidden -mt-10 block w-full h-96 object-cover object-fill absolute z-0" />
 
-<p class="text-3xl">Tableau de Bord</p>
-
-<div class="card">
-  <div class="card-head">
-
+  <div class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-20 sm:mt-0 mt-4 left-0 xl:ml-56 sm:ml-12 xl:-mt-40 sm:-mt-12">
+      <p class="text-3xl font-semibold text-gray-800">{{ stats.coursesCount }}</p>
+      <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Total des Formations</p>
   </div>
-  <div class="card-body">
-    <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-    Id, accusamus. Suscipit nam commodi in ducimus, enim minima nostrum iure facere! -->
-    <div class="pt-4">
-
-
-
-
-
-            <!-- This requires Tailwind CSS v2.0+ , pour attendre la page de tablea de bord officielle -->
-            <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-              <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>
-                <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details and application.</p>
-              </div>
-              <div class="border-t border-gray-200">
-                <dl>
-                  <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-500">Full name</dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Margot Foster</dd>
-                  </div>
-                  <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-500">Application for</dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Backend Developer</dd>
-                  </div>
-                  <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-500">Email address</dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">margotfoster@example.com</dd>
-                  </div>
-                  <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-500">Salary expectation</dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">$120,000</dd>
-                  </div>
-                  <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-500">About</dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>
-                  </div>
-                  <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                    <dt class="text-sm font-medium text-gray-500">Attachments</dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                      <ul role="list" class="border border-gray-200 rounded-md divide-y divide-gray-200">
-                        <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-                          <div class="w-0 flex-1 flex items-center">
-                            <!-- Heroicon name: solid/paper-clip -->
-                            <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="ml-2 flex-1 w-0 truncate"> resume_back_end_developer.pdf </span>
-                          </div>
-                          <div class="ml-4 flex-shrink-0">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
-                          </div>
-                        </li>
-                        <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-                          <div class="w-0 flex-1 flex items-center">
-                            <!-- Heroicon name: solid/paper-clip -->
-                            <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="ml-2 flex-1 w-0 truncate"> coverletter_back_end_developer.pdf </span>
-                          </div>
-                          <div class="ml-4 flex-shrink-0">
-                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
-                          </div>
-                        </li>
-                      </ul>
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
-
-
-
-
-
-
-
-    </div>
-
+  <div class="shadow-lg xl:p-6 p-4 w-48 sm:w-auto w-full bg-white sm:absolute relative z-20 sm:mt-0 mt-4 xl:mt-100 sm:mt-56 xl:-ml-0 sm:-ml-12">
+      <p class="text-3xl font-semibold text-gray-800">{{ stats.doctorantCount }}</p>
+      <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Nombre des doctorants en cours</p>
   </div>
+  <div class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-20 md:mt-0 sm:-mt-5 mt-4 right-0 xl:mr-56 sm:mr-24">
+      <p class="text-3xl font-semibold text-gray-800">{{ stats.profCount }}</p>
+      <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Nombre des Professeurs</p>
+  </div>
+  <div class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-20 sm:mt-0 top-0 mt-24 xl:mt-12 sm:-mt-5 mt-8 xl:mr-42 sm:mr-12">
+    <p class="text-3xl font-semibold text-gray-800">{{ stats.staffCount }}</p>
+    <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Nombres des personnels administartifs</p>
 </div>
-
-
-
-
-
 </div>

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/core/services/user.service';
+import { StatsService } from 'src/app/core/services/stats.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +9,22 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private userService:UserService) {}
+ stats:{
+    coursesCount: number;
+    doctorantCount: number;
+    profCount: number;
+    staffCount: number;
+} = {
+  coursesCount: 0,
+  doctorantCount: 0,
+  profCount: 0,
+  staffCount: 0
+}
+
+  constructor(private statsService:StatsService) {}
 
   ngOnInit(): void {
-    this.userService.getUsers({role:'doctorant'}).subscribe({next:data => console.log({data}) , error: err => console.log({err})})
+    this.statsService.getStats().subscribe({next:data => this.stats = data , error:err => console.log({err})})
   }
 
 }
