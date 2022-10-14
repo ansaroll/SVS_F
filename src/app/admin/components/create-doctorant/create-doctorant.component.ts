@@ -17,7 +17,7 @@ export class CreateDoctorantComponent implements OnInit {
   informationForm!:FormGroup;
   informationPreview$!: Observable<User>
 
-  
+
   @Input() userSignUp:any = {
     name:'',
     password:'',
@@ -32,7 +32,7 @@ export class CreateDoctorantComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
+
     this.informationForm  = this.formBuilder.group({
       name: [null],
       firstName: [null],

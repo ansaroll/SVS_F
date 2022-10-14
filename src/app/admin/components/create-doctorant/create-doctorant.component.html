@@ -9,7 +9,7 @@
 <form 
 name="form"
 #f="ngForm"
-(ngSubmit)="f.form.valid && onSubmitprofilForm(informationForm)" [formGroup]="informationForm">
+(ngSubmit)="onSubmitprofilForm(informationForm)" [formGroup]="informationForm">
   <!-- debut blpock 2-->
   <div class="mt-10 sm:mt-0" id="form-creation">
     <div class="md:grid md:grid-cols-4 md:gap-6">
@@ -28,9 +28,9 @@ name="form"
                 <input  [(ngModel)]="userSignUp.name" #name type="text" name="name" formControlName="name" id="name"
                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                   autocomplete="off" required>
-                  <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="name['required']! && f.submitted">
+                  <!-- <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="name['required']! && f.submitted">
                     "Ce champ est requis"
-                  </div>
+                  </div> -->
               </div>
 
               <div class="col-span-6 sm:col-span-3">
@@ -89,27 +89,27 @@ name="form"
                 <input  [(ngModel)]="userSignUp.password" #password title="password" type="text" name="dtn" formControlName="password" id="mdp" autocomplete="off"
                   required
                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                  <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="password['required']! && f.submitted">
+                  <!-- <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="password['required']! && f.submitted">
                     "Ce champ est requis"
-                  </div>
+                  </div> -->
                 </div>
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="cmdp" class="block text-sm font-medium text-gray-700">Confirmation mot de passe</label>
                 <input  [(ngModel)]="userSignUp.passwordconfirm" #passwordconfirm title="passwordconfirm" id="cmdp" type="text" required formControlName="passwordConfirmation"
                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                  <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="passwordconfirm['required']! && f.submitted">
+                  <!-- <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="passwordconfirm['required']! && f.submitted">
                     "Ce champ est requis"
-                  </div>
+                  </div> -->
                 </div>
 
               <div class="col-span-6">
                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                 <input  [(ngModel)]="userSignUp.email" #email type="email" name="email" formControlName="email" id="email" required
                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                  <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="email['required']! && f.submitted">
+                  <!-- <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="email['required']! && f.submitted">
                     "Ce champ est requis"
-                  </div>
+                  </div> -->
                 </div>
 
               <div class="col-span-6">

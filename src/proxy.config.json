@@ -1,0 +1,9 @@
+{
+  "/apidead/*":{
+    "target": "https://api.deadsimplechat.com",
+    "secure": false,
+    "changeOrigin": false,
+    "logLevel": "debug"
+    
+  }
+}
