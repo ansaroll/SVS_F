@@ -13,6 +13,7 @@ var TokenService = /** @class */ (function () {
         this.saveToken = function (token) {
             localStorage.setItem('accessToken', token.accessToken);
             localStorage.setItem('refreshToken', token.refreshToken);
+            localStorage.setItem('userIdConnected', token.userIdConneted);
         };
         this.isLogged = function () {
             var accessToken = localStorage.getItem('accessToken');
@@ -21,10 +22,14 @@ var TokenService = /** @class */ (function () {
         this.clearToken = function () {
             localStorage.removeItem('accessToken');
             localStorage.removeItem('refreshToken');
+            localStorage.removeItem('userIdConnected');
             window.location.reload();
         };
         this.getToken = function () {
             return localStorage.getItem('accessToken');
+        };
+        this.getUserIdConnected = function () {
+            return localStorage.getItem('userIdConnected');
         };
     }
     TokenService = __decorate([

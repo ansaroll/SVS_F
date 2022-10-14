@@ -11,6 +11,7 @@ export class TokenService {
   saveToken = (token:IToken):void  => {
     localStorage.setItem('accessToken' , token.accessToken)
     localStorage.setItem('refreshToken' , token.refreshToken)
+    localStorage.setItem('userIdConnected' , token.userIdConneted)
   }
 
   isLogged = () : boolean => {
@@ -21,10 +22,16 @@ export class TokenService {
   clearToken = () => {
       localStorage.removeItem('accessToken')
       localStorage.removeItem('refreshToken')
+      localStorage.removeItem('userIdConnected')
+
       window.location.reload()
   }
 
   getToken = () : string | null => {
     return localStorage.getItem('accessToken')
+  }
+
+  getUserIdConnected = () : string | null => {
+    return localStorage.getItem('userIdConnected')
   }
 }
