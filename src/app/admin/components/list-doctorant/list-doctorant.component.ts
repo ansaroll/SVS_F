@@ -19,7 +19,7 @@ export class ListDoctorantComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getUsers({role:'doctorant'}).subscribe({next:data => {
       this.users = data
-      this.currentUser = data[0]    
+      this.currentUser = data[0]
     } , error: err => console.log({err})})
   }
 
