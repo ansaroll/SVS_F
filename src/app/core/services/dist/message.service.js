@@ -22,8 +22,8 @@ var MessageService = /** @class */ (function () {
             })
         };
     }
-    MessageService.prototype.getMessages = function (data) {
-        return this.httpClient.get(this.endpoint + '/api/message', { params: data })
+    MessageService.prototype.getMessages = function () {
+        return this.httpClient.get(this.endpoint + '/api/messages')
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     MessageService.prototype.getSingleMessage = function (id) {

@@ -3,6 +3,7 @@ export class Message {
   expName?: string;
   // destId?: string;
   isAdmin?: boolean;
+  isFile?: boolean;
   content?: string;
   createdAt?: Date;
   updatedAt?: Date;

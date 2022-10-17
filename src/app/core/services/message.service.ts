@@ -18,9 +18,9 @@ httpHeader = {
     })
   };
 
-  getMessages(data:{role:string}) {
+  getMessages() {
     return this.httpClient.get<Partial<Message>[]>(
-      this.endpoint+'/api/message', {params:data})
+      this.endpoint+'/api/messages')
     .pipe(retry(1), catchError(this.processError));
   }
 
