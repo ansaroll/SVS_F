@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder } from '@angular/forms';
 import { MessageService } from 'src/app/core/services/message.service';
@@ -15,18 +16,19 @@ export class ChatsComponent implements OnInit {
   messages:Message[] = []
   isFileSaved: boolean = false;
   fileBase64: string | undefined = undefined;
+  file!:any
 
   constructor(private messageService:MessageService , private tokenService: TokenService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder , private http:HttpClient) { }
               messageForm!:FormGroup;
-  userIdConnected: string | null = null
+  userIdConnected: string | undefined = undefined
 
   ngOnInit(): void {
     this.messageService.getMessages().subscribe({
       next:data => this.messages = data,
       error:err => console.log({err})
     })
-    this.userIdConnected = this.tokenService.getUserIdConnected()
+    this.userIdConnected = this.tokenService.getUserIdConnected() || 'Admin'
     this.messageForm = this.formBuilder.group({
       content: [null],
       isFile:[false]
@@ -53,27 +55,31 @@ export class ChatsComponent implements OnInit {
     })
   }
 
-  uploadFile(fileInput: any) {
-    console.log({fileInput})
-    if (fileInput.target.files && fileInput.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-          const fileBase64Path = e.target.result;
-          this.fileBase64 = fileBase64Path;
-          this.isFileSaved = true;
-          this.messageService.addMessage({
-            content:this.fileBase64,
-            expId: this.userIdConnected,
-            isAdmin: true,
-            isFile:true,
-            expName: 'Admin',
-          }).subscribe({
-            next:() => this.getMessages(),
-            error:err => console.log({err})
-          })
-      };
-      reader.readAsDataURL(fileInput.target.files[0]);
-    }
+
+  selectFile(event:any){
+    const file = event.target.files[0]
+    this.file = file
+    console.log({file})
+  }
+
+  onSubmit(){
+    const formData = new FormData()
+    formData.append('file' , this.file)
+    formData.append('expName' , 'Admin')
+    formData.append('isAdmin' , 'true')
+    formData.append('isFile' , 'true')
+    formData.append('expId' , this.userIdConnected!)
+    this.http.post<any>("http://localhost:1337/api/files", formData).subscribe({
+      next:() => this.getMessages(),
+      error:err => console.log({err})
+    })
+  }
+
+  onDeleteMessage(_id:string){
+    this.messageService.deleteMessage(_id).subscribe({
+      next:() => this.getMessages(),
+      error:() => this.getMessages()
+    })
   }
 
 }

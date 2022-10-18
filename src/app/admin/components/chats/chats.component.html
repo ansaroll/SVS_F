@@ -64,12 +64,18 @@
                     text-white rounded-full">
                     {{ message.expName }}
                   </span>
-                    <div class="font-medium"></div>
-                    <div *ngIf="!message.isFile">{{ message.content }}</div>
-                    <div *ngIf="message.isFile">
-                      <iframe src={{message.content}} type="application/pdf" title="file"></iframe>
+                    <div *ngIf="!message.isFile" class="py-2">{{ message.content}}</div>
+                    <div *ngIf="message.isFile" class="text-blue-500">
+                      <a data-href="http://localhost:1337/uploads/{{message.content}}" target="_blank" download>{{message.content}}</a>
+                      <img src="http://localhost:1337/uploads/{{message.content}}" alt="" srcset="">
                     </div>
                     <div class="text-sm font-bold">{{ message.createdAt | date :'dd/MM/yy, à HH:mm' }}</div>
+                    <div class="absolute bottom-0 right-0 transform -translate-x-1/2 translate-y-1/2">
+                      <button (click)="onDeleteMessage(message._id!)">
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+
+                    </div>
                   </div>
                 </div>
               </div>
@@ -93,7 +99,10 @@
               <div class="relative w-full">
                 <input title="input" type="text" formControlName="content"
                   class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" />
-                <input title="input" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" id="uploadFile-input" class="hidden" (change)="uploadFile($event)"/>
+                <input title="input" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" id="uploadFile-input" class="hidden" (change)="selectFile($event)"/>
+                <Button (click)="onSubmit()">
+                  UploadFile
+                </Button>
                 <button title="btn"
                   class="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600">
                   <!-- <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -156,10 +165,10 @@
         </div>
       </div>
       <div class="flex flex-col mt-8">
-        <div class="flex flex-row items-center justify-between text-xs">
+        <!-- <div class="flex flex-row items-center justify-between text-xs">
           <span class="font-bold">Meme Specialite</span>
           <span class="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">4</span>
-        </div>
+        </div> -->
 
         <div class="flex flex-row items-center justify-between text-xs mt-6">
           <span class="font-bold">Fichiers</span>

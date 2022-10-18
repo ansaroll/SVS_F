@@ -20,14 +20,15 @@ exports.__esModule = true;
 exports.ChatsComponent = void 0;
 var core_1 = require("@angular/core");
 var ChatsComponent = /** @class */ (function () {
-    function ChatsComponent(messageService, tokenService, formBuilder) {
+    function ChatsComponent(messageService, tokenService, formBuilder, http) {
         this.messageService = messageService;
         this.tokenService = tokenService;
         this.formBuilder = formBuilder;
+        this.http = http;
         this.messages = [];
         this.isFileSaved = false;
         this.fileBase64 = undefined;
-        this.userIdConnected = null;
+        this.userIdConnected = undefined;
     }
     ChatsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -35,7 +36,7 @@ var ChatsComponent = /** @class */ (function () {
             next: function (data) { return _this.messages = data; },
             error: function (err) { return console.log({ err: err }); }
         });
-        this.userIdConnected = this.tokenService.getUserIdConnected();
+        this.userIdConnected = this.tokenService.getUserIdConnected() || 'Admin';
         this.messageForm = this.formBuilder.group({
             content: [null],
             isFile: [false]
@@ -55,28 +56,30 @@ var ChatsComponent = /** @class */ (function () {
             error: function (err) { return console.log({ err: err }); }
         });
     };
-    ChatsComponent.prototype.uploadFile = function (fileInput) {
+    ChatsComponent.prototype.selectFile = function (event) {
+        var file = event.target.files[0];
+        this.file = file;
+        console.log({ file: file });
+    };
+    ChatsComponent.prototype.onSubmit = function () {
         var _this = this;
-        console.log({ fileInput: fileInput });
-        if (fileInput.target.files && fileInput.target.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                var fileBase64Path = e.target.result;
-                _this.fileBase64 = fileBase64Path;
-                _this.isFileSaved = true;
-                _this.messageService.addMessage({
-                    content: _this.fileBase64,
-                    expId: _this.userIdConnected,
-                    isAdmin: true,
-                    isFile: true,
-                    expName: 'Admin'
-                }).subscribe({
-                    next: function () { return _this.getMessages(); },
-                    error: function (err) { return console.log({ err: err }); }
-                });
-            };
-            reader.readAsDataURL(fileInput.target.files[0]);
-        }
+        var formData = new FormData();
+        formData.append('file', this.file);
+        formData.append('expName', 'Admin');
+        formData.append('isAdmin', 'true');
+        formData.append('isFile', 'true');
+        formData.append('expId', this.userIdConnected);
+        this.http.post("http://localhost:1337/api/files", formData).subscribe({
+            next: function () { return _this.getMessages(); },
+            error: function (err) { return console.log({ err: err }); }
+        });
+    };
+    ChatsComponent.prototype.onDeleteMessage = function (_id) {
+        var _this = this;
+        this.messageService.deleteMessage(_id).subscribe({
+            next: function () { return _this.getMessages(); },
+            error: function () { return _this.getMessages(); }
+        });
     };
     ChatsComponent = __decorate([
         core_1.Component({

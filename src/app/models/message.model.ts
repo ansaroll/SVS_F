@@ -1,4 +1,5 @@
 export class Message {
+  _id?: string;
   expId?: string | null;
   expName?: string;
   // destId?: string;

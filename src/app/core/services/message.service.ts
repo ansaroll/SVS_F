@@ -64,7 +64,6 @@ httpHeader = {
   deleteMessage(id: any) {
     return this.httpClient
       .delete<Partial<Message>>(this.endpoint + '/api/message/' + id, this.httpHeader)
-      .pipe(retry(1), catchError(this.processError));
   }
 
   processError(err: any) {

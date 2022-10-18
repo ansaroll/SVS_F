@@ -52,8 +52,7 @@ var MessageService = /** @class */ (function () {
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     MessageService.prototype.deleteMessage = function (id) {
-        return this.httpClient["delete"](this.endpoint + '/api/message/' + id, this.httpHeader)
-            .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
+        return this.httpClient["delete"](this.endpoint + '/api/message/' + id, this.httpHeader);
     };
     MessageService.prototype.processError = function (err) {
         var message = '';
