@@ -17,6 +17,7 @@ export class ChatsComponent implements OnInit {
   isFileSaved: boolean = false;
   fileBase64: string | undefined = undefined;
   file!:any
+  fileName:string = ''
 
   constructor(private messageService:MessageService , private tokenService: TokenService,
               private formBuilder: FormBuilder , private http:HttpClient) { }
@@ -59,6 +60,8 @@ export class ChatsComponent implements OnInit {
   selectFile(event:any){
     const file = event.target.files[0]
     this.file = file
+    this.isFileSaved = true
+    this.fileName = file.name
     console.log({file})
   }
 
@@ -70,7 +73,11 @@ export class ChatsComponent implements OnInit {
     formData.append('isFile' , 'true')
     formData.append('expId' , this.userIdConnected!)
     this.http.post<any>("http://localhost:1337/api/files", formData).subscribe({
-      next:() => this.getMessages(),
+      next:() => {
+        this.getMessages(),
+        this.isFileSaved = false
+        this.messageForm.setValue({})
+      },
       error:err => console.log({err})
     })
   }

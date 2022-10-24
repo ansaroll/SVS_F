@@ -18,8 +18,8 @@ export class CoursesService {
     })
   };
 
-  getCoursess():Observable<Partial<Courses>[]> {
-    return this.httpClient.get<Partial<Courses>[]>(this.endpoint+'/api/courses')
+  getCoursess(data:{coursesId?:string,enabled?:boolean}):Observable<Partial<Courses>[]> {
+    return this.httpClient.get<Partial<Courses>[]>(this.endpoint+'/api/courses', {params:data} )
     .pipe(retry(1), catchError(this.processError));
   }
 
@@ -39,10 +39,10 @@ export class CoursesService {
       return req
   }
 
-  updateCourses(id: any, data: any): Observable<Partial<Courses>> {
+  updateCourses(data: any): Observable<Partial<Courses>> {
     return this.httpClient
       .put<Partial<Courses>>(
-        this.endpoint + '/courses/' + id,
+        this.endpoint + '/api/courses/' + data._id,
         JSON.stringify(data),
         this.httpHeader
       )

@@ -4,4 +4,5 @@ export class Courses {
   description?: string;
   responsible?:string;
   image?: string;
+  enabled?:boolean
 }

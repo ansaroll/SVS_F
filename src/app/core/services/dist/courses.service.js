@@ -22,8 +22,8 @@ var CoursesService = /** @class */ (function () {
             })
         };
     }
-    CoursesService.prototype.getCoursess = function () {
-        return this.httpClient.get(this.endpoint + '/api/courses')
+    CoursesService.prototype.getCoursess = function (data) {
+        return this.httpClient.get(this.endpoint + '/api/courses', { params: data })
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     CoursesService.prototype.getSingleCourses = function (id) {
@@ -37,9 +37,9 @@ var CoursesService = /** @class */ (function () {
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
         return req;
     };
-    CoursesService.prototype.updateCourses = function (id, data) {
+    CoursesService.prototype.updateCourses = function (data) {
         return this.httpClient
-            .put(this.endpoint + '/courses/' + id, JSON.stringify(data), this.httpHeader)
+            .put(this.endpoint + '/api/courses/' + data._id, JSON.stringify(data), this.httpHeader)
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     CoursesService.prototype.deleteCourses = function (id) {

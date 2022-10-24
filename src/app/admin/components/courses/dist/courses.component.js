@@ -15,7 +15,7 @@ var CoursesComponent = /** @class */ (function () {
     }
     CoursesComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.coursesService.getCoursess().subscribe({
+        this.coursesService.getCoursess({}).subscribe({
             next: function (data) {
                 _this.courses = data;
             },

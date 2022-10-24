@@ -50,6 +50,7 @@ const routes: Routes = [
       { path : 'courses' , component : CoursesComponent},
       { path : 'create-user' , component : CreateDoctorantComponent},
       { path : 'create-formation' , component : CreateFormationComponent},
+      { path : 'create-formation/:id' , component : CreateFormationComponent},
       { path : 'createnews' , component : CreateNewsComponent},
     ]
   },

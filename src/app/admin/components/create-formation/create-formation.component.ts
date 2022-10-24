@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
 
 import { CoursesService } from 'src/app/core/services/courses.service';
@@ -17,17 +18,39 @@ export class CreateFormationComponent implements OnInit {
   formationPreview$!: Observable<Courses>
   pdpBase64!:string
   imageSaved:boolean = false
+  isUpdate:boolean = false
 
   constructor(private formBuilder: FormBuilder ,
-              private coursesService: CoursesService) { }
+              private coursesService: CoursesService,
+              private route: ActivatedRoute ,
+              ) { }
 
   ngOnInit(): void {
     this.formationForm = this.formBuilder.group({
       title: [null],
       description:[null],
       responsible:[null],
-      image: [null]
+      image: [null],
+      enabled: false
     })
+    if(this.route.snapshot.paramMap.get('id') != null) {
+      this.isUpdate = true
+      this.coursesService.getSingleCourses(this.route.snapshot.paramMap.get('id')).subscribe({
+        next:data => {
+          this.formationForm.setValue({
+            title:data.title || '',
+            description:data.description || '',
+            responsible:data.responsible || '',
+            image:data.image || '',
+            enabled:data.enabled || false
+          }),
+          this.imageSaved = data.image != undefined,
+          this.pdpBase64 = data.image || ''
+        } ,
+        error:err => console.log({err})
+      })
+      
+    }
 
     this.formationPreview$ = this.formationForm.valueChanges.pipe(
       map(formValue => ({
@@ -60,5 +83,16 @@ export class CreateFormationComponent implements OnInit {
         error:err => console.log({err})
       })
   }
+
+  onUpdateFormation(){    
+    this.coursesService.updateCourses({
+      ...this.formationForm.value,
+      image:this.pdpBase64,
+      _id:this.route.snapshot.paramMap.get('id')
+    }).subscribe({
+      next:data => console.log({data}),
+      error:err => console.log({err})
+    })
+}
 
 }

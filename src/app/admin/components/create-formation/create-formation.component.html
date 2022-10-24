@@ -16,7 +16,12 @@
 
                   <div class="col-span-6 sm:col-span-3">
                     <label for="formationTitle" class="block text-sm font-medium text-gray-700">Titre du Formation *</label>
-                    <input type="text" name="formationTitle" id="formationTitle" autocomplete="off" formControlName="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    <input type="text" name="formationTitle" id="formationTitle" autocomplete="off" formControlName="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block  shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  </div>
+
+                  <div class="col-span-6 sm:col-span-3">
+                    <label for="status" class="block text-sm font-medium text-gray-700">Metre en ligne</label>
+                    <input type="checkbox" name="status" id="status" autocomplete="off" formControlName="enabled" class="mt-1 w-10 h-10 focus:ring-indigo-500 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md">
                   </div>
 
                   <div class="col-span-3 sm:col-span-6">
@@ -49,10 +54,10 @@
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
               <div class="inline-flex justify-center py-2 px-4 "> 
                 <input (change)="uploadImage($event)"
-                id="input-pdp-course" formControlName="pdp" class="hidden" title="pdp" type="file" src="" alt="">
+                id="input-pdp-course" class="hidden" title="pdp" type="file" src="" alt="">
                 <label for="input-pdp-course" class="btn bg-indigo-600 p-2 text-sm font-medium text-white rounded-md cursor:pointer">Ajouter photo</label>
               </div>
-              <button type="submit" (click)="onSubmitFormation()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>
+              <button type="submit" (click)="isUpdate ? onUpdateFormation() : onSubmitFormation()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>
             </div>
 
           </div>
@@ -62,22 +67,24 @@
 
     <!-- Previsualisation du Formation  -->
     <div class="mt-5 md:mt-0 md:col-span-2" *ngIf="formationPreview$ | async as formation">
-      <h1 class="text-3xl p-12">{{ formation.title }}</h1>
+      <div class="border-2 py-4 overflow-scroll {{formation.enabled ? 'border-green-600 rounded-lg' : 'border-gray-600 rounded-lg'}}">
+        <h1 class="text-3xl p-12 font-bold {{formation.enabled ? 'text-green-600' : 'text-gray-600'}}">{{ formation.title }}</h1>
 
 
 
-      <div id="ids" class="p-12">
-
-        <img *ngIf="imageSaved" width="300px" style="float:left; padding:15px;" src={{pdpBase64}} alt="photo-new-course">
-        
-        {{ formation.description }}
-
-      </div>
-
-      <div class="float-right p-8 ">
-        <em>
-          {{ formation.responsible }}
-        </em>
+        <div id="ids" class="p-12">
+  
+          <img *ngIf="imageSaved" width="300px" style="float:left; padding:15px;" src={{pdpBase64}} alt="photo-new-course">
+          
+          {{ formation.description }}
+  
+        </div>
+  
+        <div class="float-right p-8 ">
+          <em>
+            {{ formation.responsible }}
+          </em>
+        </div>
       </div>
 
 

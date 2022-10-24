@@ -97,12 +97,13 @@
             </div>
             <div class="flex-grow ml-4">
               <div class="relative w-full">
-                <input title="input" type="text" formControlName="content"
+                <input title="input" type="text"
+                 formControlName="content"
                   class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10" />
                 <input title="input" type="file" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" id="uploadFile-input" class="hidden" (change)="selectFile($event)"/>
-                <Button (click)="onSubmit()">
+                <!-- <Button (click)="onSubmit()">
                   UploadFile
-                </Button>
+                </Button> -->
                 <button title="btn"
                   class="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600">
                   <!-- <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -114,7 +115,7 @@
               </div>
             </div>
             <div class="ml-4">
-              <button title="btn" (click)="onSendMessage()"
+              <button title="btn" (click)="isFileSaved ? onSubmit() : onSendMessage()"
                 class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
                 <span>Envoyer</span>
                 <span class="ml-2">

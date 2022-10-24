@@ -28,6 +28,7 @@ var ChatsComponent = /** @class */ (function () {
         this.messages = [];
         this.isFileSaved = false;
         this.fileBase64 = undefined;
+        this.fileName = '';
         this.userIdConnected = undefined;
     }
     ChatsComponent.prototype.ngOnInit = function () {
@@ -59,6 +60,8 @@ var ChatsComponent = /** @class */ (function () {
     ChatsComponent.prototype.selectFile = function (event) {
         var file = event.target.files[0];
         this.file = file;
+        this.isFileSaved = true;
+        this.fileName = file.name;
         console.log({ file: file });
     };
     ChatsComponent.prototype.onSubmit = function () {
@@ -70,7 +73,11 @@ var ChatsComponent = /** @class */ (function () {
         formData.append('isFile', 'true');
         formData.append('expId', this.userIdConnected);
         this.http.post("http://localhost:1337/api/files", formData).subscribe({
-            next: function () { return _this.getMessages(); },
+            next: function () {
+                _this.getMessages(),
+                    _this.isFileSaved = false;
+                _this.messageForm.setValue({});
+            },
             error: function (err) { return console.log({ err: err }); }
         });
     };

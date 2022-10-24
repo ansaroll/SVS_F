@@ -21,18 +21,39 @@ exports.CreateFormationComponent = void 0;
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
 var CreateFormationComponent = /** @class */ (function () {
-    function CreateFormationComponent(formBuilder, coursesService) {
+    function CreateFormationComponent(formBuilder, coursesService, route) {
         this.formBuilder = formBuilder;
         this.coursesService = coursesService;
+        this.route = route;
         this.imageSaved = false;
+        this.isUpdate = false;
     }
     CreateFormationComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.formationForm = this.formBuilder.group({
             title: [null],
             description: [null],
             responsible: [null],
-            image: [null]
+            image: [null],
+            enabled: false
         });
+        if (this.route.snapshot.paramMap.get('id') != null) {
+            this.isUpdate = true;
+            this.coursesService.getSingleCourses(this.route.snapshot.paramMap.get('id')).subscribe({
+                next: function (data) {
+                    _this.formationForm.setValue({
+                        title: data.title || '',
+                        description: data.description || '',
+                        responsible: data.responsible || '',
+                        image: data.image || '',
+                        enabled: data.enabled || false
+                    }),
+                        _this.imageSaved = data.image != undefined,
+                        _this.pdpBase64 = data.image || '';
+                },
+                error: function (err) { return console.log({ err: err }); }
+            });
+        }
         this.formationPreview$ = this.formationForm.valueChanges.pipe(rxjs_1.map(function (formValue) { return (__assign(__assign({}, formValue), { createdDate: new Date() })); }));
     };
     CreateFormationComponent.prototype.uploadImage = function (fileInput) {
@@ -52,6 +73,12 @@ var CreateFormationComponent = /** @class */ (function () {
     };
     CreateFormationComponent.prototype.onSubmitFormation = function () {
         this.coursesService.addCourses(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64 })).subscribe({
+            next: function (data) { return console.log({ data: data }); },
+            error: function (err) { return console.log({ err: err }); }
+        });
+    };
+    CreateFormationComponent.prototype.onUpdateFormation = function () {
+        this.coursesService.updateCourses(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64, _id: this.route.snapshot.paramMap.get('id') })).subscribe({
             next: function (data) { return console.log({ data: data }); },
             error: function (err) { return console.log({ err: err }); }
         });
