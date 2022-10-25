@@ -20,26 +20,37 @@ exports.__esModule = true;
 exports.ChatsComponent = void 0;
 var core_1 = require("@angular/core");
 var ChatsComponent = /** @class */ (function () {
-    function ChatsComponent(messageService, tokenService, formBuilder, http) {
+    function ChatsComponent(messageService, tokenService, formBuilder, http, statsService, userService) {
+        var _this = this;
         this.messageService = messageService;
         this.tokenService = tokenService;
         this.formBuilder = formBuilder;
         this.http = http;
+        this.statsService = statsService;
+        this.userService = userService;
         this.messages = [];
         this.isFileSaved = false;
         this.fileBase64 = undefined;
         this.fileName = '';
+        this.idToDelete = '';
+        this.showModal = false;
+        this.statsMessages = {};
+        this.users = [];
+        this.staffs = [];
+        this.currentUser = {};
         this.userIdConnected = undefined;
+        this.selectUser = function (user) {
+            _this.currentUser = user;
+        };
     }
     ChatsComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.messageService.getMessages().subscribe({
-            next: function (data) { return _this.messages = data; },
-            error: function (err) { return console.log({ err: err }); }
-        });
+        this.getMessages();
+        this.getStatsMessages();
+        this.getAllDoctorants();
+        this.getAllStaffs();
         this.userIdConnected = this.tokenService.getUserIdConnected() || 'Admin';
         this.messageForm = this.formBuilder.group({
-            content: [null],
+            content: [''],
             isFile: [false]
         });
     };
@@ -50,10 +61,28 @@ var ChatsComponent = /** @class */ (function () {
             error: function (err) { return console.log({ err: err }); }
         });
     };
+    ChatsComponent.prototype.getStatsMessages = function () {
+        var _this = this;
+        this.statsService.getStatsMessages().subscribe({
+            next: function (data) { return _this.statsMessages = data; },
+            error: function (err) { return console.log({ err: err }); }
+        });
+    };
+    ChatsComponent.prototype.setDeleteMessage = function (id) {
+        this.idToDelete = id;
+        this.showModal = true;
+    };
+    ChatsComponent.prototype.onCancelDelete = function () {
+        this.showModal = false;
+        this.idToDelete = undefined;
+    };
     ChatsComponent.prototype.onSendMessage = function () {
         var _this = this;
         this.messageService.addMessage(__assign(__assign({}, this.messageForm.value), { expId: this.userIdConnected, isAdmin: true, expName: 'Admin' })).subscribe({
-            next: function () { return _this.getMessages(); },
+            next: function () {
+                _this.getMessages();
+                _this.getStatsMessages();
+            },
             error: function (err) { return console.log({ err: err }); }
         });
     };
@@ -62,7 +91,9 @@ var ChatsComponent = /** @class */ (function () {
         this.file = file;
         this.isFileSaved = true;
         this.fileName = file.name;
-        console.log({ file: file });
+        this.messageForm.setValue({
+            content: file.name || 'ok'
+        });
     };
     ChatsComponent.prototype.onSubmit = function () {
         var _this = this;
@@ -75,18 +106,50 @@ var ChatsComponent = /** @class */ (function () {
         this.http.post("http://localhost:1337/api/files", formData).subscribe({
             next: function () {
                 _this.getMessages(),
-                    _this.isFileSaved = false;
-                _this.messageForm.setValue({});
+                    _this.getStatsMessages();
+                _this.isFileSaved = false;
+                _this.messageForm.setValue({
+                    content: ''
+                });
             },
             error: function (err) { return console.log({ err: err }); }
         });
     };
-    ChatsComponent.prototype.onDeleteMessage = function (_id) {
+    ChatsComponent.prototype.onDeleteMessage = function () {
         var _this = this;
-        this.messageService.deleteMessage(_id).subscribe({
-            next: function () { return _this.getMessages(); },
+        this.messageService.deleteMessage(this.idToDelete).subscribe({
+            next: function () {
+                _this.getMessages();
+                _this.showModal = false;
+                _this.idToDelete = undefined;
+            },
             error: function () { return _this.getMessages(); }
         });
+    };
+    ChatsComponent.prototype.getAllDoctorants = function () {
+        var _this = this;
+        this.userService.getUsers({ role: 'doctorant' }).subscribe({ next: function (data) {
+                _this.users = data;
+                _this.currentUser = data[0];
+            }, error: function (err) { return console.log({ err: err }); } });
+    };
+    ChatsComponent.prototype.getAllStaffs = function () {
+        var _this = this;
+        this.userService.getUsers({ role: 'admin' }).subscribe({ next: function (data) {
+                _this.staffs = data;
+            }, error: function (err) { return console.log({ err: err }); } });
+    };
+    ChatsComponent.prototype.icon = function (str) {
+        console.log(str, str.split('.'), str.split('.')[1]);
+        if (str.split('.').pop() == 'pdf')
+            return 'fa-file-pdf text-red-400';
+        if (str.split('.').pop() == 'pptx')
+            return 'fa-file-powerpoint text-red-800';
+        if ((str.split('.').pop() == 'doc') || (str.split('.').pop() == 'docx'))
+            return 'fa-file-word text-blue-700';
+        if ((str.split('.').pop() == 'jpg') || (str.split('.').pop() == 'png') || (str.split('.').pop() == 'jpeg'))
+            return 'fa-file-image text-blue-300';
+        return 'fa-file';
     };
     ChatsComponent = __decorate([
         core_1.Component({

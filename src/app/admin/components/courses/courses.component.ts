@@ -18,6 +18,7 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCourses()
   }
+  
   setDeleteCourse(id:string):void{
     this.idToDelete = id
     this.showModal = true

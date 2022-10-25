@@ -26,6 +26,10 @@ var StatsService = /** @class */ (function () {
         return this.httpClient.get(this.endpoint + '/api/stats')
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
+    StatsService.prototype.getStatsMessages = function () {
+        return this.httpClient.get(this.endpoint + '/api/stats/messages')
+            .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
+    };
     StatsService.prototype.processError = function (err) {
         var message = '';
         if (err.error instanceof ErrorEvent) {

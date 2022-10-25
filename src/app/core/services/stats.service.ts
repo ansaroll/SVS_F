@@ -23,6 +23,12 @@ httpHeader = {
     .pipe(retry(1), catchError(this.processError));
   }
 
+  getStatsMessages() {
+    return this.httpClient.get<{fileCount:number,doctorantMessages:number,adminMessages:number}>(
+      this.endpoint+'/api/stats/messages')
+    .pipe(retry(1), catchError(this.processError));
+  }
+
   processError(err: any) {
     let message = '';
     if (err.error instanceof ErrorEvent) {
