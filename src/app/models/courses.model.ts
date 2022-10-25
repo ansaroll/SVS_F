@@ -1,5 +1,5 @@
 export class Courses {
-  _id?: number;
+  _id?: string;
   title?: string;
   description?: string;
   responsible?:string;

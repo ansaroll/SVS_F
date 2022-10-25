@@ -11,105 +11,83 @@
 
       <div class="grid gap-12 lg:grid-cols-2 grp_course">
 
-        <div *ngFor="let course of courses"  class="p-1 rounded-xl group sm:flex space-x-6 bg-white 
+        <div *ngFor="let course of courses" class="p-1 rounded-xl group sm:flex space-x-6 bg-white
         bg-opacity-50 shadow-xl hover:rounded-2xl
         ">
-          <img
-            src={{course.image}}
-            alt="art cover" loading="lazy" width="1000" height="667"
+          <img src={{course.image}} alt="art cover" loading="lazy" width="1000" height="667"
             class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl hover:scale-105 transition duration-500 ease-in-out">
           <div class="sm:w-7/12 pl-0 p-5">
             <div class="space-y-2">
               <div class="space-y-4">
-                <h4 class="text-2xl font-semibold text-cyan-900">{{course.title}}</h4>
+                <h4
+                  class="text-2xl font-semibold {{course.enabled ? 'text-green-600 animate-bounce' : 'text-cyan-900'}}">
+                  {{course.title}}</h4>
                 <p class="text-gray-600">{{course.description}}</p>
               </div>
               <p>
                 Responsable : <a href="www.tailus.io" class="text-cyan-600">{{course.responsible}}</a>
               </p>
-              <a href="/admin/create-formation/{{course._id}}" class="block w-max text-cyan-600">Read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white 
-                    bg-opacity-50 shadow-xl hover:rounded-2xl
-                    ">
-          <img src="https://th.bing.com/th/id/R.8864e5f202209ea2e7391f519d96003e?rik=fXphrAYd3jq76g&riu=http%3a%2f%2fwww.hauts-de-france.ars.sante.fr%2fsystem%2ffiles%2f2018-04%2fSTSS+1.png&ehk=Bat1Xfifbq8CFH0Q%2fAZ1tQ8nEvV3xgvOT%2f7prrhM3rk%3d&risl=&pid=ImgRaw&r=0" alt="art cover" loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl hover:scale-105 transition duration-500 ease-in-out">
-          <div class="sm:w-7/12 pl-0 p-5">
-            <div class="space-y-2">
-              <div class="space-y-4">
-                <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
+              <div class="flex flex-row justify-between">
+                <a href="/admin/create-formation/{{course._id}}" class="block w-max text-cyan-600">Voir plus</a>
+                <button *ngIf="!course.enabled" 
+                (click)="setDeleteCourse(course._id!)"
+                class="text-red-600 rounded-lg bg-red-100 p-1 px-2 hover:bg-red-200">
+                  Supprimer
+                </button>
+
               </div>
-              <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
             </div>
           </div>
         </div>
 
-        <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-          <img src="https://th.bing.com/th/id/R.964876ad1991928651a924ca356c76b8?rik=4lXgDV14inUNYw&riu=http%3a%2f%2fextranet.santemonteregie.qc.ca%2fuserfiles%2fimage%2fsante-publique%2fpromotion-prevention%2fN2-180-Promotion-prevention.jpg&ehk=GLChut8KZeTxEtnoUsTWs1PR1N2mMMJvltuwNGdh8Vo%3d&risl=&pid=ImgRaw&r=0" alt="art cover" loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-          <div class="sm:w-7/12 pl-0 p-5">
-            <div class="space-y-2">
-              <div class="space-y-4">
-                <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-              </div>
-              <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-            </div>
-          </div>
+        <!-- <div class="">
+          <button type="button"
+            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+            Vertically centered modal
+          </button>
         </div> -->
 
-        <!-- <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-          <img src="https://th.bing.com/th/id/R.f52a72b3723a1073ef558ea5a9c97582?rik=YR%2fy9FhjqW%2b1Aw&pid=ImgRaw&r=0" alt="art cover" loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-          <div class="sm:w-7/12 pl-0 p-5">
-            <div class="space-y-2">
-              <div class="space-y-4">
-                <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
+
+
+        <div class="modal fade {{showModal ? 'block' :'hidden'}} fixed top-1/3 left-1/2 outline-none overflow-x-hidden overflow-y-auto drop-shadow-2xl shadow-2xl"
+          id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" aria-hidden="true"
+          role="presentation">
+          <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+            <div
+              class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+              <div
+                class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-white rounded-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+                  Confirmation
+                </h5>
+                <button type="button"
+                  class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                  data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
+              <div class="modal-body relative p-4">
+                <p>
+                  Voulez-vous vraiment supprimer cette formation ?
+                </p>
+              </div>
+              <div
+                class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button"
+                  (click)="onCancelDelete()"
+                  class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                  data-bs-dismiss="modal">
+                  Annuler
+                </button>
+                <button type="button"
+                  (click)="onDeleteCourse()"
+                  class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+                  Confirmer
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-          <img src="https://th.bing.com/th/id/R.789df646f5d2a448c18eb34e555f8ebb?rik=gxv72hFxEIVgog&pid=ImgRaw&r=0" alt="art cover" loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-          <div class="sm:w-7/12 pl-0 p-5">
-            <div class="space-y-2">
-              <div class="space-y-4">
-                <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-              </div>
-              <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-            </div>
-          </div>
-        </div> -->
-<!-- 
-        <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-          <img src="https://th.bing.com/th/id/R.cee9ab44a08ed822b87251eb3d536b78?rik=TLr2jRZec%2b49ig&pid=ImgRaw&r=0" alt="art cover" loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-          <div class="sm:w-7/12 pl-0 p-5">
-            <div class="space-y-2">
-              <div class="space-y-4">
-                <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-              </div>
-              <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-          <img src="https://cdn.futura-sciences.com/buildsv6/images/wide1920/5/c/2/5c2a97eb4a_115244_02-869.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-          <div class="sm:w-7/12 pl-0 p-5">
-            <div class="space-y-2">
-              <div class="space-y-4">
-                <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-              </div>
-              <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-            </div>
-          </div>
-        </div> -->
 
 
 

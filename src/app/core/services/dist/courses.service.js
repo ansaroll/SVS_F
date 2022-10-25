@@ -43,8 +43,8 @@ var CoursesService = /** @class */ (function () {
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     CoursesService.prototype.deleteCourses = function (id) {
-        return this.httpClient["delete"](this.endpoint + '/courses/' + id, this.httpHeader)
-            .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
+        return this.httpClient["delete"](this.endpoint + '/api/courses/' + id, this.httpHeader)
+            .pipe(operators_1.catchError(this.processError));
     };
     CoursesService.prototype.processError = function (err) {
         var message = '';

@@ -12,12 +12,37 @@ var CoursesComponent = /** @class */ (function () {
     function CoursesComponent(coursesService) {
         this.coursesService = coursesService;
         this.courses = [];
+        this.idToDelete = '';
+        this.showModal = false;
     }
     CoursesComponent.prototype.ngOnInit = function () {
+        this.getAllCourses();
+    };
+    CoursesComponent.prototype.setDeleteCourse = function (id) {
+        this.idToDelete = id;
+        this.showModal = true;
+    };
+    CoursesComponent.prototype.onCancelDelete = function () {
+        this.showModal = false;
+        this.idToDelete = undefined;
+    };
+    CoursesComponent.prototype.getAllCourses = function () {
         var _this = this;
         this.coursesService.getCoursess({}).subscribe({
             next: function (data) {
                 _this.courses = data;
+            },
+            error: function (err) { return console.log({ err: err }); }
+        });
+    };
+    CoursesComponent.prototype.onDeleteCourse = function () {
+        var _this = this;
+        this.coursesService.deleteCourses(this.idToDelete).subscribe({
+            next: function (data) {
+                console.log({ data: data });
+                _this.showModal = false;
+                _this.idToDelete = undefined;
+                _this.getAllCourses();
             },
             error: function (err) { return console.log({ err: err }); }
         });

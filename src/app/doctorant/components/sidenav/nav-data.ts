@@ -4,11 +4,11 @@ export const navbarData = [
     icon : 'fa-solid fa-user-doctor',
     label : 'Profil'
   },
-  {
-    routerLink : 'calendar',
-    icon : 'fa-solid fa-calendar-days',
-    label : 'Calendrier'
-  },
+  // {
+  //   routerLink : 'calendar',
+  //   icon : 'fa-solid fa-calendar-days',
+  //   label : 'Calendrier'
+  // },
   {
     routerLink : 'chats',
     icon : 'fa-brands fa-rocketchat',

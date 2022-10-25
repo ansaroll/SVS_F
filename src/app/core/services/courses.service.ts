@@ -48,10 +48,11 @@ export class CoursesService {
       )
       .pipe(retry(1), catchError(this.processError));
   }
+  
   deleteCourses(id: any) {
     return this.httpClient
-      .delete<Partial<Courses>>(this.endpoint + '/courses/' + id, this.httpHeader)
-      .pipe(retry(1), catchError(this.processError));
+      .delete<Partial<Courses>>(this.endpoint + '/api/courses/' + id, this.httpHeader)
+      .pipe(catchError(this.processError));
   }
 
   processError(err: any) {
