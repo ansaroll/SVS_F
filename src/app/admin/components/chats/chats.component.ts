@@ -83,6 +83,9 @@ export class ChatsComponent implements OnInit {
       next:() => {
         this.getMessages()
         this.getStatsMessages()
+        this.messageForm.setValue({
+          content:''
+        })
       },
       error:err => console.log({err})
     })

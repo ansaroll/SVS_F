@@ -8,7 +8,9 @@ import { ChatsComponent } from './components/chats/chats.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { ScreenComponent } from './components/screen/screen.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BodyComponent } from './components/body/body.component';
+import { MiniProfilComponent } from './components/mini-profil/mini-profil.component';
 
 
 
@@ -21,11 +23,14 @@ import { BodyComponent } from './components/body/body.component';
     CalendarComponent,
     CoursesComponent,
     ScreenComponent,
-    BodyComponent
+    BodyComponent,
+    MiniProfilComponent
   ],
   imports: [
     CommonModule,
-    DoctorantRoutingModule
+    DoctorantRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class DoctorantModule { }

@@ -1,6 +1,6 @@
 <!-- component -->
 <div class="flex antialiased text-gray-800 py-8">
-  <div class="flex flex-col items-center lg:flex-row w-full overflow-hidden" style="height:95vh">
+  <div id="chats" class="flex flex-col items-center lg:flex-row overflow-hidden" style="height:95vh">
     <!-- sidenav droite -->
     <div class="flex flex-col h-full hidden rounded lg:block py-8 px-4 w-64 bg-white flex-shrink-0">
       <div class="flex flex-row items-start h-12 w-full">
@@ -36,7 +36,7 @@
           <span class="font-bold tex-xl">Les Admins</span>
           <span class="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">7</span>
         </div>
-        <div class="flex flex-col space-y-1 mt-4 -mx-2 h-56 scrollbar scrollbar-thin overflow-y-auto">
+        <div class="flex flex-col space-y-1 mt-4 -mx-2 h-60 scrollbar scrollbar-thin overflow-y-auto">
 
           <div *ngFor="let staf of staffs" class="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2">
             <button 
@@ -62,10 +62,10 @@
           <div class="flex flex-col h-full">
             <div class="grid grid-cols-12 gap-y-2 overflow-scroll scrollbar">
 
-              <div *ngFor="let message of messages" class="col-start-1 col-end-8 p-3 rounded-lg">
-                <div class="flex flex-row items-center">
-                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-purple-600 flex-shrink-0">
-                    A
+              <div *ngFor="let message of messages" class="{{message.isAdmin ? 'col-start-1 col-end-10' : 'col-start-4 col-end-13'}} p-3 rounded-lg " >
+                <div class="flex {{message.isAdmin ? ' flex-row' : ' flex-row-reverse'}} items-center gap-x-2">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-full {{message.isAdmin ? 'bg-purple-600' : 'bg-green-600'}} flex-shrink-0">
+                   {{ message.isAdmin ? 'A' : 'D' }}
                   </div>
                   <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
                     <span *ngIf="message.isAdmin" class="text-xs inline-block py-1 px-2.5 leading-none
@@ -152,7 +152,7 @@
     <!-- Sidenav gauche -->
 
 
-    <div class="flex flex-col h-full rounded py-8 pl-6 pr-6 w-4/5 lg:w-64 bg-white flex-shrink-0">
+    <div class="flex flex-col h-full rounded py-8 px-3 mr-12 w-4/5 lg:w-64 bg-white flex-shrink-0">
       <div class="flex flex-row items-center justify-center h-12 w-full">
         <div class="flex items-center justify-center rounded-2xl text-indigo-700 bg-indigo-100 h-10 w-10">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

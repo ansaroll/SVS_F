@@ -48,7 +48,7 @@ var ChatsComponent = /** @class */ (function () {
         this.getStatsMessages();
         this.getAllDoctorants();
         this.getAllStaffs();
-        this.userIdConnected = this.tokenService.getUserIdConnected() || 'Admin';
+        this.userIdConnected = this.tokenService.getUserIdConnected() || 'Doctorant';
         this.messageForm = this.formBuilder.group({
             content: [''],
             isFile: [false]
@@ -78,13 +78,11 @@ var ChatsComponent = /** @class */ (function () {
     };
     ChatsComponent.prototype.onSendMessage = function () {
         var _this = this;
-        this.messageService.addMessage(__assign(__assign({}, this.messageForm.value), { expId: this.userIdConnected, isAdmin: true, expName: 'Admin' })).subscribe({
+        this.messageService.addMessage(__assign(__assign({}, this.messageForm.value), { expId: this.userIdConnected, isAdmin: false, isFile: false, expName: 'Doctorant' })).subscribe({
             next: function () {
                 _this.getMessages();
                 _this.getStatsMessages();
-                _this.messageForm.setValue({
-                    content: ''
-                });
+                _this.messageForm.reset();
             },
             error: function (err) { return console.log({ err: err }); }
         });
@@ -102,8 +100,8 @@ var ChatsComponent = /** @class */ (function () {
         var _this = this;
         var formData = new FormData();
         formData.append('file', this.file);
-        formData.append('expName', 'Admin');
-        formData.append('isAdmin', 'true');
+        formData.append('expName', 'Doctorant');
+        formData.append('isAdmin', 'false');
         formData.append('isFile', 'true');
         formData.append('expId', this.userIdConnected);
         this.http.post("http://localhost:1337/api/files", formData).subscribe({

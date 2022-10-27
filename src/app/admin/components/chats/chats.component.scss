@@ -23,6 +23,11 @@
 //  .height-chats{
 //    height: 100vh;
 //  }
+#chats{
+  position: absolute;
+  padding-inline:'10px';
+  top: 2;
+}
 
 .chat-body{
   background : #f4f7fa;

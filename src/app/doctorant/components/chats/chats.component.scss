@@ -1,0 +1,27 @@
+#chats{
+  position: absolute;
+  padding-inline:'10px';
+  top: 2;
+}
+.chat-body{
+  background : #f4f7fa;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 20px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #f4f7fa;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #263238;
+  border-radius: 100vh;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c0a0b9;
+}
