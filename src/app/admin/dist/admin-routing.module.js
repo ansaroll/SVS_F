@@ -51,6 +51,7 @@ var routes = [
             { path: 'settings', component: settings_component_1.SettingsComponent },
             { path: 'courses', component: courses_component_1.CoursesComponent },
             { path: 'create-user', component: create_doctorant_component_1.CreateDoctorantComponent },
+            { path: 'create-user/:id/:role', component: create_doctorant_component_1.CreateDoctorantComponent },
             { path: 'create-formation', component: create_formation_component_1.CreateFormationComponent },
             { path: 'create-formation/:id', component: create_formation_component_1.CreateFormationComponent },
             { path: 'createnews', component: create_news_component_1.CreateNewsComponent },

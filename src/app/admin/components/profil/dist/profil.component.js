@@ -44,6 +44,9 @@ var ProfilComponent = /** @class */ (function () {
     ProfilComponent.prototype.uploadImage = function (e) {
         this.CreateBase64String(e);
     };
+    ProfilComponent.prototype.onUpdateProfil = function () {
+        this.router.navigateByUrl("/admin/create-user/" + this.userId + "/" + this.role);
+    };
     ProfilComponent.prototype.CreateBase64String = function (fileInput) {
         var _this = this;
         if (fileInput.target.files && fileInput.target.files[0]) {

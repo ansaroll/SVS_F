@@ -17,10 +17,19 @@ var DashboardComponent = /** @class */ (function () {
             profCount: 0,
             staffCount: 0
         };
+        this.statsMessages = {
+            fileCount: 0,
+            doctorantMessages: 0,
+            adminMessages: 0
+        };
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.statsService.getStats().subscribe({ next: function (data) { return _this.stats = data; }, error: function (err) { return console.log({ err: err }); } });
+        this.statsService.getStatsMessages().subscribe({
+            next: function (data) { return _this.statsMessages = data; },
+            error: function (err) { return console.log({ err: err }); }
+        });
     };
     DashboardComponent = __decorate([
         core_1.Component({

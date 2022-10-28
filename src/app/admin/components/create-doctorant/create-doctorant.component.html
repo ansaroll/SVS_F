@@ -9,7 +9,7 @@
 <form 
 name="form"
 #f="ngForm"
-(ngSubmit)="onSubmitprofilForm(informationForm)" [formGroup]="informationForm">
+(ngSubmit)="isUpdate ? onUpdateProfil(informationForm) : onSubmitprofilForm(informationForm)" [formGroup]="informationForm">
   <!-- debut blpock 2-->
   <div class="mt-10 sm:mt-0" id="form-creation">
     <div class="md:grid md:grid-cols-4 md:gap-6">
@@ -66,7 +66,7 @@ name="form"
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="dtn" class="block text-sm font-medium text-gray-700">Date de naissance</label>
-                <input title="dtn" type="date" name="dtn" formControlName="dateofBirth" id="dtn" autocomplete="off"
+                <input title="dtn" type="date" name="dtn" formControlName="dateOfBirth" id="dtn" autocomplete="off"
                   required
                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
@@ -179,7 +179,7 @@ name="form"
               <p>Nationalite : {{ info.nationality }} , Genre : {{ info.gender }}</p>
             </div>
             <div class="space-y-2">
-              <p>Date de naissance : {{ info.dateofBirth }} </p>
+              <p>Date de naissance : {{ info.dateOfBirth }} </p>
             </div>
             <div class="space-y-2">
               <p>Date d'Obtention Baccalaureat : {{ info.yearBacc }} Serie {{ info.serieBacc }} </p>

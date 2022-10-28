@@ -44,7 +44,7 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.updateUser = function (id, data) {
         return this.httpClient
-            .put(this.endpoint + '/users/' + id, JSON.stringify(data), this.httpHeader)
+            .put(this.endpoint + '/api/users/' + id, JSON.stringify(data), this.httpHeader)
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     UserService.prototype.deleteUser = function (id) {

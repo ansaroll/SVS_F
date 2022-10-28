@@ -21,10 +21,14 @@ exports.CreateDoctorantComponent = void 0;
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
 var CreateDoctorantComponent = /** @class */ (function () {
-    function CreateDoctorantComponent(formBuilder, userService, route) {
+    function CreateDoctorantComponent(formBuilder, userService, router, route) {
         this.formBuilder = formBuilder;
         this.userService = userService;
+        this.router = router;
         this.route = route;
+        this.userId = null;
+        this.role = null;
+        this.isUpdate = false;
         this.userSignUp = {
             name: '',
             password: '',
@@ -33,12 +37,15 @@ var CreateDoctorantComponent = /** @class */ (function () {
         };
     }
     CreateDoctorantComponent.prototype.ngOnInit = function () {
+        // this.userId = this.route.snapshot.paramMap.get('id')
+        // this.role = this.route.snapshot.paramMap.get('role')
+        var _this = this;
         this.informationForm = this.formBuilder.group({
             name: [null],
             firstName: [null],
             nationality: [null],
             gender: [null],
-            dateofBirth: [null],
+            dateOfBirth: [null],
             yearBacc: [null],
             adress: [null],
             cin: [null],
@@ -55,12 +62,48 @@ var CreateDoctorantComponent = /** @class */ (function () {
             im: [null],
             role: ["doctorant"]
         });
+        if (this.route.snapshot.paramMap.get('id') != null) {
+            this.isUpdate = true;
+            this.userService.getSingleUser(this.route.snapshot.paramMap.get('id')).subscribe({
+                next: function (data) {
+                    _this.informationForm.setValue({
+                        name: data.name || '',
+                        firstName: data.firstName || '',
+                        nationality: data.nationality || '',
+                        gender: data.gender || '',
+                        dateOfBirth: data.dateOfBirth || '',
+                        yearBacc: data.yearBacc || 1000,
+                        adress: data.adress || '',
+                        cin: data.cin || '',
+                        serieBacc: data.serieBacc || '',
+                        codeDoubling: data.codeDoubling || '',
+                        password: '',
+                        passwordConfirmation: '',
+                        email: data.email || '',
+                        telephone: data.telephone || '',
+                        isBoursier: data.isBoursier ? true : false,
+                        tauxBourse: data.tauxBourse || 0,
+                        about: data.about || '',
+                        poste: data.poste || '',
+                        im: data.im || '',
+                        role: data.role || ''
+                    });
+                },
+                error: function (err) { return console.log({ err: err }); }
+            });
+        }
         this.informationPreview$ = this.informationForm.valueChanges.pipe(rxjs_1.map(function (formValue) { return (__assign(__assign({}, formValue), { createdAt: new Date() })); }));
     };
     CreateDoctorantComponent.prototype.onSubmitprofilForm = function (form) {
         var _this = this;
         this.userService.addUser(form.value).subscribe({
-            next: function (data) { return _this.route.navigate(['/admin/profil', data._id, data.role]); }
+            next: function (data) { return _this.router.navigate(['/admin/profil', data._id, data.role]); }
+        });
+    };
+    CreateDoctorantComponent.prototype.onUpdateProfil = function (form) {
+        var _this = this;
+        this.userService.updateUser(this.route.snapshot.paramMap.get('id'), form.value).subscribe({
+            next: function (data) { return _this.router.navigate(['/admin/profil', data._id, data.role]); }
         });
     };
     __decorate([

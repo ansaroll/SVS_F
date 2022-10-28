@@ -21,10 +21,24 @@ export class DashboardComponent implements OnInit {
   staffCount: 0
 }
 
+statsMessages:{
+  fileCount: number;
+  doctorantMessages: number;
+  adminMessages: number;
+} = {
+  fileCount: 0,
+  doctorantMessages: 0,
+  adminMessages: 0
+}
+
   constructor(private statsService:StatsService) {}
 
   ngOnInit(): void {
     this.statsService.getStats().subscribe({next:data => this.stats = data , error:err => console.log({err})})
+    this.statsService.getStatsMessages().subscribe({
+      next:data => this.statsMessages = data,
+      error:err => console.log({err})
+    })
   }
 
 }

@@ -7,7 +7,7 @@ export class User {
   firstName?: string;
   nationality?: string;
   gender?: string;
-  dateofBirth?: string;
+  dateOfBirth?: string;
   yearBacc?: string;
   adress?: string;
   cin?: string;

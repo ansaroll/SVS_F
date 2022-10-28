@@ -59,6 +59,9 @@ export class ProfilComponent implements OnInit {
     this.CreateBase64String(e)
   }
 
+  onUpdateProfil(){
+    this.router.navigateByUrl(`/admin/create-user/${this.userId}/${this.role}`)
+  }
 
   CreateBase64String(fileInput: any) {
     if (fileInput.target.files && fileInput.target.files[0]) {
