@@ -13,7 +13,6 @@ import { BodyComponent } from './components/body/body.component';
 import { MiniProfilComponent } from './components/mini-profil/mini-profil.component';
 
 
-
 @NgModule({
   declarations: [
     ProfilComponent,

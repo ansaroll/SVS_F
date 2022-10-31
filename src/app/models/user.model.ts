@@ -8,7 +8,7 @@ export class User {
   nationality?: string;
   gender?: string;
   dateOfBirth?: string;
-  yearBacc?: string;
+  yearBacc?: number;
   adress?: string;
   cin?: string;
   serieBacc?: string;
