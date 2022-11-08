@@ -524,67 +524,79 @@ export class SignupComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;!-- Create By Joker Banny --&gt;
 &lt;div class&#x3D;&quot;min-h-screen bg-no-repeat bg-cover bg-center&quot;&gt;
 
-	&lt;div class&#x3D;&quot;md:flex&quot;&gt;
+  &lt;div class&#x3D;&quot;md:flex&quot;&gt;
 
-        &lt;div class&#x3D;&quot; hidden md:flex md:w-1/2 md:justify-center xl:justify-end items-center &quot;&gt;
-            &lt;div class&#x3D;&quot;pl-8 p-8 xl:mt-12 xl:p-16 xl:w-4/5&quot;&gt;
-                &lt;img class&#x3D;&quot;rounded-md flex justify-end items-center&quot; src&#x3D;&quot;https://inspc.mg/wp-content/uploads/2021/06/photo.jpg&quot; alt&#x3D;&quot;&quot; srcset&#x3D;&quot;&quot;&gt;
+    &lt;div class&#x3D;&quot; hidden md:flex md:w-1/2 md:justify-center xl:justify-end items-center &quot;&gt;
+      &lt;div class&#x3D;&quot;pl-8 p-8 xl:mt-12 xl:p-16 xl:w-4/5&quot;&gt;
+        &lt;img class&#x3D;&quot;rounded-md flex justify-end items-center&quot;
+          src&#x3D;&quot;https://inspc.mg/wp-content/uploads/2021/06/photo.jpg&quot; alt&#x3D;&quot;&quot; srcset&#x3D;&quot;&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;bg-white min-h-screen md:w-1/2 p-4 md:pl-4 xl:pl-16 flex justify-center md:justify-start items-center&quot;&gt;
+      &lt;div&gt;
+        &lt;div class&#x3D;&quot;flex justify-center items-center&quot;&gt;
+          &lt;div&gt;
+            &lt;div class&#x3D;&quot;flex justify-between&quot;&gt;
+              &lt;img src&#x3D;&quot;./assets/images/ua.png&quot; alt&#x3D;&quot;&quot; srcset&#x3D;&quot;&quot;&gt;
+              &lt;img class&#x3D;&quot;h-24 text-center w-auto animate-bounce &quot; src&#x3D;&quot;./assets/images/svs.png&quot; alt&#x3D;&quot;&quot; srcset&#x3D;&quot;&quot;&gt;
+
             &lt;/div&gt;
-        &lt;/div&gt;
+            &lt;!-- &lt;span class&#x3D;&quot;text-sm text-gray-900&quot;&gt;Bienvenue &lt;/span&gt; --&gt;
 
-		&lt;div class&#x3D;&quot;bg-white min-h-screen md:w-1/2 p-4 md:pl-4 xl:pl-16 flex justify-center md:justify-start items-center&quot;&gt;
-			&lt;div&gt;
-					&lt;div class&#x3D;&quot;flex justify-center items-center&quot;&gt;
-						&lt;div&gt;
-                &lt;div class&#x3D;&quot;flex justify-between&quot;&gt;
-                    &lt;img src&#x3D;&quot;./assets/images/ua.png&quot; alt&#x3D;&quot;&quot; srcset&#x3D;&quot;&quot;&gt;
-                    &lt;img class&#x3D;&quot;h-24 text-center w-auto animate-bounce &quot; src&#x3D;&quot;./assets/images/svs.png&quot; alt&#x3D;&quot;&quot; srcset&#x3D;&quot;&quot;&gt;
-
-                &lt;/div&gt;
-                 &lt;!-- &lt;span class&#x3D;&quot;text-sm text-gray-900&quot;&gt;Bienvenue &lt;/span&gt; --&gt;
-
-                &lt;h1 class&#x3D;&quot;text-2xl font-bold &quot;&gt;Creer un compte&lt;/h1&gt;
-            &lt;/div&gt;
-					&lt;/div&gt;
-					&lt;div class&#x3D;&quot;mt-5&quot;&gt;
-						&lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;password&quot;&gt;Mot de passe&lt;/label&gt;
-						&lt;input [(ngModel)]&#x3D;&quot;userObj.password&quot;
-              class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; placeholder&#x3D;&quot;mot de passe&quot;&gt;
-                    &lt;/div&gt;
-					&lt;div class&#x3D;&quot;my-3&quot;&gt;
-						&lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;password&quot;&gt;Confirmation Mot de passe&lt;/label&gt;
-            &lt;input [(ngModel)]&#x3D;&quot;userObj.passwordConfirmation&quot;
-            class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;passwordConfirmation&quot; placeholder&#x3D;&quot;mot de passe&quot;&gt;
-                  &lt;/div&gt;
-          &lt;div class&#x3D;&quot;my-3&quot;&gt;
-							&lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;email&quot;&gt;Email&lt;/label&gt;
-							&lt;input [(ngModel)]&#x3D;&quot;userObj.email&quot;
-                class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot; type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; placeholder&#x3D;&quot;email&quot;&gt;
+            &lt;h1 class&#x3D;&quot;text-2xl font-bold &quot;&gt;Creer un compte&lt;/h1&gt;
           &lt;/div&gt;
-          &lt;div class&#x3D;&quot;my-3&quot;&gt;
-            &lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;email&quot;&gt;Nom&lt;/label&gt;
-            &lt;input [(ngModel)]&#x3D;&quot;userObj.name&quot;
-              class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot; placeholder&#x3D;&quot;Nom&quot;&gt;
         &lt;/div&gt;
-					&lt;div class&#x3D;&quot;flex justify-center&quot;&gt;
-							&lt;!-- &lt;div&gt;
+        &lt;div class&#x3D;&quot;mt-5&quot;&gt;
+          &lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;password&quot;&gt;Mot de passe&lt;/label&gt;
+          &lt;input [(ngModel)]&#x3D;&quot;userObj.password&quot; class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot;
+            type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; placeholder&#x3D;&quot;mot de passe&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;my-3&quot;&gt;
+          &lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;password&quot;&gt;Confirmation Mot de passe&lt;/label&gt;
+          &lt;input [(ngModel)]&#x3D;&quot;userObj.passwordConfirmation&quot;
+            class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot; type&#x3D;&quot;password&quot;
+            name&#x3D;&quot;passwordConfirmation&quot; placeholder&#x3D;&quot;mot de passe&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;my-3&quot;&gt;
+          &lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;email&quot;&gt;Email&lt;/label&gt;
+          &lt;input [(ngModel)]&#x3D;&quot;userObj.email&quot; class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot;
+            type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; placeholder&#x3D;&quot;email&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;my-3&quot;&gt;
+          &lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;email&quot;&gt;Nom&lt;/label&gt;
+          &lt;input [(ngModel)]&#x3D;&quot;userObj.name&quot; class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot;
+            type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot; placeholder&#x3D;&quot;Nom&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;my-3&quot;&gt;
+          &lt;label class&#x3D;&quot;block text-md mb-2&quot; for&#x3D;&quot;role&quot;&gt;Nom&lt;/label&gt;
+          &lt;select [(ngModel)]&#x3D;&quot;userObj.name&quot; class&#x3D;&quot;px-4 w-full border-2 py-2 rounded-md text-sm outline-none&quot;
+            type&#x3D;&quot;select&quot; name&#x3D;&quot;name&quot; placeholder&#x3D;&quot;Nom&quot;&gt;
+            &lt;option value&#x3D;&quot;user&quot;&gt;Staff&lt;/option&gt;
+            &lt;option value&#x3D;&quot;user&quot;&gt;User&lt;/option&gt;
+          &lt;/select&gt;
+
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;flex justify-center&quot;&gt;
+          &lt;!-- &lt;div&gt;
 								&lt;input class&#x3D;&quot;cursor-pointer&quot;  type&#x3D;&quot;radio&quot; name&#x3D;&quot;rememberme&quot;&gt;
 								&lt;span class&#x3D;&quot;text-sm&quot;&gt; Me&lt;/span&gt;
 							&lt;/div&gt; --&gt;
-								&lt;!-- &lt;span class&#x3D;&quot;text-sm text-blue-700  hover:underline cursor-pointer&quot;&gt;Mot de passe oublié ?&lt;/span&gt; --&gt;
-					&lt;/div&gt;
-					&lt;div class&#x3D;&quot;&quot;&gt;
-						&lt;button type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;addUser(userObj)&quot; class&#x3D;&quot;mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100&quot;&gt;S&#x27;Enregistrer&lt;/button&gt;
-						&lt;!-- &lt;div class&#x3D;&quot;flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100&quot;&gt;
+          &lt;!-- &lt;span class&#x3D;&quot;text-sm text-blue-700  hover:underline cursor-pointer&quot;&gt;Mot de passe oublié ?&lt;/span&gt; --&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;&quot;&gt;
+          &lt;button type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;addUser(userObj)&quot;
+            class&#x3D;&quot;mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100&quot;&gt;S&#x27;Enregistrer&lt;/button&gt;
+          &lt;!-- &lt;div class&#x3D;&quot;flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100&quot;&gt;
                             &lt;img class&#x3D;&quot; h-5 cursor-pointer&quot; src&#x3D;&quot;https://i.imgur.com/arC60SB.png&quot; alt&#x3D;&quot;&quot;&gt;
                             &lt;button &gt;Ou connecter avec google&lt;/button&gt;
 					    &lt;/div&gt; --&gt;
-				    &lt;/div&gt;
+        &lt;/div&gt;
 
-				&lt;p class&#x3D;&quot;mt-8&quot;&gt;  &lt;a routerLink&#x3D;&quot;/auth/login&quot; class&#x3D;&quot;cursor-pointer text-sm text-blue-600&quot;&gt; Se connecter &lt;/a&gt;&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+        &lt;p class&#x3D;&quot;mt-8&quot;&gt; &lt;a routerLink&#x3D;&quot;/auth/login&quot; class&#x3D;&quot;cursor-pointer text-sm text-blue-600&quot;&gt; Se connecter &lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -621,8 +633,8 @@ export class SignupComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Create By Joker Banny --><div class="min-h-screen bg-no-repeat bg-cover bg-center">	<div class="md:flex">        <div class=" hidden md:flex md:w-1/2 md:justify-center xl:justify-end items-center ">            <div class="pl-8 p-8 xl:mt-12 xl:p-16 xl:w-4/5">                <img class="rounded-md flex justify-end items-center" src="https://inspc.mg/wp-content/uploads/2021/06/photo.jpg" alt="" srcset="">            </div>        </div>		<div class="bg-white min-h-screen md:w-1/2 p-4 md:pl-4 xl:pl-16 flex justify-center md:justify-start items-center">			<div>					<div class="flex justify-center items-center">						<div>                <div class="flex justify-between">                    <img src="./assets/images/ua.png" alt="" srcset="">                    <img class="h-24 text-center w-auto animate-bounce " src="./assets/images/svs.png" alt="" srcset="">                </div>                 <!-- <span class="text-sm text-gray-900">Bienvenue </span> -->                <h1 class="text-2xl font-bold ">Creer un compte</h1>            </div>					</div>					<div class="mt-5">						<label class="block text-md mb-2" for="password">Mot de passe</label>						<input [(ngModel)]="userObj.password"              class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="password" placeholder="mot de passe">                    </div>					<div class="my-3">						<label class="block text-md mb-2" for="password">Confirmation Mot de passe</label>            <input [(ngModel)]="userObj.passwordConfirmation"            class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="passwordConfirmation" placeholder="mot de passe">                  </div>          <div class="my-3">							<label class="block text-md mb-2" for="email">Email</label>							<input [(ngModel)]="userObj.email"                class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email" name="email" placeholder="email">          </div>          <div class="my-3">            <label class="block text-md mb-2" for="email">Nom</label>            <input [(ngModel)]="userObj.name"              class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="text" name="name" placeholder="Nom">        </div>					<div class="flex justify-center">							<!-- <div>								<input class="cursor-pointer"  type="radio" name="rememberme">								<span class="text-sm"> Me</span>							</div> -->								<!-- <span class="text-sm text-blue-700  hover:underline cursor-pointer">Mot de passe oublié ?</span> -->					</div>					<div class="">						<button type="submit" (click)="addUser(userObj)" class="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">S\'Enregistrer</button>						<!-- <div class="flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100">                            <img class=" h-5 cursor-pointer" src="https://i.imgur.com/arC60SB.png" alt="">                            <button >Ou connecter avec google</button>					    </div> -->				    </div>				<p class="mt-8">  <a routerLink="/auth/login" class="cursor-pointer text-sm text-blue-600"> Se connecter </a></p>			</div>		</div>	</div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
+        var COMPONENT_TEMPLATE = '<div><!-- Create By Joker Banny --><div class="min-h-screen bg-no-repeat bg-cover bg-center">  <div class="md:flex">    <div class=" hidden md:flex md:w-1/2 md:justify-center xl:justify-end items-center ">      <div class="pl-8 p-8 xl:mt-12 xl:p-16 xl:w-4/5">        <img class="rounded-md flex justify-end items-center"          src="https://inspc.mg/wp-content/uploads/2021/06/photo.jpg" alt="" srcset="">      </div>    </div>    <div class="bg-white min-h-screen md:w-1/2 p-4 md:pl-4 xl:pl-16 flex justify-center md:justify-start items-center">      <div>        <div class="flex justify-center items-center">          <div>            <div class="flex justify-between">              <img src="./assets/images/ua.png" alt="" srcset="">              <img class="h-24 text-center w-auto animate-bounce " src="./assets/images/svs.png" alt="" srcset="">            </div>            <!-- <span class="text-sm text-gray-900">Bienvenue </span> -->            <h1 class="text-2xl font-bold ">Creer un compte</h1>          </div>        </div>        <div class="mt-5">          <label class="block text-md mb-2" for="password">Mot de passe</label>          <input [(ngModel)]="userObj.password" class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none"            type="password" name="password" placeholder="mot de passe">        </div>        <div class="my-3">          <label class="block text-md mb-2" for="password">Confirmation Mot de passe</label>          <input [(ngModel)]="userObj.passwordConfirmation"            class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password"            name="passwordConfirmation" placeholder="mot de passe">        </div>        <div class="my-3">          <label class="block text-md mb-2" for="email">Email</label>          <input [(ngModel)]="userObj.email" class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none"            type="email" name="email" placeholder="email">        </div>        <div class="my-3">          <label class="block text-md mb-2" for="email">Nom</label>          <input [(ngModel)]="userObj.name" class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none"            type="text" name="name" placeholder="Nom">        </div>        <div class="my-3">          <label class="block text-md mb-2" for="role">Nom</label>          <select [(ngModel)]="userObj.name" class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none"            type="select" name="name" placeholder="Nom">            <option value="user">Staff</option>            <option value="user">User</option>          </select>        </div>        <div class="flex justify-center">          <!-- <div>								<input class="cursor-pointer"  type="radio" name="rememberme">								<span class="text-sm"> Me</span>							</div> -->          <!-- <span class="text-sm text-blue-700  hover:underline cursor-pointer">Mot de passe oublié ?</span> -->        </div>        <div class="">          <button type="submit" (click)="addUser(userObj)"            class="mt-4 mb-3 w-full bg-green-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">S\'Enregistrer</button>          <!-- <div class="flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100">                            <img class=" h-5 cursor-pointer" src="https://i.imgur.com/arC60SB.png" alt="">                            <button >Ou connecter avec google</button>					    </div> -->        </div>        <p class="mt-8"> <a routerLink="/auth/login" class="cursor-pointer text-sm text-blue-600"> Se connecter </a></p>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SignupComponent'};
 </script>

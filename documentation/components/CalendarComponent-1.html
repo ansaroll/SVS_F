@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/doctorant/components/calendar/calendar.component.ts</code>
+    <code>src/app/admin/components/body/calendar/calendar.component.ts</code>
 </p>
 
 
@@ -83,6 +83,15 @@
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
 
 
 
@@ -90,7 +99,14 @@
 
 
 
-
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>{
+    provide: CalendarEventTitleFormatter,
+}</code>
+                </td>
+            </tr>
 
 
             <tr>
@@ -125,6 +141,35 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#days" >days</a>
+                            </li>
+                            <li>
+                                <a href="#dragToCreateActive" >dragToCreateActive</a>
+                            </li>
+                            <li>
+                                <a href="#events" >events</a>
+                            </li>
+                            <li>
+                                <a href="#slots" >slots</a>
+                            </li>
+                            <li>
+                                <a href="#viewDate" >viewDate</a>
+                            </li>
+                            <li>
+                                <a href="#weekStartsOn" >weekStartsOn</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -135,7 +180,29 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#convertDay" >convertDay</a>
+                            </li>
+                            <li>
+                                <a href="#convertTime" >convertTime</a>
+                            </li>
+                            <li>
+                                <a href="#getSlots" >getSlots</a>
+                            </li>
+                            <li>
+                                <a href="#initDays" >initDays</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#refresh" >refresh</a>
+                            </li>
+                            <li>
+                                <a href="#removeSlot" >removeSlot</a>
+                            </li>
+                            <li>
+                                <a href="#startDragToCreate" >startDragToCreate</a>
                             </li>
                         </ul>
                     </td>
@@ -155,15 +222,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/doctorant/components/calendar/calendar.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:52</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -177,6 +274,218 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertDay"></a>
+                    <span class="name">
+                        <span ><b>convertDay</b></span>
+                        <a href="#convertDay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertDay(d: string | number | Date)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>
+                                            <code>string | number | Date</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertTime"></a>
+                    <span class="name">
+                        <span ><b>convertTime</b></span>
+                        <a href="#convertTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertTime(t: string | number | Date)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:140</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>t</td>
+                                    <td>
+                                            <code>string | number | Date</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSlots"></a>
+                    <span class="name">
+                        <span ><b>getSlots</b></span>
+                        <a href="#getSlots"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSlots()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:150</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initDays"></a>
+                    <span class="name">
+                        <span ><b>initDays</b></span>
+                        <a href="#initDays"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initDays()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -197,8 +506,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/doctorant/components/calendar/calendar.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:55</a></div>
                 </td>
             </tr>
 
@@ -214,6 +523,381 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refresh"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>refresh</b></span>
+                        <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refresh()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:134</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeSlot"></a>
+                    <span class="name">
+                        <span ><b>removeSlot</b></span>
+                        <a href="#removeSlot"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeSlot(id: string | number | undefined)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="165"
+                            class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:165</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                            <code>string | number | undefined</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startDragToCreate"></a>
+                    <span class="name">
+                        <span ><b>startDragToCreate</b></span>
+                        <a href="#startDragToCreate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startDragToCreate(segment: WeekViewHourSegment, mouseDownEvent: MouseEvent, segmentElement: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>segment</td>
+                                    <td>
+                                            <code>WeekViewHourSegment</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>mouseDownEvent</td>
+                                    <td>
+                                            <code>MouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>segmentElement</td>
+                                    <td>
+                                            <code>HTMLElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="days"></a>
+                    <span class="name">
+                        <span ><b>days</b></span>
+                        <a href="#days"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dragToCreateActive"></a>
+                    <span class="name">
+                        <span ><b>dragToCreateActive</b></span>
+                        <a href="#dragToCreateActive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="events"></a>
+                    <span class="name">
+                        <span ><b>events</b></span>
+                        <a href="#events"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CalendarEvent[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="slots"></a>
+                    <span class="name">
+                        <span ><b>slots</b></span>
+                        <a href="#slots"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="viewDate"></a>
+                    <span class="name">
+                        <span ><b>viewDate</b></span>
+                        <a href="#viewDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weekStartsOn"></a>
+                    <span class="name">
+                        <span ><b>weekStartsOn</b></span>
+                        <a href="#weekStartsOn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/admin/components/body/calendar/calendar.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
 </div>
@@ -222,30 +906,183 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
+
+
+
+import { ChangeDetectorRef } from &#x27;@angular/core&#x27;;
+import {
+  ChangeDetectionStrategy,
+  ViewEncapsulation,
+} from &#x27;@angular/core&#x27;;
+import { CalendarEvent, CalendarEventTitleFormatter } from &#x27;angular-calendar&#x27;;
+import { WeekViewHourSegment } from &#x27;calendar-utils&#x27;;
+import { addDays, addMinutes, endOfWeek } from &#x27;date-fns&#x27;;
+import { fromEvent } from &#x27;rxjs&#x27;;
+import { finalize, takeUntil } from &#x27;rxjs/operators&#x27;;
+
+function floorToNearest(amount: number, precision: number) {
+  return Math.floor(amount / precision) * precision;
+}
+
+function ceilToNearest(amount: number, precision: number) {
+  return Math.ceil(amount / precision) * precision;
+}
+
+
+
 @Component({
   selector: &#x27;app-calendar&#x27;,
   templateUrl: &#x27;./calendar.component.html&#x27;,
-  styleUrls: [&#x27;./calendar.component.scss&#x27;]
-})
-export class CalendarComponent implements OnInit {
+  styleUrls: [&#x27;./calendar.component.scss&#x27;],
 
-  constructor() { }
+
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    {
+      provide: CalendarEventTitleFormatter,
+    },
+  ],
+  encapsulation: ViewEncapsulation.None,
+
+
+
+})
+
+
+export class CalendarComponent implements OnInit {
+  viewDate &#x3D; new Date();
+  weekStartsOn: 0 &#x3D; 0;
+  dragToCreateActive &#x3D; false;
+  events: CalendarEvent[] &#x3D; [];
+  days: any[] &#x3D; [];
+  slots: any[] &#x3D; [];
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+    this.initDays();
   }
 
+  initDays() {
+    this.days &#x3D; [
+      &#x27;Sunday&#x27;,
+      &#x27;Monday&#x27;,
+      &#x27;Tuesday&#x27;,
+      &#x27;Wednesday&#x27;,
+      &#x27;Thursday&#x27;,
+      &#x27;Friday&#x27;,
+      &#x27;Saturday&#x27;,
+    ];
+    for (let i &#x3D; 0; i &lt; this.days.length; i++) {
+      let a &#x3D; { day: this.days[i], time: [] };
+      this.slots.push(a);
+    }
+  }
+
+  startDragToCreate(
+    segment: WeekViewHourSegment,
+    mouseDownEvent: MouseEvent,
+    segmentElement: HTMLElement
+  ) {
+    const dragToSelectEvent: CalendarEvent &#x3D; {
+      id: this.events.length,
+      title: &#x27;New slot&#x27;,
+      start: segment.date,
+      meta: {
+        tmpEvent: true,
+      },
+      actions: [
+        {
+          label: &#x27;&#x27;,
+          onClick: ({ event }: { event: CalendarEvent }): void &#x3D;&gt; {
+            this.events &#x3D; this.events.filter((iEvent) &#x3D;&gt; iEvent !&#x3D;&#x3D; event);
+            this.removeSlot(event.id);
+          },
+        },
+      ],
+    };
+    this.events &#x3D; [...this.events, dragToSelectEvent];
+
+    const segmentPosition &#x3D; segmentElement.getBoundingClientRect();
+    this.dragToCreateActive &#x3D; true;
+    const endOfView &#x3D; endOfWeek(this.viewDate, {
+      weekStartsOn: this.weekStartsOn,
+    });
+
+    fromEvent(document, &#x27;mousemove&#x27;)
+      .pipe(
+        finalize(() &#x3D;&gt; {
+          delete dragToSelectEvent.meta.tmpEvent;
+          this.dragToCreateActive &#x3D; false;
+          this.refresh();
+        }),
+        takeUntil(fromEvent(document, &#x27;mouseup&#x27;))
+      )
+      .subscribe((mouseMoveEvent : any) &#x3D;&gt; {
+        const minutesDiff &#x3D; ceilToNearest(
+          mouseMoveEvent.clientY - segmentPosition.top,
+          30
+        );
+
+        const daysDiff &#x3D;
+          floorToNearest(
+            mouseMoveEvent.clientX - segmentPosition.left,
+            segmentPosition.width
+          ) / segmentPosition.width;
+
+        const newEnd &#x3D; addDays(addMinutes(segment.date, minutesDiff), daysDiff);
+        if (newEnd &gt; segment.date &amp;&amp; newEnd &lt; endOfView) {
+          dragToSelectEvent.end &#x3D; newEnd;
+        }
+        this.refresh();
+      });
+  }
+
+  private refresh() {
+    this.events &#x3D; [...this.events];
+    this.cdr.detectChanges();
+    this.getSlots();
+  }
+
+  convertTime(t: string | number | Date) {
+    return new Date(t).toTimeString();
+  }
+
+  convertDay(d: string | number | Date) {
+    return new Date(d).toLocaleString(&#x27;en-us&#x27;, {
+      weekday: &#x27;long&#x27;,
+    });
+  }
+
+  getSlots() {
+    this.slots.map((day, i) &#x3D;&gt; {
+      this.slots[i].time &#x3D; [];
+      this.events.forEach((e) &#x3D;&gt; {
+        if (day.day &#x3D;&#x3D; this.convertDay(e.start)) {
+          this.slots[i].time.push({
+            startTime: e.start,
+            endTime: e.end,
+            id: e.id,
+          });
+        }
+      });
+    });
+  }
+
+  removeSlot(id: string | number | undefined) {
+    for (let j &#x3D; 0; j &lt; this.slots.length; j++) {
+      this.slots[j].time &#x3D; this.slots[j].time.filter((t: { id: string | number | undefined; }) &#x3D;&gt; t.id !&#x3D;&#x3D; id);
+    }
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">
-
+&lt;!--
 &lt;div class&#x3D;&quot;p-calendar&quot;&gt;
-  &lt;!-- p-calendar pour ajuster le padding-top  --&gt;
 &lt;p class&#x3D;&quot;text-3xl&quot;&gt;calendar&lt;/p&gt;
 
-&lt;!-- Soloina rehefa tonga eto ny implemetation CALENDAR GOOGLE API
 &lt;div class&#x3D;&quot;flex items-center justify-center py-8 px-4 &quot;&gt;
   &lt;div class&#x3D;&quot;2xl:w-1/3 xl:w-1/2 lg:w-3/5 sm:w-4/5 w-full shadow-lg&quot;&gt;
       &lt;div class&#x3D;&quot;md:p-16 md:pb-12 p-5 dark:bg-gray-800 bg-white rounded-t&quot;&gt;
@@ -498,14 +1335,45 @@ export class CalendarComponent implements OnInit {
           &lt;/div&gt;
       &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt; --&gt;
-&lt;!-- andrianiaina-sahobisoa-rolland@wired-apex-347808.iam.gserviceaccount.com --&gt;
-
-&lt;!-- &lt;iframe src&#x3D;&quot;https://calendar.google.com/calendar/embed?src&#x3D;ngf6pdlfcre8p3stqorsc02tv4%40group.calendar.google.com&amp;ctz&#x3D;Africa%2FNairobi&quot; style&#x3D;&quot;border: 0&quot; width&#x3D;&quot;1250&quot; height&#x3D;&quot;750&quot; frameborder&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot;&gt;&lt;/iframe&gt; --&gt;
-&lt;iframe  class&#x3D;&quot;text-2xl&quot; src&#x3D;&quot;https://calendar.google.com/calendar/embed?height&#x3D;800&amp;wkst&#x3D;1&amp;bgcolor&#x3D;%230B8043&amp;ctz&#x3D;Africa%2FNairobi&amp;showTitle&#x3D;0&amp;showNav&#x3D;1&amp;showDate&#x3D;1&amp;showPrint&#x3D;1&amp;showCalendars&#x3D;1&amp;showTz&#x3D;1&amp;src&#x3D;bmdmNnBkbGZjcmU4cDNzdHFvcnNjMDJ0djRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src&#x3D;ZnIubWcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color&#x3D;%233F51B5&amp;color&#x3D;%230B8043&quot; style&#x3D;&quot;border-width:0&quot; width&#x3D;&quot;1250&quot; height&#x3D;&quot;800&quot; frameborder&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot;&gt;&lt;/iframe&gt;
-&lt;!-- &lt;iframe src&#x3D;&quot;https://calendar.google.com/calendar/embed?height&#x3D;600&amp;wkst&#x3D;1&amp;bgcolor&#x3D;%230B8043&amp;ctz&#x3D;Africa%2FNairobi&amp;showTitle&#x3D;0&amp;showNav&#x3D;1&amp;showDate&#x3D;1&amp;showPrint&#x3D;1&amp;showCalendars&#x3D;1&amp;showTz&#x3D;1&amp;src&#x3D;bmdmNnBkbGZjcmU4cDNzdHFvcnNjMDJ0djRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color&#x3D;%233F51B5&quot; style&#x3D;&quot;border-width:0&quot; width&#x3D;&quot;800&quot; height&#x3D;&quot;600&quot; frameborder&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot;&gt;&lt;/iframe&gt; --&gt;
-&lt;!-- &lt;iframe src&#x3D;&quot;https://calendar.google.com/calendar/embed?src&#x3D;ngf6pdlfcre8p3stqorsc02tv4%40group.calendar.google.com&amp;ctz&#x3D;Africa%2FNairobi&quot; style&#x3D;&quot;border: 0&quot; width&#x3D;&quot;800&quot; height&#x3D;&quot;600&quot; frameborder&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot;&gt;&lt;/iframe&gt; --&gt;
 &lt;/div&gt;
+&lt;/div&gt; --&gt;
+
+
+&lt;!--
+
+
+&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;ng-template #weekViewHourSegmentTemplate
+     let-segment&#x3D;&quot;segment&quot; vent
+     let-locale&#x3D;&quot;locale&quot;
+     let-segmentHeight&#x3D;&quot;segmentHeight&quot;
+     let-isTimeLabel&#x3D;&quot;isTimeLabel&quot;
+   &gt;
+    &lt;div #segmentElement
+       class&#x3D;&quot;cal-hour-segment&quot;
+       [style.height.px]&#x3D;&quot;segmentHeight&quot;
+       [class.cal-hour-start]&#x3D;&quot;segment.isStart&quot;
+       [class.cal-after-hour-start]&#x3D;&quot;!segment.isStart&quot;
+       [ngClass]&#x3D;&quot;segment.cssClass&quot;
+       (mousedown)&#x3D;&quot;startDragToCreate(segment, $event, segmentElement)&quot;&gt;
+        &lt;div class&#x3D;&quot;cal-time&quot; *ngIf&#x3D;&quot;isTimeLabel&quot;&gt;
+            {{ segment.date | calendarDate:&#x27;weekViewHour&#x27;:locale }}
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/ng-template&gt;
+&lt;/div&gt;
+
+&lt;mwl-calendar-week-view
+    [viewDate]&#x3D;&quot;viewDate&quot; [events]&#x3D;&quot;events&quot;
+    [hourSegmentTemplate]&#x3D;&quot;weekViewHourSegmentTemplate&quot;
+    [weekStartsOn]&#x3D;&quot;weekStartsOn&quot;&gt;
+&lt;/mwl-calendar-week-view&gt;
+
+&lt;hr&gt; --&gt;
+&lt;!-- &lt;div&gt;Selected Slots&lt;/div&gt; --&gt;
+&lt;!-- &lt;pre&gt;{{ slots | json }}&lt;/pre&gt; --&gt;
+
+&lt;iframe  class&#x3D;&quot;text-2xl&quot; src&#x3D;&quot;https://calendar.google.com/calendar/embed?height&#x3D;800&amp;wkst&#x3D;1&amp;bgcolor&#x3D;%230B8043&amp;ctz&#x3D;Africa%2FNairobi&amp;showTitle&#x3D;0&amp;showNav&#x3D;1&amp;showDate&#x3D;1&amp;showPrint&#x3D;1&amp;showCalendars&#x3D;1&amp;showTz&#x3D;1&amp;src&#x3D;bmdmNnBkbGZjcmU4cDNzdHFvcnNjMDJ0djRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src&#x3D;ZnIubWcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color&#x3D;%233F51B5&amp;color&#x3D;%230B8043&quot; style&#x3D;&quot;border-width:0&quot; width&#x3D;&quot;1250&quot; height&#x3D;&quot;800&quot; frameborder&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot;&gt;&lt;/iframe&gt;
 </code></pre>
     </div>
 
@@ -513,7 +1381,11 @@ export class CalendarComponent implements OnInit {
                 <p class="comment">
                     <code>./calendar.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">
+.p-calendar{
+  padding: 3rem 0rem 0rem 0rem;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -541,8 +1413,8 @@ export class CalendarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="p-calendar">  <!-- p-calendar pour ajuster le padding-top  --><p class="text-3xl">calendar</p><!-- Soloina rehefa tonga eto ny implemetation CALENDAR GOOGLE API<div class="flex items-center justify-center py-8 px-4 ">  <div class="2xl:w-1/3 xl:w-1/2 lg:w-3/5 sm:w-4/5 w-full shadow-lg">      <div class="md:p-16 md:pb-12 p-5 dark:bg-gray-800 bg-white rounded-t">          <div class="px-4 flex items-center justify-between">              <h1 class="text-2xl font-bold dark:text-gray-100 text-gray-800">October 2020</h1>              <div class="flex items-center text-gray-800 dark:text-gray-100">                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />                      <polyline points="15 6 9 12 15 18" />                  </svg>                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler ml-3 icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />                      <polyline points="9 6 15 12 9 18" />                  </svg>              </div>          </div>          <div class="flex items-center justify-between pt-12 overflow-x-auto">              <table class="w-full">                  <thead>                      <tr>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Mo</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Tu</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">We</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Th</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Fr</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Sa</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Su</p>                              </div>                          </th>                      </tr>                  </thead>                  <tbody>                      <tr>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center"></div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center"></div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center"></div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">1</p>                              </div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">2</p>                              </div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">3</p>                              </div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">4</p>                              </div>                          </td>                      </tr>                      <tr>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">5</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">6</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">7</p>                              </div>                          </td>                          <td>                              <div class="w-full h-full">                                  <div class="flex items-center justify-center w-full rounded-full cursor-pointer">                                      <p class="text-2xl w-14 h-14 flex items-center justify-center font-medium text-white bg-indigo-700 rounded-full">8</p>                                  </div>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">9</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">10</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">11</p>                              </div>                          </td>                      </tr>                      <tr>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">12</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">13</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">14</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">15</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">16</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">17</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">18</p>                              </div>                          </td>                      </tr>                      <tr>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">19</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">20</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">21</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">22</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">23</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">24</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">25</p>                              </div>                          </td>                      </tr>                      <tr>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">26</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">27</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">28</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">29</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">30</p>                              </div>                          </td>                      </tr>                  </tbody>              </table>          </div>      </div>      <div class="md:py-8 py-5 md:px-16 px-5 dark:bg-gray-700 bg-gray-50 rounded-b">          <div class="px-4">              <div class="border-b pb-4 border-gray-400 border-dashed">                  <p class="text-xs font-light leading-3 text-gray-500 dark:text-gray-300">9:00 AM</p>                  <p class="text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 pt-2">Zoom call with design team</p>                  <p class="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">Discussion on UX sprint and Wireframe review</p>              </div>              <div class="border-b pb-4 border-gray-400 border-dashed pt-5">                  <p class="text-xs font-light leading-3 text-gray-500 dark:text-gray-300">10:00 AM</p>                  <p class="text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 pt-2">Orientation session with new hires</p>              </div>              <div class="border-b pb-4 border-gray-400 border-dashed pt-5">                  <p class="text-xs font-light leading-3 text-gray-500 dark:text-gray-300">9:00 AM</p>                  <p class="text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 pt-2">Zoom call with design team</p>                  <p class="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">Discussion on UX sprint and Wireframe review</p>              </div>          </div>      </div>  </div></div> --><!-- andrianiaina-sahobisoa-rolland@wired-apex-347808.iam.gserviceaccount.com --><!-- <iframe src="https://calendar.google.com/calendar/embed?src=ngf6pdlfcre8p3stqorsc02tv4%40group.calendar.google.com&ctz=Africa%2FNairobi" style="border: 0" width="1250" height="750" frameborder="0" scrolling="no"></iframe> --><iframe  class="text-2xl" src="https://calendar.google.com/calendar/embed?height=800&wkst=1&bgcolor=%230B8043&ctz=Africa%2FNairobi&showTitle=0&showNav=1&showDate=1&showPrint=1&showCalendars=1&showTz=1&src=bmdmNnBkbGZjcmU4cDNzdHFvcnNjMDJ0djRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZnIubWcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%233F51B5&color=%230B8043" style="border-width:0" width="1250" height="800" frameborder="0" scrolling="no"></iframe><!-- <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%230B8043&ctz=Africa%2FNairobi&showTitle=0&showNav=1&showDate=1&showPrint=1&showCalendars=1&showTz=1&src=bmdmNnBkbGZjcmU4cDNzdHFvcnNjMDJ0djRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%233F51B5" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe> --><!-- <iframe src="https://calendar.google.com/calendar/embed?src=ngf6pdlfcre8p3stqorsc02tv4%40group.calendar.google.com&ctz=Africa%2FNairobi" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe> --></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
+        var COMPONENT_TEMPLATE = '<div><!--<div class="p-calendar"><p class="text-3xl">calendar</p><div class="flex items-center justify-center py-8 px-4 ">  <div class="2xl:w-1/3 xl:w-1/2 lg:w-3/5 sm:w-4/5 w-full shadow-lg">      <div class="md:p-16 md:pb-12 p-5 dark:bg-gray-800 bg-white rounded-t">          <div class="px-4 flex items-center justify-between">              <h1 class="text-2xl font-bold dark:text-gray-100 text-gray-800">October 2020</h1>              <div class="flex items-center text-gray-800 dark:text-gray-100">                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />                      <polyline points="15 6 9 12 15 18" />                  </svg>                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler ml-3 icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />                      <polyline points="9 6 15 12 9 18" />                  </svg>              </div>          </div>          <div class="flex items-center justify-between pt-12 overflow-x-auto">              <table class="w-full">                  <thead>                      <tr>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Mo</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Tu</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">We</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Th</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Fr</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Sa</p>                              </div>                          </th>                          <th>                              <div class="w-full flex justify-center">                                  <p class="text-2xl font-medium text-center text-gray-800 dark:text-gray-100">Su</p>                              </div>                          </th>                      </tr>                  </thead>                  <tbody>                      <tr>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center"></div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center"></div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center"></div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">1</p>                              </div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">2</p>                              </div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">3</p>                              </div>                          </td>                          <td class="pt-6">                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">4</p>                              </div>                          </td>                      </tr>                      <tr>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">5</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">6</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">7</p>                              </div>                          </td>                          <td>                              <div class="w-full h-full">                                  <div class="flex items-center justify-center w-full rounded-full cursor-pointer">                                      <p class="text-2xl w-14 h-14 flex items-center justify-center font-medium text-white bg-indigo-700 rounded-full">8</p>                                  </div>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">9</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">10</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">11</p>                              </div>                          </td>                      </tr>                      <tr>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">12</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">13</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">14</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">15</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">16</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">17</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">18</p>                              </div>                          </td>                      </tr>                      <tr>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">19</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">20</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">21</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">22</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">23</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">24</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100">25</p>                              </div>                          </td>                      </tr>                      <tr>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">26</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">27</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">28</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">29</p>                              </div>                          </td>                          <td>                              <div class="px-4 py-4 cursor-pointer flex w-full justify-center">                                  <p class="text-2xl text-gray-500 dark:text-gray-100 font-medium">30</p>                              </div>                          </td>                      </tr>                  </tbody>              </table>          </div>      </div>      <div class="md:py-8 py-5 md:px-16 px-5 dark:bg-gray-700 bg-gray-50 rounded-b">          <div class="px-4">              <div class="border-b pb-4 border-gray-400 border-dashed">                  <p class="text-xs font-light leading-3 text-gray-500 dark:text-gray-300">9:00 AM</p>                  <p class="text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 pt-2">Zoom call with design team</p>                  <p class="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">Discussion on UX sprint and Wireframe review</p>              </div>              <div class="border-b pb-4 border-gray-400 border-dashed pt-5">                  <p class="text-xs font-light leading-3 text-gray-500 dark:text-gray-300">10:00 AM</p>                  <p class="text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 pt-2">Orientation session with new hires</p>              </div>              <div class="border-b pb-4 border-gray-400 border-dashed pt-5">                  <p class="text-xs font-light leading-3 text-gray-500 dark:text-gray-300">9:00 AM</p>                  <p class="text-lg font-medium leading-5 text-gray-800 dark:text-gray-100 pt-2">Zoom call with design team</p>                  <p class="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">Discussion on UX sprint and Wireframe review</p>              </div>          </div>      </div>  </div></div></div> --><!--<div class="container">  <ng-template #weekViewHourSegmentTemplate     let-segment="segment" vent     let-locale="locale"     let-segmentHeight="segmentHeight"     let-isTimeLabel="isTimeLabel"   >    <div #segmentElement       class="cal-hour-segment"       [style.height.px]="segmentHeight"       [class.cal-hour-start]="segment.isStart"       [class.cal-after-hour-start]="!segment.isStart"       [ngClass]="segment.cssClass"       (mousedown)="startDragToCreate(segment, $event, segmentElement)">        <div class="cal-time" *ngIf="isTimeLabel">            {{ segment.date | calendarDate:\'weekViewHour\':locale }}        </div>    </div></ng-template></div><mwl-calendar-week-view    [viewDate]="viewDate" [events]="events"    [hourSegmentTemplate]="weekViewHourSegmentTemplate"    [weekStartsOn]="weekStartsOn"></mwl-calendar-week-view><hr> --><!-- <div>Selected Slots</div> --><!-- <pre>{{ slots | json }}</pre> --><iframe  class="text-2xl" src="https://calendar.google.com/calendar/embed?height=800&wkst=1&bgcolor=%230B8043&ctz=Africa%2FNairobi&showTitle=0&showNav=1&showDate=1&showPrint=1&showCalendars=1&showTz=1&src=bmdmNnBkbGZjcmU4cDNzdHFvcnNjMDJ0djRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZnIubWcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%233F51B5&color=%230B8043" style="border-width:0" width="1250" height="800" frameborder="0" scrolling="no"></iframe></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CalendarComponent-1'};
 </script>

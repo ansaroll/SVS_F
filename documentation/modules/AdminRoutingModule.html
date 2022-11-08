@@ -74,7 +74,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;
 import { RouterModule , Routes  } from &#x27;@angular/router&#x27;
-import { CalendarComponent } from &#x27;./components/calendar/calendar.component&#x27;
+import { CalendarComponent } from &#x27;./components/body/calendar/calendar.component&#x27;
 import { ChatsComponent } from &#x27;./components/chats/chats.component&#x27;
 import { CoursesComponent } from &#x27;./components/courses/courses.component&#x27;
 import { CreateDoctorantComponent } from &#x27;./components/create-doctorant/create-doctorant.component&#x27;
@@ -88,6 +88,8 @@ import { ResumeComponent } from &#x27;./components/resume/resume.component&#x27;
 import { ScreenComponent } from &#x27;./components/screen/screen.component&#x27;
 import { SettingsComponent } from &#x27;./components/settings/settings.component&#x27;
 import { CreateNewsComponent } from &#x27;./components/create-news/create-news.component&#x27;;
+import { ProfilComponent } from &quot;./components/profil/profil.component&quot;;
+
 
 
 const routes: Routes &#x3D; [
@@ -99,6 +101,7 @@ const routes: Routes &#x3D; [
       { path : &#x27;dashboard&#x27; , component: DashboardComponent},
       { path : &#x27;calendar&#x27; , component : CalendarComponent},
       { path : &#x27;chats&#x27; , component : ChatsComponent},
+      { path : &#x27;profil/:id/:role&#x27; , component: ProfilComponent},
       { path : &#x27;database&#x27; , component : DatabaseComponent ,
 
           children : [
@@ -119,8 +122,10 @@ const routes: Routes &#x3D; [
     },
       { path : &#x27;settings&#x27; , component : SettingsComponent},
       { path : &#x27;courses&#x27; , component : CoursesComponent},
-      { path : &#x27;createdoctorant&#x27; , component : CreateDoctorantComponent},
-      { path : &#x27;createformation&#x27; , component : CreateFormationComponent},
+      { path : &#x27;create-user&#x27; , component : CreateDoctorantComponent},
+      { path : &#x27;create-user/:id/:role&#x27; , component : CreateDoctorantComponent},
+      { path : &#x27;create-formation&#x27; , component : CreateFormationComponent},
+      { path : &#x27;create-formation/:id&#x27; , component : CreateFormationComponent},
       { path : &#x27;createnews&#x27; , component : CreateNewsComponent},
     ]
   },

@@ -125,6 +125,23 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#stats" >stats</a>
+                            </li>
+                            <li>
+                                <a href="#statsMessages" >statsMessages</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -155,15 +172,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(statsService: <a href="../injectables/StatsService.html" target="_self">StatsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/admin/components/dashboard/dashboard.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/admin/components/dashboard/dashboard.component.ts:32</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>statsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StatsService.html" target="_self" >StatsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -197,8 +244,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/admin/components/dashboard/dashboard.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/admin/components/dashboard/dashboard.component.ts:36</a></div>
                 </td>
             </tr>
 
@@ -215,12 +262,91 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stats"></a>
+                    <span class="name">
+                        <span ><b>stats</b></span>
+                        <a href="#stats"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  coursesCount: 0,
+  doctorantCount: 0,
+  profCount: 0,
+  staffCount: 0
+}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/admin/components/dashboard/dashboard.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="statsMessages"></a>
+                    <span class="name">
+                        <span ><b>statsMessages</b></span>
+                        <a href="#statsMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  fileCount: 0,
+  doctorantMessages: 0,
+  adminMessages: 0
+}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/admin/components/dashboard/dashboard.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { StatsService } from &#x27;src/app/core/services/stats.service&#x27;;
 
 @Component({
   selector: &#x27;app-dashboard&#x27;,
@@ -229,9 +355,36 @@
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+ stats:{
+    coursesCount: number;
+    doctorantCount: number;
+    profCount: number;
+    staffCount: number;
+} &#x3D; {
+  coursesCount: 0,
+  doctorantCount: 0,
+  profCount: 0,
+  staffCount: 0
+}
+
+statsMessages:{
+  fileCount: number;
+  doctorantMessages: number;
+  adminMessages: number;
+} &#x3D; {
+  fileCount: 0,
+  doctorantMessages: 0,
+  adminMessages: 0
+}
+
+  constructor(private statsService:StatsService) {}
 
   ngOnInit(): void {
+    this.statsService.getStats().subscribe({next:data &#x3D;&gt; this.stats &#x3D; data , error:err &#x3D;&gt; console.log({err})})
+    this.statsService.getStatsMessages().subscribe({
+      next:data &#x3D;&gt; this.statsMessages &#x3D; data,
+      error:err &#x3D;&gt; console.log({err})
+    })
   }
 
 }
@@ -239,102 +392,50 @@ export class DashboardComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;p-dashboard&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;sm:pt-8 h-screen&quot;
+    style&#x3D;&quot;background:url(&#x27;https://i.ibb.co/KjrPCyW/map.png&#x27;);&quot;&gt;
 
-
-&lt;p class&#x3D;&quot;text-3xl&quot;&gt;Tableau de Bord&lt;/p&gt;
-
-&lt;div class&#x3D;&quot;card&quot;&gt;
-  &lt;div class&#x3D;&quot;card-head&quot;&gt;
-
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;card-body&quot;&gt;
-    &lt;!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-    Id, accusamus. Suscipit nam commodi in ducimus, enim minima nostrum iure facere! --&gt;
-    &lt;div class&#x3D;&quot;pt-4&quot;&gt;
-
-
-
-
-
-            &lt;!-- This requires Tailwind CSS v2.0+ , pour attendre la page de tablea de bord officielle --&gt;
-            &lt;div class&#x3D;&quot;bg-white shadow overflow-hidden sm:rounded-lg&quot;&gt;
-              &lt;div class&#x3D;&quot;px-4 py-5 sm:px-6&quot;&gt;
-                &lt;h3 class&#x3D;&quot;text-lg leading-6 font-medium text-gray-900&quot;&gt;Applicant Information&lt;/h3&gt;
-                &lt;p class&#x3D;&quot;mt-1 max-w-2xl text-sm text-gray-500&quot;&gt;Personal details and application.&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class&#x3D;&quot;border-t border-gray-200&quot;&gt;
-                &lt;dl&gt;
-                  &lt;div class&#x3D;&quot;bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6&quot;&gt;
-                    &lt;dt class&#x3D;&quot;text-sm font-medium text-gray-500&quot;&gt;Full name&lt;/dt&gt;
-                    &lt;dd class&#x3D;&quot;mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2&quot;&gt;Margot Foster&lt;/dd&gt;
-                  &lt;/div&gt;
-                  &lt;div class&#x3D;&quot;bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6&quot;&gt;
-                    &lt;dt class&#x3D;&quot;text-sm font-medium text-gray-500&quot;&gt;Application for&lt;/dt&gt;
-                    &lt;dd class&#x3D;&quot;mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2&quot;&gt;Backend Developer&lt;/dd&gt;
-                  &lt;/div&gt;
-                  &lt;div class&#x3D;&quot;bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6&quot;&gt;
-                    &lt;dt class&#x3D;&quot;text-sm font-medium text-gray-500&quot;&gt;Email address&lt;/dt&gt;
-                    &lt;dd class&#x3D;&quot;mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2&quot;&gt;margotfoster@example.com&lt;/dd&gt;
-                  &lt;/div&gt;
-                  &lt;div class&#x3D;&quot;bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6&quot;&gt;
-                    &lt;dt class&#x3D;&quot;text-sm font-medium text-gray-500&quot;&gt;Salary expectation&lt;/dt&gt;
-                    &lt;dd class&#x3D;&quot;mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2&quot;&gt;$120,000&lt;/dd&gt;
-                  &lt;/div&gt;
-                  &lt;div class&#x3D;&quot;bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6&quot;&gt;
-                    &lt;dt class&#x3D;&quot;text-sm font-medium text-gray-500&quot;&gt;About&lt;/dt&gt;
-                    &lt;dd class&#x3D;&quot;mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2&quot;&gt;Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.&lt;/dd&gt;
-                  &lt;/div&gt;
-                  &lt;div class&#x3D;&quot;bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6&quot;&gt;
-                    &lt;dt class&#x3D;&quot;text-sm font-medium text-gray-500&quot;&gt;Attachments&lt;/dt&gt;
-                    &lt;dd class&#x3D;&quot;mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2&quot;&gt;
-                      &lt;ul role&#x3D;&quot;list&quot; class&#x3D;&quot;border border-gray-200 rounded-md divide-y divide-gray-200&quot;&gt;
-                        &lt;li class&#x3D;&quot;pl-3 pr-4 py-3 flex items-center justify-between text-sm&quot;&gt;
-                          &lt;div class&#x3D;&quot;w-0 flex-1 flex items-center&quot;&gt;
-                            &lt;!-- Heroicon name: solid/paper-clip --&gt;
-                            &lt;svg class&#x3D;&quot;flex-shrink-0 h-5 w-5 text-gray-400&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 20 20&quot; fill&#x3D;&quot;currentColor&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
-                              &lt;path fill-rule&#x3D;&quot;evenodd&quot; d&#x3D;&quot;M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z&quot; clip-rule&#x3D;&quot;evenodd&quot; /&gt;
-                            &lt;/svg&gt;
-                            &lt;span class&#x3D;&quot;ml-2 flex-1 w-0 truncate&quot;&gt; resume_back_end_developer.pdf &lt;/span&gt;
-                          &lt;/div&gt;
-                          &lt;div class&#x3D;&quot;ml-4 flex-shrink-0&quot;&gt;
-                            &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;font-medium text-indigo-600 hover:text-indigo-500&quot;&gt; Download &lt;/a&gt;
-                          &lt;/div&gt;
-                        &lt;/li&gt;
-                        &lt;li class&#x3D;&quot;pl-3 pr-4 py-3 flex items-center justify-between text-sm&quot;&gt;
-                          &lt;div class&#x3D;&quot;w-0 flex-1 flex items-center&quot;&gt;
-                            &lt;!-- Heroicon name: solid/paper-clip --&gt;
-                            &lt;svg class&#x3D;&quot;flex-shrink-0 h-5 w-5 text-gray-400&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 20 20&quot; fill&#x3D;&quot;currentColor&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
-                              &lt;path fill-rule&#x3D;&quot;evenodd&quot; d&#x3D;&quot;M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z&quot; clip-rule&#x3D;&quot;evenodd&quot; /&gt;
-                            &lt;/svg&gt;
-                            &lt;span class&#x3D;&quot;ml-2 flex-1 w-0 truncate&quot;&gt; coverletter_back_end_developer.pdf &lt;/span&gt;
-                          &lt;/div&gt;
-                          &lt;div class&#x3D;&quot;ml-4 flex-shrink-0&quot;&gt;
-                            &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;font-medium text-indigo-600 hover:text-indigo-500&quot;&gt; Download &lt;/a&gt;
-                          &lt;/div&gt;
-                        &lt;/li&gt;
-                      &lt;/ul&gt;
-                    &lt;/dd&gt;
-                  &lt;/div&gt;
-                &lt;/dl&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-
-
-
-
-
-
-
+    &lt;div class&#x3D;&quot;sm:flex items-start justify-between gap-4 pointer&quot;&gt;
+        &lt;div class&#x3D;&quot;shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white &quot;&gt;
+            &lt;p class&#x3D;&quot;text-3xl font-semibold text-gray-800&quot;&gt;{{ stats.coursesCount }}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;text-xl leading-4 xl:mt-4 mt-2 text-gray-600&quot;&gt;Total des Formations&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white &quot;&gt;
+            &lt;p class&#x3D;&quot;text-3xl font-semibold text-gray-800&quot;&gt;{{ stats.doctorantCount }}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;text-xl leading-4 xl:mt-4 mt-2 text-gray-600&quot;&gt;Nombre des doctorants en cours&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white &quot;&gt;
+            &lt;p class&#x3D;&quot;text-3xl font-semibold text-gray-800&quot;&gt;{{ stats.profCount }}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;text-xl leading-4 xl:mt-4 mt-2 text-gray-600&quot;&gt;Nombre des Professeurs&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white &quot;&gt;
+            &lt;p class&#x3D;&quot;text-3xl font-semibold text-gray-800&quot;&gt;{{ stats.staffCount }}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;text-xl leading-4 xl:mt-4 mt-2 text-gray-600&quot;&gt;Nombres des personnels administartifs&lt;/p&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 
+    &lt;div class&#x3D;&quot;sm:pt-8 w-full sm:flex items-start justify-start gap-4 pointer&quot;&gt;
+        &lt;div class&#x3D;&quot;shadow-lg xl:p-8 p-6 sm:w-full w-full bg-white &quot;&gt;
+            &lt;p class&#x3D;&quot;text-3xl font-semibold text-gray-800&quot;&gt;{{ stats.staffCount }}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;text-xl leading-4 xl:mt-4 mt-2 text-gray-600&quot;&gt;Nombres des personnels administartifs&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;sm:pt-8 sm:flex items-start justify-start gap-4 pointer&quot;&gt;
+      &lt;div class&#x3D;&quot;shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white &quot;&gt;
+          &lt;p class&#x3D;&quot;text-3xl font-semibold text-gray-800&quot;&gt;{{ statsMessages.fileCount }}&lt;/p&gt;
+          &lt;p class&#x3D;&quot;text-xl leading-4 xl:mt-4 mt-2 text-gray-600&quot;&gt;Total des fichiers&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white &quot;&gt;
+          &lt;p class&#x3D;&quot;text-3xl font-semibold text-gray-800&quot;&gt;{{ statsMessages.doctorantMessages }}&lt;/p&gt;
+          &lt;p class&#x3D;&quot;text-xl leading-4 xl:mt-4 mt-2 text-gray-600&quot;&gt;Total de message des doctorants&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white &quot;&gt;
+          &lt;p class&#x3D;&quot;text-3xl font-semibold text-gray-800&quot;&gt;{{ statsMessages.adminMessages }}&lt;/p&gt;
+          &lt;p class&#x3D;&quot;text-xl leading-4 xl:mt-4 mt-2 text-gray-600&quot;&gt;Nombres des messages des administartifs&lt;/p&gt;
+      &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-
-
-
-
-
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -374,8 +475,8 @@ export class DashboardComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="p-dashboard"><p class="text-3xl">Tableau de Bord</p><div class="card">  <div class="card-head">  </div>  <div class="card-body">    <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit.    Id, accusamus. Suscipit nam commodi in ducimus, enim minima nostrum iure facere! -->    <div class="pt-4">            <!-- This requires Tailwind CSS v2.0+ , pour attendre la page de tablea de bord officielle -->            <div class="bg-white shadow overflow-hidden sm:rounded-lg">              <div class="px-4 py-5 sm:px-6">                <h3 class="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>                <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details and application.</p>              </div>              <div class="border-t border-gray-200">                <dl>                  <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">                    <dt class="text-sm font-medium text-gray-500">Full name</dt>                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Margot Foster</dd>                  </div>                  <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">                    <dt class="text-sm font-medium text-gray-500">Application for</dt>                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Backend Developer</dd>                  </div>                  <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">                    <dt class="text-sm font-medium text-gray-500">Email address</dt>                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">margotfoster@example.com</dd>                  </div>                  <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">                    <dt class="text-sm font-medium text-gray-500">Salary expectation</dt>                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">$120,000</dd>                  </div>                  <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">                    <dt class="text-sm font-medium text-gray-500">About</dt>                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>                  </div>                  <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">                    <dt class="text-sm font-medium text-gray-500">Attachments</dt>                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">                      <ul role="list" class="border border-gray-200 rounded-md divide-y divide-gray-200">                        <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">                          <div class="w-0 flex-1 flex items-center">                            <!-- Heroicon name: solid/paper-clip -->                            <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">                              <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />                            </svg>                            <span class="ml-2 flex-1 w-0 truncate"> resume_back_end_developer.pdf </span>                          </div>                          <div class="ml-4 flex-shrink-0">                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>                          </div>                        </li>                        <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">                          <div class="w-0 flex-1 flex items-center">                            <!-- Heroicon name: solid/paper-clip -->                            <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">                              <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd" />                            </svg>                            <span class="ml-2 flex-1 w-0 truncate"> coverletter_back_end_developer.pdf </span>                          </div>                          <div class="ml-4 flex-shrink-0">                            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>                          </div>                        </li>                      </ul>                    </dd>                  </div>                </dl>              </div>            </div>    </div>  </div></div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
+        var COMPONENT_TEMPLATE = '<div><div class="sm:pt-8 h-screen"    style="background:url(\'https://i.ibb.co/KjrPCyW/map.png\');">    <div class="sm:flex items-start justify-between gap-4 pointer">        <div class="shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white ">            <p class="text-3xl font-semibold text-gray-800">{{ stats.coursesCount }}</p>            <p class="text-xl leading-4 xl:mt-4 mt-2 text-gray-600">Total des Formations</p>        </div>        <div class="shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white ">            <p class="text-3xl font-semibold text-gray-800">{{ stats.doctorantCount }}</p>            <p class="text-xl leading-4 xl:mt-4 mt-2 text-gray-600">Nombre des doctorants en cours</p>        </div>        <div class="shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white ">            <p class="text-3xl font-semibold text-gray-800">{{ stats.profCount }}</p>            <p class="text-xl leading-4 xl:mt-4 mt-2 text-gray-600">Nombre des Professeurs</p>        </div>        <div class="shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white ">            <p class="text-3xl font-semibold text-gray-800">{{ stats.staffCount }}</p>            <p class="text-xl leading-4 xl:mt-4 mt-2 text-gray-600">Nombres des personnels administartifs</p>        </div>    </div>    <div class="sm:pt-8 w-full sm:flex items-start justify-start gap-4 pointer">        <div class="shadow-lg xl:p-8 p-6 sm:w-full w-full bg-white ">            <p class="text-3xl font-semibold text-gray-800">{{ stats.staffCount }}</p>            <p class="text-xl leading-4 xl:mt-4 mt-2 text-gray-600">Nombres des personnels administartifs</p>        </div>    </div>    <div class="sm:pt-8 sm:flex items-start justify-start gap-4 pointer">      <div class="shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white ">          <p class="text-3xl font-semibold text-gray-800">{{ statsMessages.fileCount }}</p>          <p class="text-xl leading-4 xl:mt-4 mt-2 text-gray-600">Total des fichiers</p>      </div>      <div class="shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white ">          <p class="text-3xl font-semibold text-gray-800">{{ statsMessages.doctorantMessages }}</p>          <p class="text-xl leading-4 xl:mt-4 mt-2 text-gray-600">Total de message des doctorants</p>      </div>      <div class="shadow-lg xl:p-8 p-6 sm:w-auto w-full bg-white ">          <p class="text-3xl font-semibold text-gray-800">{{ statsMessages.adminMessages }}</p>          <p class="text-xl leading-4 xl:mt-4 mt-2 text-gray-600">Nombres des messages des administartifs</p>      </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
 </script>

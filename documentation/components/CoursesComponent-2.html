@@ -125,6 +125,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#courses" >courses</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -155,15 +169,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(coursesService: <a href="../injectables/CoursesService.html" target="_self">CoursesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/public/components/courses/courses.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/public/components/courses/courses.component.ts:13</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>coursesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CoursesService.html" target="_self" >CoursesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -197,8 +241,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/public/components/courses/courses.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/public/components/courses/courses.component.ts:17</a></div>
                 </td>
             </tr>
 
@@ -215,12 +259,51 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="courses"></a>
+                    <span class="name">
+                        <span ><b>courses</b></span>
+                        <a href="#courses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Courses.html" target="_self" >Partial&lt;Courses&gt;[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/public/components/courses/courses.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { CoursesService } from &#x27;src/app/core/services/courses.service&#x27;;
+import { Courses } from &#x27;src/app/models/courses.model&#x27;;
 
 @Component({
   selector: &#x27;app-courses&#x27;,
@@ -229,9 +312,18 @@
 })
 export class CoursesComponent implements OnInit {
 
-  constructor() { }
+
+  courses:Partial&lt;Courses&gt;[] &#x3D; []
+
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
+    this.coursesService.getCoursess({enabled:true}).subscribe({
+      next:data &#x3D;&gt; {
+        this.courses &#x3D; data
+      },
+      error:err &#x3D;&gt; console.log({err})
+    })
   }
 
 }
@@ -261,14 +353,14 @@ export class CoursesComponent implements OnInit {
   &lt;div class&#x3D;&quot;lg:px-0&quot;&gt;
       &lt;div role&#x3D;&quot;contentinfo&quot; class&#x3D;&quot;flex items-center flex-col&quot;&gt;
           &lt;!-- &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none uppercase text-sm text-center text-gray-500 dark:text-gray-200 leading-none&quot;&gt;Les Formations&lt;/p&gt; --&gt;
-          &lt;h1 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-4xl lg:text-4xl font-extrabold text-center leading-tight text-gray-800 dark:text-white lg:w-7/12 md:w-9/12 xl:w-5/12&quot;&gt;Les Formations&lt;/h1&gt;
+          &lt;h1 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none py-2 text-4xl lg:text-4xl font-extrabold text-center leading-tight text-gray-800 dark:text-white lg:w-7/12 md:w-9/12 xl:w-5/12&quot;&gt;Les Formations&lt;/h1&gt;
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
 &lt;section id&#x3D;&quot;courses&quot; class&#x3D;&quot;py-12 mt-12 mx-20 mb-2&quot;&gt;
   &lt;div tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;group of cards&quot; class&#x3D;&quot;focus:outline-none px-4 lg:px-0&quot;&gt;
       &lt;div class&#x3D;&quot;mx-auto container flex flex-wrap px-2 lg:px-24&quot;&gt;
-          &lt;div tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;card 1&quot; class&#x3D;&quot;focus:outline-none flex sm:w-full md:w-1/2 lg:border-r md:border-r sm:border-r-0 border-indigo-400 pb-10 lg:pt-10&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let course of courses&quot; tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;card 1&quot; class&#x3D;&quot;focus:outline-none flex sm:w-full md:w-1/2 pb-10 lg:pt-10&quot;&gt;
               &lt;div class&#x3D;&quot; flex flex-shrink-0 items-center mr-5 text-white&quot;&gt;
                   &lt;!-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg1.svg&quot; alt&#x3D;&quot;drawer&quot;&gt; --&gt;
                   &lt;div&gt;
@@ -276,63 +368,75 @@ export class CoursesComponent implements OnInit {
                   &lt;/div&gt;
               &lt;/div&gt;
               &lt;div class&#x3D;&quot;md:w-9/12 lg:w-9/12&quot;&gt;
-                  &lt;h2 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-lg font-semibold leading-5 text-white&quot;&gt;Politique et Systeme de Santé&lt;/h2&gt;
-                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;It provides a very simple start, no need to write a lot of code, you just import it and start the primitive components and create the ones you need.&lt;/p&gt;
+                  &lt;h2 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-lg font-semibold leading-5 text-white&quot;&gt;{{course.title}}&lt;/h2&gt;
+                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;
+                    {{course.description}}
+                  &lt;/p&gt;
               &lt;/div&gt;
           &lt;/div&gt;
-          &lt;div tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;card 2&quot; class&#x3D;&quot;focus:outline-none flex sm:w-full md:w-1/2 lg:pb-10 lg:pt-10&quot;&gt;
+          &lt;!-- &lt;div tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;card 2&quot; class&#x3D;&quot;focus:outline-none flex sm:w-full md:w-1/2 lg:pb-10 lg:pt-10&quot;&gt;
               &lt;div class&#x3D;&quot; flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white&quot;&gt;
-                 &lt;!-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg2.svg&quot; alt&#x3D;&quot;check&quot;&gt; --&gt;
+                 !-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg2.svg&quot; alt&#x3D;&quot;check&quot;&gt; --
                  &lt;div&gt;
                     &lt;i class&#x3D;&quot;fa-solid fa-file-shield&quot;&gt;&lt;/i&gt;
                  &lt;/div&gt;
               &lt;/div&gt;
               &lt;div class&#x3D;&quot;md:w-9/12 lg:w-9/12 &quot;&gt;
                   &lt;h2 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-lg font-semibold leading-5 text-white&quot;&gt;Promotion et Prevention de la Santé&lt;/h2&gt;
-                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;Modify the visual appearance of your site – including colors, fonts, margins and other style-related properties – with a sophisticated style.&lt;/p&gt;
+                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;
+                    Le but est d’améliorer l’état de santé de la population en évitant l’apparition, le développement ou l’aggravation des maladies ou accidents et en favorisant les comportements individuels et collectifs pouvant contribuer à réduire le risque de maladie et d’accident.
+                  &lt;/p&gt;
               &lt;/div&gt;
           &lt;/div&gt;
           &lt;div tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;card 3&quot; class&#x3D;&quot;focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 lg:border-r md:border-r sm:border-r-0 border-indigo-400 pt-10 lg:pb-20&quot;&gt;
               &lt;div class&#x3D;&quot; flex flex-shrink-0 items-center mr-5 text-white&quot;&gt;
-                &lt;!-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg3.svg&quot; alt&#x3D;&quot;html-tag&quot;&gt; --&gt;
+                !-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg3.svg&quot; alt&#x3D;&quot;html-tag&quot;&gt; --
 
                 &lt;i class&#x3D;&quot;fa-solid fa-dna&quot;&gt;&lt;/i&gt;
               &lt;/div&gt;
               &lt;div class&#x3D;&quot;md:w-9/12 lg:w-9/12 &quot;&gt;
                   &lt;h2 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-lg font-semibold leading-5 text-white&quot;&gt;Epidemiologie et Biologie Medicale&lt;/h2&gt;
-                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product.&lt;/p&gt;
+                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;
+                    La biologie médicale est une discipline consistant à réaliser des examens de liquides biologiques (sang, urine, liquide céphalo-rachidien…) en vue d’établir le diagnostic d’une maladie. Elle a un fonctionnement essentiel dans le suivi et la surveillance d’un traitement.
+                  &lt;/p&gt;
               &lt;/div&gt;
           &lt;/div&gt;
           &lt;div tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;card 4&quot; class&#x3D;&quot;focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 border-indigo-400 pt-10 lg:pb-20&quot;&gt;
               &lt;div class&#x3D;&quot; flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white&quot;&gt;
-                 &lt;!-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg&quot; alt&#x3D;&quot;display&quot;&gt; --&gt;
+                 !-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg&quot; alt&#x3D;&quot;display&quot;&gt; --
                  &lt;i class&#x3D;&quot;fa-solid fa-book-open-reader&quot;&gt;&lt;/i&gt;
               &lt;/div&gt;
               &lt;div class&#x3D;&quot;md:w-9/12 lg:w-9/12 &quot;&gt;
                   &lt;h2 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-lg font-semibold leading-5 text-white&quot;&gt;Recherche Clinique&lt;/h2&gt;
-                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;We have chosen the bright color palettes that arouse the only positive emotions. The kit that simply assures to be loved by everyone.&lt;/p&gt;
+                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;
+                    Correspond aux études scientifiques réalisées sur la personne humaine, en vue du développement des connaissances biologiques ou médicales. Il s’agit de recherches prospectives, qui impliquent le suivi de patients ou de volontaires sains. Pour mieux comprendre les maladies, mieux les traiter, et pour identifier les facteurs de risque potentiels.
+                  &lt;/p&gt;
               &lt;/div&gt;
           &lt;/div&gt;
           &lt;div tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;card 5&quot; class&#x3D;&quot;focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 lg:border-r md:border-r sm:border-r-0 border-indigo-400 pt-10 lg:pb-20&quot;&gt;
               &lt;div class&#x3D;&quot; flex flex-shrink-0 items-center mr-5 text-white&quot;&gt;
-                 &lt;!-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg&quot; alt&#x3D;&quot;display&quot;&gt; --&gt;
+                 !-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg&quot; alt&#x3D;&quot;display&quot;&gt; --
                  &lt;i class&#x3D;&quot;fa-solid fa-hands-holding-child&quot;&gt;&lt;/i&gt;
               &lt;/div&gt;
               &lt;div class&#x3D;&quot;md:w-9/12 lg:w-9/12 &quot;&gt;
                   &lt;h2 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-lg font-semibold leading-5 text-white&quot;&gt;Santé de la Mere et de L&#x27;Enfant&lt;/h2&gt;
-                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;We have chosen the bright color palettes that arouse the only positive emotions. The kit that simply assures to be loved by everyone.&lt;/p&gt;
+                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;
+                    Le Programme National de Santé de la Mère et de l&#x27;Enfant a pour mission de contribuer à la réduction de la morbidité et de la mortalité maternelle et infanto-juvénile par la promotion des interventions à la Santé de la Reproduction y compris la Planification Familiale, la Survie et le Développement de l&#x27;Enfant .
+                  &lt;/p&gt;
               &lt;/div&gt;
           &lt;/div&gt;
           &lt;div tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;card 6&quot; class&#x3D;&quot;focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0  border-indigo-400 pt-10 lg:pb-20&quot;&gt;
               &lt;div class&#x3D;&quot; flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white&quot;&gt;
-                 &lt;!-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg&quot; alt&#x3D;&quot;display&quot;&gt; --&gt;
+                 !-- &lt;img src&#x3D;&quot;https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg&quot; alt&#x3D;&quot;display&quot;&gt; --
                  &lt;i class&#x3D;&quot;fa-solid fa-heart-pulse w-18&quot;&gt;&lt;/i&gt;
               &lt;/div&gt;
               &lt;div class&#x3D;&quot;md:w-9/12 lg:w-9/12 &quot;&gt;
                   &lt;h2 tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-lg font-semibold leading-5 text-white&quot;&gt;Science Biologie des Vivants&lt;/h2&gt;
-                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;We have chosen the bright color palettes that arouse the only positive emotions. The kit that simply assures to be loved by everyone.&lt;/p&gt;
+                  &lt;p tabindex&#x3D;&quot;0&quot; class&#x3D;&quot;focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2&quot;&gt;
+                    Ce Département forme des étudiants dans tous les domaines de la Biologie, de ses bases moléculaires et structurales au fonctionnement du Vivant, du niveau cellulaire jusqu’au niveau de l’organisme entier en relation avec son environnement.
+                  &lt;/p&gt;
               &lt;/div&gt;
-          &lt;/div&gt;
+          &lt;/div&gt; --&gt;
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;
@@ -390,8 +494,8 @@ export class CoursesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- <section class="courses px-20" >  <h2 class="text-4xl"> Les Formations </h2>  <h1>    Vous savez l\'existence de votre opportunitee ?    pas de panique ceci en est une .  </h1></section> --><section class="bg-white dark:bg-gray-900 md:mx-20 sm:mx-10 py-4 mt-4">  <div class="lg:px-0">      <div role="contentinfo" class="flex items-center flex-col">          <!-- <p tabindex="0" class="focus:outline-none uppercase text-sm text-center text-gray-500 dark:text-gray-200 leading-none">Les Formations</p> -->          <h1 tabindex="0" class="focus:outline-none text-4xl lg:text-4xl font-extrabold text-center leading-tight text-gray-800 dark:text-white lg:w-7/12 md:w-9/12 xl:w-5/12">Les Formations</h1>      </div>  </div></section><section id="courses" class="py-12 mt-12 mx-20 mb-2">  <div tabindex="0" aria-label="group of cards" class="focus:outline-none px-4 lg:px-0">      <div class="mx-auto container flex flex-wrap px-2 lg:px-24">          <div tabindex="0" aria-label="card 1" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-r md:border-r sm:border-r-0 border-indigo-400 pb-10 lg:pt-10">              <div class=" flex flex-shrink-0 items-center mr-5 text-white">                  <!-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg1.svg" alt="drawer"> -->                  <div>                    <i class="fa-solid fa-dove"></i>                  </div>              </div>              <div class="md:w-9/12 lg:w-9/12">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Politique et Systeme de Santé</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">It provides a very simple start, no need to write a lot of code, you just import it and start the primitive components and create the ones you need.</p>              </div>          </div>          <div tabindex="0" aria-label="card 2" class="focus:outline-none flex sm:w-full md:w-1/2 lg:pb-10 lg:pt-10">              <div class=" flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white">                 <!-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg2.svg" alt="check"> -->                 <div>                    <i class="fa-solid fa-file-shield"></i>                 </div>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Promotion et Prevention de la Santé</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">Modify the visual appearance of your site – including colors, fonts, margins and other style-related properties – with a sophisticated style.</p>              </div>          </div>          <div tabindex="0" aria-label="card 3" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 lg:border-r md:border-r sm:border-r-0 border-indigo-400 pt-10 lg:pb-20">              <div class=" flex flex-shrink-0 items-center mr-5 text-white">                <!-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg3.svg" alt="html-tag"> -->                <i class="fa-solid fa-dna"></i>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Epidemiologie et Biologie Medicale</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">Instead of just giving you the tools to create your own site, they offer you a list of themes you can choose from. Thus a handy product.</p>              </div>          </div>          <div tabindex="0" aria-label="card 4" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 border-indigo-400 pt-10 lg:pb-20">              <div class=" flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white">                 <!-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg" alt="display"> -->                 <i class="fa-solid fa-book-open-reader"></i>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Recherche Clinique</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">We have chosen the bright color palettes that arouse the only positive emotions. The kit that simply assures to be loved by everyone.</p>              </div>          </div>          <div tabindex="0" aria-label="card 5" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 lg:border-r md:border-r sm:border-r-0 border-indigo-400 pt-10 lg:pb-20">              <div class=" flex flex-shrink-0 items-center mr-5 text-white">                 <!-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg" alt="display"> -->                 <i class="fa-solid fa-hands-holding-child"></i>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Santé de la Mere et de L\'Enfant</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">We have chosen the bright color palettes that arouse the only positive emotions. The kit that simply assures to be loved by everyone.</p>              </div>          </div>          <div tabindex="0" aria-label="card 6" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0  border-indigo-400 pt-10 lg:pb-20">              <div class=" flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white">                 <!-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg" alt="display"> -->                 <i class="fa-solid fa-heart-pulse w-18"></i>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Science Biologie des Vivants</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">We have chosen the bright color palettes that arouse the only positive emotions. The kit that simply assures to be loved by everyone.</p>              </div>          </div>      </div>  </div></section><app-footer></app-footer></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
+        var COMPONENT_TEMPLATE = '<div><!-- <section class="courses px-20" >  <h2 class="text-4xl"> Les Formations </h2>  <h1>    Vous savez l\'existence de votre opportunitee ?    pas de panique ceci en est une .  </h1></section> --><section class="bg-white dark:bg-gray-900 md:mx-20 sm:mx-10 py-4 mt-4">  <div class="lg:px-0">      <div role="contentinfo" class="flex items-center flex-col">          <!-- <p tabindex="0" class="focus:outline-none uppercase text-sm text-center text-gray-500 dark:text-gray-200 leading-none">Les Formations</p> -->          <h1 tabindex="0" class="focus:outline-none py-2 text-4xl lg:text-4xl font-extrabold text-center leading-tight text-gray-800 dark:text-white lg:w-7/12 md:w-9/12 xl:w-5/12">Les Formations</h1>      </div>  </div></section><section id="courses" class="py-12 mt-12 mx-20 mb-2">  <div tabindex="0" aria-label="group of cards" class="focus:outline-none px-4 lg:px-0">      <div class="mx-auto container flex flex-wrap px-2 lg:px-24">          <div *ngFor="let course of courses" tabindex="0" aria-label="card 1" class="focus:outline-none flex sm:w-full md:w-1/2 pb-10 lg:pt-10">              <div class=" flex flex-shrink-0 items-center mr-5 text-white">                  <!-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg1.svg" alt="drawer"> -->                  <div>                    <i class="fa-solid fa-dove"></i>                  </div>              </div>              <div class="md:w-9/12 lg:w-9/12">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">{{course.title}}</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">                    {{course.description}}                  </p>              </div>          </div>          <!-- <div tabindex="0" aria-label="card 2" class="focus:outline-none flex sm:w-full md:w-1/2 lg:pb-10 lg:pt-10">              <div class=" flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white">                 !-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg2.svg" alt="check"> --                 <div>                    <i class="fa-solid fa-file-shield"></i>                 </div>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Promotion et Prevention de la Santé</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">                    Le but est d’améliorer l’état de santé de la population en évitant l’apparition, le développement ou l’aggravation des maladies ou accidents et en favorisant les comportements individuels et collectifs pouvant contribuer à réduire le risque de maladie et d’accident.                  </p>              </div>          </div>          <div tabindex="0" aria-label="card 3" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 lg:border-r md:border-r sm:border-r-0 border-indigo-400 pt-10 lg:pb-20">              <div class=" flex flex-shrink-0 items-center mr-5 text-white">                !-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg3.svg" alt="html-tag"> --                <i class="fa-solid fa-dna"></i>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Epidemiologie et Biologie Medicale</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">                    La biologie médicale est une discipline consistant à réaliser des examens de liquides biologiques (sang, urine, liquide céphalo-rachidien…) en vue d’établir le diagnostic d’une maladie. Elle a un fonctionnement essentiel dans le suivi et la surveillance d’un traitement.                  </p>              </div>          </div>          <div tabindex="0" aria-label="card 4" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 border-indigo-400 pt-10 lg:pb-20">              <div class=" flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white">                 !-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg" alt="display"> --                 <i class="fa-solid fa-book-open-reader"></i>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Recherche Clinique</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">                    Correspond aux études scientifiques réalisées sur la personne humaine, en vue du développement des connaissances biologiques ou médicales. Il s’agit de recherches prospectives, qui impliquent le suivi de patients ou de volontaires sains. Pour mieux comprendre les maladies, mieux les traiter, et pour identifier les facteurs de risque potentiels.                  </p>              </div>          </div>          <div tabindex="0" aria-label="card 5" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0 lg:border-r md:border-r sm:border-r-0 border-indigo-400 pt-10 lg:pb-20">              <div class=" flex flex-shrink-0 items-center mr-5 text-white">                 !-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg" alt="display"> --                 <i class="fa-solid fa-hands-holding-child"></i>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Santé de la Mere et de L\'Enfant</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">                    Le Programme National de Santé de la Mère et de l\'Enfant a pour mission de contribuer à la réduction de la morbidité et de la mortalité maternelle et infanto-juvénile par la promotion des interventions à la Santé de la Reproduction y compris la Planification Familiale, la Survie et le Développement de l\'Enfant .                  </p>              </div>          </div>          <div tabindex="0" aria-label="card 6" class="focus:outline-none flex sm:w-full md:w-1/2 lg:border-t md:border-t sm:border-t-0  border-indigo-400 pt-10 lg:pb-20">              <div class=" flex flex-shrink-0 items-center sm:ml-0 md:ml-10 lg:ml-10 mr-5 text-white">                 !-- <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/indigo_bg_with_divider-svg4.svg" alt="display"> --                 <i class="fa-solid fa-heart-pulse w-18"></i>              </div>              <div class="md:w-9/12 lg:w-9/12 ">                  <h2 tabindex="0" class="focus:outline-none text-lg font-semibold leading-5 text-white">Science Biologie des Vivants</h2>                  <p tabindex="0" class="focus:outline-none text-base text-white leading-normal xl:w-10/12 pt-2">                    Ce Département forme des étudiants dans tous les domaines de la Biologie, de ses bases moléculaires et structurales au fonctionnement du Vivant, du niveau cellulaire jusqu’au niveau de l’organisme entier en relation avec son environnement.                  </p>              </div>          </div> -->      </div>  </div></section><app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CoursesComponent-2'};
 </script>

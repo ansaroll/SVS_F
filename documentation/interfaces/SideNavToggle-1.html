@@ -177,7 +177,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Output , EventEmitter, OnInit, HostListener} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, style, transition, trigger } from &#x27;@angular/animations&#x27;;
+import { Component, Output , EventEmitter, OnInit, HostListener} from &#x27;@angular/core&#x27;;
 import { INavbarData } from &#x27;./helper&#x27;;
 import { navbarData } from &#x27;./nav-data&#x27;;
 
@@ -189,7 +190,23 @@ interface SideNavToggle {
 @Component({
   selector: &#x27;app-sidenav&#x27;,
   templateUrl: &#x27;./sidenav.component.html&#x27;,
-  styleUrls: [&#x27;./sidenav.component.scss&#x27;]
+  styleUrls: [&#x27;./sidenav.component.scss&#x27;],
+  animations:[
+    trigger(&#x27;fadeInOut&#x27;,[
+      transition(&#x27;:enter&#x27;,[
+        style({opacity:0}),
+        animate(&#x27;1000ms ease-in-out&#x27;,
+          style({opacity:1})
+        )
+      ]),
+      transition(&#x27;:leave&#x27;,[
+        style({opacity:1}),
+        animate(&#x27;1000ms ease-in-out&#x27;,
+          style({opacity:0})
+        )
+      ])
+    ])
+  ]
 })
 export class SidenavComponent implements OnInit{
 

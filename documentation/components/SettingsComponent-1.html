@@ -125,6 +125,32 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#informationForm" >informationForm</a>
+                            </li>
+                            <li>
+                                <a href="#informationPreview$" >informationPreview$</a>
+                            </li>
+                            <li>
+                                <a href="#isUpdate" >isUpdate</a>
+                            </li>
+                            <li>
+                                <a href="#role" >role</a>
+                            </li>
+                            <li>
+                                <a href="#userId" >userId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -137,10 +163,30 @@
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#onSubmitprofilForm" >onSubmitprofilForm</a>
+                            </li>
+                            <li>
+                                <a href="#onUpdateProfil" >onUpdateProfil</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#userSignUp" >userSignUp</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -155,20 +201,119 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:29</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
 
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userSignUp"></a>
+                        <b>userSignUp</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    name: &#x27;&#x27;,
+    password: &#x27;&#x27;,
+    passwordconfirm: &#x27;&#x27;,
+    email: &#x27;&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -197,8 +342,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -214,13 +359,308 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmitprofilForm"></a>
+                    <span class="name">
+                        <span ><b>onSubmitprofilForm</b></span>
+                        <a href="#onSubmitprofilForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmitprofilForm(form: <a href="https://angular.io/api/forms/FormGroup" target="_blank">FormGroup</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="113"
+                            class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onUpdateProfil"></a>
+                    <span class="name">
+                        <span ><b>onUpdateProfil</b></span>
+                        <a href="#onUpdateProfil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onUpdateProfil(form: <a href="https://angular.io/api/forms/FormGroup" target="_blank">FormGroup</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="informationForm"></a>
+                    <span class="name">
+                        <span ><b>informationForm</b></span>
+                        <a href="#informationForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="informationPreview$"></a>
+                    <span class="name">
+                        <span ><b>informationPreview$</b></span>
+                        <a href="#informationPreview$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUpdate"></a>
+                    <span class="name">
+                        <span ><b>isUpdate</b></span>
+                        <a href="#isUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="role"></a>
+                    <span class="name">
+                        <span ><b>role</b></span>
+                        <a href="#role"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userId"></a>
+                    <span class="name">
+                        <span ><b>userId</b></span>
+                        <a href="#userId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/doctorant/components/settings/settings.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, VERSION, Input } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { map, Observable } from &#x27;rxjs&#x27;;
+import { UserService } from &#x27;src/app/core/services/user.service&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { User } from &#x27;src/app/models/user.model&#x27;;
+
 
 @Component({
   selector: &#x27;app-settings&#x27;,
@@ -229,9 +669,113 @@
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  userId: string | null &#x3D; null
+  role: string | null &#x3D; null
+  isUpdate: boolean &#x3D; false
+
+  informationForm!: FormGroup;
+  informationPreview$!: Observable&lt;User&gt;
+
+
+  @Input() userSignUp: any &#x3D; {
+    name: &#x27;&#x27;,
+    password: &#x27;&#x27;,
+    passwordconfirm: &#x27;&#x27;,
+    email: &#x27;&#x27;,
+  }
+
+
+  constructor(private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
+    // this.userId &#x3D; this.route.snapshot.paramMap.get(&#x27;id&#x27;)
+    // this.role &#x3D; this.route.snapshot.paramMap.get(&#x27;role&#x27;)
+
+
+    this.informationForm &#x3D; this.formBuilder.group({
+      name: [null],
+      firstName: [null],
+      nationality: [null],
+      gender: [null],
+      dateOfBirth: [null],
+      yearBacc: [null],
+      adress: [null],
+      cin: [null],
+      serieBacc: [null],
+      codeDoubling: [null],
+      password: [null],
+      passwordConfirmation: [null],
+      email: [null],
+      telephone: [null],
+      isBoursier: [null],
+      tauxBourse: [null],
+      about: [null],
+      poste: [null],
+      im: [null],
+      role: [&quot;doctorant&quot;]
+    })
+
+
+    if (this.route.snapshot.paramMap.get(&#x27;id&#x27;) !&#x3D; null) {
+      this.isUpdate &#x3D; true
+      this.userService.getSingleUser(this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe({
+        next: data &#x3D;&gt; {
+          this.informationForm.setValue({
+            name: data.name || &#x27;&#x27;,
+            firstName: data.firstName || &#x27;&#x27;,
+            nationality: data.nationality || &#x27;&#x27;,
+            gender: data.gender || &#x27;&#x27;,
+            dateOfBirth: data.dateOfBirth || &#x27;&#x27;,
+            yearBacc: data.yearBacc || 1000,
+            adress: data.adress || &#x27;&#x27;,
+            cin: data.cin || &#x27;&#x27;,
+            serieBacc: data.serieBacc || &#x27;&#x27;,
+            codeDoubling: data.codeDoubling || &#x27;&#x27;,
+            password: &#x27;&#x27;,
+            passwordConfirmation: &#x27;&#x27;,
+            email: data.email || &#x27;&#x27;,
+            telephone: data.telephone || &#x27;&#x27;,
+            isBoursier:data.isBoursier ? true : false,
+            tauxBourse: data.tauxBourse || 0,
+            about: data.about || &#x27;&#x27;,
+            poste: data.poste || &#x27;&#x27;,
+            im: data.im || &#x27;&#x27;,
+            role: data.role || &#x27;&#x27;,
+          })
+        },
+        error: err &#x3D;&gt; console.log({ err })
+      })
+
+    }
+
+
+
+
+
+    this.informationPreview$ &#x3D; this.informationForm.valueChanges.pipe(
+      map(formValue &#x3D;&gt; ({
+        ...formValue,
+        createdAt: new Date(),
+      }))
+    )
+
+  }
+
+
+  onSubmitprofilForm(form: FormGroup) {
+    this.userService.addUser(form.value).subscribe({
+      next: data &#x3D;&gt; this.router.navigate([&#x27;/doctorant/profil&#x27;]),
+    })
+  }
+
+  onUpdateProfil(form:FormGroup){
+    this.userService.updateUser(this.route.snapshot.paramMap.get(&#x27;id&#x27;),form.value).subscribe({
+      next: data &#x3D;&gt; this.router.navigate([&#x27;/doctorant/profil&#x27;]),
+    })
   }
 
 }
@@ -239,265 +783,334 @@ export class SettingsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;h1 class&#x3D;&quot;text-2xl font-bold py-4&quot;&gt;Paramettres&lt;/h1&gt;
-
+        <pre class="line-numbers"><code class="language-html">&lt;h1 class&#x3D;&quot;text-2xl font-semibold py-4&quot;&gt;Ajouter un nouveau Doctorant&lt;/h1&gt;
+&lt;!-- ligne de separation --&gt;
 &lt;div class&#x3D;&quot;hidden sm:block&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
   &lt;div class&#x3D;&quot;py-5&quot;&gt;
     &lt;div class&#x3D;&quot;border-t border-gray-200&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div&gt;
-  &lt;div class&#x3D;&quot;md:grid md:grid-cols-4 md:gap-6&quot;&gt;
-    &lt;div class&#x3D;&quot;md:col-span-1&quot;&gt;
+&lt;form
+name&#x3D;&quot;form&quot;
+#f&#x3D;&quot;ngForm&quot;
+(ngSubmit)&#x3D;&quot;isUpdate ? onUpdateProfil(informationForm) : onSubmitprofilForm(informationForm)&quot; [formGroup]&#x3D;&quot;informationForm&quot;&gt;
+  &lt;!-- debut blpock 2--&gt;
+  &lt;div class&#x3D;&quot;mt-10 sm:mt-0&quot; id&#x3D;&quot;form-creation&quot;&gt;
+    &lt;div class&#x3D;&quot;md:grid md:grid-cols-4 md:gap-6&quot;&gt;
+      &lt;!-- &lt;div class&#x3D;&quot;md:col-span-1&quot;&gt;
       &lt;div class&#x3D;&quot;px-4 sm:px-0&quot;&gt;
-        &lt;h3 class&#x3D;&quot;text-lg font-medium leading-6 text-gray-900&quot;&gt;Profile&lt;/h3&gt;
-        &lt;p class&#x3D;&quot;mt-1 text-sm text-gray-600&quot;&gt;This information will be displayed publicly so be careful what you share.&lt;/p&gt;
+        &lt;h3 class&#x3D;&quot;text-lg font-medium leading-6 text-gray-900&quot;&gt;Personal Information&lt;/h3&gt;
+        &lt;p class&#x3D;&quot;mt-1 text-sm text-gray-600&quot;&gt;Use a permanent address where you can receive mail.&lt;/p&gt;
       &lt;/div&gt;
+    &lt;/div&gt; --&gt;
+      &lt;div class&#x3D;&quot;mt-5 md:mt-0 md:col-span-2&quot;&gt;
+        &lt;div class&#x3D;&quot;shadow overflow-hidden sm:rounded-md&quot;&gt;
+          &lt;div class&#x3D;&quot;px-4 py-5 bg-white sm:p-6&quot;&gt;
+            &lt;div class&#x3D;&quot;grid grid-cols-6 gap-6&quot;&gt;
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;name&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Nom&lt;/label&gt;
+                &lt;input [(ngModel)]&#x3D;&quot;userSignUp.name&quot; #name type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot; formControlName&#x3D;&quot;name&quot; id&#x3D;&quot;name&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;
+                  autocomplete&#x3D;&quot;off&quot; required [readonly]&#x3D;&quot;true&quot;&gt;
+                  &lt;!-- &lt;div class&#x3D;&quot;form_error text-red-400 text-xs animate-pulse&quot; *ngIf&#x3D;&quot;name[&#x27;required&#x27;]! &amp;&amp; f.submitted&quot;&gt;
+                    &quot;Ce champ est requis&quot;
+                  &lt;/div&gt; --&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;first-name&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Prenom&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;first-name&quot; id&#x3D;&quot;first-name&quot; formControlName&#x3D;&quot;firstName&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;
+                  autocomplete&#x3D;&quot;off&quot; required [readonly]&#x3D;&quot;true&quot;&gt;
+              &lt;/div&gt;
+
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;nationality&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Nationalité&lt;/label&gt;
+                &lt;select id&#x3D;&quot;nationality&quot; ng-disabled&#x3D;&quot;all&quot; name&#x3D;&quot;nationality&quot; formControlName&#x3D;&quot;nationality&quot; autocomplete&#x3D;&quot;country-name&quot;
+                  required ng-disabled&#x3D;&quot;true&quot;
+                  class&#x3D;&quot;mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm&quot;&gt;
+                  &lt;option value&#x3D;&quot;Madagascar&quot;&gt;Malgache&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;Comore&quot;&gt;Comorien&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;France&quot;&gt;Français&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;sexe&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Sexe&lt;/label&gt;
+                &lt;select title&#x3D;&quot;sexeOptions&quot; id&#x3D;&quot;sexe&quot; name&#x3D;&quot;sexe&quot; formControlName&#x3D;&quot;gender&quot; autocomplete&#x3D;&quot;country-name&quot;
+                  required
+                  class&#x3D;&quot;mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm&quot;&gt;
+                  &lt;option value&#x3D;&quot;masculin&quot;&gt;Masculin&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;feminin&quot;&gt;Feminin&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;binaire&quot;&gt;Binaire&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;dtn&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Date de naissance&lt;/label&gt;
+                &lt;input title&#x3D;&quot;dtn&quot; type&#x3D;&quot;date&quot; name&#x3D;&quot;dtn&quot; formControlName&#x3D;&quot;dateOfBirth&quot; id&#x3D;&quot;dtn&quot; autocomplete&#x3D;&quot;off&quot;
+                  required [readonly]&#x3D;&quot;true&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;dtbacc&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Obtention Bacc&lt;/label&gt;
+                &lt;input title&#x3D;&quot;dtbacc&quot; id&#x3D;&quot;dtbacc&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1900&quot; max&#x3D;&quot;2022&quot; step&#x3D;&quot;1&quot; value&#x3D;&quot;2016&quot; required
+                  formControlName&#x3D;&quot;yearBacc&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6&quot;&gt;
+                &lt;label for&#x3D;&quot;address&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Adresse&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;adress&quot; formControlName&#x3D;&quot;adress&quot; id&#x3D;&quot;address&quot; autocomplete&#x3D;&quot;off&quot; required
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;mdp&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Mot de passe&lt;/label&gt;
+                &lt;input  [(ngModel)]&#x3D;&quot;userSignUp.password&quot; #password title&#x3D;&quot;password&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;dtn&quot; formControlName&#x3D;&quot;password&quot; id&#x3D;&quot;mdp&quot; autocomplete&#x3D;&quot;off&quot;
+                  required
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+                  &lt;!-- &lt;div class&#x3D;&quot;form_error text-red-400 text-xs animate-pulse&quot; *ngIf&#x3D;&quot;password[&#x27;required&#x27;]! &amp;&amp; f.submitted&quot;&gt;
+                    &quot;Ce champ est requis&quot;
+                  &lt;/div&gt; --&gt;
+                &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;cmdp&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Confirmation mot de passe&lt;/label&gt;
+                &lt;input  [(ngModel)]&#x3D;&quot;userSignUp.passwordconfirm&quot; #passwordconfirm title&#x3D;&quot;passwordconfirm&quot; id&#x3D;&quot;cmdp&quot; type&#x3D;&quot;text&quot; required formControlName&#x3D;&quot;passwordConfirmation&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+                  &lt;!-- &lt;div class&#x3D;&quot;form_error text-red-400 text-xs animate-pulse&quot; *ngIf&#x3D;&quot;passwordconfirm[&#x27;required&#x27;]! &amp;&amp; f.submitted&quot;&gt;
+                    &quot;Ce champ est requis&quot;
+                  &lt;/div&gt; --&gt;
+                &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6&quot;&gt;
+                &lt;label for&#x3D;&quot;email&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Email&lt;/label&gt;
+                &lt;input  [(ngModel)]&#x3D;&quot;userSignUp.email&quot; #email type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot; id&#x3D;&quot;email&quot; required
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+                  &lt;!-- &lt;div class&#x3D;&quot;form_error text-red-400 text-xs animate-pulse&quot; *ngIf&#x3D;&quot;email[&#x27;required&#x27;]! &amp;&amp; f.submitted&quot;&gt;
+                    &quot;Ce champ est requis&quot;
+                  &lt;/div&gt; --&gt;
+                &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6&quot;&gt;
+                &lt;label for&#x3D;&quot;cin&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;CIN&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;cin&quot; id&#x3D;&quot;cin&quot; pattern&#x3D;&quot;[0-9]{11}&quot; formControlName&#x3D;&quot;cin&quot; autocomplete&#x3D;&quot;off&quot;
+                  required
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;
+                  required&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-6 lg:col-span-2&quot;&gt;
+                &lt;label for&#x3D;&quot;role&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Status&lt;/label&gt;
+                &lt;select title&#x3D;&quot;role&quot; id&#x3D;&quot;role&quot; name&#x3D;&quot;role&quot; formControlName&#x3D;&quot;role&quot; required ng-disabled&#x3D;&quot;all&quot;
+                   class&#x3D;&quot;mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm&quot;&gt;
+                  &lt;option value&#x3D;&quot;doctorant&quot;&gt;Docorant&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;prof&quot;&gt;Prof&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;admin&quot;&gt;Admin&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3 lg:col-span-2&quot;&gt;
+                &lt;label for&#x3D;&quot;serieBacc&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Serie BACC&lt;/label&gt;
+                &lt;select title&#x3D;&quot;serieBacc&quot; id&#x3D;&quot;serieBacc&quot; name&#x3D;&quot;serieBAcc&quot; formControlName&#x3D;&quot;serieBacc&quot; autocomplete&#x3D;&quot;off&quot;
+                  class&#x3D;&quot;mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm&quot;&gt;
+                  &lt;option value&#x3D;&quot;C&quot;&gt;C&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;C&quot;&gt;D&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;C&quot;&gt;A&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3 lg:col-span-2&quot;&gt;
+                &lt;label for&#x3D;&quot;codeRedoublement&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Code de
+                  Redoublement&lt;/label&gt;
+                &lt;select title&#x3D;&quot;codeRedoublement&quot; id&#x3D;&quot;codeRedoublement&quot; name&#x3D;&quot;codeRedoublement&quot; required
+                  formControlName&#x3D;&quot;codeDoubling&quot; autocomplete&#x3D;&quot;off&quot;
+                  class&#x3D;&quot;mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm&quot;&gt;
+                  &lt;option&gt;Nouveau&lt;/option&gt;
+                  &lt;option&gt;Ancien&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+              &lt;!-- (click)&#x3D;&quot;onSubmitprofilForm()&quot;  --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+
+      &lt;div class&#x3D;&quot;md:col-span-2&quot;&gt;
+        &lt;div class&#x3D;&quot;px-4 sm:px-0&quot; *ngIf&#x3D;&quot;informationPreview$ | async as info&quot;&gt;
+
+          &lt;div class&#x3D;&quot;text-center w-32 mx-auto&quot;&gt;
+            &lt;img src&#x3D;&quot;./assets/profils/default_profil_{{info.gender &#x3D;&#x3D;&#x3D; &#x27;feminin&#x27; ? &#x27;female&#x27; : &#x27;male&#x27; }}.jpg&quot;
+              class&#x3D;&quot;rounded-full w-32&quot; alt&#x3D;&quot;Avatar&quot; /&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;py-4 space-y-2 font-medium text-gray-600 text-center&quot;&gt;
+            &lt;h1 class&#x3D;&quot;text-2xl&quot;&gt;{{ info.name +&quot; &quot;+ info.firstName}} &lt;/h1&gt;
+            &lt;span class&#x3D;&quot;text-xs inline-block py-1 px-2.5 leading-none
+              text-center whitespace-nowrap align-baseline font-bold
+              {{ info.role &#x3D;&#x3D;&#x3D; &#x27;doctorant&#x27; ? &#x27;bg-green-500&#x27; : ( info.role &#x3D;&#x3D;&#x3D; &#x27;prof&#x27; ? &#x27;bg-blue-600&#x27; :  &#x27;bg-purple-600&#x27;)  }}
+              text-white rounded-full&quot;&gt;
+              {{ info.role &#x3D;&#x3D;&#x3D; &#x27;doctorant&#x27; ? &#x27;Doctorant&#x27; : ( info.role &#x3D;&#x3D;&#x3D; &#x27;prof&#x27; ? &#x27;Professeur&#x27; : &#x27;Administrateur&#x27;) }}
+            &lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;px-8 font-medium text-gray-600 grid gap-4 grid-cols-1&quot;&gt;
+            &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+              &lt;p&gt;Nationalite : {{ info.nationality }} , Genre : {{ info.gender }}&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+              &lt;p&gt;Date de naissance : {{ info.dateOfBirth }} &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+              &lt;p&gt;Date d&#x27;Obtention Baccalaureat : {{ info.yearBacc }} Serie {{ info.serieBacc }} &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+              &lt;p&gt;Adresse : {{ info.adress }} &lt;/p&gt;
+            &lt;/div&gt;
+
+
+            &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+              &lt;hr&gt;
+            &lt;/div&gt;
+            &lt;p&gt;Numero CIN : {{ info.cin }} Code Redoublement {{ info.codeDoubling }} &lt;/p&gt;
+
+            &lt;!-- &lt;p&gt;Photo de profil&lt;/p&gt; --&gt;
+            &lt;!-- &lt;img [src]&#x3D;&quot;contact.&quot; [alt]&#x3D;&quot;contact.name&quot;&gt; --&gt;
+            &lt;p&gt;{{ info.email }}&lt;/p&gt;
+
+            &lt;!-- &lt;p *ngIf&#x3D;&quot;info.city&quot;&gt;Adresse : {{ info.city }}&lt;/p&gt; --&gt;
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;mt-5 md:mt-0 md:col-span-2&quot;&gt;
-      &lt;form action&#x3D;&quot;#&quot; method&#x3D;&quot;POST&quot;&gt;
+  &lt;/div&gt;
+  &lt;!-- debut blpock 2--&gt;
+
+
+
+  &lt;!-- ligne de separation --&gt;
+  &lt;div class&#x3D;&quot;hidden sm:block&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;py-5&quot;&gt;
+      &lt;div class&#x3D;&quot;border-t border-gray-200&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- debut blpock 1 --&gt;
+  &lt;div id&#x3D;&quot;contact-form&quot;&gt;
+    &lt;div class&#x3D;&quot;md:grid md:grid-cols-4 md:gap-6&quot;&gt;
+      &lt;div class&#x3D;&quot;mt-5 md:mt-0 md:col-span-2&quot;&gt;
         &lt;div class&#x3D;&quot;shadow sm:rounded-md sm:overflow-hidden&quot;&gt;
           &lt;div class&#x3D;&quot;px-4 py-5 bg-white space-y-6 sm:p-6&quot;&gt;
-            &lt;div class&#x3D;&quot;grid grid-cols-3 gap-6&quot;&gt;
-              &lt;div class&#x3D;&quot;col-span-3 sm:col-span-2&quot;&gt;
-                &lt;label for&#x3D;&quot;company-website&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt; Email &lt;/label&gt;
-                &lt;div class&#x3D;&quot;mt-1 flex rounded-md shadow-sm&quot;&gt;
-                  &lt;span class&#x3D;&quot;inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm&quot;&gt; Email &lt;/span&gt;
-                  &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;company-website&quot; id&#x3D;&quot;company-website&quot; class&#x3D;&quot;focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300&quot; placeholder&#x3D;&quot;www.example.com&quot;&gt;
-                &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;grid grid-cols-6 gap-6&quot;&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-6&quot;&gt;
+                &lt;label for&#x3D;&quot;telephone&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Telephone&lt;/label&gt;
+                &lt;input type&#x3D;&quot;tel&quot; name&#x3D;&quot;telephone&quot; id&#x3D;&quot;telephone&quot; autocomplete&#x3D;&quot;off&quot; formControlName&#x3D;&quot;telephone&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-6 lg:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;isBoursier&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Boursier&lt;/label&gt;
+                &lt;select title&#x3D;&quot;isBoursier&quot; id&#x3D;&quot;isBoursier&quot; name&#x3D;&quot;isBoursier&quot; autocomplete&#x3D;&quot;off&quot;
+                  formControlName&#x3D;&quot;isBoursier&quot; ng-disabled&#x3D;&quot;all&quot;
+                  class&#x3D;&quot;mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm&quot;&gt;
+                  &lt;option value&#x3D;&quot;true&quot;&gt;Boursier&lt;/option&gt;
+                  &lt;option value&#x3D;&quot;false&quot;&gt;Non Boursier&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3 lg:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;taux&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Taux de Bourse&lt;/label&gt;
+                &lt;input title&#x3D;&quot;tauxBourse&quot; id&#x3D;&quot;taux&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1&quot; max&#x3D;&quot;100&quot; step&#x3D;&quot;1&quot; name&#x3D;&quot;tauxBourse&quot;
+                  formControlName&#x3D;&quot;tauxBourse&quot; id&#x3D;&quot;tauxBourse&quot; autocomplete&#x3D;&quot;off&quot; pattern&#x3D;&quot;[0-9]{3}-[0-9]{2}-[0-9]{3}&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;
+                  required [readonly]&#x3D;&quot;true&quot;&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-6 lg:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;poste&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Poste actuelle&lt;/label&gt;
+                &lt;input title&#x3D;&quot;poste&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;poste&quot; name&#x3D;&quot;poste&quot; formControlName&#x3D;&quot;poste&quot; id&#x3D;&quot;poste&quot; autocomplete&#x3D;&quot;off&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;
+                  required&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3 lg:col-span-3&quot;&gt;
+                &lt;label for&#x3D;&quot;taux&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;IM&lt;/label&gt;
+                &lt;input title&#x3D;&quot;im&quot; id&#x3D;&quot;im&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;im&quot; formControlName&#x3D;&quot;im&quot; id&#x3D;&quot;im&quot; autocomplete&#x3D;&quot;off&quot;
+                  class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;
+                  required&gt;
               &lt;/div&gt;
             &lt;/div&gt;
 
             &lt;div&gt;
               &lt;label for&#x3D;&quot;about&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt; About &lt;/label&gt;
               &lt;div class&#x3D;&quot;mt-1&quot;&gt;
-                &lt;textarea id&#x3D;&quot;about&quot; name&#x3D;&quot;about&quot; rows&#x3D;&quot;3&quot; class&#x3D;&quot;shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md&quot; placeholder&#x3D;&quot;you@example.com&quot;&gt;&lt;/textarea&gt;
+                &lt;textarea id&#x3D;&quot;about&quot; name&#x3D;&quot;about&quot; rows&#x3D;&quot;3&quot;
+                  class&#x3D;&quot;shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md&quot;
+                  formControlName&#x3D;&quot;about&quot; placeholder&#x3D;&quot;Exemple: Il est souriant , a deux enfants , ... &quot;&gt;&lt;/textarea&gt;
               &lt;/div&gt;
-              &lt;p class&#x3D;&quot;mt-2 text-sm text-gray-500&quot;&gt;Brief description for your profile. URLs are hyperlinked.&lt;/p&gt;
+              &lt;p class&#x3D;&quot;mt-2 text-sm text-gray-500&quot;&gt;Petit description du nouveau doctorant&lt;/p&gt;
             &lt;/div&gt;
 
-            &lt;div&gt;
-              &lt;label class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt; Photo &lt;/label&gt;
-              &lt;div class&#x3D;&quot;mt-1 flex items-center&quot;&gt;
-                &lt;span class&#x3D;&quot;inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100&quot;&gt;
-                  &lt;svg class&#x3D;&quot;h-full w-full text-gray-300&quot; fill&#x3D;&quot;currentColor&quot; viewBox&#x3D;&quot;0 0 24 24&quot;&gt;
-                    &lt;path d&#x3D;&quot;M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z&quot; /&gt;
-                  &lt;/svg&gt;
-                &lt;/span&gt;
-                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500&quot;&gt;Change&lt;/button&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-
-            &lt;div&gt;
-              &lt;label class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt; Cover photo &lt;/label&gt;
-              &lt;div class&#x3D;&quot;mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md&quot;&gt;
-                &lt;div class&#x3D;&quot;space-y-1 text-center&quot;&gt;
-                  &lt;svg class&#x3D;&quot;mx-auto h-12 w-12 text-gray-400&quot; stroke&#x3D;&quot;currentColor&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 48 48&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
-                    &lt;path d&#x3D;&quot;M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02&quot; stroke-width&#x3D;&quot;2&quot; stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; /&gt;
-                  &lt;/svg&gt;
-                  &lt;div class&#x3D;&quot;flex text-sm text-gray-600&quot;&gt;
-                    &lt;label for&#x3D;&quot;file-upload&quot; class&#x3D;&quot;relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500&quot;&gt;
-                      &lt;span&gt;Upload a file&lt;/span&gt;
-                      &lt;input id&#x3D;&quot;file-upload&quot; name&#x3D;&quot;file-upload&quot; type&#x3D;&quot;file&quot; class&#x3D;&quot;sr-only&quot;&gt;
-                    &lt;/label&gt;
-                    &lt;p class&#x3D;&quot;pl-1&quot;&gt;or drag and drop&lt;/p&gt;
-                  &lt;/div&gt;
-                  &lt;p class&#x3D;&quot;text-xs text-gray-500&quot;&gt;PNG, JPG, GIF up to 10MB&lt;/p&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;px-4 py-3 bg-gray-50 text-right sm:px-6&quot;&gt;
-            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500&quot;&gt;Save&lt;/button&gt;
+            &lt;button type&#x3D;&quot;submit&quot;
+              class&#x3D;&quot;inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500&quot;&gt;Enregistrer&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-      &lt;/form&gt;
-    &lt;/div&gt;
-
-    &lt;div class&#x3D;&quot;md:col-span-1&quot;&gt;
-      &lt;div class&#x3D;&quot;px-4 sm:px-0&quot;&gt;
-        &lt;h3 class&#x3D;&quot;text-lg font-medium leading-6 text-gray-900&quot;&gt;Votre Profil&lt;/h3&gt;
-        &lt;p class&#x3D;&quot;mt-1 text-sm text-gray-600&quot;&gt;This information will be displayed publicly so be careful what you share.&lt;/p&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
 
-  &lt;/div&gt;
-&lt;/div&gt;
+      &lt;div class&#x3D;&quot;md:col-span-2&quot;&gt;
+        &lt;div class&#x3D;&quot;px-10 py-4 space-y-4 font-medium text-gray-600&quot; *ngIf&#x3D;&quot;informationPreview$ | async as info&quot;&gt;
 
-&lt;div class&#x3D;&quot;hidden sm:block&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
-  &lt;div class&#x3D;&quot;py-5&quot;&gt;
-    &lt;div class&#x3D;&quot;border-t border-gray-200&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;mt-10 sm:mt-0&quot;&gt;
-  &lt;div class&#x3D;&quot;md:grid md:grid-cols-4 md:gap-6&quot;&gt;
-    &lt;div class&#x3D;&quot;md:col-span-1&quot;&gt;
-      &lt;div class&#x3D;&quot;px-4 sm:px-0&quot;&gt;
-        &lt;h3 class&#x3D;&quot;text-lg font-medium leading-6 text-gray-900&quot;&gt;Personal Information&lt;/h3&gt;
-        &lt;p class&#x3D;&quot;mt-1 text-sm text-gray-600&quot;&gt;Use a permanent address where you can receive mail.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;mt-5 md:mt-0 md:col-span-2&quot;&gt;
-      &lt;form action&#x3D;&quot;#&quot; method&#x3D;&quot;POST&quot;&gt;
-        &lt;div class&#x3D;&quot;shadow overflow-hidden sm:rounded-md&quot;&gt;
-          &lt;div class&#x3D;&quot;px-4 py-5 bg-white sm:p-6&quot;&gt;
-            &lt;div class&#x3D;&quot;grid grid-cols-6 gap-6&quot;&gt;
-              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
-                &lt;label for&#x3D;&quot;first-name&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;First name&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;first-name&quot; id&#x3D;&quot;first-name&quot; autocomplete&#x3D;&quot;given-name&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
-              &lt;/div&gt;
-
-              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
-                &lt;label for&#x3D;&quot;last-name&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Last name&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;last-name&quot; id&#x3D;&quot;last-name&quot; autocomplete&#x3D;&quot;family-name&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
-              &lt;/div&gt;
-
-              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-4&quot;&gt;
-                &lt;label for&#x3D;&quot;email-address&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Email address&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;email-address&quot; id&#x3D;&quot;email-address&quot; autocomplete&#x3D;&quot;email&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
-              &lt;/div&gt;
-
-              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3&quot;&gt;
-                &lt;label for&#x3D;&quot;country&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Country&lt;/label&gt;
-                &lt;select id&#x3D;&quot;country&quot; name&#x3D;&quot;country&quot; autocomplete&#x3D;&quot;country-name&quot; class&#x3D;&quot;mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm&quot;&gt;
-                  &lt;option&gt;United States&lt;/option&gt;
-                  &lt;option&gt;Canada&lt;/option&gt;
-                  &lt;option&gt;Mexico&lt;/option&gt;
-                &lt;/select&gt;
-              &lt;/div&gt;
-
-              &lt;div class&#x3D;&quot;col-span-6&quot;&gt;
-                &lt;label for&#x3D;&quot;street-address&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;Street address&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;street-address&quot; id&#x3D;&quot;street-address&quot; autocomplete&#x3D;&quot;street-address&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
-              &lt;/div&gt;
-
-              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-6 lg:col-span-2&quot;&gt;
-                &lt;label for&#x3D;&quot;city&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;City&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;city&quot; id&#x3D;&quot;city&quot; autocomplete&#x3D;&quot;address-level2&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
-              &lt;/div&gt;
-
-              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3 lg:col-span-2&quot;&gt;
-                &lt;label for&#x3D;&quot;region&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;State / Province&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;region&quot; id&#x3D;&quot;region&quot; autocomplete&#x3D;&quot;address-level1&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
-              &lt;/div&gt;
-
-              &lt;div class&#x3D;&quot;col-span-6 sm:col-span-3 lg:col-span-2&quot;&gt;
-                &lt;label for&#x3D;&quot;postal-code&quot; class&#x3D;&quot;block text-sm font-medium text-gray-700&quot;&gt;ZIP / Postal code&lt;/label&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;postal-code&quot; id&#x3D;&quot;postal-code&quot; autocomplete&#x3D;&quot;postal-code&quot; class&#x3D;&quot;mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md&quot;&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
+          &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+            &lt;p&gt;Telephone : {{ info.telephone }}&lt;/p&gt;
           &lt;/div&gt;
-          &lt;div class&#x3D;&quot;px-4 py-3 bg-gray-50 text-right sm:px-6&quot;&gt;
-            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500&quot;&gt;Save&lt;/button&gt;
+
+
+          &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+            &lt;p&gt;Boursier ? : {{ info.isBoursier ? &#x27;Boursier&#x27; : &#x27;Non Boursier&#x27; }}&lt;/p&gt;
           &lt;/div&gt;
+
+
+          &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+            &lt;p&gt;Taux Bourse : {{ info.tauxBourse }} %&lt;/p&gt;
+          &lt;/div&gt;
+
+
+          &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+            &lt;p&gt;Date d&#x27;inscription: {{ info.createdAt | date: &#x27;à HH:mm, le d MMMM yyyy&#x27; }}&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+            &lt;p&gt;Poste Actuelle : {{ info.poste }} &lt;/p&gt;
+          &lt;/div&gt;
+
+
+          &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+            &lt;p&gt;IM : {{ info.im }}&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;space-y-2&quot;&gt;
+            &lt;p class&#x3D;&quot;italic font-normal&quot;&gt;&quot; ... {{ info.about }} &quot;&lt;/p&gt;
+          &lt;/div&gt;
+
         &lt;/div&gt;
-      &lt;/form&gt;
-    &lt;/div&gt;
-
-
-    &lt;div class&#x3D;&quot;md:col-span-1&quot;&gt;
-      &lt;div class&#x3D;&quot;px-4 sm:px-0&quot;&gt;
-        &lt;h3 class&#x3D;&quot;text-lg font-medium leading-6 text-gray-900&quot;&gt;Votre Information Personnel&lt;/h3&gt;
-        &lt;p class&#x3D;&quot;mt-1 text-sm text-gray-600&quot;&gt;This information will be displayed publicly so be careful what you share.&lt;/p&gt;
       &lt;/div&gt;
+
     &lt;/div&gt;
-
-
   &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;hidden sm:block&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
-  &lt;div class&#x3D;&quot;py-5&quot;&gt;
-    &lt;div class&#x3D;&quot;border-t border-gray-200&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class&#x3D;&quot;mt-10 sm:mt-0&quot;&gt;
-  &lt;div class&#x3D;&quot;md:grid md:grid-cols-4 md:gap-6&quot;&gt;
-    &lt;div class&#x3D;&quot;md:col-span-1&quot;&gt;
-      &lt;div class&#x3D;&quot;px-4 sm:px-0&quot;&gt;
-        &lt;h3 class&#x3D;&quot;text-lg font-medium leading-6 text-gray-900&quot;&gt;Notifications&lt;/h3&gt;
-        &lt;p class&#x3D;&quot;mt-1 text-sm text-gray-600&quot;&gt;Decide which communications you&#x27;d like to receive and how.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;mt-5 md:mt-0 md:col-span-2&quot;&gt;
-      &lt;form action&#x3D;&quot;#&quot; method&#x3D;&quot;POST&quot;&gt;
-        &lt;div class&#x3D;&quot;shadow overflow-hidden sm:rounded-md&quot;&gt;
-          &lt;div class&#x3D;&quot;px-4 py-5 bg-white space-y-6 sm:p-6&quot;&gt;
-            &lt;fieldset&gt;
-              &lt;legend class&#x3D;&quot;text-base font-medium text-gray-900&quot;&gt;By Email&lt;/legend&gt;
-              &lt;div class&#x3D;&quot;mt-4 space-y-4&quot;&gt;
-                &lt;div class&#x3D;&quot;flex items-start&quot;&gt;
-                  &lt;div class&#x3D;&quot;flex items-center h-5&quot;&gt;
-                    &lt;input id&#x3D;&quot;comments&quot; name&#x3D;&quot;comments&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded&quot;&gt;
-                  &lt;/div&gt;
-                  &lt;div class&#x3D;&quot;ml-3 text-sm&quot;&gt;
-                    &lt;label for&#x3D;&quot;comments&quot; class&#x3D;&quot;font-medium text-gray-700&quot;&gt;Comments&lt;/label&gt;
-                    &lt;p class&#x3D;&quot;text-gray-500&quot;&gt;Get notified when someones posts a comment on a posting.&lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;flex items-start&quot;&gt;
-                  &lt;div class&#x3D;&quot;flex items-center h-5&quot;&gt;
-                    &lt;input id&#x3D;&quot;candidates&quot; name&#x3D;&quot;candidates&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded&quot;&gt;
-                  &lt;/div&gt;
-                  &lt;div class&#x3D;&quot;ml-3 text-sm&quot;&gt;
-                    &lt;label for&#x3D;&quot;candidates&quot; class&#x3D;&quot;font-medium text-gray-700&quot;&gt;Candidates&lt;/label&gt;
-                    &lt;p class&#x3D;&quot;text-gray-500&quot;&gt;Get notified when a candidate applies for a job.&lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;flex items-start&quot;&gt;
-                  &lt;div class&#x3D;&quot;flex items-center h-5&quot;&gt;
-                    &lt;input id&#x3D;&quot;offers&quot; name&#x3D;&quot;offers&quot; type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded&quot;&gt;
-                  &lt;/div&gt;
-                  &lt;div class&#x3D;&quot;ml-3 text-sm&quot;&gt;
-                    &lt;label for&#x3D;&quot;offers&quot; class&#x3D;&quot;font-medium text-gray-700&quot;&gt;Offers&lt;/label&gt;
-                    &lt;p class&#x3D;&quot;text-gray-500&quot;&gt;Get notified when a candidate accepts or rejects an offer.&lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/fieldset&gt;
-            &lt;fieldset&gt;
-              &lt;div&gt;
-                &lt;legend class&#x3D;&quot;text-base font-medium text-gray-900&quot;&gt;Push Notifications&lt;/legend&gt;
-                &lt;p class&#x3D;&quot;text-sm text-gray-500&quot;&gt;These are delivered via SMS to your mobile phone.&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class&#x3D;&quot;mt-4 space-y-4&quot;&gt;
-                &lt;div class&#x3D;&quot;flex items-center&quot;&gt;
-                  &lt;input id&#x3D;&quot;push-everything&quot; name&#x3D;&quot;push-notifications&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300&quot;&gt;
-                  &lt;label for&#x3D;&quot;push-everything&quot; class&#x3D;&quot;ml-3 block text-sm font-medium text-gray-700&quot;&gt; Everything &lt;/label&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;flex items-center&quot;&gt;
-                  &lt;input id&#x3D;&quot;push-email&quot; name&#x3D;&quot;push-notifications&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300&quot;&gt;
-                  &lt;label for&#x3D;&quot;push-email&quot; class&#x3D;&quot;ml-3 block text-sm font-medium text-gray-700&quot;&gt; Same as email &lt;/label&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;flex items-center&quot;&gt;
-                  &lt;input id&#x3D;&quot;push-nothing&quot; name&#x3D;&quot;push-notifications&quot; type&#x3D;&quot;radio&quot; class&#x3D;&quot;focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300&quot;&gt;
-                  &lt;label for&#x3D;&quot;push-nothing&quot; class&#x3D;&quot;ml-3 block text-sm font-medium text-gray-700&quot;&gt; No push notifications &lt;/label&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/fieldset&gt;
-          &lt;/div&gt;
-          &lt;div class&#x3D;&quot;px-4 py-3 bg-gray-50 text-right sm:px-6&quot;&gt;
-            &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500&quot;&gt;Save&lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/form&gt;
-    &lt;/div&gt;
-
-
-
-    &lt;div class&#x3D;&quot;md:col-span-1&quot;&gt;
-      &lt;div class&#x3D;&quot;px-4 sm:px-0&quot;&gt;
-        &lt;h3 class&#x3D;&quot;text-lg font-medium leading-6 text-gray-900&quot;&gt;Votre Notifications&lt;/h3&gt;
-        &lt;p class&#x3D;&quot;mt-1 text-sm text-gray-600&quot;&gt;This information will be displayed publicly so be careful what you share.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-
-  &lt;/div&gt;
-&lt;/div&gt;
+  &lt;!--fin blpock 1 --&gt;
+&lt;/form&gt;
 </code></pre>
     </div>
 
@@ -533,8 +1146,8 @@ export class SettingsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1 class="text-2xl font-bold py-4">Paramettres</h1><div class="hidden sm:block" aria-hidden="true">  <div class="py-5">    <div class="border-t border-gray-200"></div>  </div></div><div>  <div class="md:grid md:grid-cols-4 md:gap-6">    <div class="md:col-span-1">      <div class="px-4 sm:px-0">        <h3 class="text-lg font-medium leading-6 text-gray-900">Profile</h3>        <p class="mt-1 text-sm text-gray-600">This information will be displayed publicly so be careful what you share.</p>      </div>    </div>    <div class="mt-5 md:mt-0 md:col-span-2">      <form action="#" method="POST">        <div class="shadow sm:rounded-md sm:overflow-hidden">          <div class="px-4 py-5 bg-white space-y-6 sm:p-6">            <div class="grid grid-cols-3 gap-6">              <div class="col-span-3 sm:col-span-2">                <label for="company-website" class="block text-sm font-medium text-gray-700"> Email </label>                <div class="mt-1 flex rounded-md shadow-sm">                  <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm"> Email </span>                  <input type="text" name="company-website" id="company-website" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="www.example.com">                </div>              </div>            </div>            <div>              <label for="about" class="block text-sm font-medium text-gray-700"> About </label>              <div class="mt-1">                <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com"></textarea>              </div>              <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>            </div>            <div>              <label class="block text-sm font-medium text-gray-700"> Photo </label>              <div class="mt-1 flex items-center">                <span class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">                  <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />                  </svg>                </span>                <button type="button" class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Change</button>              </div>            </div>            <div>              <label class="block text-sm font-medium text-gray-700"> Cover photo </label>              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">                <div class="space-y-1 text-center">                  <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />                  </svg>                  <div class="flex text-sm text-gray-600">                    <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">                      <span>Upload a file</span>                      <input id="file-upload" name="file-upload" type="file" class="sr-only">                    </label>                    <p class="pl-1">or drag and drop</p>                  </div>                  <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>                </div>              </div>            </div>          </div>          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>          </div>        </div>      </form>    </div>    <div class="md:col-span-1">      <div class="px-4 sm:px-0">        <h3 class="text-lg font-medium leading-6 text-gray-900">Votre Profil</h3>        <p class="mt-1 text-sm text-gray-600">This information will be displayed publicly so be careful what you share.</p>      </div>    </div>  </div></div><div class="hidden sm:block" aria-hidden="true">  <div class="py-5">    <div class="border-t border-gray-200"></div>  </div></div><div class="mt-10 sm:mt-0">  <div class="md:grid md:grid-cols-4 md:gap-6">    <div class="md:col-span-1">      <div class="px-4 sm:px-0">        <h3 class="text-lg font-medium leading-6 text-gray-900">Personal Information</h3>        <p class="mt-1 text-sm text-gray-600">Use a permanent address where you can receive mail.</p>      </div>    </div>    <div class="mt-5 md:mt-0 md:col-span-2">      <form action="#" method="POST">        <div class="shadow overflow-hidden sm:rounded-md">          <div class="px-4 py-5 bg-white sm:p-6">            <div class="grid grid-cols-6 gap-6">              <div class="col-span-6 sm:col-span-3">                <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-3">                <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-4">                <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>                <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-3">                <label for="country" class="block text-sm font-medium text-gray-700">Country</label>                <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">                  <option>United States</option>                  <option>Canada</option>                  <option>Mexico</option>                </select>              </div>              <div class="col-span-6">                <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>                <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-6 lg:col-span-2">                <label for="city" class="block text-sm font-medium text-gray-700">City</label>                <input type="text" name="city" id="city" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-3 lg:col-span-2">                <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>                <input type="text" name="region" id="region" autocomplete="address-level1" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-3 lg:col-span-2">                <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>                <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>            </div>          </div>          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>          </div>        </div>      </form>    </div>    <div class="md:col-span-1">      <div class="px-4 sm:px-0">        <h3 class="text-lg font-medium leading-6 text-gray-900">Votre Information Personnel</h3>        <p class="mt-1 text-sm text-gray-600">This information will be displayed publicly so be careful what you share.</p>      </div>    </div>  </div></div><div class="hidden sm:block" aria-hidden="true">  <div class="py-5">    <div class="border-t border-gray-200"></div>  </div></div><div class="mt-10 sm:mt-0">  <div class="md:grid md:grid-cols-4 md:gap-6">    <div class="md:col-span-1">      <div class="px-4 sm:px-0">        <h3 class="text-lg font-medium leading-6 text-gray-900">Notifications</h3>        <p class="mt-1 text-sm text-gray-600">Decide which communications you\'d like to receive and how.</p>      </div>    </div>    <div class="mt-5 md:mt-0 md:col-span-2">      <form action="#" method="POST">        <div class="shadow overflow-hidden sm:rounded-md">          <div class="px-4 py-5 bg-white space-y-6 sm:p-6">            <fieldset>              <legend class="text-base font-medium text-gray-900">By Email</legend>              <div class="mt-4 space-y-4">                <div class="flex items-start">                  <div class="flex items-center h-5">                    <input id="comments" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">                  </div>                  <div class="ml-3 text-sm">                    <label for="comments" class="font-medium text-gray-700">Comments</label>                    <p class="text-gray-500">Get notified when someones posts a comment on a posting.</p>                  </div>                </div>                <div class="flex items-start">                  <div class="flex items-center h-5">                    <input id="candidates" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">                  </div>                  <div class="ml-3 text-sm">                    <label for="candidates" class="font-medium text-gray-700">Candidates</label>                    <p class="text-gray-500">Get notified when a candidate applies for a job.</p>                  </div>                </div>                <div class="flex items-start">                  <div class="flex items-center h-5">                    <input id="offers" name="offers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">                  </div>                  <div class="ml-3 text-sm">                    <label for="offers" class="font-medium text-gray-700">Offers</label>                    <p class="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>                  </div>                </div>              </div>            </fieldset>            <fieldset>              <div>                <legend class="text-base font-medium text-gray-900">Push Notifications</legend>                <p class="text-sm text-gray-500">These are delivered via SMS to your mobile phone.</p>              </div>              <div class="mt-4 space-y-4">                <div class="flex items-center">                  <input id="push-everything" name="push-notifications" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">                  <label for="push-everything" class="ml-3 block text-sm font-medium text-gray-700"> Everything </label>                </div>                <div class="flex items-center">                  <input id="push-email" name="push-notifications" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">                  <label for="push-email" class="ml-3 block text-sm font-medium text-gray-700"> Same as email </label>                </div>                <div class="flex items-center">                  <input id="push-nothing" name="push-notifications" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">                  <label for="push-nothing" class="ml-3 block text-sm font-medium text-gray-700"> No push notifications </label>                </div>              </div>            </fieldset>          </div>          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>          </div>        </div>      </form>    </div>    <div class="md:col-span-1">      <div class="px-4 sm:px-0">        <h3 class="text-lg font-medium leading-6 text-gray-900">Votre Notifications</h3>        <p class="mt-1 text-sm text-gray-600">This information will be displayed publicly so be careful what you share.</p>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
+        var COMPONENT_TEMPLATE = '<div><h1 class="text-2xl font-semibold py-4">Ajouter un nouveau Doctorant</h1><!-- ligne de separation --><div class="hidden sm:block" aria-hidden="true">  <div class="py-5">    <div class="border-t border-gray-200"></div>  </div></div><formname="form"#f="ngForm"(ngSubmit)="isUpdate ? onUpdateProfil(informationForm) : onSubmitprofilForm(informationForm)" [formGroup]="informationForm">  <!-- debut blpock 2-->  <div class="mt-10 sm:mt-0" id="form-creation">    <div class="md:grid md:grid-cols-4 md:gap-6">      <!-- <div class="md:col-span-1">      <div class="px-4 sm:px-0">        <h3 class="text-lg font-medium leading-6 text-gray-900">Personal Information</h3>        <p class="mt-1 text-sm text-gray-600">Use a permanent address where you can receive mail.</p>      </div>    </div> -->      <div class="mt-5 md:mt-0 md:col-span-2">        <div class="shadow overflow-hidden sm:rounded-md">          <div class="px-4 py-5 bg-white sm:p-6">            <div class="grid grid-cols-6 gap-6">              <div class="col-span-6 sm:col-span-3">                <label for="name" class="block text-sm font-medium text-gray-700">Nom</label>                <input [(ngModel)]="userSignUp.name" #name type="text" name="name" formControlName="name" id="name"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"                  autocomplete="off" required [readonly]="true">                  <!-- <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="name[\'required\']! && f.submitted">                    "Ce champ est requis"                  </div> -->              </div>              <div class="col-span-6 sm:col-span-3">                <label for="first-name" class="block text-sm font-medium text-gray-700">Prenom</label>                <input type="text" name="first-name" id="first-name" formControlName="firstName"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"                  autocomplete="off" required [readonly]="true">              </div>              <div class="col-span-6 sm:col-span-3">                <label for="nationality" class="block text-sm font-medium text-gray-700">Nationalité</label>                <select id="nationality" ng-disabled="all" name="nationality" formControlName="nationality" autocomplete="country-name"                  required ng-disabled="true"                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">                  <option value="Madagascar">Malgache</option>                  <option value="Comore">Comorien</option>                  <option value="France">Français</option>                </select>              </div>              <div class="col-span-6 sm:col-span-3">                <label for="sexe" class="block text-sm font-medium text-gray-700">Sexe</label>                <select title="sexeOptions" id="sexe" name="sexe" formControlName="gender" autocomplete="country-name"                  required                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">                  <option value="masculin">Masculin</option>                  <option value="feminin">Feminin</option>                  <option value="binaire">Binaire</option>                </select>              </div>              <div class="col-span-6 sm:col-span-3">                <label for="dtn" class="block text-sm font-medium text-gray-700">Date de naissance</label>                <input title="dtn" type="date" name="dtn" formControlName="dateOfBirth" id="dtn" autocomplete="off"                  required [readonly]="true"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-3">                <label for="dtbacc" class="block text-sm font-medium text-gray-700">Obtention Bacc</label>                <input title="dtbacc" id="dtbacc" type="number" min="1900" max="2022" step="1" value="2016" required                  formControlName="yearBacc"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6">                <label for="address" class="block text-sm font-medium text-gray-700">Adresse</label>                <input type="text" name="adress" formControlName="adress" id="address" autocomplete="off" required                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-3">                <label for="mdp" class="block text-sm font-medium text-gray-700">Mot de passe</label>                <input  [(ngModel)]="userSignUp.password" #password title="password" type="text" name="dtn" formControlName="password" id="mdp" autocomplete="off"                  required                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">                  <!-- <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="password[\'required\']! && f.submitted">                    "Ce champ est requis"                  </div> -->                </div>              <div class="col-span-6 sm:col-span-3">                <label for="cmdp" class="block text-sm font-medium text-gray-700">Confirmation mot de passe</label>                <input  [(ngModel)]="userSignUp.passwordconfirm" #passwordconfirm title="passwordconfirm" id="cmdp" type="text" required formControlName="passwordConfirmation"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">                  <!-- <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="passwordconfirm[\'required\']! && f.submitted">                    "Ce champ est requis"                  </div> -->                </div>              <div class="col-span-6">                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>                <input  [(ngModel)]="userSignUp.email" #email type="email" name="email" formControlName="email" id="email" required                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">                  <!-- <div class="form_error text-red-400 text-xs animate-pulse" *ngIf="email[\'required\']! && f.submitted">                    "Ce champ est requis"                  </div> -->                </div>              <div class="col-span-6">                <label for="cin" class="block text-sm font-medium text-gray-700">CIN</label>                <input type="text" name="cin" id="cin" pattern="[0-9]{11}" formControlName="cin" autocomplete="off"                  required                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"                  required>              </div>              <div class="col-span-6 sm:col-span-6 lg:col-span-2">                <label for="role" class="block text-sm font-medium text-gray-700">Status</label>                <select title="role" id="role" name="role" formControlName="role" required ng-disabled="all"                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">                  <option value="doctorant">Docorant</option>                  <option value="prof">Prof</option>                  <option value="admin">Admin</option>                </select>              </div>              <div class="col-span-6 sm:col-span-3 lg:col-span-2">                <label for="serieBacc" class="block text-sm font-medium text-gray-700">Serie BACC</label>                <select title="serieBacc" id="serieBacc" name="serieBAcc" formControlName="serieBacc" autocomplete="off"                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">                  <option value="C">C</option>                  <option value="C">D</option>                  <option value="C">A</option>                </select>              </div>              <div class="col-span-6 sm:col-span-3 lg:col-span-2">                <label for="codeRedoublement" class="block text-sm font-medium text-gray-700">Code de                  Redoublement</label>                <select title="codeRedoublement" id="codeRedoublement" name="codeRedoublement" required                  formControlName="codeDoubling" autocomplete="off"                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">                  <option>Nouveau</option>                  <option>Ancien</option>                </select>              </div>              <!-- (click)="onSubmitprofilForm()"  -->            </div>          </div>        </div>      </div>      <div class="md:col-span-2">        <div class="px-4 sm:px-0" *ngIf="informationPreview$ | async as info">          <div class="text-center w-32 mx-auto">            <img src="./assets/profils/default_profil_{{info.gender === \'feminin\' ? \'female\' : \'male\' }}.jpg"              class="rounded-full w-32" alt="Avatar" />          </div>          <div class="py-4 space-y-2 font-medium text-gray-600 text-center">            <h1 class="text-2xl">{{ info.name +" "+ info.firstName}} </h1>            <span class="text-xs inline-block py-1 px-2.5 leading-none              text-center whitespace-nowrap align-baseline font-bold              {{ info.role === \'doctorant\' ? \'bg-green-500\' : ( info.role === \'prof\' ? \'bg-blue-600\' :  \'bg-purple-600\')  }}              text-white rounded-full">              {{ info.role === \'doctorant\' ? \'Doctorant\' : ( info.role === \'prof\' ? \'Professeur\' : \'Administrateur\') }}            </span>          </div>          <div class="px-8 font-medium text-gray-600 grid gap-4 grid-cols-1">            <div class="space-y-2">              <p>Nationalite : {{ info.nationality }} , Genre : {{ info.gender }}</p>            </div>            <div class="space-y-2">              <p>Date de naissance : {{ info.dateOfBirth }} </p>            </div>            <div class="space-y-2">              <p>Date d\'Obtention Baccalaureat : {{ info.yearBacc }} Serie {{ info.serieBacc }} </p>            </div>            <div class="space-y-2">              <p>Adresse : {{ info.adress }} </p>            </div>            <div class="space-y-2">              <hr>            </div>            <p>Numero CIN : {{ info.cin }} Code Redoublement {{ info.codeDoubling }} </p>            <!-- <p>Photo de profil</p> -->            <!-- <img [src]="contact." [alt]="contact.name"> -->            <p>{{ info.email }}</p>            <!-- <p *ngIf="info.city">Adresse : {{ info.city }}</p> -->          </div>        </div>      </div>    </div>  </div>  <!-- debut blpock 2-->  <!-- ligne de separation -->  <div class="hidden sm:block" aria-hidden="true">    <div class="py-5">      <div class="border-t border-gray-200"></div>    </div>  </div>  <!-- debut blpock 1 -->  <div id="contact-form">    <div class="md:grid md:grid-cols-4 md:gap-6">      <div class="mt-5 md:mt-0 md:col-span-2">        <div class="shadow sm:rounded-md sm:overflow-hidden">          <div class="px-4 py-5 bg-white space-y-6 sm:p-6">            <div class="grid grid-cols-6 gap-6">              <div class="col-span-6 sm:col-span-6">                <label for="telephone" class="block text-sm font-medium text-gray-700">Telephone</label>                <input type="tel" name="telephone" id="telephone" autocomplete="off" formControlName="telephone"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">              </div>              <div class="col-span-6 sm:col-span-6 lg:col-span-3">                <label for="isBoursier" class="block text-sm font-medium text-gray-700">Boursier</label>                <select title="isBoursier" id="isBoursier" name="isBoursier" autocomplete="off"                  formControlName="isBoursier" ng-disabled="all"                  class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">                  <option value="true">Boursier</option>                  <option value="false">Non Boursier</option>                </select>              </div>              <div class="col-span-6 sm:col-span-3 lg:col-span-3">                <label for="taux" class="block text-sm font-medium text-gray-700">Taux de Bourse</label>                <input title="tauxBourse" id="taux" type="number" min="1" max="100" step="1" name="tauxBourse"                  formControlName="tauxBourse" id="tauxBourse" autocomplete="off" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"                  required [readonly]="true">              </div>              <div class="col-span-6 sm:col-span-6 lg:col-span-3">                <label for="poste" class="block text-sm font-medium text-gray-700">Poste actuelle</label>                <input title="poste" type="text" id="poste" name="poste" formControlName="poste" id="poste" autocomplete="off"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"                  required>              </div>              <div class="col-span-6 sm:col-span-3 lg:col-span-3">                <label for="taux" class="block text-sm font-medium text-gray-700">IM</label>                <input title="im" id="im" type="text" name="im" formControlName="im" id="im" autocomplete="off"                  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"                  required>              </div>            </div>            <div>              <label for="about" class="block text-sm font-medium text-gray-700"> About </label>              <div class="mt-1">                <textarea id="about" name="about" rows="3"                  class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"                  formControlName="about" placeholder="Exemple: Il est souriant , a deux enfants , ... "></textarea>              </div>              <p class="mt-2 text-sm text-gray-500">Petit description du nouveau doctorant</p>            </div>          </div>          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">            <button type="submit"              class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>          </div>        </div>      </div>      <div class="md:col-span-2">        <div class="px-10 py-4 space-y-4 font-medium text-gray-600" *ngIf="informationPreview$ | async as info">          <div class="space-y-2">            <p>Telephone : {{ info.telephone }}</p>          </div>          <div class="space-y-2">            <p>Boursier ? : {{ info.isBoursier ? \'Boursier\' : \'Non Boursier\' }}</p>          </div>          <div class="space-y-2">            <p>Taux Bourse : {{ info.tauxBourse }} %</p>          </div>          <div class="space-y-2">            <p>Date d\'inscription: {{ info.createdAt | date: \'à HH:mm, le d MMMM yyyy\' }}</p>          </div>          <div class="space-y-2">            <p>Poste Actuelle : {{ info.poste }} </p>          </div>          <div class="space-y-2">            <p>IM : {{ info.im }}</p>          </div>          <div class="space-y-2">            <p class="italic font-normal">" ... {{ info.about }} "</p>          </div>        </div>      </div>    </div>  </div>  <!--fin blpock 1 --></form></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SettingsComponent-1'};
 </script>

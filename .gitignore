@@ -6,8 +6,9 @@
 /out-tsc
 /bazel-out
 
-#documentation 
-# /documentation
+
+#documentation
+/documentation
 
 # Node
 /node_modules

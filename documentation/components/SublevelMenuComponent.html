@@ -49,6 +49,9 @@
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
         <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
             <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
         </li>
         <li >
@@ -101,47 +104,11 @@
             </tr>
 
 
+
             <tr>
-                <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;ul *ngIf&#x3D;&quot;collapsed &amp;&amp; data.items &amp;&amp; data.items.length &gt; 0&quot;
- [@submenu]&#x3D;&quot;expended ? {value:&#x27;visible&#x27; , params:{transitionParams:&#x27;400ms cubic-bezier(0.86 , 0, 0.07, 1)&#x27; , height:&#x27;*&#x27;}}
-                      : {value: &#x27;hidden&#x27;,
-                         params:{transitionParams:&#x27;400ms cubic-bezier(0.86 , 0, 0.07, 1)&#x27; , height:&#x27;0&#x27;}}&quot;
- class&#x3D;&quot;sublevel-nav&quot;
-&gt;
-   &lt;li *ngFor&#x3D;&quot;let item of data.items&quot; class&#x3D;&quot;sublevel-nav-item&quot;&gt;
-     &lt;a class&#x3D;&quot;sublevel-nav-link&quot;
-       (click)&#x3D;&quot;handleClick(item)&quot;
-       *ngIf&#x3D;&quot;item.items &amp;&amp; item.items.length &gt; 0&quot;
-     &gt;
-       &lt;i class&#x3D;&quot;sublevel-link-icon fa fa-circle&quot;&gt;&lt;/i&gt;
-       &lt;span class&#x3D;&quot;sublevel-link-text&quot; *ngIf&#x3D;&quot;collapsed&quot;&gt;{{ item.label }}&lt;/span&gt;
-       &lt;i *ngIf&#x3D;&quot;item.items &amp;&amp; collapsed&quot; class&#x3D;&quot;menu-collapsed-icon&quot;
-          [ngClass]&#x3D;&quot;!item.expended  ? &#x27;fal fa-angle-right&#x27; : &#x27;fal fa-angle-down&#x27;&quot;
-       &gt;&lt;/i&gt;
-     &lt;/a&gt;
-     &lt;a class&#x3D;&quot;sublevel-nav-link&quot;
-       *ngIf&#x3D;&quot;!item.items || (item.items.length &#x3D;&#x3D;&#x3D; 0)&quot;
-       [routerLink]&#x3D;&quot;[item.routerLink]&quot;
-       routerLinkActive&#x3D;&quot;active-sublevel&quot;
-       [routerLinkActiveOptions]&#x3D;&quot;{exact: true}&quot;
-     &gt;
-       &lt;i class&#x3D;&quot;sublevel-link-icon fa fa-circle&quot;&gt;&lt;/i&gt;
-       &lt;span class&#x3D;&quot;sublevel-link-text&quot; *ngIf&#x3D;&quot;collapsed&quot;&gt;{{ item.label }}&lt;/span&gt;
-     &lt;/a&gt;
-     &lt;div *ngIf&#x3D;&quot;item.items &amp;&amp; item.items.length &gt; 0&quot;&gt;
-       &lt;app-sublevel-menu
-         [collapsed]&#x3D;&quot;collapsed&quot;
-         [multiple]&#x3D;&quot;multiple&quot;
-         [expended]&#x3D;&quot;item.expended&quot;
-       &gt;&lt;/app-sublevel-menu&gt;
-     &lt;/div&gt;
-   &lt;/li&gt;
-
-&lt;/ul&gt;
-</code></pre></td>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./sublevel-menu-component.html</code></td>
             </tr>
-
 
 
 
@@ -222,7 +189,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:78</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -248,7 +215,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:76</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:37</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -274,7 +241,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:75</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:36</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -298,14 +265,14 @@
                         <i>Default value : </i><code>{
     routerLink:&#x27;&#x27;,
     icon:&#x27;&#x27;,
-    label:&#x27;&#x27;, 
+    label:&#x27;&#x27;,
     items:[]
   }</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:29</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -326,7 +293,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:77</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:38</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -352,7 +319,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:78</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:39</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -386,8 +353,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:49</a></div>
                 </td>
             </tr>
 
@@ -455,8 +422,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="82"
-                            class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:82</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/admin/components/sidenav/sublevel-menu.component.ts:43</a></div>
                 </td>
             </tr>
 
@@ -484,71 +451,32 @@ import { animate, state, style, transition, trigger } from &#x27;@angular/animat
 
 @Component({
   selector: &#x27;app-sublevel-menu&#x27;,
-  template: &#x60;
-   &lt;ul *ngIf&#x3D;&quot;collapsed &amp;&amp; data.items &amp;&amp; data.items.length &gt; 0&quot;
-    [@submenu]&#x3D;&quot;expended ? {value:&#x27;visible&#x27; , params:{transitionParams:&#x27;400ms cubic-bezier(0.86 , 0, 0.07, 1)&#x27; , height:&#x27;*&#x27;}} 
-                         : {value: &#x27;hidden&#x27;, 
-                            params:{transitionParams:&#x27;400ms cubic-bezier(0.86 , 0, 0.07, 1)&#x27; , height:&#x27;0&#x27;}}&quot;
-    class&#x3D;&quot;sublevel-nav&quot;
-   &gt;
-      &lt;li *ngFor&#x3D;&quot;let item of data.items&quot; class&#x3D;&quot;sublevel-nav-item&quot;&gt;
-        &lt;a class&#x3D;&quot;sublevel-nav-link&quot;
-          (click)&#x3D;&quot;handleClick(item)&quot;
-          *ngIf&#x3D;&quot;item.items &amp;&amp; item.items.length &gt; 0&quot;
-        &gt;
-          &lt;i class&#x3D;&quot;sublevel-link-icon fa fa-circle&quot;&gt;&lt;/i&gt;
-          &lt;span class&#x3D;&quot;sublevel-link-text&quot; *ngIf&#x3D;&quot;collapsed&quot;&gt;{{ item.label }}&lt;/span&gt;
-          &lt;i *ngIf&#x3D;&quot;item.items &amp;&amp; collapsed&quot; class&#x3D;&quot;menu-collapsed-icon&quot;
-             [ngClass]&#x3D;&quot;!item.expended  ? &#x27;fal fa-angle-right&#x27; : &#x27;fal fa-angle-down&#x27;&quot;
-          &gt;&lt;/i&gt;
-        &lt;/a&gt;
-        &lt;a class&#x3D;&quot;sublevel-nav-link&quot;
-          *ngIf&#x3D;&quot;!item.items || (item.items.length &#x3D;&#x3D;&#x3D; 0)&quot;
-          [routerLink]&#x3D;&quot;[item.routerLink]&quot;
-          routerLinkActive&#x3D;&quot;active-sublevel&quot;
-          [routerLinkActiveOptions]&#x3D;&quot;{exact: true}&quot;
-        &gt;
-          &lt;i class&#x3D;&quot;sublevel-link-icon fa fa-circle&quot;&gt;&lt;/i&gt;
-          &lt;span class&#x3D;&quot;sublevel-link-text&quot; *ngIf&#x3D;&quot;collapsed&quot;&gt;{{ item.label }}&lt;/span&gt;
-        &lt;/a&gt;
-        &lt;div *ngIf&#x3D;&quot;item.items &amp;&amp; item.items.length &gt; 0&quot;&gt;
-          &lt;app-sublevel-menu
-            [collapsed]&#x3D;&quot;collapsed&quot;
-            [multiple]&#x3D;&quot;multiple&quot;
-            [expended]&#x3D;&quot;item.expended&quot;
-          &gt;&lt;/app-sublevel-menu&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-   
-   &lt;/ul&gt;
-  &#x60;,
-   styleUrls: [&#x27;./sidenav.component.scss&#x27;],
-   animations:[
+  templateUrl: &#x27;./sublevel-menu-component.html&#x27;,
+  styleUrls: [&#x27;./sidenav.component.scss&#x27;],
+  animations:[
      trigger(&#x27;submenu&#x27;, [
         state(&#x27;hidden&#x27;, style({
-          height:&#x27;0&#x27;,
-          overflow:&#x27;hidden&#x27;
+          height:&#x27;0px&#x27;,
+          overflow:&#x27;hidden&#x27;,
+          opacity:0
         })),
-        state(&#x27;visble&#x27;, style({
-          height:&#x27;*&#x27;,
+        state(&#x27;visible&#x27;, style({
+          height:&#x27;150px&#x27;,
+          opacity:1
         })),
-        transition(&#x27;visible &lt;&#x3D;&gt; hidden&#x27; ,
+        transition(&#x27;hidden &lt;&#x3D;&gt; visible&#x27; ,
         [
-          style({
-            overflow:&#x27;hidden&#x27;
-          }), 
-          animate(&#x27;{{ trasitionParams }}&#x27;),
-          transition(&#x27;void &#x3D;&gt; *&#x27; , animate(0))
-        ])
+          animate(&#x27;2000ms ease-in-out&#x27;)
+        ]),
      ])
-    ]
+  ]
 })
 export class SublevelMenuComponent implements OnInit {
 
   @Input() data: INavbarData &#x3D; {
     routerLink:&#x27;&#x27;,
     icon:&#x27;&#x27;,
-    label:&#x27;&#x27;, 
+    label:&#x27;&#x27;,
     items:[]
   }
 
@@ -560,7 +488,10 @@ export class SublevelMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(&#x27;thisSub.expended&#x27; , this.expended);
   }
+
+
 
   handleClick(item:any):void {
     if(!this.multiple){
@@ -578,6 +509,44 @@ export class SublevelMenuComponent implements OnInit {
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ul *ngIf&#x3D;&quot;collapsed &amp;&amp; data.items &amp;&amp; data.items.length &gt; 0&quot;
+[@submenu]&#x3D;&quot;expended ? &#x27;visible&#x27; : &#x27;hidden&#x27;&quot;
+class&#x3D;&quot;sublevel-nav&quot;
+&gt;
+  &lt;li *ngFor&#x3D;&quot;let item of data.items&quot; class&#x3D;&quot;sublevel-nav-item&quot;&gt;
+    &lt;a class&#x3D;&quot;sublevel-nav-link&quot;
+      (click)&#x3D;&quot;handleClick(item)&quot;
+      *ngIf&#x3D;&quot;item.items &amp;&amp; item.items.length &gt; 0&quot;
+    &gt;
+      &lt;i class&#x3D;&quot;sublevel-link-icon fa-solid fa-circle&quot;&gt;&lt;/i&gt;
+      &lt;span class&#x3D;&quot;sublevel-link-text&quot; *ngIf&#x3D;&quot;collapsed&quot;&gt;{{ item.label }}&lt;/span&gt;
+      &lt;i *ngIf&#x3D;&quot;item.items &amp;&amp; collapsed&quot; class&#x3D;&quot;menu-collapsed-icon&quot;
+         [ngClass]&#x3D;&quot;!item.expended ? &#x27;fa fa-angle-right&#x27; : &#x27;fa fa-angle-down&#x27;&quot;
+      &gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;a class&#x3D;&quot;sublevel-nav-link&quot;
+      *ngIf&#x3D;&quot;!item.items || (item.items &amp;&amp; item.items.length &#x3D;&#x3D;&#x3D; 0)&quot;
+      [routerLink]&#x3D;&quot;[item.routerLink]&quot;
+      routerLinkActive&#x3D;&quot;active-sublevel&quot;
+      [routerLinkActiveOptions]&#x3D;&quot;{exact: true}&quot;
+    &gt;
+      &lt;i class&#x3D;&quot;sublevel-link-icon fa-solid fa-circle&quot;&gt;&lt;/i&gt;
+      &lt;span class&#x3D;&quot;sublevel-link-text&quot; *ngIf&#x3D;&quot;collapsed&quot;&gt;{{ item.label }}&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;div *ngIf&#x3D;&quot;item.items &amp;&amp; item.items.length &gt; 0&quot;&gt;
+      &lt;app-sublevel-menu
+        [data]&#x3D;&quot;item&quot;
+        [collapsed]&#x3D;&quot;collapsed&quot;
+        [multiple]&#x3D;&quot;multiple&quot;
+        [expended]&#x3D;&quot;item.expended&quot;
+      &gt;&lt;/app-sublevel-menu&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+
+&lt;/ul&gt;
+</code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
@@ -592,6 +561,7 @@ export class SublevelMenuComponent implements OnInit {
   width: 5rem;
   height: 100vh;
   box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+  transition: all .3s ease-in-out;
 
   .logo-container{
     display: flex;
@@ -679,12 +649,14 @@ export class SublevelMenuComponent implements OnInit {
           margin-left: 1.25rem;
       }
     }
-  }
 
-  .sidenav-nav-item:hover{
-    .sidenav-nav-link{
-      background-color : #f3f3f3;
-      color : #263238
+    .sidenav-nav-link:hover{
+      background-color: #fff;
+      color: #000;
+
+      .menu-collapse-icon{
+        color:#000;
+      }
     }
   }
 
@@ -694,9 +666,57 @@ export class SublevelMenuComponent implements OnInit {
 .active{
   background-color: #f3f3f3;
 
+  .menu-collapse-icon,
   .sidenav-link-icon,
   .sidenav-link-text{
       color : #000;
+  }
+}
+
+
+.menu-collapse-icon {
+  font-size:25px;
+  width : 2rem;
+  min-width:2rem;
+  margin: auto 0.5rem auto auto;
+  text-align: center;
+  color : #f3f3f3;
+}
+
+
+.sublevel-nav{
+  list-style: none;
+  margin-left: 20px;
+  transition: all .3s ease-in-out;
+
+  .sublevel-nav-item{
+
+    .sublevel-nav-link{
+      display : flex;
+      align-items: center;
+      height: 3rem;
+      color : #898989;
+      text-decoration: none;
+      border-radius: 0.625rem;
+      transition: all .3s ease-in-out;
+
+      .sublevel-link-icon{
+        font-size:7px;
+        width : 2rem;
+        min-width: 2rem;
+        margin: 0 0.5rem;
+        text-align: center;
+      }
+
+
+      .sidenav-link-text{
+        margin-left: 0.8rem;
+      }
+    }
+
+    .sublevel-nav-link:hover{
+      color: #f3f3f3;
+    }
   }
 }
 </code></pre>
@@ -727,8 +747,8 @@ export class SublevelMenuComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ul *ngIf="collapsed && data.items && data.items.length > 0" [@submenu]="expended ? {value:\'visible\' , params:{transitionParams:\'400ms cubic-bezier(0.86 , 0, 0.07, 1)\' , height:\'*\'}}                      : {value: \'hidden\',                         params:{transitionParams:\'400ms cubic-bezier(0.86 , 0, 0.07, 1)\' , height:\'0\'}}" class="sublevel-nav">   <li *ngFor="let item of data.items" class="sublevel-nav-item">     <a class="sublevel-nav-link"       (click)="handleClick(item)"       *ngIf="item.items && item.items.length > 0"     >       <i class="sublevel-link-icon fa fa-circle"></i>       <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>       <i *ngIf="item.items && collapsed" class="menu-collapsed-icon"          [ngClass]="!item.expended  ? \'fal fa-angle-right\' : \'fal fa-angle-down\'"       ></i>     </a>     <a class="sublevel-nav-link"       *ngIf="!item.items || (item.items.length === 0)"       [routerLink]="[item.routerLink]"       routerLinkActive="active-sublevel"       [routerLinkActiveOptions]="{exact: true}"     >       <i class="sublevel-link-icon fa fa-circle"></i>       <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>     </a>     <div *ngIf="item.items && item.items.length > 0">       <app-sublevel-menu         [collapsed]="collapsed"         [multiple]="multiple"         [expended]="item.expended"       ></app-sublevel-menu>     </div>   </li></ul></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
+        var COMPONENT_TEMPLATE = '<div><ul *ngIf="collapsed && data.items && data.items.length > 0"[@submenu]="expended ? \'visible\' : \'hidden\'"class="sublevel-nav">  <li *ngFor="let item of data.items" class="sublevel-nav-item">    <a class="sublevel-nav-link"      (click)="handleClick(item)"      *ngIf="item.items && item.items.length > 0"    >      <i class="sublevel-link-icon fa-solid fa-circle"></i>      <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>      <i *ngIf="item.items && collapsed" class="menu-collapsed-icon"         [ngClass]="!item.expended ? \'fa fa-angle-right\' : \'fa fa-angle-down\'"      ></i>    </a>    <a class="sublevel-nav-link"      *ngIf="!item.items || (item.items && item.items.length === 0)"      [routerLink]="[item.routerLink]"      routerLinkActive="active-sublevel"      [routerLinkActiveOptions]="{exact: true}"    >      <i class="sublevel-link-icon fa-solid fa-circle"></i>      <span class="sublevel-link-text" *ngIf="collapsed">{{ item.label }}</span>    </a>    <div *ngIf="item.items && item.items.length > 0">      <app-sublevel-menu        [data]="item"        [collapsed]="collapsed"        [multiple]="multiple"        [expended]="item.expended"      ></app-sublevel-menu>    </div>  </li></ul></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ChatsComponent', 'selector': 'app-chats'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CreateDoctorantComponent', 'selector': 'app-create-doctorant'},{'name': 'CreateFormationComponent', 'selector': 'app-create-formation'},{'name': 'CreateNewsComponent', 'selector': 'app-create-news'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DatabaseComponent', 'selector': 'app-database'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListDoctorantComponent', 'selector': 'app-list-doctorant'},{'name': 'ListProfComponent', 'selector': 'app-list-prof'},{'name': 'ListStaffComponent', 'selector': 'app-list-staff'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'MiniProfilComponent', 'selector': 'app-mini-profil'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ProfilComponent', 'selector': 'app-profil'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'ScreenComponent', 'selector': 'app-screen'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SublevelMenuComponent', 'selector': 'app-sublevel-menu'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SublevelMenuComponent'};
 </script>
