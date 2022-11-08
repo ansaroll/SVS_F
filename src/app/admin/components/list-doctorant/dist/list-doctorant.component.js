@@ -18,6 +18,15 @@ var ListDoctorantComponent = /** @class */ (function () {
         this.onViewUser = function (user) {
             _this.currentUser = user;
         };
+        this.userDeletedHandler = function () {
+            _this.fetch();
+        };
+        this.fetch = function () {
+            _this.userService.getUsers({ role: 'doctorant' }).subscribe({ next: function (data) {
+                    _this.users = data;
+                    _this.currentUser = data[0];
+                }, error: function (err) { return console.log({ err: err }); } });
+        };
     }
     ListDoctorantComponent.prototype.ngOnInit = function () {
         var _this = this;

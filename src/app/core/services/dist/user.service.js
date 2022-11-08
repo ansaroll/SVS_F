@@ -48,7 +48,7 @@ var UserService = /** @class */ (function () {
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     UserService.prototype.deleteUser = function (id) {
-        return this.httpClient["delete"](this.endpoint + '/users/' + id, this.httpHeader)
+        return this.httpClient["delete"](this.endpoint + '/api/users/' + id, this.httpHeader)
             .pipe(operators_1.retry(1), operators_1.catchError(this.processError));
     };
     UserService.prototype.processError = function (err) {

@@ -16,33 +16,39 @@ var ResumeComponent = /** @class */ (function () {
         this.router = router;
         this.location = location;
         this.user = {};
+        this.userDeleted = new core_1.EventEmitter();
+        this.openDialogConfirm = false;
+        this.userToDelete = undefined;
         this.id = null;
-        // fetch = (id:string | null) => {
-        //   this.userService.getSingleUser(id).subscribe(
-        //     {
-        //       next:data => this.user = data,
-        //       error:err => console.log({err})
-        //     }
-        //   )
-        // }
+        this.deleteUser = function () {
+            _this.openDialogConfirm = false;
+            _this.userService.deleteUser(_this.userToDelete).subscribe({
+                next: function () { return _this.userDeleted.emit(); },
+                error: function (err) { return console.log({ err: err }); }
+            });
+        };
+        this.cancelDelete = function () {
+            _this.openDialogConfirm = false;
+            _this.userToDelete = undefined;
+        };
         this.onViewDetailUser = function (idUser, role) {
             _this.router.navigateByUrl("/admin/profil/" + idUser + "/" + role);
+        };
+        this.onViewDeleteUser = function (idUser) {
+            _this.openDialogConfirm = true;
+            _this.userToDelete = idUser;
         };
         this.ngOnDestroy = function () {
             // this.fetch(this.route.snapshot.paramMap.get('id'))
         };
     }
-    ResumeComponent.prototype.ngOnInit = function () {
-        // this.fetch(this.route.snapshot.paramMap.get('id'))
-        // this.location.onUrlChange(()=>{
-        //   // this.id = this.route.snapshot.paramMap.get('id')
-        //   this.fetch(this.route.snapshot.paramMap.get('id'))
-        //   console.log('id' , this.route.snapshot.paramMap.get('id') );
-        // })
-    };
+    ResumeComponent.prototype.ngOnInit = function () { };
     __decorate([
         core_1.Input()
     ], ResumeComponent.prototype, "user");
+    __decorate([
+        core_1.Output()
+    ], ResumeComponent.prototype, "userDeleted");
     ResumeComponent = __decorate([
         core_1.Component({
             selector: 'app-resume',

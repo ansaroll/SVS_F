@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 
 import { CoursesService } from 'src/app/core/services/courses.service';
@@ -23,6 +23,7 @@ export class CreateFormationComponent implements OnInit {
   constructor(private formBuilder: FormBuilder ,
               private coursesService: CoursesService,
               private route: ActivatedRoute ,
+              private router:Router
               ) { }
 
   ngOnInit(): void {
@@ -49,7 +50,7 @@ export class CreateFormationComponent implements OnInit {
         } ,
         error:err => console.log({err})
       })
-      
+
     }
 
     this.formationPreview$ = this.formationForm.valueChanges.pipe(
@@ -74,23 +75,23 @@ export class CreateFormationComponent implements OnInit {
     }
   }
 
-  onSubmitFormation(){    
+  onSubmitFormation(){
       this.coursesService.addCourses({
         ...this.formationForm.value,
         image:this.pdpBase64
       }).subscribe({
-        next:data => console.log({data}),
+        next:() =>  this.router.navigateByUrl('/admin/courses'),
         error:err => console.log({err})
       })
   }
 
-  onUpdateFormation(){    
+  onUpdateFormation(){
     this.coursesService.updateCourses({
       ...this.formationForm.value,
       image:this.pdpBase64,
       _id:this.route.snapshot.paramMap.get('id')
     }).subscribe({
-      next:data => console.log({data}),
+      next:() =>  this.router.navigateByUrl('/admin/courses'),
       error:err => console.log({err})
     })
 }

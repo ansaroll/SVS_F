@@ -21,10 +21,11 @@ exports.CreateFormationComponent = void 0;
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
 var CreateFormationComponent = /** @class */ (function () {
-    function CreateFormationComponent(formBuilder, coursesService, route) {
+    function CreateFormationComponent(formBuilder, coursesService, route, router) {
         this.formBuilder = formBuilder;
         this.coursesService = coursesService;
         this.route = route;
+        this.router = router;
         this.imageSaved = false;
         this.isUpdate = false;
     }
@@ -72,14 +73,16 @@ var CreateFormationComponent = /** @class */ (function () {
         }
     };
     CreateFormationComponent.prototype.onSubmitFormation = function () {
+        var _this = this;
         this.coursesService.addCourses(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64 })).subscribe({
-            next: function (data) { return console.log({ data: data }); },
+            next: function () { return _this.router.navigateByUrl('/admin/courses'); },
             error: function (err) { return console.log({ err: err }); }
         });
     };
     CreateFormationComponent.prototype.onUpdateFormation = function () {
+        var _this = this;
         this.coursesService.updateCourses(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64, _id: this.route.snapshot.paramMap.get('id') })).subscribe({
-            next: function (data) { return console.log({ data: data }); },
+            next: function () { return _this.router.navigateByUrl('/admin/courses'); },
             error: function (err) { return console.log({ err: err }); }
         });
     };

@@ -27,6 +27,16 @@ export class ListDoctorantComponent implements OnInit {
     this.currentUser = user
   }
 
+  userDeletedHandler = () => {
+    this.fetch()
+  }
+
+  fetch = () => {
+    this.userService.getUsers({role:'doctorant'}).subscribe({next:data => {
+      this.users = data
+      this.currentUser = data[0]
+    } , error: err => console.log({err})})
+  }
 
 }
 

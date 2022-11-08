@@ -63,7 +63,7 @@
   <div
     class="md:col-span-1 hidden lg:block dark:border-gray-700 border-t lg:border-t-0 lg:border-r lg:border-l lg:rounded-r dark:bg-gray-700 bg-gray-100">
 
-    <app-resume [user]="currentUser"></app-resume>
+    <app-resume [user]="currentUser" (userDeleted)="userDeletedHandler()"></app-resume>
     <!-- <router-outlet></router-outlet> -->
   </div>
 

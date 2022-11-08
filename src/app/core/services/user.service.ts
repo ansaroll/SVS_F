@@ -61,7 +61,7 @@ httpHeader = {
   }
   deleteUser(id: any) {
     return this.httpClient
-      .delete<Partial<User>>(this.endpoint + '/users/' + id, this.httpHeader)
+      .delete<Partial<User>>(this.endpoint + '/api/users/' + id, this.httpHeader)
       .pipe(retry(1), catchError(this.processError));
   }
 
