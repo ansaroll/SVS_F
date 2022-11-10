@@ -29,6 +29,7 @@ var CreateDoctorantComponent = /** @class */ (function () {
         this.userId = null;
         this.role = null;
         this.isUpdate = false;
+        this.dataPdpBase64 = undefined;
         this.userSignUp = {
             name: '',
             password: '',
@@ -46,7 +47,7 @@ var CreateDoctorantComponent = /** @class */ (function () {
             nationality: [null],
             gender: [null],
             dateOfBirth: [null],
-            yearBacc: [null],
+            yearBacc: [1000],
             adress: [null],
             cin: [null],
             serieBacc: [null],
@@ -55,17 +56,19 @@ var CreateDoctorantComponent = /** @class */ (function () {
             passwordConfirmation: [null],
             email: [null],
             telephone: [null],
-            isBoursier: [null],
+            isBoursier: [false],
             tauxBourse: [null],
             about: [null],
             poste: [null],
             im: [null],
+            pictureUrl: [null],
             role: ["doctorant"]
         });
         if (this.route.snapshot.paramMap.get('id') != null) {
             this.isUpdate = true;
             this.userService.getSingleUser(this.route.snapshot.paramMap.get('id')).subscribe({
                 next: function (data) {
+                    _this.dataPdpBase64 = data.pictureUrl;
                     _this.informationForm.setValue({
                         name: data.name || '',
                         firstName: data.firstName || '',
@@ -86,7 +89,8 @@ var CreateDoctorantComponent = /** @class */ (function () {
                         about: data.about || '',
                         poste: data.poste || '',
                         im: data.im || '',
-                        role: data.role || ''
+                        role: data.role || '',
+                        pictureUrl: data.pictureUrl || ''
                     });
                 },
                 error: function (err) { return console.log({ err: err }); }

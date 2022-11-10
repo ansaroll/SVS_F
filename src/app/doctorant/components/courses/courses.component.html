@@ -3,91 +3,95 @@
 
   <div class="pb-16">
     <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-        <div class="mb-12 space-y-2 text-center">
-          <!-- <span class="block w-max mx-auto px-3 py-1.5 border border-green-200 rounded-full bg-green-100 text-green-600">Les Formations</span> -->
-          <h2 class="text-2xl text-cyan-900 font-bold md:text-4xl">Les Formations de l'EAD</h2>
-          <!-- <p class="lg:w-6/12 lg:mx-auto">Quam hic dolore cumque voluptate rerum beatae et quae, tempore sunt, debitis dolorum officia aliquid explicabo? Excepturi, voluptate?</p> -->
-        </div>
+      <div class="mb-12 space-y-2 text-center">
+        <!-- <span class="block w-max mx-auto px-3 py-1.5 border border-green-200 rounded-full bg-green-100 text-green-600">Les Formations</span> -->
+        <h2 class="text-2xl text-cyan-900 font-bold md:text-4xl">Les Formations de l'EAD</h2>
+        <!-- <p class="lg:w-6/12 lg:mx-auto">Quam hic dolore cumque voluptate rerum beatae et quae, tempore sunt, debitis dolorum officia aliquid explicabo? Excepturi, voluptate?</p> -->
+      </div>
 
-        <div class="grid gap-12 lg:grid-cols-2">
-          <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-            <img src="https://th.bing.com/th/id/R.8864e5f202209ea2e7391f519d96003e?rik=fXphrAYd3jq76g&riu=http%3a%2f%2fwww.hauts-de-france.ars.sante.fr%2fsystem%2ffiles%2f2018-04%2fSTSS+1.png&ehk=Bat1Xfifbq8CFH0Q%2fAZ1tQ8nEvV3xgvOT%2f7prrhM3rk%3d&risl=&pid=ImgRaw&r=0" alt="art cover" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-            <div class="sm:w-7/12 pl-0 p-5">
-              <div class="space-y-2">
-                <div class="space-y-4">
-                  <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                  <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-                </div>
-                <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-              </div>
-            </div>
-          </div>
+      <div class="grid gap-12 lg:grid-cols-2 grp_course">
 
-          <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-            <img src="https://th.bing.com/th/id/R.964876ad1991928651a924ca356c76b8?rik=4lXgDV14inUNYw&riu=http%3a%2f%2fextranet.santemonteregie.qc.ca%2fuserfiles%2fimage%2fsante-publique%2fpromotion-prevention%2fN2-180-Promotion-prevention.jpg&ehk=GLChut8KZeTxEtnoUsTWs1PR1N2mMMJvltuwNGdh8Vo%3d&risl=&pid=ImgRaw&r=0" alt="art cover" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-            <div class="sm:w-7/12 pl-0 p-5">
-              <div class="space-y-2">
-                <div class="space-y-4">
-                  <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                  <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-                </div>
-                <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
+        <div *ngFor="let course of courses" class="p-1 rounded-xl group sm:flex space-x-6 bg-white
+        bg-opacity-50 shadow-xl hover:rounded-2xl
+        ">
+          <img src={{course.image}} alt="art cover" loading="lazy" width="1000" height="667"
+            class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl hover:scale-105 transition duration-500 ease-in-out">
+          <div class="sm:w-7/12 pl-0 p-5">
+            <div class="space-y-2">
+              <div class="space-y-4">
+                <h4
+                  class="text-2xl font-semibold {{course.enabled ? 'text-green-600 animate-bounce' : 'text-cyan-900'}}">
+                  {{course.title}}</h4>
+                <p class="text-gray-600">{{course.description}}</p>
               </div>
-            </div>
-          </div>
+              <p>
+                Responsable : <a href="www.tailus.io" class="text-cyan-600">{{course.responsible}}</a>
+              </p>
+              <!-- <div class="flex flex-row justify-between">
+                <a href="/admin/create-formation/{{course._id}}" class="block w-max text-cyan-600">Voir plus</a>
+                <button *ngIf="!course.enabled"
+                (click)="setDeleteCourse(course._id!)"
+                class="text-red-600 rounded-lg bg-red-100 p-1 px-2 hover:bg-red-200">
+                  Supprimer
+                </button>
 
-          <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-            <img src="https://th.bing.com/th/id/R.f52a72b3723a1073ef558ea5a9c97582?rik=YR%2fy9FhjqW%2b1Aw&pid=ImgRaw&r=0" alt="art cover" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-            <div class="sm:w-7/12 pl-0 p-5">
-              <div class="space-y-2">
-                <div class="space-y-4">
-                  <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                  <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-                </div>
-                <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-            <img src="https://th.bing.com/th/id/R.789df646f5d2a448c18eb34e555f8ebb?rik=gxv72hFxEIVgog&pid=ImgRaw&r=0" alt="art cover" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-            <div class="sm:w-7/12 pl-0 p-5">
-              <div class="space-y-2">
-                <div class="space-y-4">
-                  <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                  <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-                </div>
-                <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-            <img src="https://th.bing.com/th/id/R.cee9ab44a08ed822b87251eb3d536b78?rik=TLr2jRZec%2b49ig&pid=ImgRaw&r=0" alt="art cover" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-            <div class="sm:w-7/12 pl-0 p-5">
-              <div class="space-y-2">
-                <div class="space-y-4">
-                  <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                  <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-                </div>
-                <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-            <img src="https://th.bing.com/th/id/R.4385cf53fe2ed4014a8cc087ff662610?rik=BCxjI3bBrnDpVQ&pid=ImgRaw&r=0https://tailus.io/sources/blocks/twocards/preview/images/woman.jpg" alt="art cover" width="1000" height="667" class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl">
-            <div class="sm:w-7/12 pl-0 p-5">
-              <div class="space-y-2">
-                <div class="space-y-4">
-                  <h4 class="text-2xl font-semibold text-cyan-900">Provident de illo eveniet commodi fuga fugiat laboriosam expedita.</h4>
-                  <p class="text-gray-600">Laborum saepe laudantium in, voluptates ex placeat quo harum aliquam totam, doloribus eum impedit atque! Temporibus...</p>
-                </div>
-                <a href="www.tailus.io" class="block w-max text-cyan-600">Read more</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
+
+        <!-- <div class="">
+          <button type="button"
+            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+            Vertically centered modal
+          </button>
+        </div> -->
+
+
+
+        <!-- <div class="modal fade {{showModal ? 'block' :'hidden'}} fixed top-1/3 left-1/2 outline-none overflow-x-hidden overflow-y-auto drop-shadow-2xl shadow-2xl"
+          id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" aria-hidden="true"
+          role="presentation">
+          <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+            <div
+              class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+              <div
+                class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-white rounded-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+                  Confirmation
+                </h5>
+                <button type="button"
+                  class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                  data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body relative p-4">
+                <p>
+                  Voulez-vous vraiment supprimer cette formation ?
+                </p>
+              </div>
+              <div
+                class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button"
+                  (click)="onCancelDelete()"
+                  class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                  data-bs-dismiss="modal">
+                  Annuler
+                </button>
+                <button type="button"
+                  (click)="onDeleteCourse()"
+                  class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+                  Confirmer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+
+
+
+      </div>
     </div>
   </div>
 
@@ -95,47 +99,4 @@
 
 
 
-  </div>
-
-
-
-
-
-  <div class="flex-col md:flex-row flex items-center md:justify-center">
-    <!--Code Block for white tooltip starts-->
-    <div class="relative mt-20 md:mt-0" (mouseover)="this.tooltip_status = 1" (mouseout)="this.tooltip_status = 0">
-        <div class="mr-2 cursor-pointer">
-            <svg aria-haspopup="true" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#A0AEC0" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" />
-                <circle cx="12" cy="12" r="9" />
-                <line x1="12" y1="8" x2="12.01" y2="8" />
-                <polyline points="11 12 12 12 12 16 13 16" />
-            </svg>
-        </div>
-        <div *ngIf="tooltip_status == 1" role="tooltip" class="z-20 -mt-20 w-64 absolute transition duration-150 ease-in-out left-0 ml-8 shadow-lg bg-white p-4 rounded">
-            <svg class="absolute left-0 -ml-2 bottom-0 top-0 h-full" width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="Tooltips-" transform="translate(-874.000000, -1029.000000)" fill="#FFFFFF">
-                        <g id="Group-3-Copy-16" transform="translate(850.000000, 975.000000)">
-                            <g id="Group-2" transform="translate(24.000000, 0.000000)">
-                                <polygon id="Triangle" transform="translate(4.500000, 62.000000) rotate(-90.000000) translate(-4.500000, -62.000000) " points="4.5 57.5 12.5 66.5 -3.5 66.5"></polygon>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-            <p class="text-sm font-bold text-gray-800 pb-1">Keep track of follow ups</p>
-            <p class="text-xs leading-4 text-gray-600 pb-3">Reach out to more prospects at the right moment.</p>
-            <div class="flex justify-between">
-                <div class="flex items-center">
-                    <span class="text-xs font-bold text-indigo-700">Step 1 of 4</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-xs text-gray-600 underline mr-2 cursor-pointer">Skip Tour</span>
-                    <button class="focus:outline-none bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-5 py-1 text-xs">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Code Block for white tooltip ends-->
 </div>

@@ -50,7 +50,7 @@ httpHeader = {
       return req
   }
 
-  updateUser(id: any, data: any): Observable<Partial<User>> {
+  updateUser(id: any, data: Partial<User>): Observable<Partial<User>> {
     return this.httpClient
       .put<Partial<User>>(
         this.endpoint + '/api/users/' + id,

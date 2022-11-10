@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<form 
+<form
 name="form"
 #f="ngForm"
 (ngSubmit)="isUpdate ? onUpdateProfil(informationForm) : onSubmitprofilForm(informationForm)" [formGroup]="informationForm">
@@ -161,7 +161,9 @@ name="form"
         <div class="px-4 sm:px-0" *ngIf="informationPreview$ | async as info">
 
           <div class="text-center w-32 mx-auto">
-            <img src="./assets/profils/default_profil_{{info.gender === 'feminin' ? 'female' : 'male' }}.jpg"
+            <img *ngIf="dataPdpBase64 == undefined"  src="./assets/profils/default_profil_{{info.gender === 'feminin' ? 'female' : 'male' }}.jpg"
+              class="rounded-full w-32" alt="Avatar" />
+            <img *ngIf="dataPdpBase64 != undefined" src="{{dataPdpBase64}}"
               class="rounded-full w-32" alt="Avatar" />
           </div>
 
@@ -246,7 +248,7 @@ name="form"
               <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                 <label for="taux" class="block text-sm font-medium text-gray-700">Taux de Bourse</label>
                 <input title="tauxBourse" id="taux" type="number" min="1" max="100" step="1" name="tauxBourse"
-                  formControlName="tauxBourse" id="tauxBourse" autocomplete="off" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                  formControlName="tauxBourse" id="tauxBourse" autocomplete="off"
                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                   required>
               </div>

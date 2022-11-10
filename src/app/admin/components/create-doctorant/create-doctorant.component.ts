@@ -16,6 +16,7 @@ export class CreateDoctorantComponent implements OnInit {
   userId: string | null = null
   role: string | null = null
   isUpdate: boolean = false
+  dataPdpBase64?:string = undefined
 
   informationForm!: FormGroup;
   informationPreview$!: Observable<User>
@@ -46,7 +47,7 @@ export class CreateDoctorantComponent implements OnInit {
       nationality: [null],
       gender: [null],
       dateOfBirth: [null],
-      yearBacc: [null],
+      yearBacc: [1000],
       adress: [null],
       cin: [null],
       serieBacc: [null],
@@ -55,11 +56,12 @@ export class CreateDoctorantComponent implements OnInit {
       passwordConfirmation: [null],
       email: [null],
       telephone: [null],
-      isBoursier: [null],
+      isBoursier: [false],
       tauxBourse: [null],
       about: [null],
       poste: [null],
       im: [null],
+      pictureUrl:[null],
       role: ["doctorant"]
     })
 
@@ -68,6 +70,7 @@ export class CreateDoctorantComponent implements OnInit {
       this.isUpdate = true
       this.userService.getSingleUser(this.route.snapshot.paramMap.get('id')).subscribe({
         next: data => {
+          this.dataPdpBase64 = data.pictureUrl
           this.informationForm.setValue({
             name: data.name || '',
             firstName: data.firstName || '',
@@ -89,6 +92,7 @@ export class CreateDoctorantComponent implements OnInit {
             poste: data.poste || '',
             im: data.im || '',
             role: data.role || '',
+            pictureUrl:data.pictureUrl || ''
           })
         },
         error: err => console.log({ err })

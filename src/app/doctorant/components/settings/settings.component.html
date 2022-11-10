@@ -46,9 +46,9 @@ name="form"
                 <select id="nationality" ng-disabled="all" name="nationality" formControlName="nationality" autocomplete="country-name"
                   required ng-disabled="true"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option value="Madagascar">Malgache</option>
-                  <option value="Comore">Comorien</option>
-                  <option value="France">Français</option>
+                  <option disabled value="Madagascar">Malgache</option>
+                  <option disabled value="Comore">Comorien</option>
+                  <option disabled value="France">Français</option>
                 </select>
               </div>
 
@@ -58,9 +58,9 @@ name="form"
                 <select title="sexeOptions" id="sexe" name="sexe" formControlName="gender" autocomplete="country-name"
                   required
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option value="masculin">Masculin</option>
-                  <option value="feminin">Feminin</option>
-                  <option value="binaire">Binaire</option>
+                  <option disabled value="masculin">Masculin</option>
+                  <option disabled value="feminin">Feminin</option>
+                  <option disabled value="binaire">Binaire</option>
                 </select>
               </div>
 
@@ -74,7 +74,7 @@ name="form"
               <div class="col-span-6 sm:col-span-3">
                 <label for="dtbacc" class="block text-sm font-medium text-gray-700">Obtention Bacc</label>
                 <input title="dtbacc" id="dtbacc" type="number" min="1900" max="2022" step="1" value="2016" required
-                  formControlName="yearBacc"
+                  formControlName="yearBacc" [readonly]="true"
                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
@@ -124,9 +124,9 @@ name="form"
                 <label for="role" class="block text-sm font-medium text-gray-700">Status</label>
                 <select title="role" id="role" name="role" formControlName="role" required ng-disabled="all"
                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option value="doctorant">Docorant</option>
-                  <option value="prof">Prof</option>
-                  <option value="admin">Admin</option>
+                  <option disabled  value="doctorant">Docorant</option>
+                  <option disabled value="prof">Prof</option>
+                  <option disabled value="admin">Admin</option>
                 </select>
               </div>
 
@@ -134,9 +134,9 @@ name="form"
                 <label for="serieBacc" class="block text-sm font-medium text-gray-700">Serie BACC</label>
                 <select title="serieBacc" id="serieBacc" name="serieBAcc" formControlName="serieBacc" autocomplete="off"
                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option value="C">C</option>
-                  <option value="C">D</option>
-                  <option value="C">A</option>
+                  <option disabled value="C">C</option>
+                  <option disabled value="C">D</option>
+                  <option disabled value="C">A</option>
                 </select>
               </div>
 
@@ -260,7 +260,7 @@ name="form"
 
               <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                 <label for="taux" class="block text-sm font-medium text-gray-700">IM</label>
-                <input title="im" id="im" type="text" name="im" formControlName="im" id="im" autocomplete="off"
+                <input title="im" id="im" type="text" name="im" formControlName="im" id="im" autocomplete="off" [readonly]="true"
                   class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                   required>
               </div>
