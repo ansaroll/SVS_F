@@ -29,6 +29,19 @@ export class ChatsComponent implements OnInit {
   staffs:Partial<User>[] = []
   currentUser:Partial<User> = {}
 
+  stats:{
+    coursesCount: number;
+    doctorantCount: number;
+    profCount: number;
+    staffCount: number;
+} = {
+  coursesCount: 0,
+  doctorantCount: 0,
+  profCount: 0,
+  staffCount: 0
+}
+
+
 
   constructor(private messageService:MessageService , private tokenService: TokenService,
               private formBuilder: FormBuilder , private http:HttpClient,
@@ -36,6 +49,8 @@ export class ChatsComponent implements OnInit {
               ) { }
               messageForm!:FormGroup;
   userIdConnected: string | undefined = undefined
+  userNameConnected: string | undefined = undefined
+
 
   ngOnInit(): void {
     this.getMessages()
@@ -43,6 +58,8 @@ export class ChatsComponent implements OnInit {
     this.getAllDoctorants()
     this.getAllStaffs()
     this.userIdConnected = this.tokenService.getUserIdConnected() || 'Admin'
+    this.userNameConnected = this.tokenService.getUserNameConnected() || 'Admin'
+    this.statsService.getStats().subscribe({next:data => this.stats = data , error:err => console.log({err})})
     this.messageForm = this.formBuilder.group({
       content: [''],
       isFile:[false]
@@ -78,7 +95,7 @@ export class ChatsComponent implements OnInit {
       ...this.messageForm.value,
       expId: this.userIdConnected,
       isAdmin: true,
-      expName: 'Admin',
+      expName:this.userNameConnected ||'Admin',
     }).subscribe({
       next:() => {
         this.getMessages()
@@ -105,7 +122,7 @@ export class ChatsComponent implements OnInit {
   onSubmit(){
     const formData = new FormData()
     formData.append('file' , this.file)
-    formData.append('expName' , 'Admin')
+    formData.append('expName' , this.userNameConnected || 'Admin')
     formData.append('isAdmin' , 'true')
     formData.append('isFile' , 'true')
     formData.append('expId' , this.userIdConnected!)

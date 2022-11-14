@@ -50,9 +50,7 @@ var SettingsComponent = /** @class */ (function () {
         this.informationPreview$ = this.informationForm.valueChanges.pipe(rxjs_1.map(function (formValue) { return (__assign({}, formValue)); }));
     };
     SettingsComponent.prototype.onSubmitprofilForm = function (form) {
-        // alert('hey')
         this.doctorantService.addDoctorant(form.value);
-        console.log(form.value);
     };
     SettingsComponent = __decorate([
         core_1.Component({

@@ -21,11 +21,12 @@ exports.SettingsComponent = void 0;
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
 var SettingsComponent = /** @class */ (function () {
-    function SettingsComponent(formBuilder, userService, router, route) {
+    function SettingsComponent(formBuilder, userService, router, route, tokenService) {
         this.formBuilder = formBuilder;
         this.userService = userService;
         this.router = router;
         this.route = route;
+        this.tokenService = tokenService;
         this.userId = null;
         this.role = null;
         this.isUpdate = false;
@@ -40,6 +41,7 @@ var SettingsComponent = /** @class */ (function () {
         // this.userId = this.route.snapshot.paramMap.get('id')
         // this.role = this.route.snapshot.paramMap.get('role')
         var _this = this;
+        this.userId = this.tokenService.getUserIdConnected();
         this.informationForm = this.formBuilder.group({
             name: [null],
             firstName: [null],
@@ -62,9 +64,9 @@ var SettingsComponent = /** @class */ (function () {
             im: [null],
             role: ["doctorant"]
         });
-        if (this.route.snapshot.paramMap.get('id') != null) {
+        if (this.userId) {
             this.isUpdate = true;
-            this.userService.getSingleUser(this.route.snapshot.paramMap.get('id')).subscribe({
+            this.userService.getSingleUser(this.userId).subscribe({
                 next: function (data) {
                     _this.informationForm.setValue({
                         name: data.name || '',
@@ -72,7 +74,7 @@ var SettingsComponent = /** @class */ (function () {
                         nationality: data.nationality || '',
                         gender: data.gender || '',
                         dateOfBirth: data.dateOfBirth || '',
-                        yearBacc: data.yearBacc || 1000,
+                        yearBacc: data.yearBacc || '1000',
                         adress: data.adress || '',
                         cin: data.cin || '',
                         serieBacc: data.serieBacc || '',
@@ -81,7 +83,7 @@ var SettingsComponent = /** @class */ (function () {
                         passwordConfirmation: '',
                         email: data.email || '',
                         telephone: data.telephone || '',
-                        isBoursier: data.isBoursier ? true : false,
+                        isBoursier: data.isBoursier || 'false',
                         tauxBourse: data.tauxBourse || 0,
                         about: data.about || '',
                         poste: data.poste || '',

@@ -28,7 +28,7 @@ var CoursesComponent = /** @class */ (function () {
     };
     CoursesComponent.prototype.getAllCourses = function () {
         var _this = this;
-        this.coursesService.getCoursess({}).subscribe({
+        this.coursesService.getCoursess({ enabled: true }).subscribe({
             next: function (data) {
                 _this.courses = data;
             },

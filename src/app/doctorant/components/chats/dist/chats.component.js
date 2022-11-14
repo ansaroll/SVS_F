@@ -38,17 +38,27 @@ var ChatsComponent = /** @class */ (function () {
         this.users = [];
         this.staffs = [];
         this.currentUser = {};
+        this.stats = {
+            coursesCount: 0,
+            doctorantCount: 0,
+            profCount: 0,
+            staffCount: 0
+        };
         this.userIdConnected = undefined;
+        this.userNameConnected = undefined;
         this.selectUser = function (user) {
             _this.currentUser = user;
         };
     }
     ChatsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.getMessages();
         this.getStatsMessages();
         this.getAllDoctorants();
         this.getAllStaffs();
+        this.statsService.getStats().subscribe({ next: function (data) { return _this.stats = data; }, error: function (err) { return console.log({ err: err }); } });
         this.userIdConnected = this.tokenService.getUserIdConnected() || 'Doctorant';
+        this.userNameConnected = this.tokenService.getUserNameConnected() || 'Doctorant';
         this.messageForm = this.formBuilder.group({
             content: [''],
             isFile: [false]
@@ -78,7 +88,7 @@ var ChatsComponent = /** @class */ (function () {
     };
     ChatsComponent.prototype.onSendMessage = function () {
         var _this = this;
-        this.messageService.addMessage(__assign(__assign({}, this.messageForm.value), { expId: this.userIdConnected, isAdmin: false, isFile: false, expName: 'Doctorant' })).subscribe({
+        this.messageService.addMessage(__assign(__assign({}, this.messageForm.value), { expId: this.userIdConnected, isAdmin: false, isFile: false, expName: this.userNameConnected || 'Doctorant' })).subscribe({
             next: function () {
                 _this.getMessages();
                 _this.getStatsMessages();
@@ -100,7 +110,7 @@ var ChatsComponent = /** @class */ (function () {
         var _this = this;
         var formData = new FormData();
         formData.append('file', this.file);
-        formData.append('expName', 'Doctorant');
+        formData.append('expName', this.userNameConnected || 'Doctorant');
         formData.append('isAdmin', 'false');
         formData.append('isFile', 'true');
         formData.append('expId', this.userIdConnected);
@@ -141,7 +151,6 @@ var ChatsComponent = /** @class */ (function () {
             }, error: function (err) { return console.log({ err: err }); } });
     };
     ChatsComponent.prototype.icon = function (str) {
-        console.log(str, str.split('.'), str.split('.')[1]);
         if (str.split('.').pop() == 'pdf')
             return 'fa-file-pdf text-red-400';
         if (str.split('.').pop() == 'pptx')

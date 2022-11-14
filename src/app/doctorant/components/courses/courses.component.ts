@@ -30,7 +30,7 @@ export class CoursesComponent implements OnInit {
   }
 
   getAllCourses(){
-    this.coursesService.getCoursess({}).subscribe({
+    this.coursesService.getCoursess({enabled:true}).subscribe({
       next:data => {
         this.courses = data
       },

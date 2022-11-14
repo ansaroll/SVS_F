@@ -9,11 +9,19 @@ exports.__esModule = true;
 exports.TokenService = void 0;
 var core_1 = require("@angular/core");
 var TokenService = /** @class */ (function () {
-    function TokenService() {
+    function TokenService(userService) {
+        var _this = this;
+        this.userService = userService;
+        this.user = {};
         this.saveToken = function (token) {
             localStorage.setItem('accessToken', token.accessToken);
             localStorage.setItem('refreshToken', token.refreshToken);
             localStorage.setItem('userIdConnected', token.userIdConneted);
+            _this.userService.getSingleUser(token.userIdConneted).subscribe({
+                next: function (user) {
+                    localStorage.setItem('nameConnected', (user.firstName || "" + user.name) || 'Doctorant');
+                }
+            });
         };
         this.isLogged = function () {
             var accessToken = localStorage.getItem('accessToken');
@@ -30,6 +38,9 @@ var TokenService = /** @class */ (function () {
         };
         this.getUserIdConnected = function () {
             return localStorage.getItem('userIdConnected');
+        };
+        this.getUserNameConnected = function () {
+            return localStorage.getItem('nameConnected');
         };
     }
     TokenService = __decorate([

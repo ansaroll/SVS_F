@@ -60,9 +60,7 @@ export class SettingsComponent implements OnInit {
 
   }
   onSubmitprofilForm(form:FormGroup) {
-    // alert('hey')
     this.doctorantService.addDoctorant(form.value)
-    console.log(form.value);
   }
 
 }

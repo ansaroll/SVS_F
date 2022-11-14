@@ -16,6 +16,7 @@ const routes: Routes = [
     { path : 'calendar' , component : CalendarComponent },
     { path : 'chats' , component : ChatsComponent },
     { path : 'courses' , component : CoursesComponent },
+    { path : 'settings' , component : SettingsComponent },
     { path : 'settings/:id' , component : SettingsComponent }
   ]
   }

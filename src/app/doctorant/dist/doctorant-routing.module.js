@@ -24,6 +24,7 @@ var routes = [
             { path: 'calendar', component: calendar_component_1.CalendarComponent },
             { path: 'chats', component: chats_component_1.ChatsComponent },
             { path: 'courses', component: courses_component_1.CoursesComponent },
+            { path: 'settings', component: settings_component_1.SettingsComponent },
             { path: 'settings/:id', component: settings_component_1.SettingsComponent }
         ]
     }

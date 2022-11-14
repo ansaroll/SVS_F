@@ -8,15 +8,15 @@ export class User {
   nationality?: string;
   gender?: string;
   dateOfBirth?: string;
-  yearBacc?: number;
+  yearBacc?: string;
   adress?: string;
   cin?: string;
   serieBacc?: string;
   codeDoubling?: string;
   email?: string;
   telephone?: string;
-  isBoursier?: boolean;
-  tauxBourse?: number;
+  isBoursier?: string;
+  tauxBourse?: string;
   about?: string;
   createdAt?: Date;
   pictureUrl?:string;

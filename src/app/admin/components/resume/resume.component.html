@@ -1,9 +1,7 @@
 
 <div class="flex justify-center">
   <div class="max-w-sm">
-    <a href="#!">
-      <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
-    </a>
+      <img class="rounded-t-lg" src="{{user.pictureUrl}}" alt=""/>
     <div class="p-6 mt-2 h-96 scrollbar scrollbar-thin overflow-y-auto">
       <h5 class="text-gray-100 text-3xl font-medium mb-2">
         {{ user.name }}
@@ -15,7 +13,7 @@
         {{ user._id }}
       </div>
       <div class="pt-4 text-gray-200 text-2xl break">
-        date d'inscription : {{ user.createdAt | date}}
+        Date d'inscription : {{ user.createdAt | date}}
       </div>
       <button
         (click)="onViewDetailUser(user._id, user.role)"

@@ -16,7 +16,7 @@
       <div class="flex flex-col mt-8">
         <div class="flex flex-row items-center justify-between text-xs">
           <span class="font-bold">Tous les doctorants</span>
-          <span class="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">4</span>
+          <span class="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">{{ stats.doctorantCount }}</span>
         </div>
         <div class="flex flex-col space-y-1 mt-4 -mx-2 h-80 scrollbar scrollbar-thin overflow-y-auto chat-body">
 
@@ -34,7 +34,7 @@
         </div>
         <div class="flex flex-row items-center  justify-between text-xs mt-6">
           <span class="font-bold tex-xl">Les Admins</span>
-          <span class="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">7</span>
+          <span class="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">{{ stats.staffCount }}</span>
         </div>
         <div class="flex flex-col space-y-1 mt-4 -mx-2 h-60 scrollbar scrollbar-thin overflow-y-auto chat-body">
 
@@ -69,9 +69,9 @@
                    {{ message.isAdmin ? 'A' : 'D' }}
                   </div>
                   <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
-                    <span *ngIf="message.isAdmin" class="text-xs inline-block py-1 px-2.5 leading-none
+                    <span class="text-xs inline-block py-1 px-2.5 leading-none
                     text-center whitespace-nowrap align-baseline font-bold
-                    bg-purple-600
+                    {{ message.isAdmin ? 'bg-purple-600' : 'bg-green-600'}}
                     text-white rounded-full">
                       {{ message.expName }}
                     </span>

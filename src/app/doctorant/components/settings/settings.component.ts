@@ -4,6 +4,7 @@ import { map, Observable } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user.model';
+import { TokenService } from 'src/app/core/services/token.service';
 
 
 @Component({
@@ -33,12 +34,14 @@ export class SettingsComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private route: ActivatedRoute,
+    private tokenService: TokenService
   ) { }
 
   ngOnInit(): void {
     // this.userId = this.route.snapshot.paramMap.get('id')
     // this.role = this.route.snapshot.paramMap.get('role')
 
+    this.userId =  this.tokenService.getUserIdConnected()
 
     this.informationForm = this.formBuilder.group({
       name: [null],
@@ -63,10 +66,9 @@ export class SettingsComponent implements OnInit {
       role: ["doctorant"]
     })
 
-
-    if (this.route.snapshot.paramMap.get('id') != null) {
+    if (this.userId) {
       this.isUpdate = true
-      this.userService.getSingleUser(this.route.snapshot.paramMap.get('id')).subscribe({
+      this.userService.getSingleUser(this.userId).subscribe({
         next: data => {
           this.informationForm.setValue({
             name: data.name || '',
@@ -74,7 +76,7 @@ export class SettingsComponent implements OnInit {
             nationality: data.nationality || '',
             gender: data.gender || '',
             dateOfBirth: data.dateOfBirth || '',
-            yearBacc: data.yearBacc || 1000,
+            yearBacc: data.yearBacc || '1000',
             adress: data.adress || '',
             cin: data.cin || '',
             serieBacc: data.serieBacc || '',
@@ -83,7 +85,7 @@ export class SettingsComponent implements OnInit {
             passwordConfirmation: '',
             email: data.email || '',
             telephone: data.telephone || '',
-            isBoursier:data.isBoursier ? true : false,
+            isBoursier:data.isBoursier || 'false',
             tauxBourse: data.tauxBourse || 0,
             about: data.about || '',
             poste: data.poste || '',
