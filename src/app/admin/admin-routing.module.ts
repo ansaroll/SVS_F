@@ -15,6 +15,7 @@ import { ScreenComponent } from './components/screen/screen.component'
 import { SettingsComponent } from './components/settings/settings.component'
 import { CreateNewsComponent } from './components/create-news/create-news.component';
 import { ProfilComponent } from "./components/profil/profil.component";
+import { CreateAdvertComponent } from './components/create-advert/create-advert.component'
 
 
 
@@ -51,6 +52,8 @@ const routes: Routes = [
       { path : 'create-user' , component : CreateDoctorantComponent},
       { path : 'create-user/:id/:role' , component : CreateDoctorantComponent},
       { path : 'create-formation' , component : CreateFormationComponent},
+      { path : 'create-advert' , component : CreateAdvertComponent},
+      { path : 'create-advert/:id' , component : CreateAdvertComponent},
       { path : 'create-formation/:id' , component : CreateFormationComponent},
       { path : 'createnews' , component : CreateNewsComponent},
     ]

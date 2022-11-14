@@ -38,6 +38,10 @@ export const navbarData:INavbarData[] = [
       {
         routerLink : 'create-formation',
         label : 'Formation'
+      },
+      {
+        routerLink : 'create-advert',
+        label : 'Annonce'
       }
     ]
   },

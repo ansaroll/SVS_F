@@ -36,6 +36,8 @@ var create_formation_component_1 = require("./components/create-formation/create
 var tinymce_angular_1 = require("@tinymce/tinymce-angular");
 var create_news_component_1 = require("./components/create-news/create-news.component");
 var sublevel_menu_component_1 = require("./components/sidenav/sublevel-menu.component");
+var mini_profil_component_1 = require("./components/mini-profil/mini-profil.component");
+var create_advert_component_1 = require("./components/create-advert/create-advert.component");
 var AdminModule = /** @class */ (function () {
     function AdminModule() {
     }
@@ -60,7 +62,9 @@ var AdminModule = /** @class */ (function () {
                 create_doctorant_component_1.CreateDoctorantComponent,
                 create_formation_component_1.CreateFormationComponent,
                 create_news_component_1.CreateNewsComponent,
-                sublevel_menu_component_1.SublevelMenuComponent
+                sublevel_menu_component_1.SublevelMenuComponent,
+                mini_profil_component_1.MiniProfilComponent,
+                create_advert_component_1.CreateAdvertComponent
             ],
             imports: [
                 common_1.CommonModule,
@@ -74,6 +78,9 @@ var AdminModule = /** @class */ (function () {
                 }),
                 forms_1.ReactiveFormsModule,
                 forms_1.FormsModule
+            ],
+            providers: [
+                { provide: tinymce_angular_1.TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
             ]
         })
     ], AdminModule);

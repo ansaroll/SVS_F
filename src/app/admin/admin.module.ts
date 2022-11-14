@@ -30,6 +30,8 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CreateNewsComponent } from './components/create-news/create-news.component';
 import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.component';
 import { MiniProfilComponent } from './components/mini-profil/mini-profil.component';
+import { CreateAdvertComponent } from './components/create-advert/create-advert.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 @NgModule({
@@ -53,7 +55,8 @@ import { MiniProfilComponent } from './components/mini-profil/mini-profil.compon
     CreateFormationComponent,
     CreateNewsComponent,
     SublevelMenuComponent,
-    MiniProfilComponent
+    MiniProfilComponent,
+    CreateAdvertComponent
   ],
   imports: [
     CommonModule,
@@ -67,6 +70,9 @@ import { MiniProfilComponent } from './components/mini-profil/mini-profil.compon
     }),
     ReactiveFormsModule,
     FormsModule
+  ],
+  providers:[
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ]
 })
 export class AdminModule { }

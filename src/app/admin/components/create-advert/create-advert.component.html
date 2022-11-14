@@ -1,0 +1,93 @@
+<div class="formFormation">
+
+
+  <h1 class="text-3xl mb-12" >Rediger ici toutes informations concernant la nouvelle Annonce .</h1>
+  
+  
+  <!-- // DEBUT FORM EDIT DE FORATION -->
+  <div>
+    <div class="md:grid md:grid-cols-4 md:gap-6">
+      <div class="mt-5 md:mt-0 md:col-span-2">
+        <form [formGroup]="formationForm">
+            <div class="shadow bg-white rounded-lg sm:rounded-md sm:overflow-hidden">
+  
+              <div class="px-4 py-5 space-y-6 sm:p-6">
+                <div class="grid grid-cols-6 gap-6">
+  
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="formationTitle" class="block text-sm font-medium text-gray-700">Titre du Formation *</label>
+                      <input type="text" name="formationTitle" id="formationTitle" autocomplete="off" formControlName="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block  shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+  
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="status" class="block text-sm font-medium text-gray-700">Metre en ligne</label>
+                      <input type="checkbox" name="status" id="status" autocomplete="off" formControlName="enabled" class="mt-1 w-10 h-10 focus:ring-indigo-500 focus:border-indigo-500 block shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+  
+                    <div class="col-span-3 sm:col-span-6">
+                      <label for="other" class="block text-sm font-medium text-gray-700">Description du nouveau Formation *</label>
+  
+  
+                      <textarea class="outline-0 border-0" title="others" name="" id="" cols="60" rows="10"
+                      formControlName="description"
+                      ></textarea>
+  
+  
+  
+                    </div>
+  
+                    <div class="col-span-6 sm:col-span-5">
+                      <label for="profResponsable" class="block text-sm font-medium text-gray-700">Prof Responable *</label>
+                      <input type="text" name="profResponsable" id="profResponsable" autocomplete="off" formControlName="responsible" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+  
+                </div>
+              </div>
+  
+              <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                <div class="inline-flex justify-center py-2 px-4 "> 
+                  <input (change)="uploadImage($event)"
+                  id="input-pdp-course" class="hidden" title="pdp" type="file" src="" alt="">
+                  <label for="input-pdp-course" class="btn bg-indigo-600 p-2 text-sm font-medium text-white rounded-md cursor:pointer">Ajouter photo</label>
+                </div>
+                <button type="submit" (click)="isUpdate ? onUpdateFormation() : onSubmitFormation()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>
+              </div>
+  
+            </div>
+       </form>
+      </div>
+  
+  
+      <!-- Previsualisation du Formation  -->
+      <div class="mt-5 md:mt-0 md:col-span-2" *ngIf="formationPreview$ | async as formation">
+        <div class="border-2 py-4 overflow-scroll {{formation.enabled ? 'border-green-600 rounded-lg' : 'border-gray-600 rounded-lg'}}">
+          <h1 class="text-3xl p-12 font-bold {{formation.enabled ? 'text-green-600' : 'text-gray-600'}}">{{ formation.title }}</h1>
+  
+  
+  
+          <div id="ids" class="p-12">
+    
+            <img *ngIf="imageSaved" width="300px" style="float:left; padding:15px;" src={{pdpBase64}} alt="photo-new-course">
+            
+            {{ formation.description }}
+    
+          </div>
+    
+          <div class="float-right p-8 ">
+            <em>
+              {{ formation.responsible }}
+            </em>
+          </div>
+        </div>
+  
+  
+      </div>
+  
+  
+  
+    </div>
+  </div>
+  
+  
+  </div>
+  

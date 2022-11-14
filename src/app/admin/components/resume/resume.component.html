@@ -3,16 +3,16 @@
   <div class="max-w-sm">
       <img class="rounded-t-lg" src="{{user.pictureUrl}}" alt=""/>
     <div class="p-6 mt-2 h-96 scrollbar scrollbar-thin overflow-y-auto">
-      <h5 class="text-gray-100 text-3xl font-medium mb-2">
+      <h5 class="text-gray-100 text-2xl font-medium mb-2">
         {{ user.name }}
       </h5>
-      <div class="pt-4 text-gray-200 text-2xl break">
+      <div class="pt-4 text-gray-200 text-xl break">
         {{ user.email }}
       </div>
-      <div class="pt-4 text-gray-200 text-2xl break">
+      <div class="pt-4 text-gray-200 text-xl break">
         {{ user._id }}
       </div>
-      <div class="pt-4 text-gray-200 text-2xl break">
+      <div class="pt-4 text-gray-200 text-xl break">
         Date d'inscription : {{ user.createdAt | date}}
       </div>
       <button

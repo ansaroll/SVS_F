@@ -7,11 +7,11 @@ exports.navbarData = [
         icon: 'fa-solid fa-house-laptop',
         label: 'Tableau de Bord'
     },
-    {
-        routerLink: 'calendar',
-        icon: 'fa-solid fa-calendar-days',
-        label: 'Calendrier'
-    },
+    // {
+    //   routerLink : 'calendar',
+    //   icon : 'fa-solid fa-calendar-days',
+    //   label : 'Calendrier'
+    // },
     {
         routerLink: 'chats',
         icon: 'fa-brands fa-rocketchat',
@@ -39,6 +39,10 @@ exports.navbarData = [
             {
                 routerLink: 'create-formation',
                 label: 'Formation'
+            },
+            {
+                routerLink: 'create-advert',
+                label: 'Annonce'
             }
         ]
     },

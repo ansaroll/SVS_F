@@ -24,6 +24,7 @@ var screen_component_1 = require("./components/screen/screen.component");
 var settings_component_1 = require("./components/settings/settings.component");
 var create_news_component_1 = require("./components/create-news/create-news.component");
 var profil_component_1 = require("./components/profil/profil.component");
+var create_advert_component_1 = require("./components/create-advert/create-advert.component");
 var routes = [
     {
         path: '', component: screen_component_1.ScreenComponent,
@@ -53,6 +54,8 @@ var routes = [
             { path: 'create-user', component: create_doctorant_component_1.CreateDoctorantComponent },
             { path: 'create-user/:id/:role', component: create_doctorant_component_1.CreateDoctorantComponent },
             { path: 'create-formation', component: create_formation_component_1.CreateFormationComponent },
+            { path: 'create-advert', component: create_advert_component_1.CreateAdvertComponent },
+            { path: 'create-advert/:id', component: create_advert_component_1.CreateAdvertComponent },
             { path: 'create-formation/:id', component: create_formation_component_1.CreateFormationComponent },
             { path: 'createnews', component: create_news_component_1.CreateNewsComponent },
         ]
