@@ -1,0 +1,12 @@
+.p-courses {
+  padding: 3rem 0rem 0rem 0rem;
+  background-color: #f4f7fa;
+}
+
+.grp_course > div {
+  transition: all 0.5s ease-in-out;
+}
+
+.grp_course > div:hover {
+  transform: scale(1.03);
+}

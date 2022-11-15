@@ -32,6 +32,7 @@ import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.compon
 import { MiniProfilComponent } from './components/mini-profil/mini-profil.component';
 import { CreateAdvertComponent } from './components/create-advert/create-advert.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AdvertComponent } from './components/advert/advert.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     CreateNewsComponent,
     SublevelMenuComponent,
     MiniProfilComponent,
-    CreateAdvertComponent
+    CreateAdvertComponent,
+    AdvertComponent
   ],
   imports: [
     CommonModule,

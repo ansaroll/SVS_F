@@ -12,6 +12,7 @@ var router_1 = require("@angular/router");
 var calendar_component_1 = require("./components/body/calendar/calendar.component");
 var chats_component_1 = require("./components/chats/chats.component");
 var courses_component_1 = require("./components/courses/courses.component");
+var advert_component_1 = require("./components/advert/advert.component");
 var create_doctorant_component_1 = require("./components/create-doctorant/create-doctorant.component");
 var dashboard_component_1 = require("./components/dashboard/dashboard.component");
 var create_formation_component_1 = require("./components/create-formation/create-formation.component");
@@ -51,6 +52,7 @@ var routes = [
             },
             { path: 'settings', component: settings_component_1.SettingsComponent },
             { path: 'courses', component: courses_component_1.CoursesComponent },
+            { path: 'advert', component: advert_component_1.AdvertComponent },
             { path: 'create-user', component: create_doctorant_component_1.CreateDoctorantComponent },
             { path: 'create-user/:id/:role', component: create_doctorant_component_1.CreateDoctorantComponent },
             { path: 'create-formation', component: create_formation_component_1.CreateFormationComponent },

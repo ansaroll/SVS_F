@@ -23,6 +23,11 @@ exports.navbarData = [
         label: 'Formations'
     },
     {
+        routerLink: 'advert',
+        icon: 'fa-solid fa-scroll',
+        label: 'Annonces'
+    },
+    {
         routerLink: 'database',
         icon: 'fa-solid fa-database',
         label: 'Base de donnees'

@@ -1,0 +1,103 @@
+<div class="p-advert mt-8">
+
+
+  <div class="pb-16">
+    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+      <div class="mb-12 space-y-2 text-center">
+        <!-- <span class="block w-max mx-auto px-3 py-1.5 border border-green-200 rounded-full bg-green-100 text-green-600">Les Formations</span> -->
+        <h2 class="text-2xl text-cyan-900 font-bold md:text-4xl">Les annonces de l'ED SVS</h2>
+        <!-- <p class="lg:w-6/12 lg:mx-auto">Quam hic dolore cumque voluptate rerum beatae et quae, tempore sunt, debitis dolorum officia aliquid explicabo? Excepturi, voluptate?</p> -->
+      </div>
+
+      <div class="grid gap-12 lg:grid-cols-2 grp_advert">
+
+        <div *ngFor="let advert of advert" class="p-1 rounded-xl group sm:flex space-x-6 bg-white
+        bg-opacity-50 shadow-xl hover:rounded-2xl
+        ">
+          <img src={{advert.image}} alt="art cover" loading="lazy" width="1000" height="667"
+            class="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500 group-hover:rounded-xl hover:scale-105 transition duration-500 ease-in-out">
+          <div class="sm:w-7/12 pl-0 p-5">
+            <div class="space-y-2">
+              <div class="space-y-4">
+                <h4
+                  class="text-2xl font-semibold {{advert.enabled ? 'text-green-600 animate-bounce' : 'text-cyan-900'}}">
+                  {{advert.title}}</h4>
+                <p class="text-gray-600">{{advert.description}}</p>
+              </div>
+              <p>
+                Responsable : <a href="www.tailus.io" class="text-cyan-600">{{advert.responsible}}</a>
+              </p>
+              <div class="flex flex-row justify-between">
+                <a href="/admin/create-advert/{{advert._id}}" class="block w-max text-cyan-600">Voir plus</a>
+                <button *ngIf="!advert.enabled"
+                (click)="setDeleteCourse(advert._id!)"
+                class="text-red-600 rounded-lg bg-red-100 p-1 px-2 hover:bg-red-200">
+                  Supprimer
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="">
+          <button type="button"
+            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+            Vertically centered modal
+          </button>
+        </div> -->
+
+
+
+        <div class="modal fade {{showModal ? 'block' :'hidden'}} fixed top-1/3 left-1/2 outline-none overflow-x-hidden overflow-y-auto drop-shadow-2xl shadow-2xl"
+          id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" aria-hidden="true"
+          role="presentation">
+          <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+            <div
+              class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+              <div
+                class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-white rounded-md">
+                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+                  Confirmation
+                </h5>
+                <button type="button"
+                  class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                  data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body relative p-4">
+                <p>
+                  Voulez-vous vraiment supprimer cette formation ?
+                </p>
+              </div>
+              <div
+                class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button"
+                  (click)="onCancelDelete()"
+                  class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                  data-bs-dismiss="modal">
+                  Annuler
+                </button>
+                <button type="button"
+                  (click)="onDeleteCourse()"
+                  class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+                  Confirmer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+

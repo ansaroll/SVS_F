@@ -3,6 +3,7 @@ import { RouterModule , Routes  } from '@angular/router'
 import { CalendarComponent } from './components/body/calendar/calendar.component'
 import { ChatsComponent } from './components/chats/chats.component'
 import { CoursesComponent } from './components/courses/courses.component'
+import { AdvertComponent } from './components/advert/advert.component'
 import { CreateDoctorantComponent } from './components/create-doctorant/create-doctorant.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { CreateFormationComponent } from './components/create-formation/create-formation.component'
@@ -49,6 +50,7 @@ const routes: Routes = [
     },
       { path : 'settings' , component : SettingsComponent},
       { path : 'courses' , component : CoursesComponent},
+      { path : 'advert' , component : AdvertComponent},
       { path : 'create-user' , component : CreateDoctorantComponent},
       { path : 'create-user/:id/:role' , component : CreateDoctorantComponent},
       { path : 'create-formation' , component : CreateFormationComponent},
