@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { CoursesService } from 'src/app/core/services/courses.service';
-import { Courses } from 'src/app/models/courses.model';
+import { AdvertService } from 'src/app/core/services/advert.service';
+import { Advert } from 'src/app/models/advert.model';
 
 
 @Component({
@@ -14,14 +14,14 @@ import { Courses } from 'src/app/models/courses.model';
 export class CreateAdvertComponent implements OnInit {
 
   formationForm!:FormGroup;
-  formationPreview$!: Observable<Courses>
+  formationPreview$!: Observable<Advert>
   pdpBase64!:string
   imageSaved:boolean = false
   isUpdate:boolean = false
 
 
   constructor(private formBuilder: FormBuilder ,
-              private coursesService: CoursesService,
+              private coursesService: AdvertService,
               private route: ActivatedRoute ,
               private router:Router
               ) { }
@@ -36,7 +36,7 @@ export class CreateAdvertComponent implements OnInit {
     })
     if(this.route.snapshot.paramMap.get('id') != null) {
       this.isUpdate = true
-      this.coursesService.getSingleCourses(this.route.snapshot.paramMap.get('id')).subscribe({
+      this.coursesService.getSingleAdvert(this.route.snapshot.paramMap.get('id')).subscribe({
         next:data => {
           this.formationForm.setValue({
             title:data.title || '',
@@ -76,22 +76,22 @@ export class CreateAdvertComponent implements OnInit {
   }
 
   onSubmitFormation(){
-      this.coursesService.addCourses({
+      this.coursesService.addAdvert({
         ...this.formationForm.value,
         image:this.pdpBase64
       }).subscribe({
-        next:() =>  this.router.navigateByUrl('/admin/courses'),
+        next:() =>  this.router.navigateByUrl('/admin/advert'),
         error:err => console.log({err})
       })
   }
 
   onUpdateFormation(){
-    this.coursesService.updateCourses({
+    this.coursesService.updateAdvert({
       ...this.formationForm.value,
       image:this.pdpBase64,
       _id:this.route.snapshot.paramMap.get('id')
     }).subscribe({
-      next:() =>  this.router.navigateByUrl('/admin/courses'),
+      next:() =>  this.router.navigateByUrl('/admin/advert'),
       error:err => console.log({err})
     })
 }

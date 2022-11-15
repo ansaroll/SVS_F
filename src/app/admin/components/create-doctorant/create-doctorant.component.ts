@@ -86,7 +86,7 @@ export class CreateDoctorantComponent implements OnInit {
             passwordConfirmation: '',
             email: data.email || '',
             telephone: data.telephone || '',
-            isBoursier:data.isBoursier || 'false',
+            isBoursier:data.isBoursier ? 'true' : 'false',
             tauxBourse: data.tauxBourse || 0,
             about: data.about || '',
             poste: data.poste || '',

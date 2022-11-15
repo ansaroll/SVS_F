@@ -40,7 +40,7 @@ var CreateAdvertComponent = /** @class */ (function () {
         });
         if (this.route.snapshot.paramMap.get('id') != null) {
             this.isUpdate = true;
-            this.coursesService.getSingleCourses(this.route.snapshot.paramMap.get('id')).subscribe({
+            this.coursesService.getSingleAdvert(this.route.snapshot.paramMap.get('id')).subscribe({
                 next: function (data) {
                     _this.formationForm.setValue({
                         title: data.title || '',
@@ -74,15 +74,15 @@ var CreateAdvertComponent = /** @class */ (function () {
     };
     CreateAdvertComponent.prototype.onSubmitFormation = function () {
         var _this = this;
-        this.coursesService.addCourses(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64 })).subscribe({
-            next: function () { return _this.router.navigateByUrl('/admin/courses'); },
+        this.coursesService.addAdvert(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64 })).subscribe({
+            next: function () { return _this.router.navigateByUrl('/admin/advert'); },
             error: function (err) { return console.log({ err: err }); }
         });
     };
     CreateAdvertComponent.prototype.onUpdateFormation = function () {
         var _this = this;
-        this.coursesService.updateCourses(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64, _id: this.route.snapshot.paramMap.get('id') })).subscribe({
-            next: function () { return _this.router.navigateByUrl('/admin/courses'); },
+        this.coursesService.updateAdvert(__assign(__assign({}, this.formationForm.value), { image: this.pdpBase64, _id: this.route.snapshot.paramMap.get('id') })).subscribe({
+            next: function () { return _this.router.navigateByUrl('/admin/advert'); },
             error: function (err) { return console.log({ err: err }); }
         });
     };
