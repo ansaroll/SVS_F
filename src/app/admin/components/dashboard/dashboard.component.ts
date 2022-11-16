@@ -14,11 +14,13 @@ export class DashboardComponent implements OnInit {
     doctorantCount: number;
     profCount: number;
     staffCount: number;
+    advertCount: number;
 } = {
   coursesCount: 0,
   doctorantCount: 0,
   profCount: 0,
-  staffCount: 0
+  staffCount: 0,
+  advertCount: 0
 }
 
 statsMessages:{

@@ -18,7 +18,7 @@ httpHeader = {
   };
 
   getStats() {
-    return this.httpClient.get<{coursesCount:number,  doctorantCount:number,  profCount:number,  staffCount:number}>(
+    return this.httpClient.get<{coursesCount:number,  doctorantCount:number,  profCount:number,  staffCount:number, advertCount:number}>(
       this.endpoint+'/api/stats')
     .pipe(retry(1), catchError(this.processError));
   }

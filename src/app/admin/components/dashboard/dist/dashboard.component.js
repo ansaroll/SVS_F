@@ -15,7 +15,8 @@ var DashboardComponent = /** @class */ (function () {
             coursesCount: 0,
             doctorantCount: 0,
             profCount: 0,
-            staffCount: 0
+            staffCount: 0,
+            advertCount: 0
         };
         this.statsMessages = {
             fileCount: 0,
