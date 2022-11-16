@@ -5,4 +5,5 @@ export class Advert {
   responsible?:string;
   image?: string;
   enabled?:boolean
+  createdAt?:Date
 }

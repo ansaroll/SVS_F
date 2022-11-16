@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdvertComponent } from './components/advert/advert.component';
+import { AdvertDetailsComponent } from './components/advert-details/advert-details.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AboutComponent,
     HomeComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    AdvertComponent,
+    AdvertDetailsComponent
   ],
   imports: [
     CommonModule,

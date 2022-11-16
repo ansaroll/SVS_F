@@ -22,10 +22,10 @@
                 <h4
                   class="text-2xl font-semibold {{advert.enabled ? 'text-green-600 animate-bounce' : 'text-cyan-900'}}">
                   {{advert.title}}</h4>
-                <p class="text-gray-600">{{advert.description}}</p>
+                <p class="text-gray-600">{{advert.description  | slice:0:200 }}</p>
               </div>
               <p>
-                Responsable : <a href="www.tailus.io" class="text-cyan-600">{{advert.responsible}}</a>
+                Auteur : <a href="www.tailus.io" class="text-cyan-600">{{advert.responsible}}</a>
               </p>
               <div class="flex flex-row justify-between">
                 <a href="/admin/create-advert/{{advert._id}}" class="block w-max text-cyan-600">Voir plus</a>

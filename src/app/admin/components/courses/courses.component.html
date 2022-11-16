@@ -22,14 +22,14 @@
                 <h4
                   class="text-2xl font-semibold {{course.enabled ? 'text-green-600 animate-bounce' : 'text-cyan-900'}}">
                   {{course.title}}</h4>
-                <p class="text-gray-600">{{course.description}}</p>
+                <p class="text-gray-600">{{ course.description  | slice:0:200 }}</p>
               </div>
               <p>
                 Responsable : <a href="www.tailus.io" class="text-cyan-600">{{course.responsible}}</a>
               </p>
               <div class="flex flex-row justify-between">
                 <a href="/admin/create-formation/{{course._id}}" class="block w-max text-cyan-600">Voir plus</a>
-                <button *ngIf="!course.enabled" 
+                <button *ngIf="!course.enabled"
                 (click)="setDeleteCourse(course._id!)"
                 class="text-red-600 rounded-lg bg-red-100 p-1 px-2 hover:bg-red-200">
                   Supprimer
